@@ -15,6 +15,8 @@ internal enum AthleteResourcePath: String {
 
 public extension Strava {
 
+    // Gets profile for current athlete
+    // Docs: http://strava.github.io/api/v3/athlete/#get-details
     static func getAthlete(completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = AthleteResourcePath.Athlete.rawValue
 
@@ -27,6 +29,8 @@ public extension Strava {
         }
     }
 
+    // Gets profile for athlete by ID
+    // Docs: http://strava.github.io/api/v3/athlete/#get-another-details
     static func getAthlete(athleteId: Int, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = AthleteResourcePath.Athletes.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(athleteId))
 
@@ -49,7 +53,8 @@ public extension Strava {
             }
         }
         else {
-            let error = NSError(domain: "Athlete Error", code: 500, userInfo: [NSLocalizedDescriptionKey : "Unable to create Athlete"])
+            let userInfo = [NSLocalizedDescriptionKey : "Unable to create Athlete"]
+            let error = NSError(domain: "Athlete Error", code: 500, userInfo: userInfo)
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(athlete: nil, error: error)
             }
