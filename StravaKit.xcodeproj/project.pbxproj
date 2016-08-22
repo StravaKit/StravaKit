@@ -674,6 +674,7 @@
 				26AEBF821D664A2E00481015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26AEBF831D664A2E00481015 /* Build configuration list for PBXNativeTarget "StravaDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -682,6 +683,7 @@
 				26AEBF851D664A2E00481015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26AEBFA21D664B9500481015 /* Build configuration list for PBXNativeTarget "StravaKit" */ = {
 			isa = XCConfigurationList;
@@ -690,6 +692,7 @@
 				26AEBFA41D664B9500481015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26AEBFA61D664B9500481015 /* Build configuration list for PBXNativeTarget "StravaKitTests" */ = {
 			isa = XCConfigurationList;
@@ -698,6 +701,7 @@
 				26AEBFA81D664B9500481015 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
