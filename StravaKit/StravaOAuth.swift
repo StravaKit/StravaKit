@@ -137,7 +137,9 @@ public extension Strava {
                 let accessToken = response["access_token"] as? String,
                 let athleteDictionary = response["athlete"] as? [String : AnyObject] else {
                     let error : NSError = NSError(domain: "No clientId and clientSecret", code: 500, userInfo: nil)
-                    completionHandler?(success: false, error: error)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        completionHandler?(success: false, error: error)
+                    }
                     return
             }
 
@@ -145,7 +147,9 @@ public extension Strava {
             sharedInstance.athlete = Athlete.athlete(athleteDictionary)
             sharedInstance.storeAccessData()
             assert(sharedInstance.athlete != nil, "Athlete is required")
-            completionHandler?(success: true, error: nil)
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler?(success: true, error: nil)
+            }
         }
     }
 

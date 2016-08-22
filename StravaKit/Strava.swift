@@ -81,7 +81,8 @@ public class Strava {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         if authenticated {
             guard let accessToken = sharedInstance.accessToken else {
-                completionHandler?(response: nil, error: NSError(domain: "No Access Token", code: StravaErrorCode.NoAccessToken.rawValue, userInfo: nil))
+                let error = NSError(domain: "No Access Token", code: StravaErrorCode.NoAccessToken.rawValue, userInfo: nil)
+                completionHandler?(response: nil, error: error)
                 return nil
             }
             sessionConfiguration.HTTPAdditionalHeaders = ["Authorization": "Bearer \(accessToken)"]
@@ -96,16 +97,19 @@ public class Strava {
                         if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject] {
                             completionHandler?(response: response, error: error)
                         } else {
-                            completionHandler?(response: nil, error: NSError(domain: "No Response", code: StravaErrorCode.NoResponse.rawValue, userInfo: nil))
+                            let error = NSError(domain: "No Response", code: StravaErrorCode.NoResponse.rawValue, userInfo: nil)
+                            completionHandler?(response: nil, error: error)
                         }
                     } catch {
-                        completionHandler?(response: nil, error: NSError(domain: "Response JSON Serialization Failed", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: nil))
+                        let error = NSError(domain: "Response JSON Serialization Failed", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: nil)
+                        completionHandler?(response: nil, error: error)
                     }
                 }
             } else if let error = error {
                 completionHandler?(response: nil, error: error)
             } else {
-                completionHandler?(response: nil, error: NSError(domain: "No Data", code: StravaErrorCode.NoResponse.rawValue, userInfo: nil))
+                let error = NSError(domain: "No Data", code: StravaErrorCode.NoResponse.rawValue, userInfo: nil)
+                completionHandler?(response: nil, error: error)
             }
         }
         task.resume()
