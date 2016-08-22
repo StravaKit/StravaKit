@@ -55,11 +55,19 @@
                                     <action selector="getAthleteByIDButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eyh-zw-qnU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwz-Da-yVS">
+                                <rect key="frame" x="268" y="302" width="64" height="30"/>
+                                <state key="normal" title="Get Stats"/>
+                                <connections>
+                                    <action selector="getStatsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PIR-Dq-9WX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1So-dd-0Zh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4cP-Mj-g9f"/>
                             <constraint firstItem="W1X-0c-xTe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8rH-P8-Gsr"/>
+                            <constraint firstItem="hwz-Da-yVS" firstAttribute="top" secondItem="W1X-0c-xTe" secondAttribute="bottom" constant="8" id="90m-hX-J3j"/>
                             <constraint firstItem="ddg-KI-KWa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Chk-ZB-Al4"/>
                             <constraint firstItem="pFq-7Q-RRV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Dx4-GR-6bX"/>
                             <constraint firstItem="0uV-BB-IN0" firstAttribute="top" secondItem="ddg-KI-KWa" secondAttribute="bottom" constant="8" id="LhU-XL-01B"/>
@@ -70,6 +78,7 @@
                             <constraint firstItem="ddg-KI-KWa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="b1I-BM-NMh"/>
                             <constraint firstItem="pFq-7Q-RRV" firstAttribute="top" secondItem="SUB-aL-BDO" secondAttribute="bottom" constant="8" id="cPs-7L-Kx4"/>
                             <constraint firstItem="0uV-BB-IN0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="d30-8o-sUc"/>
+                            <constraint firstItem="hwz-Da-yVS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hWX-5X-odm"/>
                             <constraint firstItem="ddg-KI-KWa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mIn-ef-NgJ"/>
                             <constraint firstItem="SUB-aL-BDO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rns-rF-nDH"/>
                             <constraint firstItem="SUB-aL-BDO" firstAttribute="top" secondItem="0uV-BB-IN0" secondAttribute="bottom" constant="8" id="tax-VE-7qm"/>
@@ -84,6 +93,7 @@
                         <outlet property="clientSecretTextField" destination="0uV-BB-IN0" id="SOf-ko-A4S"/>
                         <outlet property="getAthleteButton" destination="1So-dd-0Zh" id="fLX-9C-sSZ"/>
                         <outlet property="getAthleteByIDButton" destination="W1X-0c-xTe" id="ecM-TN-JEN"/>
+                        <outlet property="getStatsButton" destination="hwz-Da-yVS" id="MXV-1s-3mh"/>
                         <outlet property="statusLabel" destination="pFq-7Q-RRV" id="lSy-lk-H3t"/>
                     </connections>
                 </viewController>

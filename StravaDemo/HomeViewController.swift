@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var getAthleteButton: UIButton!
     @IBOutlet weak var getAthleteByIDButton: UIButton!
+    @IBOutlet weak var getStatsButton: UIButton!
 
     var safariViewController: SFSafariViewController? = nil
 
@@ -88,6 +89,9 @@ class HomeViewController: UIViewController {
     @IBAction func getAthleteByIDButtonTapped(sender: AnyObject) {
         getAtheleteByID()
     }
+    @IBAction func getStatsButtonTapped(sender: AnyObject) {
+        getStats()
+    }
 
     // MARK: Internal Functions
 
@@ -99,6 +103,7 @@ class HomeViewController: UIViewController {
         accessButton.setTitle(title, forState: .Normal)
         getAthleteButton.hidden = !isAuthenticated
         getAthleteByIDButton.hidden = !isAuthenticated
+        getStatsButton.hidden = !isAuthenticated
     }
 
     internal func authorizeStrava() {
@@ -171,6 +176,20 @@ class HomeViewController: UIViewController {
                     self.statusLabel.text = error.localizedDescription
                 }
             }
+        }
+    }
+
+    internal func getStats() {
+        if let athleteId = Strava.currentAthlete?.athleteId {
+            Strava.getStats(athleteId, completionHandler: { (stats, error) in
+                if let stats = stats {
+                    self.statusLabel.text = "Loaded Stats: \(stats.athleteId)"
+                    print("\(athleteId)")
+                }
+                else if let error = error {
+                    self.statusLabel.text = error.localizedDescription
+                }
+            })
         }
     }
 

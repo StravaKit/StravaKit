@@ -11,6 +11,7 @@ import Foundation
 internal enum AthleteResourcePath: String {
     case Athlete = "/api/v3/athlete"
     case Athletes = "/api/v3/athletes/:id"
+    case Stats = "/api/v3/athletes/:id/stats"
 }
 
 public extension Strava {
@@ -43,6 +44,21 @@ public extension Strava {
         }
     }
 
+    // Gets stats for athlete by ID
+    // Docs: http://strava.github.io/api/v3/athlete/#stats
+    static func getStats(athleteId: Int, completionHandler: ((stats: Stats?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+        let path = AthleteResourcePath.Stats.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(athleteId))
+
+        return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
+            if let error = error {
+                completionHandler?(stats: nil, error: error)
+            }
+
+            handleStatsResponse(athleteId, response: response, completionHandler: completionHandler)
+        }
+
+    }
+
     // MARK: Internal Functions
 
     internal static func handleAthleteResponse(response: [String : AnyObject]?, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) {
@@ -57,6 +73,22 @@ public extension Strava {
             let error = NSError(domain: "Athlete Error", code: 500, userInfo: userInfo)
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(athlete: nil, error: error)
+            }
+        }
+    }
+
+    internal static func handleStatsResponse(athleteId: Int, response: [String : AnyObject]?, completionHandler: ((stats: Stats?, error: NSError?) -> ())?) {
+        if let dictionary = response,
+            let stats = Stats.stats(athleteId, dictionary: dictionary) {
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler?(stats: stats, error: nil)
+            }
+        }
+        else {
+            let userInfo = [NSLocalizedDescriptionKey : "Unable to create Stats"]
+            let error = NSError(domain: "Stats Error", code: 500, userInfo: userInfo)
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler?(stats: nil, error: error)
             }
         }
     }
