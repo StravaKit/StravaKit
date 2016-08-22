@@ -62,28 +62,30 @@ public extension Strava {
     }
     
     // Handles the URL given to AppDelegate
-    static func openURL(url: NSURL, sourceApplication: String?) -> Bool {
+    static func openURL(URL: NSURL, sourceApplication: String?) -> Bool {
         guard let _ = sharedInstance.clientId,
-            _ = sharedInstance.clientSecret else { return false }
-
-        guard let sa = sourceApplication where sa == "com.apple.SafariViewService",
-            let uri = sharedInstance.redirectURI,
-            let _ = url.absoluteString.rangeOfString(uri) else {
+            _ = sharedInstance.clientSecret else {
                 return false
         }
 
-        guard let code = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == "code" }).first?.value else { return false }
+        guard let sa = sourceApplication where sa == "com.apple.SafariViewService",
+            let uri = sharedInstance.redirectURI,
+            let _ = URL.absoluteString.rangeOfString(uri) else {
+                return false
+        }
 
-        exchangeTokenWithCode(code) { (success, error) in
-            var userInfo: [String : AnyObject] = [:]
-            userInfo[StravaStatusKey] = success ? StravaStatusSuccessValue : StravaStatusFailureValue
-            if let error = error {
-                userInfo[StravaErrorKey] = error
-            }
-            let nc = NSNotificationCenter.defaultCenter()
-            let name = StravaAuthorizationCompletedNotification
-            dispatch_sync(dispatch_get_main_queue()) {
-                nc.postNotificationName(name, object: nil, userInfo: userInfo)
+        var error: NSError? = nil
+
+        // The user can tap the cancel button which results in an access denied error.
+        // Example: stravademo://localhost/oauth/signin?state=&error=access_denied
+
+        if let errorValue = queryStringValue(URL, name: "error") {
+            error = NSError(domain: "OAuth Error", code: 500, userInfo: [NSLocalizedDescriptionKey : errorValue])
+            notifyAuthorizationCompleted(false, error: error)
+        }
+        else if let code = queryStringValue(URL, name: "code") {
+            exchangeTokenWithCode(code) { (success, error) in
+                notifyAuthorizationCompleted(success, error: error)
             }
         }
 
@@ -102,7 +104,8 @@ public extension Strava {
 
             sharedInstance.accessToken = nil
             sharedInstance.athlete = nil
-            dispatch_sync(dispatch_get_main_queue()) {
+            sharedInstance.deleteAccessData()
+            dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(success: true, error: nil)
             }
         }
@@ -139,9 +142,27 @@ public extension Strava {
 
             sharedInstance.accessToken = accessToken
             sharedInstance.athlete = Athlete.athlete(athleteDictionary)
+            sharedInstance.storeAccessData()
             assert(sharedInstance.athlete != nil, "Athlete is required")
             completionHandler?(success: true, error: nil)
         }
+    }
+
+    internal static func notifyAuthorizationCompleted(success: Bool, error: NSError?) {
+        var userInfo: [String : AnyObject] = [:]
+        userInfo[StravaStatusKey] = success ? StravaStatusSuccessValue : StravaStatusFailureValue
+        if let error = error {
+            userInfo[StravaErrorKey] = error
+        }
+        let nc = NSNotificationCenter.defaultCenter()
+        let name = StravaAuthorizationCompletedNotification
+        dispatch_async(dispatch_get_main_queue()) {
+            nc.postNotificationName(name, object: nil, userInfo: userInfo)
+        }
+    }
+
+    internal static func queryStringValue(URL: NSURL, name: String) -> String? {
+        return NSURLComponents(URL: URL, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == name }).first?.value
     }
 
 }

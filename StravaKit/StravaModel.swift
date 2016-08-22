@@ -32,6 +32,31 @@ public struct Athlete {
         }
     }
 
+    public var dictionary: [String : AnyObject] {
+        get {
+            let dictionary: [String : AnyObject] = [
+                "id" : athleteId,
+                "resource_state" : resourceState,
+                "firstname" : firstName,
+                "lastname" : lastName,
+                "city" : city,
+                "state" : state,
+                "country" : country,
+                "profile" : String(profileImageURL),
+                "profile_medium" : String(profileMediumImageURL),
+                "sex" : sex,
+                "premium" : premium,
+                "follower_count" : followerCount,
+                "friend_count" : friendCount,
+                "mutual_friend_count" : mutualFriendCount,
+                "measurement_preference" : measurementPreference,
+                "email" : email
+            ]
+
+            return dictionary
+        }
+    }
+
     public static func athlete(dictionary: [String : AnyObject]) -> Athlete? {
         if let athleteId = dictionary["id"] as? Int,
             let resourceState = dictionary["resource_state"] as? Int,

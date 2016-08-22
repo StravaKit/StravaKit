@@ -2,6 +2,7 @@
 
 1. Implement full API
    1. ~~/v3/oauth~~
+   1. ~~Implement secure access data storage~~
    1. /v3/athlete
    1. /v3/athletes/:id
    1. /v3/activities/:id

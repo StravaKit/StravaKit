@@ -34,6 +34,26 @@ class StravaAtheleteTests: XCTestCase {
         XCTAssertNil(athlete)
     }
 
+    func testAthleteDictionary() {
+        // all required values are in the JSON file
+        guard let dictionary = athleteDictionary("athlete-good") else {
+            XCTFail()
+            return
+        }
+
+        guard let athlete = Athlete.athlete(dictionary),
+            let otherAthlete = Athlete.athlete(athlete.dictionary) else {
+                XCTFail()
+                return
+        }
+        XCTAssertTrue(athlete.firstName == otherAthlete.firstName)
+        XCTAssertTrue(athlete.lastName == otherAthlete.lastName)
+        XCTAssertTrue(athlete.city == otherAthlete.city)
+        XCTAssertTrue(athlete.state == otherAthlete.state)
+        XCTAssertTrue(athlete.country == otherAthlete.country)
+        XCTAssertTrue(athlete.email == otherAthlete.email)
+    }
+
     // MARK: Private
 
     private func athleteDictionary(name: String) -> [String : AnyObject]? {
