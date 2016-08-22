@@ -12,7 +12,7 @@ import XCTest
 
 class StravaStatsTests: XCTestCase {
     
-    func testAthleteCreationFromGoodDictionary() {
+    func testStatsCreationFromGoodDictionary() {
         // all required values are in the JSON file
         guard let dictionary = statsDictionary("stats-good") else {
             XCTFail()
@@ -23,7 +23,7 @@ class StravaStatsTests: XCTestCase {
         XCTAssertNotNil(stats)
     }
 
-    func testAthleteCreationFromBadDictionary() {
+    func testStatsCreationFromBadDictionary() {
         // required values are missing from the JSON file
         guard let dictionary = statsDictionary("stats-bad") else {
             XCTFail()
