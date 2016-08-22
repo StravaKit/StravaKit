@@ -12,6 +12,8 @@ import SafariServices
 
 class HomeViewController: UIViewController {
 
+    // MARK: Properties
+
     @IBOutlet weak var clientIdTextField: UITextField!
     @IBOutlet weak var clientSecretTextField: UITextField!
     @IBOutlet weak var accessButton: UIButton!
@@ -22,8 +24,12 @@ class HomeViewController: UIViewController {
 
     var safariViewController: SFSafariViewController? = nil
 
+    // MARK: Private Constants
+
     private let ClientIDKey : String = "ClientID"
     private let ClientSecretKey : String = "ClientSecret"
+
+    // MARK: Computed Properties
 
     var clientId : String {
         get {
@@ -49,6 +55,8 @@ class HomeViewController: UIViewController {
         }
     }
 
+    // MARK: View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,6 +69,8 @@ class HomeViewController: UIViewController {
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: StravaAuthorizationCompletedNotification, object: nil)
     }
+
+    // MARK: User Actions
 
     @IBAction func accessButtonTapped(sender: AnyObject) {
         if !Strava.isAuthenticated {
@@ -108,7 +118,7 @@ class HomeViewController: UIViewController {
             assert(NSThread.isMainThread(), "Main Thread is required")
             self.refreshUI()
             if success {
-                print("Deauthorization successfull!")
+                print("Deauthorization successful!")
             }
             else {
                 // TODO: warn user
@@ -126,7 +136,7 @@ class HomeViewController: UIViewController {
         if let userInfo = notification?.userInfo {
             if let status = userInfo[StravaStatusKey] as? String {
                 if status == StravaStatusSuccessValue {
-                    print("Authorization successfull!")
+                    print("Authorization successful!")
                     if let athlete = Strava.currentAthlete {
                         print("Athlete: \(athlete.fullName)")
                     }
@@ -139,7 +149,6 @@ class HomeViewController: UIViewController {
     }
 
     internal func getAthelete() {
-
         Strava.getAthlete { (athlete, error) in
             if let athlete = athlete {
                 self.statusLabel.text = "Loaded Athlete: \(athlete.fullName)"
@@ -149,7 +158,6 @@ class HomeViewController: UIViewController {
                 self.statusLabel.text = error.localizedDescription
             }
         }
-
     }
 
     internal func getAtheleteByID() {
