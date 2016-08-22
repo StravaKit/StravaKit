@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qTC-bS-5J0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Strava-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="StravaDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-KI-KWa">
+                                <rect key="frame" x="40" y="72" width="520" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Secret" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-BB-IN0">
+                                <rect key="frame" x="40" y="110" width="520" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUB-aL-BDO">
+                                <rect key="frame" x="244" y="148" width="112" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="Authorize"/>
+                                <connections>
+                                    <action selector="accessButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6I9-0Z-aI1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ddg-KI-KWa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Chk-ZB-Al4"/>
+                            <constraint firstItem="0uV-BB-IN0" firstAttribute="top" secondItem="ddg-KI-KWa" secondAttribute="bottom" constant="8" id="LhU-XL-01B"/>
+                            <constraint firstItem="0uV-BB-IN0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PW8-Ex-hRW"/>
+                            <constraint firstItem="ddg-KI-KWa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="b1I-BM-NMh"/>
+                            <constraint firstItem="0uV-BB-IN0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="d30-8o-sUc"/>
+                            <constraint firstItem="ddg-KI-KWa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mIn-ef-NgJ"/>
+                            <constraint firstItem="SUB-aL-BDO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rns-rF-nDH"/>
+                            <constraint firstItem="SUB-aL-BDO" firstAttribute="top" secondItem="0uV-BB-IN0" secondAttribute="bottom" constant="8" id="tax-VE-7qm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Strava" id="7bB-eM-Pgd">
+                        <barButtonItem key="backBarButtonItem" title=" " id="5Ol-og-EP1"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="accessButton" destination="SUB-aL-BDO" id="GpP-HE-ReO"/>
+                        <outlet property="clientIdTextField" destination="ddg-KI-KWa" id="2xz-Kj-go7"/>
+                        <outlet property="clientSecretTextField" destination="0uV-BB-IN0" id="SOf-ko-A4S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="-367"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HYy-MQ-Kaf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qTC-bS-5J0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tFN-Kx-NjE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8xZ-go-jmQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7JU-vl-4jQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="273" y="-367"/>
+        </scene>
+    </scenes>
+</document>
