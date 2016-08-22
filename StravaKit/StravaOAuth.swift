@@ -33,6 +33,7 @@ public enum OAuthScope: String {
 }
 
 public extension Strava {
+    
     // Initialize clientId & clientSecret
     static func set(clientId clientId: String, clientSecret: String, redirectURI: String, sandbox: Bool? = nil) {
         sharedInstance.clientId = clientId
