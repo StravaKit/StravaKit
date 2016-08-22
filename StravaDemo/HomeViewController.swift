@@ -16,6 +16,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var clientSecretTextField: UITextField!
     @IBOutlet weak var accessButton: UIButton!
 
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var getAthleteButton: UIButton!
+    @IBOutlet weak var getAthleteByIDButton: UIButton!
+
     var safariViewController: SFSafariViewController? = nil
 
     private let ClientIDKey : String = "ClientID"
@@ -49,7 +53,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         loadDefaults()
-        refreshAccessButton()
+        refreshUI()
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.stravaSignInCompleted(_:)), name: StravaAuthorizationCompletedNotification, object: nil)
     }
@@ -67,12 +71,24 @@ class HomeViewController: UIViewController {
         }
     }
 
+    @IBAction func getAthleteTapped(sender: AnyObject) {
+        getAthelete()
+    }
+
+    @IBAction func getAthleteByIDButtonTapped(sender: AnyObject) {
+        getAtheleteByID()
+    }
+
     // MARK: Internal Functions
 
-    internal func refreshAccessButton() {
+    internal func refreshUI() {
         assert(NSThread.isMainThread(), "Main Thread is required")
-        let title = Strava.isAuthenticated ? "Deauthorize" : "Authorize"
+        let isAuthenticated = Strava.isAuthenticated
+        let title = isAuthenticated ? "Deauthorize" : "Authorize"
+        statusLabel.text = nil
         accessButton.setTitle(title, forState: .Normal)
+        getAthleteButton.hidden = !isAuthenticated
+        getAthleteByIDButton.hidden = !isAuthenticated
     }
 
     internal func authorizeStrava() {
@@ -90,7 +106,7 @@ class HomeViewController: UIViewController {
     internal func deauthorizeStrava() {
         Strava.deauthorize { (success, error) in
             assert(NSThread.isMainThread(), "Main Thread is required")
-            self.refreshAccessButton()
+            self.refreshUI()
             if success {
                 print("Deauthorization successfull!")
             }
@@ -106,7 +122,7 @@ class HomeViewController: UIViewController {
     internal func stravaSignInCompleted(notification: NSNotification?) {
         assert(NSThread.isMainThread(), "Main Thread is required")
         safariViewController?.dismissViewControllerAnimated(true, completion: nil)
-        refreshAccessButton()
+        refreshUI()
         if let userInfo = notification?.userInfo {
             if let status = userInfo[StravaStatusKey] as? String {
                 if status == StravaStatusSuccessValue {
@@ -117,6 +133,34 @@ class HomeViewController: UIViewController {
                 }
                 else if let error = userInfo[StravaErrorKey] as? NSError {
                     print("\(error.localizedDescription)")
+                }
+            }
+        }
+    }
+
+    internal func getAthelete() {
+
+        Strava.getAthlete { (athlete, error) in
+            if let athlete = athlete {
+                self.statusLabel.text = "Loaded Athlete: \(athlete.fullName)"
+                print("\(athlete.fullName)")
+            }
+            else if let error = error {
+                self.statusLabel.text = error.localizedDescription
+            }
+        }
+
+    }
+
+    internal func getAtheleteByID() {
+        if let athleteId = Strava.currentAthlete?.athleteId {
+            Strava.getAthlete(athleteId) { (athlete, error) in
+                if let athlete = athlete {
+                    self.statusLabel.text = "Loaded Athlete by ID: \(athlete.fullName)"
+                    print("\(athlete.fullName)")
+                }
+                else if let error = error {
+                    self.statusLabel.text = error.localizedDescription
                 }
             }
         }

@@ -54,6 +54,18 @@ class StravaAtheleteTests: XCTestCase {
         XCTAssertTrue(athlete.email == otherAthlete.email)
     }
 
+
+    func testAthleteCreationFromOtherDictionary() {
+        // other athlete JSON which is not as full
+        guard let dictionary = athleteDictionary("athlete-other") else {
+            XCTFail()
+            return
+        }
+
+        let athlete = Athlete.athlete(dictionary)
+        XCTAssertNotNil(athlete)
+    }
+
     // MARK: Private
 
     private func athleteDictionary(name: String) -> [String : AnyObject]? {

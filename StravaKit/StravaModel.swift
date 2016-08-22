@@ -70,18 +70,24 @@ public struct Athlete {
             let profileMedium = dictionary["profile_medium"] as? String,
             let profileMediumImageURL = NSURL(string: profileMedium),
             let sex = dictionary["sex"] as? String,
-            let premium = dictionary["premium"] as? Bool,
-            let followerCount = dictionary["follower_count"] as? Int,
-            let friendCount = dictionary["friend_count"] as? Int,
-            let mutualFriendCount = dictionary["mutual_friend_count"] as? Int,
-            let measurementPreference = dictionary["measurement_preference"] as? String,
-            let email = dictionary["email"] as? String {
+            let premium = dictionary["premium"] as? Bool {
 
-            let athlete: Athlete = Athlete(athleteId: athleteId, resourceState: resourceState, firstName: firstName, lastName: lastName, city: city, state: state, country: country, profileImageURL: profileImageURL, profileMediumImageURL: profileMediumImageURL, sex: sex, premium: premium, followerCount: followerCount, friendCount: friendCount, mutualFriendCount: mutualFriendCount, measurementPreference: measurementPreference, email: email)
-            return athlete
+            if let followerCount = dictionary["follower_count"] as? Int,
+                let friendCount = dictionary["friend_count"] as? Int,
+                let mutualFriendCount = dictionary["mutual_friend_count"] as? Int,
+                let measurementPreference = dictionary["measurement_preference"] as? String,
+                let email = dictionary["email"] as? String {
+                let athlete: Athlete = Athlete(athleteId: athleteId, resourceState: resourceState, firstName: firstName, lastName: lastName, city: city, state: state, country: country, profileImageURL: profileImageURL, profileMediumImageURL: profileMediumImageURL, sex: sex, premium: premium, followerCount: followerCount, friendCount: friendCount, mutualFriendCount: mutualFriendCount, measurementPreference: measurementPreference, email: email)
+                return athlete
+            }
+            else {
+                let athlete: Athlete = Athlete(athleteId: athleteId, resourceState: resourceState, firstName: firstName, lastName: lastName, city: city, state: state, country: country, profileImageURL: profileImageURL, profileMediumImageURL: profileMediumImageURL, sex: sex, premium: premium, followerCount: 0, friendCount: 0, mutualFriendCount: 0, measurementPreference: "", email: "")
+                return athlete
+
+            }
         }
-
+        
         return nil
     }
-
+    
 }
