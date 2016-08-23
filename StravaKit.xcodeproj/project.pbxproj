@@ -33,6 +33,7 @@
 		26C92BFE1D6B7E9900C5D491 /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BFD1D6B7E9900C5D491 /* stats-good.json */; };
 		26C92C001D6B853F00C5D491 /* StravaStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92BFF1D6B853F00C5D491 /* StravaStatsTests.swift */; };
 		26C92C021D6B85B000C5D491 /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C011D6B85B000C5D491 /* stats-bad.json */; };
+		26C92C061D6BDCF200C5D491 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C051D6BDCF200C5D491 /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		26C92BFD1D6B7E9900C5D491 /* stats-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stats-good.json"; sourceTree = "<group>"; };
 		26C92BFF1D6B853F00C5D491 /* StravaStatsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaStatsTests.swift; sourceTree = "<group>"; };
 		26C92C011D6B85B000C5D491 /* stats-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stats-bad.json"; sourceTree = "<group>"; };
+		26C92C051D6BDCF200C5D491 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,9 +197,10 @@
 		26AEBF8C1D664B9500481015 /* StravaKit */ = {
 			isa = PBXGroup;
 			children = (
+				26C92C071D6BDD2800C5D491 /* Model */,
+				26C92C041D6BDCDF00C5D491 /* Internal */,
 				26AEBF8D1D664B9500481015 /* StravaKit.h */,
 				26AEBF8F1D664B9500481015 /* Info.plist */,
-				26AEBFC21D697CF100481015 /* StravaModel.swift */,
 				26AEBFA91D664D3600481015 /* Strava.swift */,
 				26AEBFBE1D69296500481015 /* StravaOAuth.swift */,
 				26C92BF11D6ADA2200C5D491 /* StravaAthlete.swift */,
@@ -231,6 +234,22 @@
 				26C92C011D6B85B000C5D491 /* stats-bad.json */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		26C92C041D6BDCDF00C5D491 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				26C92C051D6BDCF200C5D491 /* Keychain.swift */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		26C92C071D6BDD2800C5D491 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26AEBFC21D697CF100481015 /* StravaModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +453,7 @@
 				26C92BFA1D6B7B4B00C5D491 /* StravaClub.swift in Sources */,
 				26C92BFC1D6B7B6400C5D491 /* StravaUpload.swift in Sources */,
 				26AEBFBF1D69296500481015 /* StravaOAuth.swift in Sources */,
+				26C92C061D6BDCF200C5D491 /* Keychain.swift in Sources */,
 				26C92BF21D6ADA2200C5D491 /* StravaAthlete.swift in Sources */,
 				26C92BF81D6B7B3C00C5D491 /* StravaSegment.swift in Sources */,
 				26AEBFAA1D664D3600481015 /* Strava.swift in Sources */,

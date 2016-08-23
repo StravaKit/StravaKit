@@ -25,8 +25,6 @@ public enum StravaErrorCode: Int {
     case InvalidResponse = 503
 }
 
-internal let StravaKeychainAccount: String = "StravaKit"
-
 public class Strava {
     static let sharedInstance = Strava()
     static let stravaBaseURL = "https://www.strava.com"
@@ -154,76 +152,6 @@ public class Strava {
         components.queryItems = queryItems
 
         return components.URL
-    }
-
-    // MARK: Keychain Access
-
-    internal func storeAccessData() -> Bool {
-        deleteAccessData()
-
-        if let accessToken = accessToken,
-            let athlete = athlete {
-
-            let dictionary: [String : AnyObject] = [
-                "access_token" : accessToken,
-                "athlete" : athlete.dictionary
-            ]
-
-            let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(dictionary)
-
-            let query: [String : AnyObject] = [
-                kSecClass as String : kSecClassGenericPassword,
-                kSecAttrAccount as String : StravaKeychainAccount,
-                kSecValueData as String : data,
-                kSecAttrAccessible as String  : kSecAttrAccessibleAlways as String
-            ]
-
-            let resultCode = SecItemAdd(query as CFDictionary, nil)
-            return resultCode == noErr
-        }
-
-        return false
-    }
-
-    internal func loadAccessData() -> Bool {
-        let query: [String: AnyObject] = [
-            kSecClass as String : kSecClassGenericPassword,
-            kSecAttrAccount as String : StravaKeychainAccount,
-            kSecReturnData as String : kCFBooleanTrue,
-            kSecMatchLimit as String : kSecMatchLimitOne
-        ]
-
-        var result: AnyObject?
-
-        let resultCode = withUnsafeMutablePointer(&result) {
-            SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
-        }
-
-        if resultCode == noErr {
-            if let data = result as? NSData {
-                if let dictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String : AnyObject],
-                    let accessToken = dictionary["access_token"] as? String,
-                    let athleteDictionary = dictionary["athlete"] as? [String : AnyObject],
-                    let athlete = Athlete.athlete(athleteDictionary) {
-                    self.accessToken = accessToken
-                    self.athlete = athlete
-                    return true
-                }
-            }
-        }
-
-        return false
-    }
-
-    internal func deleteAccessData() -> Bool {
-        let query: [String: AnyObject] = [
-            kSecClass as String : kSecClassGenericPassword,
-            kSecAttrAccount as String : StravaKeychainAccount
-        ]
-
-        let resultCode = SecItemDelete(query as CFDictionary)
-
-        return resultCode == noErr
     }
 
 }
