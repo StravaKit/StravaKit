@@ -1,5 +1,9 @@
 # TODO
 
+1. ~~Add test automation~~
+   1. ~~Make requests testable~~
+   1. ~~Test calls to API endpoints~~
+   1. ~~Increase code coverage~~
 1. Implement full API
    1. ~~/v3/oauth~~
    1. ~~Implement secure access data storage~~
