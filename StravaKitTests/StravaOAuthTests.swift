@@ -86,7 +86,7 @@ class StravaOAuthTests: XCTestCase {
         let opened = Strava.openURL(callbackURL, sourceApplication: sourceApplication)
         XCTAssertTrue(opened)
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -172,7 +172,7 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -192,7 +192,7 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -216,7 +216,7 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -236,7 +236,7 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -256,7 +256,7 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -276,7 +276,7 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -303,7 +303,7 @@ class StravaOAuthTests: XCTestCase {
 
         Strava.notifyAuthorizationCompleted(true, error: nil)
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -331,7 +331,7 @@ class StravaOAuthTests: XCTestCase {
         let error = NSError(domain: "Testing", code: 500, userInfo: nil)
         Strava.notifyAuthorizationCompleted(false, error: error)
 
-        let timeout: NSTimeInterval = 10
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }

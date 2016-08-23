@@ -27,8 +27,8 @@ class HomeViewController: UIViewController {
 
     // MARK: Private Constants
 
-    private let ClientIDKey : String = "ClientID"
-    private let ClientSecretKey : String = "ClientSecret"
+    private let ClientIDKey: String = "ClientID"
+    private let ClientSecretKey: String = "ClientSecret"
 
     // MARK: Computed Properties
 
@@ -89,6 +89,7 @@ class HomeViewController: UIViewController {
     @IBAction func getAthleteByIDButtonTapped(sender: AnyObject) {
         getAtheleteByID()
     }
+
     @IBAction func getStatsButtonTapped(sender: AnyObject) {
         getStats()
     }

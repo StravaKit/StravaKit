@@ -49,6 +49,19 @@
 		26C92C261D6C11D900C5D491 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C251D6C11D900C5D491 /* empty.json */; };
 		26C92C281D6C163700C5D491 /* KeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C271D6C163700C5D491 /* KeychainTests.swift */; };
 		26C92C2A1D6C2E3000C5D491 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
+		26C92C2F1D6CBA9600C5D491 /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BF31D6ADB8300C5D491 /* athlete-other.json */; };
+		26C92C301D6CBA9600C5D491 /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC61D6AB4E500481015 /* athlete-good.json */; };
+		26C92C311D6CBA9600C5D491 /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC71D6AB4E500481015 /* athlete-bad.json */; };
+		26C92C321D6CBA9600C5D491 /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BFD1D6B7E9900C5D491 /* stats-good.json */; };
+		26C92C331D6CBA9600C5D491 /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C011D6B85B000C5D491 /* stats-bad.json */; };
+		26C92C341D6CBA9600C5D491 /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C0E1D6BE4CC00C5D491 /* activities-good.json */; };
+		26C92C351D6CBA9600C5D491 /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C141D6BF50F00C5D491 /* activities-bad.json */; };
+		26C92C361D6CBA9600C5D491 /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */; };
+		26C92C371D6CBA9600C5D491 /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C231D6C111C00C5D491 /* exchange-token-bad.json */; };
+		26C92C381D6CBA9600C5D491 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C251D6C11D900C5D491 /* empty.json */; };
+		26C92C391D6CBA9600C5D491 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
+		26C92C3A1D6CBAB100C5D491 /* JSONRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C181D6C028000C5D491 /* JSONRequestor.swift */; };
+		26C92C3B1D6CBAB100C5D491 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C211D6C0E6700C5D491 /* JSONLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -455,6 +468,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C92C351D6CBA9600C5D491 /* activities-bad.json in Resources */,
+				26C92C381D6CBA9600C5D491 /* empty.json in Resources */,
+				26C92C331D6CBA9600C5D491 /* stats-bad.json in Resources */,
+				26C92C391D6CBA9600C5D491 /* invalid.json in Resources */,
+				26C92C341D6CBA9600C5D491 /* activities-good.json in Resources */,
+				26C92C321D6CBA9600C5D491 /* stats-good.json in Resources */,
+				26C92C371D6CBA9600C5D491 /* exchange-token-bad.json in Resources */,
+				26C92C311D6CBA9600C5D491 /* athlete-bad.json in Resources */,
+				26C92C301D6CBA9600C5D491 /* athlete-good.json in Resources */,
+				26C92C2F1D6CBA9600C5D491 /* athlete-other.json in Resources */,
+				26C92C361D6CBA9600C5D491 /* exchange-token-good.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +523,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C92C3A1D6CBAB100C5D491 /* JSONRequestor.swift in Sources */,
 				26AEBF7C1D664A2E00481015 /* StravaDemoTests.swift in Sources */,
+				26C92C3B1D6CBAB100C5D491 /* JSONLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
