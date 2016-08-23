@@ -63,7 +63,7 @@ class StravaActivityTests: XCTestCase {
         XCTAssertNil(activity)
     }
 
-    // MARK: Private
+    // MARK: - Private Functions -
 
     private func activitiesDictionaries(name: String) -> [JSONDictionary]? {
         let bundle = NSBundle(forClass: self.classForCoder)

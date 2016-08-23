@@ -119,7 +119,7 @@ class StravaDemoTests: XCTestCase {
         }
     }
 
-    // MARK: Private -
+    // MARK: - Private Functions -
 
     private func getHomeViewController() -> HomeViewController? {
         if let nc = getNavigationController(),

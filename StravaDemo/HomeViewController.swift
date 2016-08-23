@@ -12,7 +12,7 @@ import SafariServices
 
 class HomeViewController: UIViewController {
 
-    // MARK: Properties
+    // MARK: - Properties -
 
     @IBOutlet weak var clientIdTextField: UITextField!
     @IBOutlet weak var clientSecretTextField: UITextField!
@@ -25,12 +25,12 @@ class HomeViewController: UIViewController {
 
     var safariViewController: SFSafariViewController? = nil
 
-    // MARK: Private Constants
+    // MARK: - Private Constants -
 
     private let ClientIDKey: String = "ClientID"
     private let ClientSecretKey: String = "ClientSecret"
 
-    // MARK: Computed Properties
+    // MARK: - Computed Properties -
 
     var clientId : String {
         get {
@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
         }
     }
 
-    // MARK: View Lifecycle
+    // MARK: - View Lifecycle -
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: StravaAuthorizationCompletedNotification, object: nil)
     }
 
-    // MARK: User Actions
+    // MARK: - User Actions -
 
     @IBAction func accessButtonTapped(sender: AnyObject) {
         if !Strava.isAuthenticated {
@@ -94,7 +94,7 @@ class HomeViewController: UIViewController {
         getStats()
     }
 
-    // MARK: Internal Functions
+    // MARK: - Internal Functions -
 
     internal func refreshUI() {
         assert(NSThread.isMainThread(), "Main Thread is required")

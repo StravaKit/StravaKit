@@ -115,6 +115,8 @@ public extension Strava {
         }
     }
 
+    // MARK: - Internal Functions -
+
     // Exchanges code with the OAuth provider for the Access Token
     // Docs: http://strava.github.io/api/v3/oauth/#post-token
     internal static func exchangeTokenWithCode(code: String, completionHandler: ((success: Bool, error: NSError?) -> ())?) {

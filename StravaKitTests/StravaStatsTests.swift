@@ -105,7 +105,7 @@ class StravaStatsTests: XCTestCase {
         }
     }
 
-    // MARK: Private
+    // MARK: - Private Functions -
 
     private func statsDictionary(name: String) -> JSONDictionary? {
         if let json = JSONLoader.sharedInstance.loadJSON(name) as? JSONDictionary {

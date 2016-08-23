@@ -39,7 +39,7 @@ public class DefaultRequestor : Requestor {
         return nil
     }
 
-    // MARK: Helper functions
+    // MARK: - Internal Functions -
 
     internal func processRequest(request: NSURLRequest, authenticated: Bool, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()

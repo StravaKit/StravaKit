@@ -68,7 +68,7 @@ public class Strava {
         return sharedInstance.defaultRequestor.request(method, authenticated: authenticated, path: path, params: params, completionHandler: completionHandler)
     }
 
-    // MARK: Helper functions
+    // MARK: - Internal Functions -
 
     internal static func urlWithString(string: String?, parameters: JSONDictionary?) -> NSURL? {
         guard let string = string else {

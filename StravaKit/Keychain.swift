@@ -14,8 +14,6 @@ internal let StravaAthleteKey: String = "athlete"
 
 public extension Strava {
 
-    // MARK: Keychain Access
-
     internal func storeAccessData() -> Bool {
         deleteAccessData()
         var success = false

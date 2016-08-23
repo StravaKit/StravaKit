@@ -62,7 +62,7 @@ public extension Strava {
 
     }
 
-    // MARK: Internal Functions
+    // MARK: - Internal Functions -
 
     internal static func handleAthleteResponse(response: AnyObject?, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) {
         if let dictionary = response as? JSONDictionary,
