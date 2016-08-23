@@ -32,9 +32,9 @@ public struct Athlete {
         }
     }
 
-    public var dictionary: [String : AnyObject] {
+    public var dictionary: JSONDictionary {
         get {
-            let dictionary: [String : AnyObject] = [
+            let dictionary: JSONDictionary = [
                 "id" : athleteId,
                 "resource_state" : resourceState,
                 "firstname" : firstName,
@@ -57,7 +57,7 @@ public struct Athlete {
         }
     }
 
-    init?(dictionary: [String : AnyObject]) {
+    init?(dictionary: JSONDictionary) {
         if let athleteId = dictionary["id"] as? Int,
             let resourceState = dictionary["resource_state"] as? Int,
             let firstName = dictionary["firstname"] as? String,

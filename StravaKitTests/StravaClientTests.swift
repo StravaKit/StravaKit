@@ -26,7 +26,7 @@ class StravaClientTests: XCTestCase {
 
     func testURLCreationForBasicParemeters() {
         // adding parameters
-        let parameters : [String : AnyObject] = ["name" : "strava"]
+        let parameters : JSONDictionary = ["name" : "strava"]
         let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: parameters)
         XCTAssertNotNil(URL)
         if let URL = URL,
@@ -42,7 +42,7 @@ class StravaClientTests: XCTestCase {
 
     func testURLCreationForIntParameter() {
         // add parameter which is an Int
-        let parameters : [String : AnyObject] = ["name" : "strava", "score" : Int(5)]
+        let parameters : JSONDictionary = ["name" : "strava", "score" : Int(5)]
         let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: parameters)
         XCTAssertNotNil(URL)
         if let URL = URL,
@@ -60,7 +60,7 @@ class StravaClientTests: XCTestCase {
 
     func testURLCreationForDoubleParameter() {
         // add parameter which is a Double
-        let parameters : [String : AnyObject] = ["name" : "strava", "pi" : Double(3.14)]
+        let parameters : JSONDictionary = ["name" : "strava", "pi" : Double(3.14)]
         let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: parameters)
         XCTAssertNotNil(URL)
         if let URL = URL,
@@ -78,7 +78,7 @@ class StravaClientTests: XCTestCase {
 
     func testURLCreationForParameterWithSpace() {
         // adding parameter value which has a space
-        let parameters : [String : AnyObject] = ["name" : "strava v3"]
+        let parameters : JSONDictionary = ["name" : "strava v3"]
         let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: parameters)
         XCTAssertNotNil(URL)
         if let URL = URL,

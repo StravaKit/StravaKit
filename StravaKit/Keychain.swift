@@ -22,14 +22,14 @@ public extension Strava {
         if let accessToken = accessToken,
             let athlete = athlete {
 
-            let dictionary: [String : AnyObject] = [
+            let dictionary: JSONDictionary = [
                 StravaAccessTokenKey : accessToken,
                 StravaAthleteKey : athlete.dictionary
             ]
 
             let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(dictionary)
 
-            let query: [String : AnyObject] = [
+            let query: JSONDictionary = [
                 kSecClass as String : kSecClassGenericPassword,
                 kSecAttrAccount as String : StravaKeychainAccount,
                 kSecValueData as String : data,
@@ -59,9 +59,9 @@ public extension Strava {
 
         if resultCode == noErr {
             if let data = result as? NSData {
-                if let dictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String : AnyObject],
+                if let dictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? JSONDictionary,
                     let accessToken = dictionary[StravaAccessTokenKey] as? String,
-                    let athleteDictionary = dictionary[StravaAthleteKey] as? [String : AnyObject],
+                    let athleteDictionary = dictionary[StravaAthleteKey] as? JSONDictionary,
                     let athlete = Athlete(dictionary: athleteDictionary) {
                     self.accessToken = accessToken
                     self.athlete = athlete

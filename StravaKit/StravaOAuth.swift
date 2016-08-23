@@ -48,7 +48,7 @@ public extension Strava {
             _ = sharedInstance.clientSecret,
             redirectURI = sharedInstance.redirectURI else { return nil }
 
-        let parameters : [String : AnyObject] = [
+        let parameters : JSONDictionary = [
             "client_id" : clientId,
             "response_type" : "code",
             "redirect_uri" : redirectURI,
@@ -123,7 +123,7 @@ public extension Strava {
         }
 
         let path = OAuthResourcePath.TokenExchange.rawValue
-        let params: [String : AnyObject] = [
+        let params: JSONDictionary = [
             "client_id" : clientId,
             "client_secret" : clientSecret,
             "code" : code
@@ -135,7 +135,7 @@ public extension Strava {
             }
             guard let response = response,
                 let accessToken = response["access_token"] as? String,
-                let athleteDictionary = response["athlete"] as? [String : AnyObject] else {
+                let athleteDictionary = response["athlete"] as? JSONDictionary else {
                     let error : NSError = NSError(domain: "No clientId and clientSecret", code: 500, userInfo: nil)
                     dispatch_async(dispatch_get_main_queue()) {
                         completionHandler?(success: false, error: error)
@@ -154,7 +154,7 @@ public extension Strava {
     }
 
     internal static func notifyAuthorizationCompleted(success: Bool, error: NSError?) {
-        var userInfo: [String : AnyObject] = [:]
+        var userInfo: JSONDictionary = [:]
         userInfo[StravaStatusKey] = success ? StravaStatusSuccessValue : StravaStatusFailureValue
         if let error = error {
             userInfo[StravaErrorKey] = error

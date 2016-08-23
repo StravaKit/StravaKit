@@ -16,7 +16,7 @@ public struct StatsDetail {
     public let elevationGain: Float
     public let achievementCount: Int?
 
-    init?(dictionary: [String : AnyObject]) {
+    init?(dictionary: JSONDictionary) {
         if let count = dictionary["count"] as? Int,
             let distance = dictionary["distance"] as? Float,
             let movingTime = dictionary["moving_time"] as? Int,

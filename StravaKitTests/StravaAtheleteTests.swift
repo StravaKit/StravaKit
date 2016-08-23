@@ -67,7 +67,7 @@ class StravaAtheleteTests: XCTestCase {
 
     // MARK: Private
 
-    private func athleteDictionary(name: String) -> [String : AnyObject]? {
+    private func athleteDictionary(name: String) -> JSONDictionary? {
         let bundle = NSBundle(forClass: self.classForCoder)
         guard let path = bundle.pathForResource(name, ofType: "json") else {
             return nil

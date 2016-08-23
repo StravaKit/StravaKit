@@ -61,7 +61,7 @@ public extension Strava {
 
     // MARK: Internal Functions
 
-    internal static func handleAthleteResponse(response: [String : AnyObject]?, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) {
+    internal static func handleAthleteResponse(response: JSONDictionary?, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) {
         if let dictionary = response,
             let athlete = Athlete(dictionary: dictionary) {
             dispatch_async(dispatch_get_main_queue()) {
@@ -77,7 +77,7 @@ public extension Strava {
         }
     }
 
-    internal static func handleStatsResponse(athleteId: Int, response: [String : AnyObject]?, completionHandler: ((stats: Stats?, error: NSError?) -> ())?) {
+    internal static func handleStatsResponse(athleteId: Int, response: JSONDictionary?, completionHandler: ((stats: Stats?, error: NSError?) -> ())?) {
         if let dictionary = response,
             let stats = Stats(athleteId: athleteId, dictionary: dictionary) {
             dispatch_async(dispatch_get_main_queue()) {

@@ -1,5 +1,5 @@
 //
-//  StravaStatsTests.swift
+//  StravaActivityTests.swift
 //  StravaKit
 //
 //  Created by Brennan Stehling on 8/22/16.
@@ -10,33 +10,33 @@ import XCTest
 
 @testable import StravaKit
 
-class StravaStatsTests: XCTestCase {
-    
-    func testStatsCreationFromGoodDictionary() {
+class StravaActivityTests: XCTestCase {
+
+    func testActivitiesCreationFromGoodDictionary() {
         // all required values are in the JSON file
-        guard let dictionary = statsDictionary("stats-good") else {
+        guard let dictionaries = activitiesDictionaries("activities-good") else {
             XCTFail()
             return
         }
 
-        let stats = Stats(athleteId: 1, dictionary: dictionary)
-        XCTAssertNotNil(stats)
+        let activities = Activity.activities(dictionaries)
+        XCTAssertNotNil(activities)
     }
 
-    func testStatsCreationFromBadDictionary() {
+    func testActivitiesCreationFromBadDictionary() {
         // required values are missing from the JSON file
-        guard let dictionary = statsDictionary("stats-bad") else {
+        guard let dictionaries = activitiesDictionaries("activities-bad") else {
             XCTFail()
             return
         }
 
-        let stats = Stats(athleteId: 1, dictionary: dictionary)
-        XCTAssertNil(stats)
+        let activities = Activity.activities(dictionaries)
+        XCTAssertNil(activities)
     }
-    
+
     // MARK: Private
 
-    private func statsDictionary(name: String) -> JSONDictionary? {
+    private func activitiesDictionaries(name: String) -> [JSONDictionary]? {
         let bundle = NSBundle(forClass: self.classForCoder)
         guard let path = bundle.pathForResource(name, ofType: "json") else {
             return nil
@@ -47,8 +47,8 @@ class StravaStatsTests: XCTestCase {
                 return nil
             }
             do {
-                if let dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject] {
-                    return dictionary
+                if let dictionaries = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [JSONDictionary] {
+                    return dictionaries
                 }
             }
             catch {
@@ -58,5 +58,6 @@ class StravaStatsTests: XCTestCase {
 
         return nil
     }
+
 
 }

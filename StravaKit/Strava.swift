@@ -13,6 +13,8 @@
 import Foundation
 import Security
 
+public typealias JSONDictionary = [String : AnyObject]
+
 public enum HTTPMethod: String {
     case GET = "GET"
     case POST = "POST"
@@ -114,7 +116,7 @@ public class Strava {
         return task
     }
 
-    internal static func urlWithString(string: String?, parameters: [String : AnyObject]?) -> NSURL? {
+    internal static func urlWithString(string: String?, parameters: JSONDictionary?) -> NSURL? {
         guard let string = string else {
             return nil
         }
@@ -128,7 +130,7 @@ public class Strava {
         }
     }
 
-    internal static func appendQueryParameters(parameters: [String : AnyObject], URL: NSURL?) -> NSURL? {
+    internal static func appendQueryParameters(parameters: JSONDictionary, URL: NSURL?) -> NSURL? {
         guard let URL = URL,
             let components = NSURLComponents(URL: URL, resolvingAgainstBaseURL: false) else {
             return nil
