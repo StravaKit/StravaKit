@@ -14,6 +14,10 @@ import Foundation
 import Security
 
 public typealias JSONDictionary = [String : AnyObject]
+public typealias JSONArray = [JSONDictionary]
+public typealias ParamsDictionary = [String : AnyObject]
+
+public let StravaBaseURL = "https://www.strava.com"
 
 public enum HTTPMethod: String {
     case GET = "GET"
@@ -22,19 +26,23 @@ public enum HTTPMethod: String {
 }
 
 public enum StravaErrorCode: Int {
-    case NoAccessToken = 501
-    case NoResponse = 502
-    case InvalidResponse = 503
+    case RemoteError = 501
+    case MissingCredentials = 502
+    case NoAccessToken = 503
+    case NoResponse = 504
+    case InvalidResponse = 505
+    case UndefinedError = 599
 }
 
 public class Strava {
     static let sharedInstance = Strava()
-    static let stravaBaseURL = "https://www.strava.com"
     internal var clientId: String?
     internal var clientSecret: String?
     internal var redirectURI: String?
     internal var accessToken: String?
     internal var athlete: Athlete?
+    internal var defaultRequestor: Requestor = DefaultRequestor()
+    internal var alternateRequestor: Requestor?
 
     init() {
         loadAccessData()
@@ -52,69 +60,15 @@ public class Strava {
         }
     }
 
-    public static func request(method: HTTPMethod, authenticated: Bool, path: String, params: [String: AnyObject]?, completionHandler: ((response: [String: AnyObject]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        if let url = urlWithString(stravaBaseURL + path, parameters: method == .GET ? params : nil) {
-            let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = method.rawValue
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-            do {
-                // Place parameters in body for POST and PUT methods
-                if let params = params  where method == .POST || method == .PUT {
-                    let body = try NSJSONSerialization.dataWithJSONObject(params, options: [])
-                    request.HTTPBody = body
-                }
-
-                return processRequest(request, authenticated: authenticated, completionHandler: completionHandler)
-            } catch {
-                completionHandler?(response: nil, error: NSError(domain: "Body JSON Serialization Failed", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: nil))
-                return nil
-            }
+    public static func request(method: HTTPMethod, authenticated: Bool, path: String, params: [String: AnyObject]?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+        if let alternateRequestor = sharedInstance.alternateRequestor {
+            return alternateRequestor.request(method, authenticated: authenticated, path: path, params: params, completionHandler: completionHandler)
         }
-
-        return nil
+        
+        return sharedInstance.defaultRequestor.request(method, authenticated: authenticated, path: path, params: params, completionHandler: completionHandler)
     }
 
     // MARK: Helper functions
-
-    internal static func processRequest(request: NSURLRequest, authenticated: Bool, completionHandler: ((response: [String: AnyObject]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        if authenticated {
-            guard let accessToken = sharedInstance.accessToken else {
-                let error = NSError(domain: "No Access Token", code: StravaErrorCode.NoAccessToken.rawValue, userInfo: nil)
-                completionHandler?(response: nil, error: error)
-                return nil
-            }
-            sessionConfiguration.HTTPAdditionalHeaders = ["Authorization": "Bearer \(accessToken)"]
-        }
-        let session = NSURLSession(configuration: sessionConfiguration)
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            if let data = data {
-                if data.length == 0 {
-                    completionHandler?(response: [:], error: error)
-                } else {
-                    do {
-                        if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject] {
-                            completionHandler?(response: response, error: error)
-                        } else {
-                            let error = NSError(domain: "No Response", code: StravaErrorCode.NoResponse.rawValue, userInfo: nil)
-                            completionHandler?(response: nil, error: error)
-                        }
-                    } catch {
-                        let error = NSError(domain: "Response JSON Serialization Failed", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: nil)
-                        completionHandler?(response: nil, error: error)
-                    }
-                }
-            } else if let error = error {
-                completionHandler?(response: nil, error: error)
-            } else {
-                let error = NSError(domain: "No Data", code: StravaErrorCode.NoResponse.rawValue, userInfo: nil)
-                completionHandler?(response: nil, error: error)
-            }
-        }
-        task.resume()
-        return task
-    }
 
     internal static func urlWithString(string: String?, parameters: JSONDictionary?) -> NSURL? {
         guard let string = string else {
@@ -125,15 +79,14 @@ public class Strava {
         if let parameters = parameters {
             return appendQueryParameters(parameters, URL: URL)
         }
-        else {
-            return URL
-        }
+
+        return URL
     }
 
     internal static func appendQueryParameters(parameters: JSONDictionary, URL: NSURL?) -> NSURL? {
         guard let URL = URL,
             let components = NSURLComponents(URL: URL, resolvingAgainstBaseURL: false) else {
-            return nil
+                return nil
         }
 
         var queryItems: [NSURLQueryItem] = []
@@ -155,5 +108,6 @@ public class Strava {
 
         return components.URL
     }
+
 
 }

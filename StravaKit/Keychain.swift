@@ -18,6 +18,7 @@ public extension Strava {
 
     internal func storeAccessData() -> Bool {
         deleteAccessData()
+        var success = false
 
         if let accessToken = accessToken,
             let athlete = athlete {
@@ -37,13 +38,16 @@ public extension Strava {
             ]
 
             let resultCode = SecItemAdd(query as CFDictionary, nil)
-            return resultCode == noErr
+
+            success = resultCode == noErr
         }
 
-        return false
+        return success
     }
 
     internal func loadAccessData() -> Bool {
+        var success = false
+
         let query: [String: AnyObject] = [
             kSecClass as String : kSecClassGenericPassword,
             kSecAttrAccount as String : StravaKeychainAccount,
@@ -65,12 +69,12 @@ public extension Strava {
                     let athlete = Athlete(dictionary: athleteDictionary) {
                     self.accessToken = accessToken
                     self.athlete = athlete
-                    return true
+                    success = true
                 }
             }
         }
 
-        return false
+        return success
     }
 
     internal func deleteAccessData() -> Bool {
@@ -81,7 +85,7 @@ public extension Strava {
         
         let resultCode = SecItemDelete(query as CFDictionary)
         
-        return resultCode == noErr
+        return resultCode == noErr || resultCode == errSecItemNotFound
     }
 
 }

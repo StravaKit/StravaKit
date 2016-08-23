@@ -12,7 +12,7 @@ import XCTest
 
 class StravaActivityTests: XCTestCase {
 
-    func testActivitiesCreationFromGoodDictionary() {
+    func testActivitiesCreationFromGoodArray() {
         // all required values are in the JSON file
         guard let dictionaries = activitiesDictionaries("activities-good") else {
             XCTFail()
@@ -21,9 +21,19 @@ class StravaActivityTests: XCTestCase {
 
         let activities = Activity.activities(dictionaries)
         XCTAssertNotNil(activities)
+
+        if let activity = activities?.first {
+            let startCoordinate = activity.startCoordinate
+            let endCoordinate = activity.endCoordinate
+
+            XCTAssertTrue(startCoordinate.latitude == 37.73697)
+            XCTAssertTrue(startCoordinate.longitude == -122.416727)
+            XCTAssertTrue(endCoordinate.latitude == 37.786237)
+            XCTAssertTrue(endCoordinate.longitude == -122.398677)
+        }
     }
 
-    func testActivitiesCreationFromBadDictionary() {
+    func testActivitiesCreationFromBadArray() {
         // required values are missing from the JSON file
         guard let dictionaries = activitiesDictionaries("activities-bad") else {
             XCTFail()
@@ -32,6 +42,25 @@ class StravaActivityTests: XCTestCase {
 
         let activities = Activity.activities(dictionaries)
         XCTAssertNil(activities)
+    }
+
+    func testActivitiesCreationFromEmptyArray() {
+        // use an empty array
+        let dictionaries: [JSONDictionary] = []
+        let activities = Activity.activities(dictionaries)
+        XCTAssertNil(activities)
+    }
+
+
+    func testActivityCreationFromEmptyDictionary() {
+        // required values are missing from the JSON file
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("empty") as? JSONDictionary else {
+            XCTFail()
+            return
+        }
+
+        let activity = Activity(dictionary: dictionary)
+        XCTAssertNil(activity)
     }
 
     // MARK: Private

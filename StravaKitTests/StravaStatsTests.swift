@@ -33,30 +33,87 @@ class StravaStatsTests: XCTestCase {
         let stats = Stats(athleteId: 1, dictionary: dictionary)
         XCTAssertNil(stats)
     }
-    
+
+    func testStatsDetailCreationFromEmptyDictionary() {
+        // use empty JSON file for stats dictionary to fail the initializer
+        guard let dictionary = statsDictionary("empty") else {
+            XCTFail()
+            return
+        }
+
+        let statsDetail = StatsDetail(dictionary: dictionary)
+        XCTAssertNil(statsDetail)
+    }
+
+    func testGetStatsGood() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("stats-good")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getStats(1) { (stats, error) in
+            XCTAssertNotNil(stats)
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 10
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetStatsBad() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("stats-bad")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getStats(1) { (stats, error) in
+            XCTAssertNil(stats)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 10
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetStatsWithError() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = nil
+        jsonRequestor.error = NSError(domain: "Testing", code: 500, userInfo: nil)
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getStats(1) { (stats, error) in
+            XCTAssertNil(stats)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 10
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
     // MARK: Private
 
     private func statsDictionary(name: String) -> JSONDictionary? {
-        let bundle = NSBundle(forClass: self.classForCoder)
-        guard let path = bundle.pathForResource(name, ofType: "json") else {
+        if let json = JSONLoader.sharedInstance.loadJSON(name) as? JSONDictionary {
+            return json
+        }
+        else {
             return nil
         }
-        let fm = NSFileManager.defaultManager()
-        if fm.isReadableFileAtPath(path) {
-            guard let data = fm.contentsAtPath(path) else {
-                return nil
-            }
-            do {
-                if let dictionary = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject] {
-                    return dictionary
-                }
-            }
-            catch {
-                // do nothing
-            }
-        }
-
-        return nil
     }
 
 }

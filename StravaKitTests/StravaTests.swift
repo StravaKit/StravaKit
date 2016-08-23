@@ -18,16 +18,22 @@ class StravaClientTests: XCTestCase {
         XCTAssertNil(URL)
     }
 
+    func testAddQueryParametersToNilURL() {
+        let params = ["name" : "Tim"]
+        let URL = Strava.appendQueryParameters(params, URL: nil)
+        XCTAssertNil(URL)
+    }
+
     func testURLCreationForValueURLString() {
         // valid URL string
-        let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: nil)
+        let URL = Strava.urlWithString(StravaBaseURL, parameters: nil)
         XCTAssertNotNil(URL)
     }
 
     func testURLCreationForBasicParemeters() {
         // adding parameters
         let parameters : JSONDictionary = ["name" : "strava"]
-        let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: parameters)
+        let URL = Strava.urlWithString(StravaBaseURL, parameters: parameters)
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
@@ -43,7 +49,7 @@ class StravaClientTests: XCTestCase {
     func testURLCreationForIntParameter() {
         // add parameter which is an Int
         let parameters : JSONDictionary = ["name" : "strava", "score" : Int(5)]
-        let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: parameters)
+        let URL = Strava.urlWithString(StravaBaseURL, parameters: parameters)
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
@@ -61,7 +67,7 @@ class StravaClientTests: XCTestCase {
     func testURLCreationForDoubleParameter() {
         // add parameter which is a Double
         let parameters : JSONDictionary = ["name" : "strava", "pi" : Double(3.14)]
-        let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: parameters)
+        let URL = Strava.urlWithString(StravaBaseURL, parameters: parameters)
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
@@ -79,7 +85,7 @@ class StravaClientTests: XCTestCase {
     func testURLCreationForParameterWithSpace() {
         // adding parameter value which has a space
         let parameters : JSONDictionary = ["name" : "strava v3"]
-        let URL = Strava.urlWithString(Strava.stravaBaseURL, parameters: parameters)
+        let URL = Strava.urlWithString(StravaBaseURL, parameters: parameters)
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
@@ -89,6 +95,47 @@ class StravaClientTests: XCTestCase {
         }
         else {
             XCTFail()
+        }
+    }
+
+    func testGetBaseURL() {
+        // get base URL which is a web page and not JSON data
+        let expectation = self.expectationWithDescription("API Call")
+
+        // use default requestor
+        Strava.sharedInstance.alternateRequestor = nil
+
+        Strava.request(.GET, authenticated: false, path: "/", params: nil) { (response, error) in
+            XCTAssertNotNil(error)
+            XCTAssertTrue(error?.code == StravaErrorCode.InvalidResponse.rawValue)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 10
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetBaseURLAuthenticatedBad() {
+        // get base URL which is a web page and not JSON data
+        let expectation = self.expectationWithDescription("API Call")
+
+        // use default requestor
+        Strava.sharedInstance.alternateRequestor = nil
+
+        // delete access token
+        Strava.sharedInstance.accessToken = nil
+
+        Strava.request(.GET, authenticated: true, path: "/", params: nil) { (response, error) in
+            XCTAssertNotNil(error)
+            XCTAssertTrue(error?.code == StravaErrorCode.NoAccessToken.rawValue)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 10
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
         }
     }
 

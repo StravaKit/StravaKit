@@ -58,7 +58,7 @@ public extension Strava {
         ]
 
         let path = OAuthResourcePath.RequestAccess.rawValue
-        let URL = urlWithString("\(stravaBaseURL)/\(path)", parameters: parameters)
+        let URL = urlWithString("\(StravaBaseURL)/\(path)", parameters: parameters)
         return URL
     }
     
@@ -81,7 +81,7 @@ public extension Strava {
         // Example: stravademo://localhost/oauth/signin?state=&error=access_denied
 
         if let errorValue = queryStringValue(URL, name: "error") {
-            error = NSError(domain: "OAuth Error", code: 500, userInfo: [NSLocalizedDescriptionKey : errorValue])
+            error = NSError(domain: "OAuth Error", code: StravaErrorCode.RemoteError.rawValue, userInfo: [NSLocalizedDescriptionKey : errorValue])
             notifyAuthorizationCompleted(false, error: error)
         }
         else if let code = queryStringValue(URL, name: "code") {
@@ -100,7 +100,10 @@ public extension Strava {
 
         request(.POST, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                completionHandler?(success: false, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(success: false, error: error)
+                }
+                return
             }
 
             sharedInstance.accessToken = nil
@@ -117,7 +120,7 @@ public extension Strava {
     internal static func exchangeTokenWithCode(code: String, completionHandler: ((success: Bool, error: NSError?) -> ())?) {
         guard let clientId = sharedInstance.clientId,
             clientSecret = sharedInstance.clientSecret else {
-                let error : NSError = NSError(domain: "No clientId and clientSecret", code: 500, userInfo: nil)
+                let error : NSError = NSError(domain: "No clientId and clientSecret", code: StravaErrorCode.MissingCredentials.rawValue, userInfo: nil)
                 completionHandler?(success: false, error: error)
                 return
         }
@@ -132,11 +135,13 @@ public extension Strava {
         request(.POST, authenticated: false, path: path, params: params) { (response, error) in
             if let error = error {
                 completionHandler?(success: false, error: error)
+                return
             }
+            
             guard let response = response,
                 let accessToken = response["access_token"] as? String,
                 let athleteDictionary = response["athlete"] as? JSONDictionary else {
-                    let error : NSError = NSError(domain: "No clientId and clientSecret", code: 500, userInfo: nil)
+                    let error : NSError = NSError(domain: "Invalid Response", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: nil)
                     dispatch_async(dispatch_get_main_queue()) {
                         completionHandler?(success: false, error: error)
                     }

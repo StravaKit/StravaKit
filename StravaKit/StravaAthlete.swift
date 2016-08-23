@@ -24,6 +24,7 @@ public extension Strava {
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
                 completionHandler?(athlete: nil, error: error)
+                return
             }
 
             handleAthleteResponse(response, completionHandler: completionHandler)
@@ -38,6 +39,7 @@ public extension Strava {
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
                 completionHandler?(athlete: nil, error: error)
+                return
             }
 
             handleAthleteResponse(response, completionHandler: completionHandler)
@@ -52,6 +54,7 @@ public extension Strava {
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
                 completionHandler?(stats: nil, error: error)
+                return
             }
 
             handleStatsResponse(athleteId, response: response, completionHandler: completionHandler)
@@ -61,8 +64,8 @@ public extension Strava {
 
     // MARK: Internal Functions
 
-    internal static func handleAthleteResponse(response: JSONDictionary?, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) {
-        if let dictionary = response,
+    internal static func handleAthleteResponse(response: AnyObject?, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) {
+        if let dictionary = response as? JSONDictionary,
             let athlete = Athlete(dictionary: dictionary) {
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(athlete: athlete, error: nil)
@@ -70,15 +73,15 @@ public extension Strava {
         }
         else {
             let userInfo = [NSLocalizedDescriptionKey : "Unable to create Athlete"]
-            let error = NSError(domain: "Athlete Error", code: 500, userInfo: userInfo)
+            let error = NSError(domain: "Athlete Error", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: userInfo)
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(athlete: nil, error: error)
             }
         }
     }
 
-    internal static func handleStatsResponse(athleteId: Int, response: JSONDictionary?, completionHandler: ((stats: Stats?, error: NSError?) -> ())?) {
-        if let dictionary = response,
+    internal static func handleStatsResponse(athleteId: Int, response: AnyObject?, completionHandler: ((stats: Stats?, error: NSError?) -> ())?) {
+        if let dictionary = response as? JSONDictionary,
             let stats = Stats(athleteId: athleteId, dictionary: dictionary) {
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(stats: stats, error: nil)
@@ -86,7 +89,7 @@ public extension Strava {
         }
         else {
             let userInfo = [NSLocalizedDescriptionKey : "Unable to create Stats"]
-            let error = NSError(domain: "Stats Error", code: 500, userInfo: userInfo)
+            let error = NSError(domain: "Stats Error", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: userInfo)
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(stats: nil, error: error)
             }

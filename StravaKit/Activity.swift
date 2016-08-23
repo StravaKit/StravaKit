@@ -27,8 +27,6 @@ public struct Activity {
     public let timezone: String
     public let startCoordinates: [CLLocationDegrees]
     public let endCoordinates: [CLLocationDegrees]
-//    public let startCoordinate: CLLocationCoordinate2D,
-//    public let endCoordinate: CLLocationCoordinate2D,
     public let city: String
     public let state: String
     public let country: String
@@ -165,14 +163,19 @@ public struct Activity {
         if activities.count > 0 {
             return activities
         }
-        else {
-            return nil
-        }
+
+        return nil
     }
 
     public var startCoordinate: CLLocationCoordinate2D {
         get {
             return CLLocationCoordinate2DMake(self.startCoordinates.first!, startCoordinates.last!)
+        }
+    }
+
+    public var endCoordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2DMake(self.endCoordinates.first!, endCoordinates.last!)
         }
     }
 
