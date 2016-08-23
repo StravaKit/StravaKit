@@ -79,7 +79,7 @@ public extension Strava {
 
     internal static func handleStatsResponse(athleteId: Int, response: [String : AnyObject]?, completionHandler: ((stats: Stats?, error: NSError?) -> ())?) {
         if let dictionary = response,
-            let stats = Stats.stats(athleteId, dictionary: dictionary) {
+            let stats = Stats(athleteId: athleteId, dictionary: dictionary) {
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(stats: stats, error: nil)
             }

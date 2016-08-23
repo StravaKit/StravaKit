@@ -16,7 +16,7 @@ public struct StatsDetail {
     public let elevationGain: Float
     public let achievementCount: Int?
 
-    public static func statsDetail(dictionary: [String : AnyObject]) -> StatsDetail? {
+    init?(dictionary: [String : AnyObject]) {
         if let count = dictionary["count"] as? Int,
             let distance = dictionary["distance"] as? Float,
             let movingTime = dictionary["moving_time"] as? Int,
@@ -24,12 +24,17 @@ public struct StatsDetail {
             let elevationGain = dictionary["elevation_gain"] as? Float {
             let achievementCount = dictionary["achievement_count"] as? Int
 
-            let statsDetail = StatsDetail(count: count, distance: distance, movingTime: movingTime, elapsedTime: elapsedTime, elevationGain: elevationGain, achievementCount: achievementCount)
-
-            return statsDetail
+            self.count = count
+            self.distance = distance
+            self.movingTime = movingTime
+            self.elapsedTime = elapsedTime
+            self.elevationGain = elevationGain
+            self.achievementCount = achievementCount
         }
-        
-        return nil
+        else {
+            return nil
+        }
+
     }
-    
+
 }

@@ -25,37 +25,50 @@ public struct Stats {
     public let allRunTotals: StatsDetail
     public let allSwimTotals: StatsDetail
 
-    public static func stats(athleteId: Int, dictionary: [String : AnyObject]) -> Stats? {
+    init?(athleteId: Int, dictionary: [String : AnyObject]) {
         if let biggestRideDistance = dictionary["biggest_ride_distance"] as? Float,
             let biggestClimbElevationGain = dictionary["biggest_climb_elevation_gain"] as? Float,
 
             let recentRideTotalsDictionary = dictionary["recent_ride_totals"] as? [String : AnyObject],
-            let recentRideTotals = StatsDetail.statsDetail(recentRideTotalsDictionary),
+            let recentRideTotals = StatsDetail(dictionary: recentRideTotalsDictionary),
             let recentRunTotalsDictionary = dictionary["recent_run_totals"] as? [String : AnyObject],
-            let recentRunTotals = StatsDetail.statsDetail(recentRunTotalsDictionary),
+            let recentRunTotals = StatsDetail(dictionary: recentRunTotalsDictionary),
             let recentSwimTotalsDictionary = dictionary["recent_swim_totals"] as? [String : AnyObject],
-            let recentSwimTotals = StatsDetail.statsDetail(recentSwimTotalsDictionary),
+            let recentSwimTotals = StatsDetail(dictionary: recentSwimTotalsDictionary),
 
             let ytdRideTotalsDictionary = dictionary["ytd_ride_totals"] as? [String : AnyObject],
-            let ytdRideTotals = StatsDetail.statsDetail(ytdRideTotalsDictionary),
+            let ytdRideTotals = StatsDetail(dictionary: ytdRideTotalsDictionary),
             let ytdRunTotalsDictionary = dictionary["ytd_run_totals"] as? [String : AnyObject],
-            let ytdRunTotals = StatsDetail.statsDetail(ytdRunTotalsDictionary),
+            let ytdRunTotals = StatsDetail(dictionary: ytdRunTotalsDictionary),
             let ytdSwimTotalsDictionary = dictionary["ytd_swim_totals"] as? [String : AnyObject],
-            let ytdSwimTotals = StatsDetail.statsDetail(ytdSwimTotalsDictionary),
+            let ytdSwimTotals = StatsDetail(dictionary: ytdSwimTotalsDictionary),
 
             let allRideTotalsDictionary = dictionary["all_ride_totals"] as? [String : AnyObject],
-            let allRideTotals = StatsDetail.statsDetail(allRideTotalsDictionary),
+            let allRideTotals = StatsDetail(dictionary: allRideTotalsDictionary),
             let allRunTotalsDictionary = dictionary["all_run_totals"] as? [String : AnyObject],
-            let allRunTotals = StatsDetail.statsDetail(allRunTotalsDictionary),
+            let allRunTotals = StatsDetail(dictionary: allRunTotalsDictionary),
             let allSwimTotalsDictionary = dictionary["all_swim_totals"] as? [String : AnyObject],
-            let allSwimTotals = StatsDetail.statsDetail(allSwimTotalsDictionary) {
+            let allSwimTotals = StatsDetail(dictionary: allSwimTotalsDictionary) {
+            self.athleteId = athleteId
 
-            let stats = Stats(athleteId: athleteId, biggestRideDistance: biggestRideDistance, biggestClimbElevationGain: biggestClimbElevationGain, recentRideTotals: recentRideTotals, recentRunTotals: recentRunTotals, recentSwimTotals: recentSwimTotals, ytdRideTotals: ytdRideTotals, ytdRunTotals: ytdRunTotals, ytdSwimTotals: ytdSwimTotals, allRideTotals: allRideTotals, allRunTotals: allRunTotals, allSwimTotals: allSwimTotals)
-            
-            return stats
+            self.biggestRideDistance = biggestRideDistance
+            self.biggestClimbElevationGain = biggestClimbElevationGain
+
+            self.recentRideTotals = recentRideTotals
+            self.recentRunTotals = recentRunTotals
+            self.recentSwimTotals = recentSwimTotals
+
+            self.ytdRideTotals = ytdRideTotals
+            self.ytdRunTotals = ytdRunTotals
+            self.ytdSwimTotals = ytdSwimTotals
+
+            self.allRideTotals = allRideTotals
+            self.allRunTotals = allRunTotals
+            self.allSwimTotals = allSwimTotals
         }
-        
-        return nil
+        else {
+            return nil
+        }
     }
-    
+
 }

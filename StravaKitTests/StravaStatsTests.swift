@@ -19,7 +19,7 @@ class StravaStatsTests: XCTestCase {
             return
         }
 
-        let stats = Stats.stats(1, dictionary: dictionary)
+        let stats = Stats(athleteId: 1, dictionary: dictionary)
         XCTAssertNotNil(stats)
     }
 
@@ -30,7 +30,7 @@ class StravaStatsTests: XCTestCase {
             return
         }
 
-        let stats = Stats.stats(1, dictionary: dictionary)
+        let stats = Stats(athleteId: 1, dictionary: dictionary)
         XCTAssertNil(stats)
     }
     
