@@ -18,8 +18,8 @@
    1. /v3/uploads
 1. Implement full demo app
    1. ~~/v3/oauth~~
-   1. /v3/athlete
-   1. /v3/athletes/:id
+   1. ~~/v3/athlete~~
+   1. ~~/v3/athletes/:id~~
    1. /v3/activities/:id
    1. /v3/activities/:id/streams
    1. /v3/clubs/:id
