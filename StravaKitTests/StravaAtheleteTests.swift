@@ -19,7 +19,7 @@ class StravaAtheleteTests: XCTestCase {
             return
         }
 
-        let athlete = Athlete.athlete(dictionary)
+        let athlete = Athlete(dictionary: dictionary)
         XCTAssertNotNil(athlete)
     }
 
@@ -30,7 +30,7 @@ class StravaAtheleteTests: XCTestCase {
             return
         }
 
-        let athlete = Athlete.athlete(dictionary)
+        let athlete = Athlete(dictionary: dictionary)
         XCTAssertNil(athlete)
     }
 
@@ -41,8 +41,8 @@ class StravaAtheleteTests: XCTestCase {
             return
         }
 
-        guard let athlete = Athlete.athlete(dictionary),
-            let otherAthlete = Athlete.athlete(athlete.dictionary) else {
+        guard let athlete = Athlete(dictionary: dictionary),
+            let otherAthlete = Athlete(dictionary: athlete.dictionary) else {
                 XCTFail()
                 return
         }
@@ -61,7 +61,7 @@ class StravaAtheleteTests: XCTestCase {
             return
         }
 
-        let athlete = Athlete.athlete(dictionary)
+        let athlete = Athlete(dictionary: dictionary)
         XCTAssertNotNil(athlete)
     }
 

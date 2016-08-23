@@ -144,7 +144,7 @@ public extension Strava {
             }
 
             sharedInstance.accessToken = accessToken
-            sharedInstance.athlete = Athlete.athlete(athleteDictionary)
+            sharedInstance.athlete = Athlete(dictionary: athleteDictionary)
             sharedInstance.storeAccessData()
             assert(sharedInstance.athlete != nil, "Athlete is required")
             dispatch_async(dispatch_get_main_queue()) {

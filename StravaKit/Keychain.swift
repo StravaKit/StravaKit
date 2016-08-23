@@ -62,7 +62,7 @@ public extension Strava {
                 if let dictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [String : AnyObject],
                     let accessToken = dictionary[StravaAccessTokenKey] as? String,
                     let athleteDictionary = dictionary[StravaAthleteKey] as? [String : AnyObject],
-                    let athlete = Athlete.athlete(athleteDictionary) {
+                    let athlete = Athlete(dictionary: athleteDictionary) {
                     self.accessToken = accessToken
                     self.athlete = athlete
                     return true
