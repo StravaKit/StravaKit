@@ -64,7 +64,11 @@ class HomeViewController: UIViewController {
         loadDefaults()
         refreshUI()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.stravaSignInCompleted(_:)), name: StravaAuthorizationCompletedNotification, object: nil)
+        #if swift(>=2.2)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.stravaSignInCompleted(_:)), name: StravaAuthorizationCompletedNotification, object: nil)
+        #else
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "stravaSignInCompleted:", name: StravaAuthorizationCompletedNotification, object: nil)
+        #endif
     }
 
     deinit {
