@@ -27,3 +27,16 @@
    1. /v3/segments/:id/leaderboard
    1. /v3/segments/:id/all_efforts
    1. /v3/uploads
+1. Review performance
+   1. implement rate limiting support (retry logic)
+   1. profile API calls for various calls
+1. Plan work to store data to disk
+   1. Generic data store protocol
+   1. JSON implementation
+   1. sqlite implementation
+   1. Realm implementation
+
+## Notes
+
+[Rating Limiting](http://strava.github.io/api/#rate-limiting
+) has reasonable settings for moderate use. It will be necessary to detect when a 403 Forbidden response is returned with the JSON payload indicating that the rate limit was exceeded. When that happens the current failed request can detect the state, wait a moment and try the request again. The delay could be 1 second initially and increase with each failed request. A maximum retry count of 5 or 10 may be reasonable to provide the best possible user experience.  
