@@ -37,8 +37,6 @@ class StravaClientTests: XCTestCase {
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
-            print("URL: \(URL.absoluteString)")
-            print("Query: \(query)")
             XCTAssertTrue(query.containsString("name=strava"))
         }
         else {
@@ -53,8 +51,6 @@ class StravaClientTests: XCTestCase {
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
-            print("URL: \(URL.absoluteString)")
-            print("Query: \(query)")
             // Note: Order of query parameters is not guaranteed
             XCTAssertTrue(query.containsString("name=strava"))
             XCTAssertTrue(query.containsString("score=5"))
@@ -71,8 +67,6 @@ class StravaClientTests: XCTestCase {
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
-            print("URL: \(URL.absoluteString)")
-            print("Query: \(query)")
             // Note: Order of query parameters is not guaranteed
             XCTAssertTrue(query.containsString("name=strava"))
             XCTAssertTrue(query.containsString("pi=3.14"))
@@ -89,8 +83,6 @@ class StravaClientTests: XCTestCase {
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
-            print("URL: \(URL.absoluteString)")
-            print("Query: \(query)")
             XCTAssertTrue(query.containsString("name=strava%20v3"))
         }
         else {

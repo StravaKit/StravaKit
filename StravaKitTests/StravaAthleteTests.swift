@@ -184,7 +184,6 @@ class StravaAthleteTests: XCTestCase {
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
         Strava.getAthlete(1) { (athlete, error) in
-            print("testGetAthleteByIDWithError")
             XCTAssertNil(athlete)
             XCTAssertNotNil(error)
             expectation.fulfill()
