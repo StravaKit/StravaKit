@@ -6,4 +6,4 @@ set -e
 
 # xcodebuild -project StravaKit.xcodeproj -scheme StravaDemo -destination "platform=iOS Simulator,name=iPhone 6" test 
 
-xcodebuild -project StravaKit.xcodeproj -scheme StravaDemo -configuration Debug -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 6" test -enableCodeCoverage YES
+xcodebuild -project StravaKit.xcodeproj -scheme StravaDemo -configuration Debug -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 6" test
