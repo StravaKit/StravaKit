@@ -129,7 +129,7 @@ class HomeViewController: UIViewController {
             else {
                 // TODO: warn user
                 if let error = error {
-                    print("\(error.localizedDescription)")
+                    print("Error: \(error.localizedDescription)")
                 }
             }
         }
@@ -148,7 +148,7 @@ class HomeViewController: UIViewController {
                     }
                 }
                 else if let error = userInfo[StravaErrorKey] as? NSError {
-                    print("\(error.localizedDescription)")
+                    print("Error: \(error.localizedDescription)")
                 }
             }
         }
