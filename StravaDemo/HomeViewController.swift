@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
         loadDefaults()
         refreshUI()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.stravaSignInCompleted(_:)), name: StravaAuthorizationCompletedNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.stravaAuthorizationCompleted(_:)), name: StravaAuthorizationCompletedNotification, object: nil)
     }
 
     deinit {
@@ -109,7 +109,7 @@ class HomeViewController: UIViewController {
         let redirectURI = "stravademo://localhost/oauth/signin"
         Strava.set(clientId: clientId, clientSecret: clientSecret, redirectURI: redirectURI)
 
-        if let URL = Strava.userLogin(scope: .Public, state: "") {
+        if let URL = Strava.userLogin(scope: .Public) {
             let vc = SFSafariViewController(URL: URL, entersReaderIfAvailable: false)
             presentViewController(vc, animated: true, completion: nil)
             safariViewController = vc
@@ -132,7 +132,7 @@ class HomeViewController: UIViewController {
         }
     }
 
-    internal func stravaSignInCompleted(notification: NSNotification?) {
+    internal func stravaAuthorizationCompleted(notification: NSNotification?) {
         assert(NSThread.isMainThread(), "Main Thread is required")
         safariViewController?.dismissViewControllerAnimated(true, completion: nil)
         refreshUI()
