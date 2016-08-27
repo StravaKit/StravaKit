@@ -5,7 +5,7 @@
    1. ~~Test calls to API endpoints~~
    1. ~~Increase code coverage~~
 1. Add support to use as a dependency
-   1. CocoaPods
+   1. ~~CocoaPods~~
    1. Carthage   
 1. Implement full API
    1. ~~/v3/oauth~~
