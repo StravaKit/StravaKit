@@ -10,6 +10,24 @@
 		2655C56D1D711EEE00715ADE /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56C1D711EEE00715ADE /* activity-good.json */; };
 		2655C56F1D711F3000715ADE /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56E1D711F3000715ADE /* activity-bad.json */; };
 		2655C5711D71210500715ADE /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5701D71210500715ADE /* activities-following.json */; };
+		2655C5A71D7224A500715ADE /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BF31D6ADB8300C5D491 /* athlete-other.json */; };
+		2655C5A81D7224A500715ADE /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC61D6AB4E500481015 /* athlete-good.json */; };
+		2655C5A91D7224A500715ADE /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC71D6AB4E500481015 /* athlete-bad.json */; };
+		2655C5AA1D7224A500715ADE /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C0E1D6BE4CC00C5D491 /* activities-good.json */; };
+		2655C5AB1D7224A500715ADE /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C141D6BF50F00C5D491 /* activities-bad.json */; };
+		2655C5AC1D7224A500715ADE /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56C1D711EEE00715ADE /* activity-good.json */; };
+		2655C5AD1D7224A500715ADE /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56E1D711F3000715ADE /* activity-bad.json */; };
+		2655C5AE1D7224A500715ADE /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5701D71210500715ADE /* activities-following.json */; };
+		2655C5AF1D7224A500715ADE /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BFD1D6B7E9900C5D491 /* stats-good.json */; };
+		2655C5B01D7224A500715ADE /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C011D6B85B000C5D491 /* stats-bad.json */; };
+		2655C5B11D7224A500715ADE /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */; };
+		2655C5B21D7224A500715ADE /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C231D6C111C00C5D491 /* exchange-token-bad.json */; };
+		2655C5B31D7224A500715ADE /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C251D6C11D900C5D491 /* empty.json */; };
+		2655C5B41D7224A500715ADE /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
+		2655C5B51D7224A500715ADE /* polylines.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E41D70DC6200EB4162 /* polylines.json */; };
+		2655C5B61D7224A500715ADE /* photo-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E81D710BC600EB4162 /* photo-light.json */; };
+		2655C5B71D7224A500715ADE /* photo-heavy.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521EA1D710BF000EB4162 /* photo-heavy.json */; };
+		2655C5B91D72293C00715ADE /* StravaStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C5B81D72293C00715ADE /* StravaStyleKit.swift */; };
 		26AEBF671D664A2E00481015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBF661D664A2E00481015 /* AppDelegate.swift */; };
 		26AEBF6C1D664A2E00481015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6A1D664A2E00481015 /* Main.storyboard */; };
 		26AEBF6E1D664A2E00481015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6D1D664A2E00481015 /* Assets.xcassets */; };
@@ -52,17 +70,6 @@
 		26C92C261D6C11D900C5D491 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C251D6C11D900C5D491 /* empty.json */; };
 		26C92C281D6C163700C5D491 /* KeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C271D6C163700C5D491 /* KeychainTests.swift */; };
 		26C92C2A1D6C2E3000C5D491 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
-		26C92C2F1D6CBA9600C5D491 /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BF31D6ADB8300C5D491 /* athlete-other.json */; };
-		26C92C301D6CBA9600C5D491 /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC61D6AB4E500481015 /* athlete-good.json */; };
-		26C92C311D6CBA9600C5D491 /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC71D6AB4E500481015 /* athlete-bad.json */; };
-		26C92C321D6CBA9600C5D491 /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BFD1D6B7E9900C5D491 /* stats-good.json */; };
-		26C92C331D6CBA9600C5D491 /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C011D6B85B000C5D491 /* stats-bad.json */; };
-		26C92C341D6CBA9600C5D491 /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C0E1D6BE4CC00C5D491 /* activities-good.json */; };
-		26C92C351D6CBA9600C5D491 /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C141D6BF50F00C5D491 /* activities-bad.json */; };
-		26C92C361D6CBA9600C5D491 /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */; };
-		26C92C371D6CBA9600C5D491 /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C231D6C111C00C5D491 /* exchange-token-bad.json */; };
-		26C92C381D6CBA9600C5D491 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C251D6C11D900C5D491 /* empty.json */; };
-		26C92C391D6CBA9600C5D491 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
 		26C92C3A1D6CBAB100C5D491 /* JSONRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C181D6C028000C5D491 /* JSONRequestor.swift */; };
 		26C92C3B1D6CBAB100C5D491 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C211D6C0E6700C5D491 /* JSONLoader.swift */; };
 		26F521DF1D70D4DE00EB4162 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521DE1D70D4DE00EB4162 /* Map.swift */; };
@@ -124,6 +131,7 @@
 		2655C56C1D711EEE00715ADE /* activity-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-good.json"; sourceTree = "<group>"; };
 		2655C56E1D711F3000715ADE /* activity-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-bad.json"; sourceTree = "<group>"; };
 		2655C5701D71210500715ADE /* activities-following.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activities-following.json"; sourceTree = "<group>"; };
+		2655C5B81D72293C00715ADE /* StravaStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaStyleKit.swift; sourceTree = "<group>"; };
 		26AEBF631D664A2E00481015 /* StravaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AEBF661D664A2E00481015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AEBF6B1D664A2E00481015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -246,6 +254,7 @@
 				26AEBF6F1D664A2E00481015 /* LaunchScreen.storyboard */,
 				26AEBF721D664A2E00481015 /* Info.plist */,
 				26AEBFC01D692F7800481015 /* HomeViewController.swift */,
+				2655C5B81D72293C00715ADE /* StravaStyleKit.swift */,
 			);
 			path = StravaDemo;
 			sourceTree = "<group>";
@@ -501,17 +510,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C92C351D6CBA9600C5D491 /* activities-bad.json in Resources */,
-				26C92C381D6CBA9600C5D491 /* empty.json in Resources */,
-				26C92C331D6CBA9600C5D491 /* stats-bad.json in Resources */,
-				26C92C391D6CBA9600C5D491 /* invalid.json in Resources */,
-				26C92C341D6CBA9600C5D491 /* activities-good.json in Resources */,
-				26C92C321D6CBA9600C5D491 /* stats-good.json in Resources */,
-				26C92C371D6CBA9600C5D491 /* exchange-token-bad.json in Resources */,
-				26C92C311D6CBA9600C5D491 /* athlete-bad.json in Resources */,
-				26C92C301D6CBA9600C5D491 /* athlete-good.json in Resources */,
-				26C92C2F1D6CBA9600C5D491 /* athlete-other.json in Resources */,
-				26C92C361D6CBA9600C5D491 /* exchange-token-good.json in Resources */,
+				2655C5AB1D7224A500715ADE /* activities-bad.json in Resources */,
+				2655C5AD1D7224A500715ADE /* activity-bad.json in Resources */,
+				2655C5B31D7224A500715ADE /* empty.json in Resources */,
+				2655C5A91D7224A500715ADE /* athlete-bad.json in Resources */,
+				2655C5AF1D7224A500715ADE /* stats-good.json in Resources */,
+				2655C5B41D7224A500715ADE /* invalid.json in Resources */,
+				2655C5B21D7224A500715ADE /* exchange-token-bad.json in Resources */,
+				2655C5B61D7224A500715ADE /* photo-light.json in Resources */,
+				2655C5A81D7224A500715ADE /* athlete-good.json in Resources */,
+				2655C5B01D7224A500715ADE /* stats-bad.json in Resources */,
+				2655C5AE1D7224A500715ADE /* activities-following.json in Resources */,
+				2655C5A71D7224A500715ADE /* athlete-other.json in Resources */,
+				2655C5AA1D7224A500715ADE /* activities-good.json in Resources */,
+				2655C5B71D7224A500715ADE /* photo-heavy.json in Resources */,
+				2655C5B51D7224A500715ADE /* polylines.json in Resources */,
+				2655C5B11D7224A500715ADE /* exchange-token-good.json in Resources */,
+				2655C5AC1D7224A500715ADE /* activity-good.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2655C5B91D72293C00715ADE /* StravaStyleKit.swift in Sources */,
 				26AEBF671D664A2E00481015 /* AppDelegate.swift in Sources */,
 				26AEBFC11D692F7800481015 /* HomeViewController.swift in Sources */,
 			);

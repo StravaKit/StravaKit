@@ -1,8 +1,9 @@
 # StravaKit
 
-[![Travis CI](https://travis-ci.org/brennanMKE/StravaKit.svg?branch=master)](https://travis-ci.org/brennanMKE/StravaKit)
-
 API client for Strava written in Swift.
+
+
+![](Strava.png)
 
 ## Docs
 

@@ -1,5 +1,5 @@
 //
-//  StravaAtheleteTests.swift
+//  StravaAthleteTests.swift
 //  StravaKit
 //
 //  Created by Brennan Stehling on 8/21/16.

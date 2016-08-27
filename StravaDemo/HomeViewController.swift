@@ -19,11 +19,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var accessButton: UIButton!
 
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var getAthleteButton: UIButton!
-    @IBOutlet weak var getAthleteByIDButton: UIButton!
-    @IBOutlet weak var getStatsButton: UIButton!
+    @IBOutlet weak var runTestsButton: UIButton!
 
     var safariViewController: SFSafariViewController? = nil
+    var testCount: Int = 0
 
     // MARK: - Private Constants -
 
@@ -61,6 +60,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.titleView = UIImageView(image: StravaStyleKit.imageOfTitleLogo)
+
         loadDefaults()
         refreshUI()
 
@@ -82,19 +83,11 @@ class HomeViewController: UIViewController {
         }
     }
 
-    @IBAction func getAthleteTapped(sender: AnyObject) {
-        getAthelete()
+    @IBAction func runTestsButtonTapped(sender: AnyObject) {
+        runTests()
     }
 
-    @IBAction func getAthleteByIDButtonTapped(sender: AnyObject) {
-        getAtheleteByID()
-    }
-
-    @IBAction func getStatsButtonTapped(sender: AnyObject) {
-        getStats()
-    }
-
-    // MARK: - Internal Functions -
+    // MARK: - UI Functions -
 
     internal func refreshUI() {
         assert(NSThread.isMainThread(), "Main Thread is required")
@@ -102,10 +95,14 @@ class HomeViewController: UIViewController {
         let title = isAuthenticated ? "Deauthorize" : "Authorize"
         statusLabel.text = nil
         accessButton.setTitle(title, forState: .Normal)
-        getAthleteButton.hidden = !isAuthenticated
-        getAthleteByIDButton.hidden = !isAuthenticated
-        getStatsButton.hidden = !isAuthenticated
+        runTestsButton.hidden = !isAuthenticated
     }
+
+    internal func showIntegrationResult(success: Bool) {
+        statusLabel.text = success ? "Integration Passed" : "Integration Failed"
+    }
+
+    // MARK: - Integration Functions -
 
     internal func authorizeStrava() {
         storeDefaults()
@@ -142,10 +139,7 @@ class HomeViewController: UIViewController {
         if let userInfo = notification?.userInfo {
             if let status = userInfo[StravaStatusKey] as? String {
                 if status == StravaStatusSuccessValue {
-                    print("Authorization successful!")
-                    if let athlete = Strava.currentAthlete {
-                        print("Athlete: \(athlete.fullName)")
-                    }
+                    self.statusLabel.text = "Authorization successful!"
                 }
                 else if let error = userInfo[StravaErrorKey] as? NSError {
                     print("Error: \(error.localizedDescription)")
@@ -154,45 +148,113 @@ class HomeViewController: UIViewController {
         }
     }
 
-    internal func getAthelete() {
+    internal func runTests() {
+        let total: Int = 5
+
+        // reset test count
+        testCount = 0
+        statusLabel.text = "Running Tests"
+
+        getAthlete { (success, error) in
+            self.handleTestResult(success, total: total, error: error)
+        }
+        getAthleteByID { (success, error) in
+            self.handleTestResult(success, total: total, error: error)
+        }
+        getStats { (success, error) in
+            self.handleTestResult(success, total: total, error: error)
+        }
+        getActivities { (success, error) in
+            self.handleTestResult(success, total: total, error: error)
+        }
+        getFollowingActivities { (success, error) in
+            self.handleTestResult(success, total: total, error: error)
+        }
+    }
+
+    internal func handleTestResult(success: Bool, total: Int, error: NSError?) {
+        if success {
+            testCount += 1
+            if testCount == total {
+                showIntegrationResult(true)
+            }
+        }
+        else {
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            showIntegrationResult(false)
+        }
+    }
+
+    internal func getAthlete(completionHandler: ((success: Bool, error: NSError?) -> ())) {
         Strava.getAthlete { (athlete, error) in
-            if let athlete = athlete {
-                self.statusLabel.text = "Loaded Athlete: \(athlete.fullName)"
-                print("\(athlete.fullName)")
+            if let _ = athlete {
+                completionHandler(success: true, error: nil)
             }
             else if let error = error {
-                self.statusLabel.text = error.localizedDescription
+                completionHandler(success: false, error: error)
             }
         }
     }
 
-    internal func getAtheleteByID() {
+    internal func getAthleteByID(completionHandler: ((success: Bool, error: NSError?) -> ())) {
         if let athleteId = Strava.currentAthlete?.athleteId {
             Strava.getAthlete(athleteId) { (athlete, error) in
-                if let athlete = athlete {
-                    self.statusLabel.text = "Loaded Athlete by ID: \(athlete.fullName)"
-                    print("\(athlete.fullName)")
+                if let _ = athlete {
+                    completionHandler(success: true, error: nil)
                 }
                 else if let error = error {
-                    self.statusLabel.text = error.localizedDescription
+                    completionHandler(success: false, error: error)
                 }
             }
         }
     }
 
-    internal func getStats() {
+    internal func getStats(completionHandler: ((success: Bool, error: NSError?) -> ())) {
         if let athleteId = Strava.currentAthlete?.athleteId {
             Strava.getStats(athleteId, completionHandler: { (stats, error) in
-                if let stats = stats {
-                    self.statusLabel.text = "Loaded Stats: \(stats.athleteId)"
-                    print("\(athleteId)")
+                if let _ = stats {
+                    completionHandler(success: true, error: nil)
                 }
                 else if let error = error {
-                    self.statusLabel.text = error.localizedDescription
+                    completionHandler(success: false, error: error)
                 }
             })
         }
     }
+
+    internal func getActivities(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getActivities { (activities, error) in
+            if let activities = activities,
+                let firstActivity = activities.first {
+                Strava.getActivity(firstActivity.activityId, completionHandler: { (activity, error) in
+                    if let _ = activity {
+                        completionHandler(success: true, error: nil)
+                    }
+                    else if let error = error {
+                        completionHandler(success: false, error: error)
+                    }
+                })
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    internal func getFollowingActivities(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getFollowingActivities { (activities, error) in
+            if let _ = activities {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    // MARK: - Defaults Functions -
 
     internal func loadDefaults() {
         let defaults = NSUserDefaults.standardUserDefaults()

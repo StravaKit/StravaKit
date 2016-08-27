@@ -23,6 +23,12 @@ class StravaDemoTests: XCTestCase {
             return
         }
 
+        // Load current defaults
+        vc.loadDefaults()
+        let clientId = vc.clientId
+        let clientSecret = vc.clientSecret
+
+        // Change default to test values
         vc.clientId = ClientId
         vc.clientSecret = ClientSecret
 
@@ -34,6 +40,12 @@ class StravaDemoTests: XCTestCase {
         XCTAssertTrue(vc.clientSecret == Strava.sharedInstance.clientSecret)
         XCTAssertTrue(ClientId == Strava.sharedInstance.clientId)
         XCTAssertTrue(ClientSecret == Strava.sharedInstance.clientSecret)
+
+        // Return existing defaults
+        vc.clientId = clientId
+        vc.clientSecret = clientSecret
+        vc.storeDefaults()
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 
     func testGetAthlete() {
@@ -42,9 +54,6 @@ class StravaDemoTests: XCTestCase {
         let requestor = JSONRequestor()
         requestor.response = JSONLoader.sharedInstance.loadJSON("athlete-good")
         requestor.error = nil
-        requestor.callback = {
-            expectation.fulfill()
-        }
         Strava.sharedInstance.alternateRequestor = requestor
         Strava.sharedInstance.accessToken = AccessToken
 
@@ -53,7 +62,10 @@ class StravaDemoTests: XCTestCase {
             return
         }
 
-        vc.getAthleteTapped(vc.getAthleteButton)
+        vc.getAthlete { (success, error) in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
 
         let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
@@ -69,9 +81,6 @@ class StravaDemoTests: XCTestCase {
         let requestor = JSONRequestor()
         requestor.response = athleteResponse
         requestor.error = nil
-        requestor.callback = {
-            expectation.fulfill()
-        }
         Strava.sharedInstance.alternateRequestor = requestor
         Strava.sharedInstance.accessToken = AccessToken
 
@@ -83,7 +92,10 @@ class StravaDemoTests: XCTestCase {
 
         Strava.sharedInstance.athlete = Athlete(dictionary: dictionary)
 
-        vc.getAthleteByIDButtonTapped(vc.getAthleteByIDButton)
+        vc.getAthleteByID { (success, error) in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
 
         let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout, handler: nil)
@@ -95,9 +107,6 @@ class StravaDemoTests: XCTestCase {
         let requestor = JSONRequestor()
         requestor.response = JSONLoader.sharedInstance.loadJSON("stats-good")
         requestor.error = nil
-        requestor.callback = {
-            expectation.fulfill()
-        }
         Strava.sharedInstance.alternateRequestor = requestor
         Strava.sharedInstance.accessToken = AccessToken
 
@@ -111,7 +120,76 @@ class StravaDemoTests: XCTestCase {
         
         Strava.sharedInstance.athlete = Athlete(dictionary: dictionary)
 
-        vc.getStatsButtonTapped(vc.getStatsButton)
+        vc.getStats { (success, error) in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetActivities() {
+        let expectation = self.expectationWithDescription("UI")
+
+        guard let activities = JSONLoader.sharedInstance.loadJSON("activities-good"),
+            let activity = JSONLoader.sharedInstance.loadJSON("activity-good") else {
+                XCTFail()
+                return
+        }
+
+        let requestor = JSONRequestor()
+        requestor.responses = [activities, activity]
+        requestor.error = nil
+        Strava.sharedInstance.alternateRequestor = requestor
+        Strava.sharedInstance.accessToken = AccessToken
+
+        let athleteResponse = JSONLoader.sharedInstance.loadJSON("athlete-good")
+
+        guard let vc = getHomeViewController(),
+            let dictionary = athleteResponse as? JSONDictionary else {
+                XCTFail()
+                return
+        }
+
+        Strava.sharedInstance.athlete = Athlete(dictionary: dictionary)
+
+        vc.getActivities { (success, error) in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetFollowerActivities() {
+        let expectation = self.expectationWithDescription("UI")
+
+        let requestor = JSONRequestor()
+        requestor.response = JSONLoader.sharedInstance.loadJSON("activities-following")
+        requestor.error = nil
+        Strava.sharedInstance.alternateRequestor = requestor
+        Strava.sharedInstance.accessToken = AccessToken
+
+        let athleteResponse = JSONLoader.sharedInstance.loadJSON("athlete-good")
+
+        guard let vc = getHomeViewController(),
+            let dictionary = athleteResponse as? JSONDictionary else {
+                XCTFail()
+                return
+        }
+
+        Strava.sharedInstance.athlete = Athlete(dictionary: dictionary)
+
+        vc.getFollowingActivities { (success, error) in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
 
         let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in

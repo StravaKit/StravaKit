@@ -20,6 +20,12 @@ public typealias ParamsDictionary = [String : AnyObject]
 public let StravaBaseURL = "https://www.strava.com"
 public let StravaErrorDomain = "StravaKit"
 
+public let RateLimitLimitHeaderKey = "X-Ratelimit-Limit"
+public let RateLimitUsageHeaderKey = "X-Ratelimit-Usage"
+
+public let RateLimitLimitKey = "Rate-Limit-Limit"
+public let RateLimitUsageKey = "Rate-Limit-Usage"
+
 public enum HTTPMethod: String {
     case GET = "GET"
     case POST = "POST"
@@ -32,6 +38,9 @@ public enum StravaErrorCode: Int {
     case NoAccessToken = 503
     case NoResponse = 504
     case InvalidResponse = 505
+    case RecordNotFound = 506
+    case RateLimitExceeded = 507
+    case AccessForbidden = 508
     case UndefinedError = 599
 }
 
@@ -71,9 +80,11 @@ public class Strava {
 
     // MARK: - Internal Functions -
 
-    internal static func error(code: StravaErrorCode, reason: String) -> NSError {
-        let userInfo: [String : String] = [NSLocalizedDescriptionKey : reason]
-        let error = NSError(domain: StravaErrorDomain, code: code.rawValue, userInfo: userInfo)
+    internal static func error(code: StravaErrorCode, reason: String, userInfo: [String : AnyObject]? = [:]) -> NSError {
+        var dictionary: [String : AnyObject]? = userInfo
+        dictionary?[NSLocalizedDescriptionKey] = reason
+
+        let error = NSError(domain: StravaErrorDomain, code: code.rawValue, userInfo: dictionary)
         return error
     }
 
@@ -115,6 +126,5 @@ public class Strava {
 
         return components.URL
     }
-
 
 }

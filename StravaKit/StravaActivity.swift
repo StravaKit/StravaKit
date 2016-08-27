@@ -33,11 +33,10 @@ public extension Strava {
 
     // Gets activity detail
     // Docs: http://strava.github.io/api/v3/activities/#get-details
-    static func getActivity(id: Int, completionHandler:((activity: Activity?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        let path = ActivityResourcePath.Activity.rawValue
-        let params: JSONDictionary = ["id" : id]
+    static func getActivity(activityId: Int, completionHandler:((activity: Activity?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+        let path = ActivityResourcePath.Activity.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(activityId))
 
-        return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
+        return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
                 completionHandler?(activity: nil, error: error)
                 return
