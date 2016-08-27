@@ -65,6 +65,7 @@ If the URL which opened the app includes a code to use for getting an access tok
 ```swift
 internal func stravaAuthorizationCompleted(notification: NSNotification?) {
     self.safariViewController?.dismissViewControllerAnimated(true, completion: nil)
+    self.safariViewController = nil
     if let userInfo = notification?.userInfo {
         if let status = userInfo[StravaStatusKey] as? String {
             if status == StravaStatusSuccessValue {

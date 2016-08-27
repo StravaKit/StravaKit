@@ -135,6 +135,7 @@ class HomeViewController: UIViewController {
     internal func stravaAuthorizationCompleted(notification: NSNotification?) {
         assert(NSThread.isMainThread(), "Main Thread is required")
         safariViewController?.dismissViewControllerAnimated(true, completion: nil)
+        safariViewController = nil
         refreshUI()
         if let userInfo = notification?.userInfo {
             if let status = userInfo[StravaStatusKey] as? String {
