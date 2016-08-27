@@ -75,7 +75,7 @@ class HomeViewController: UIViewController {
     // MARK: - User Actions -
 
     @IBAction func accessButtonTapped(sender: AnyObject) {
-        if !Strava.isAuthenticated {
+        if !Strava.isAuthorized {
             authorizeStrava()
         }
         else {
@@ -91,11 +91,11 @@ class HomeViewController: UIViewController {
 
     internal func refreshUI() {
         assert(NSThread.isMainThread(), "Main Thread is required")
-        let isAuthenticated = Strava.isAuthenticated
-        let title = isAuthenticated ? "Deauthorize" : "Authorize"
+        let isAuthorized = Strava.isAuthorized
+        let title = isAuthorized ? "Deauthorize" : "Authorize"
         statusLabel.text = nil
         accessButton.setTitle(title, forState: .Normal)
-        runTestsButton.hidden = !isAuthenticated
+        runTestsButton.hidden = !isAuthorized
     }
 
     internal func showIntegrationResult(success: Bool) {

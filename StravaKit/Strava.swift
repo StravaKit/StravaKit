@@ -58,7 +58,7 @@ public class Strava {
         loadAccessData()
     }
 
-    public static var isAuthenticated: Bool {
+    public static var isAuthorized: Bool {
         get {
             return sharedInstance.accessToken != nil && sharedInstance.athlete != nil
         }

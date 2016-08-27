@@ -158,7 +158,7 @@ class StravaOAuthTests: XCTestCase {
 
         Strava.exchangeTokenWithCode("1234") { (success, error) in
             XCTAssertTrue(success)
-            XCTAssertTrue(Strava.isAuthenticated)
+            XCTAssertTrue(Strava.isAuthorized)
             XCTAssertNil(error)
 
             if let currentAthlete = Strava.currentAthlete {
