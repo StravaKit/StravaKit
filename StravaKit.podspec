@@ -1,0 +1,18 @@
+Pod::Spec.new do |s|
+  s.name             = "StravaKit"
+  s.version          = "0.0.3"
+  s.summary          = "API client for Strava written in Swift."
+  s.description      = "Strava framework for interacting with the Strava API."
+  s.module_name      = "StravaKit"
+  s.homepage         = "https://github.com/brennanMKE/StravaKit"
+  s.license          = 'MIT'
+  s.author           = { "Brennan Stehling" => "brennan@smallsharptools.com" }
+  s.source           = { :git => "https://github.com/brennanMKE/StravaKit.git", :tag => "v0.0.3" }
+  s.social_media_url = 'https://twitter.com/smallsharptools'
+  s.ios.deployment_target = '9.0'
+  s.source_files = 'StravaKit/*.swift'
+  s.cocoapods_version = '>= 1.0'
+  s.platform = :ios
+  s.ios.deployment_target = '9.0'
+  s.frameworks = 'Foundation', 'CoreLocation', 'Security', 'SafariServices'
+end
