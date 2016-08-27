@@ -34,6 +34,10 @@ A demo application is included with StravaKit along with a comprehensive collect
 
 Strava uses [OAuth 2.0](https://oauth.net/2/) for authorizing access to the API on behalf of the user. You will need to register your own application and get a Client ID and Client Secret to allow your app to use OAuth with Strava. For an iOS app the web view which is used is the Safari View Controller which gives the user access to their existing browser session outside your app. It will allow them to log into Strava more easily to allow for giving your app permission to get an access token. Once access has been granted the `redirectURI` will be used to open your app which must be configured with a URL Scheme. For the demo app the URL Scheme is defined in the `Info.plist` with a key named `CFBundleURLTypes`. You can copy this configuration and change the values to suit your app.
 
+### User Login
+
+Returns a URL which can be used to open the login web page for Strava.
+
 ```swift
 let redirectURI = "stravademo://localhost/oauth/signin"
 Strava.set(clientId: clientId, clientSecret: clientSecret, redirectURI: redirectURI)
@@ -42,9 +46,11 @@ if let URL = Strava.userLogin(scope: .Public) {
     let vc = SFSafariViewController(URL: URL, entersReaderIfAvailable: false)
     presentViewController(vc, animated: true, completion: nil)
     // hold onto the vc to dismiss later 
-    self.fsafariViewController = vc
+    self.safariViewController = vc
 }
 ```
+
+### Open URL
 
 When the `redirectURI` is used it will cause a method in your `AppDelegate` to be run. The `openURL` method which is provided by StravaKit will determine if an opened URL should be used for OAuth authorization.
 
@@ -71,6 +77,8 @@ internal func stravaAuthorizationCompleted(notification: NSNotification?) {
     }
 }
 ```
+
+### Deauthorize
 
 Once the authorization steps have beenc completed successfully the access token and athlete profile have been securely stored in the user's Keychain for use whenever they use your app. If they ever want to remove the access token and athlete profile they can deauthorize their session with Strava.
 
@@ -136,7 +144,7 @@ Strava.getActivity(firstActivity.activityId, completionHandler: { (activity, err
 Fetches activities for other athletes the current athlete is following.
 
 ```swift
-trava.getFollowingActivities { (activities, error) in }
+Strava.getFollowingActivities { (activities, error) in }
 ```
 
 Not all endpoints have been implemented in StravaKit. See Contributions below.
