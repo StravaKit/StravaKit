@@ -1,0 +1,824 @@
+{
+  "resource_state": 3,
+  "external_id": "7E6CFFE0-F1A7-4645-AB7B-55DDEBC06369",
+  "upload_id": 468506592,
+  "name": "Morning Ride",
+  "distance": 7320.2,
+  "moving_time": 1408,
+  "elapsed_time": 1484,
+  "total_elevation_gain": 25.6,
+  "type": "Ride",
+  "start_date": "2015-10-23T15:07:14Z",
+  "start_date_local": "2015-10-23T08:07:14Z",
+  "timezone": "(GMT-08:00) America/Los_Angeles",
+  "start_latlng": [
+    37.73697,
+    -122.416727
+  ],
+  "end_latlng": [
+    37.786237,
+    -122.398677
+  ],
+  "location_city": "San Francisco",
+  "location_state": "California",
+  "location_country": "United States",
+  "start_latitude": 37.73697,
+  "start_longitude": -122.416727,
+  "achievement_count": 6,
+  "kudos_count": 0,
+  "comment_count": 0,
+  "athlete_count": 1,
+  "photo_count": 0,
+  "map": {
+    "id": "a418655830",
+    "polyline": "aoieFpodjVYMQEuA@ICK?SKuFUa@xJIf@wIjYCJQB]KEIUC[a@WGSAuAw@GIaAy@i@KMIMC]UaAaAQIMQ]Ws@[]U]Mi@]QG[Uo@[u@c@]O]BIIGK[MIKSKi@I[_@SKSUKEIKm@U_Ai@WWSOgAq@QKK?]Q?ME@ADGDEKWK[OWEU@MGGAG@UEQFQ?CCPBS]q@iXUUP]@HGJGDeiBdIkLj@sADo@AeBQmAUaA]mAm@w@k@}@y@{AgB{DmFm@i@Yq@UUg@s@QMEMKOKE@IcAoA_@q@OSs@oAm@w@UUgAyAIO_AgAe@{@IGsBuC[_@GKGIICCKUSO]a@a@Q]a@i@o@o@IWyAgB_A}ACDE?u@qAyBwCQWa@e@Wg@i@i@c@o@QMCKo@y@EKyCqEyAqBk@q@MY_@k@}@gAYe@{@cAkAcBg@k@S[WYiBoCc@}@W]EAKJCHOGOMe@q@c@mAkA{Ak@j@iE~FBECDbAvAD?BDZG",
+    "resource_state": 3,
+    "summary_polyline": "aoieFpodjVaLw@k@`LmJzY}i@o[oEc@{@{Zw`ChJkQqPyfAk{AkE}EuFjHhBtA"
+  },
+  "trainer": false,
+  "commute": false,
+  "manual": false,
+  "private": false,
+  "flagged": false,
+  "gear_id": null,
+  "average_speed": 5.199,
+  "max_speed": 12.0,
+  "average_watts": 92.2,
+  "kilojoules": 129.8,
+  "device_watts": false,
+  "has_heartrate": false,
+  "elev_high": 70.5,
+  "elev_low": 4.4,
+  "total_photo_count": 0,
+  "has_kudoed": false,
+  "workout_type": 0,
+  "description": null,
+  "calories": 144.7,
+  "segment_efforts": [
+    {
+      "id": 10069245828,
+      "resource_state": 2,
+      "name": "Cortlandia",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 42,
+      "moving_time": 42,
+      "start_date": "2015-10-23T15:08:16Z",
+      "start_date_local": "2015-10-23T08:08:16Z",
+      "distance": 178.8,
+      "start_index": 38,
+      "end_index": 66,
+      "device_watts": false,
+      "average_watts": 170.3,
+      "segment": {
+        "id": 6318669,
+        "resource_state": 2,
+        "name": "Cortlandia",
+        "activity_type": "Ride",
+        "distance": 191.1,
+        "average_grade": 1.7,
+        "maximum_grade": 7.2,
+        "elevation_high": 70.4,
+        "elevation_low": 66.0,
+        "start_latlng": [
+          37.739182,
+          -122.41652
+        ],
+        "end_latlng": [
+          37.739287,
+          -122.418554
+        ],
+        "start_latitude": 37.739182,
+        "start_longitude": -122.41652,
+        "end_latitude": 37.739287,
+        "end_longitude": -122.418554,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": null,
+      "achievements": [],
+      "hidden": false
+    },
+    {
+      "id": 10069245841,
+      "resource_state": 2,
+      "name": "Bernal to Cesar Chavez",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 192,
+      "moving_time": 166,
+      "start_date": "2015-10-23T15:09:28Z",
+      "start_date_local": "2015-10-23T08:09:28Z",
+      "distance": 1211.3,
+      "start_index": 79,
+      "end_index": 228,
+      "device_watts": false,
+      "average_watts": 42.8,
+      "segment": {
+        "id": 1258705,
+        "resource_state": 2,
+        "name": "Bernal to Cesar Chavez",
+        "activity_type": "Ride",
+        "distance": 1183.59,
+        "average_grade": -4.3,
+        "maximum_grade": -0.9,
+        "elevation_high": 68.6,
+        "elevation_low": 17.5,
+        "start_latlng": [
+          37.73987899072257,
+          -122.41972231317537
+        ],
+        "end_latlng": [
+          37.7480290504524,
+          -122.41822740074471
+        ],
+        "start_latitude": 37.73987899072257,
+        "start_longitude": -122.41972231317537,
+        "end_latitude": 37.7480290504524,
+        "end_longitude": -122.41822740074471,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": null,
+      "achievements": [],
+      "hidden": false
+    },
+    {
+      "id": 10069245855,
+      "resource_state": 2,
+      "name": "Escape from Valencia",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 192,
+      "moving_time": 192,
+      "start_date": "2015-10-23T15:17:08Z",
+      "start_date_local": "2015-10-23T08:17:08Z",
+      "distance": 1215.8,
+      "start_index": 388,
+      "end_index": 550,
+      "device_watts": false,
+      "average_watts": 88.1,
+      "segment": {
+        "id": 742929,
+        "resource_state": 2,
+        "name": "Escape from Valencia",
+        "activity_type": "Ride",
+        "distance": 1227.29,
+        "average_grade": -0.8,
+        "maximum_grade": 0.0,
+        "elevation_high": 16.7,
+        "elevation_low": 6.9,
+        "start_latlng": [
+          37.75418906402545,
+          -122.41428673357
+        ],
+        "end_latlng": [
+          37.76517846392645,
+          -122.4152942867131
+        ],
+        "start_latitude": 37.75418906402545,
+        "start_longitude": -122.41428673357,
+        "end_latitude": 37.76517846392645,
+        "end_longitude": -122.4152942867131,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": null,
+      "achievements": [],
+      "hidden": false
+    },
+    {
+      "id": 10069245876,
+      "resource_state": 2,
+      "name": "Folsom: 21st to Freeway",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 203,
+      "moving_time": 203,
+      "start_date": "2015-10-23T15:18:05Z",
+      "start_date_local": "2015-10-23T08:18:05Z",
+      "distance": 1312.0,
+      "start_index": 439,
+      "end_index": 608,
+      "device_watts": false,
+      "average_watts": 84.1,
+      "segment": {
+        "id": 8087348,
+        "resource_state": 2,
+        "name": "Folsom: 21st to Freeway",
+        "activity_type": "Ride",
+        "distance": 1358.4,
+        "average_grade": -0.5,
+        "maximum_grade": 0.0,
+        "elevation_high": 14.2,
+        "elevation_low": 6.9,
+        "start_latlng": [
+          37.757416,
+          -122.414494
+        ],
+        "end_latlng": [
+          37.769321,
+          -122.415581
+        ],
+        "start_latitude": 37.757416,
+        "start_longitude": -122.414494,
+        "end_latitude": 37.769321,
+        "end_longitude": -122.415581,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": 3,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 3
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": 10069245907,
+      "resource_state": 2,
+      "name": "Folsom 20th to 7th",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 373,
+      "moving_time": 349,
+      "start_date": "2015-10-23T15:18:29Z",
+      "start_date_local": "2015-10-23T08:18:29Z",
+      "distance": 2142.4,
+      "start_index": 459,
+      "end_index": 741,
+      "device_watts": false,
+      "average_watts": 96.8,
+      "segment": {
+        "id": 1774324,
+        "resource_state": 2,
+        "name": "Folsom 20th to 7th",
+        "activity_type": "Ride",
+        "distance": 2155.62,
+        "average_grade": -0.2,
+        "maximum_grade": 1.6,
+        "elevation_high": 11.1,
+        "elevation_low": 6.2,
+        "start_latlng": [
+          37.75903655811258,
+          -122.41461351430011
+        ],
+        "end_latlng": [
+          37.77615609795197,
+          -122.40856213687388
+        ],
+        "start_latitude": 37.75903655811258,
+        "start_longitude": -122.41461351430011,
+        "end_latitude": 37.77615609795197,
+        "end_longitude": -122.40856213687388,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": null,
+      "achievements": [],
+      "hidden": false
+    },
+    {
+      "id": 10069245866,
+      "resource_state": 2,
+      "name": "Folsom 17th to 14th",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 83,
+      "moving_time": 83,
+      "start_date": "2015-10-23T15:19:50Z",
+      "start_date_local": "2015-10-23T08:19:50Z",
+      "distance": 533.6,
+      "start_index": 525,
+      "end_index": 597,
+      "device_watts": false,
+      "average_watts": 96.9,
+      "segment": {
+        "id": 8695418,
+        "resource_state": 2,
+        "name": "Folsom 17th to 14th",
+        "activity_type": "Ride",
+        "distance": 533.0,
+        "average_grade": 0.0,
+        "maximum_grade": 0.0,
+        "elevation_high": 6.9,
+        "elevation_low": 6.9,
+        "start_latlng": [
+          37.763698,
+          -122.415151
+        ],
+        "end_latlng": [
+          37.768484,
+          -122.415625
+        ],
+        "start_latitude": 37.763698,
+        "start_longitude": -122.415151,
+        "end_latitude": 37.768484,
+        "end_longitude": -122.415625,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "California",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": 10069245898,
+      "resource_state": 2,
+      "name": "Folsom Curve",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 66,
+      "moving_time": 66,
+      "start_date": "2015-10-23T15:21:14Z",
+      "start_date_local": "2015-10-23T08:21:14Z",
+      "distance": 410.0,
+      "start_index": 598,
+      "end_index": 650,
+      "device_watts": false,
+      "average_watts": 118.5,
+      "segment": {
+        "id": 741566,
+        "resource_state": 2,
+        "name": "Folsom Curve",
+        "activity_type": "Ride",
+        "distance": 413.757,
+        "average_grade": 0.4,
+        "maximum_grade": 1.4,
+        "elevation_high": 8.5,
+        "elevation_low": 6.9,
+        "start_latlng": [
+          37.76863033915422,
+          -122.4156421526177
+        ],
+        "end_latlng": [
+          37.77195579196291,
+          -122.4140521434931
+        ],
+        "start_latitude": 37.76863033915422,
+        "start_longitude": -122.4156421526177,
+        "end_latitude": 37.77195579196291,
+        "end_longitude": -122.4140521434931,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": 3,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 3
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": 10069245917,
+      "resource_state": 2,
+      "name": "Folsom Commute",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 280,
+      "moving_time": 232,
+      "start_date": "2015-10-23T15:21:19Z",
+      "start_date_local": "2015-10-23T08:21:19Z",
+      "distance": 1408.9,
+      "start_index": 599,
+      "end_index": 780,
+      "device_watts": false,
+      "average_watts": 105.8,
+      "segment": {
+        "id": 1143292,
+        "resource_state": 2,
+        "name": "Folsom Commute",
+        "activity_type": "Ride",
+        "distance": 1418.12,
+        "average_grade": -0.2,
+        "maximum_grade": 1.1,
+        "elevation_high": 11.2,
+        "elevation_low": 4.5,
+        "start_latlng": [
+          37.768676443991964,
+          -122.41551057446972
+        ],
+        "end_latlng": [
+          37.778321458061946,
+          -122.40592503000275
+        ],
+        "start_latitude": 37.768676443991964,
+        "start_longitude": -122.41551057446972,
+        "end_latitude": 37.778321458061946,
+        "end_longitude": -122.40592503000275,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": null,
+      "achievements": [],
+      "hidden": false
+    },
+    {
+      "id": 10069245971,
+      "resource_state": 2,
+      "name": "Tour de Folsom",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 333,
+      "moving_time": 285,
+      "start_date": "2015-10-23T15:22:56Z",
+      "start_date_local": "2015-10-23T08:22:56Z",
+      "distance": 1745.5,
+      "start_index": 671,
+      "end_index": 901,
+      "device_watts": false,
+      "average_watts": 110.1,
+      "segment": {
+        "id": 1560148,
+        "resource_state": 2,
+        "name": "Tour de Folsom",
+        "activity_type": "Ride",
+        "distance": 1743.61,
+        "average_grade": -0.1,
+        "maximum_grade": 2.8,
+        "elevation_high": 9.4,
+        "elevation_low": 3.2,
+        "start_latlng": [
+          37.772815553471446,
+          -122.41295929066837
+        ],
+        "end_latlng": [
+          37.783839432522655,
+          -122.39905262365937
+        ],
+        "start_latitude": 37.772815553471446,
+        "start_longitude": -122.41295929066837,
+        "end_latitude": 37.783839432522655,
+        "end_longitude": -122.39905262365937,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": 10069245937,
+      "resource_state": 2,
+      "name": "Folsom 8th to 4th",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 203,
+      "moving_time": 179,
+      "start_date": "2015-10-23T15:24:21Z",
+      "start_date_local": "2015-10-23T08:24:21Z",
+      "distance": 1088.8,
+      "start_index": 722,
+      "end_index": 863,
+      "device_watts": false,
+      "average_watts": 96.1,
+      "segment": {
+        "id": 6178725,
+        "resource_state": 2,
+        "name": "Folsom 8th to 4th",
+        "activity_type": "Ride",
+        "distance": 1084.0,
+        "average_grade": -0.3,
+        "maximum_grade": 1.1,
+        "elevation_high": 8.1,
+        "elevation_low": 4.4,
+        "start_latlng": [
+          37.775118,
+          -122.40991
+        ],
+        "end_latlng": [
+          37.781946,
+          -122.401336
+        ],
+        "start_latitude": 37.775118,
+        "start_longitude": -122.40991,
+        "end_latitude": 37.781946,
+        "end_longitude": -122.401336,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": null,
+      "achievements": [],
+      "hidden": false
+    },
+    {
+      "id": 10069245989,
+      "resource_state": 2,
+      "name": "6th to 2nd",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 196,
+      "moving_time": 196,
+      "start_date": "2015-10-23T15:26:22Z",
+      "start_date_local": "2015-10-23T08:26:22Z",
+      "distance": 1060.9,
+      "start_index": 790,
+      "end_index": 945,
+      "device_watts": false,
+      "average_watts": 133.9,
+      "segment": {
+        "id": 2544836,
+        "resource_state": 2,
+        "name": "6th to 2nd",
+        "activity_type": "Ride",
+        "distance": 1045.49,
+        "average_grade": 0.8,
+        "maximum_grade": 9.5,
+        "elevation_high": -6.2,
+        "elevation_low": -15.0,
+        "start_latlng": [
+          37.77868481352925,
+          -122.40532387979329
+        ],
+        "end_latlng": [
+          37.78539855033159,
+          -122.39705706015229
+        ],
+        "start_latitude": 37.77868481352925,
+        "start_longitude": -122.40532387979329,
+        "end_latitude": 37.78539855033159,
+        "end_longitude": -122.39705706015229,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": 2,
+      "achievements": [
+        {
+          "type_id": 3,
+          "type": "pr",
+          "rank": 2
+        }
+      ],
+      "hidden": false
+    },
+    {
+      "id": 10069245947,
+      "resource_state": 2,
+      "name": "5 to 4 Folsom S IP IR II IN T !!",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 44,
+      "moving_time": 44,
+      "start_date": "2015-10-23T15:27:03Z",
+      "start_date_local": "2015-10-23T08:27:03Z",
+      "distance": 245.5,
+      "start_index": 825,
+      "end_index": 865,
+      "device_watts": false,
+      "average_watts": 106.3,
+      "segment": {
+        "id": 5205538,
+        "resource_state": 2,
+        "name": "5 to 4 Folsom S IP IR II IN T !!",
+        "activity_type": "Ride",
+        "distance": 258.4,
+        "average_grade": 0.4,
+        "maximum_grade": 1.0,
+        "elevation_high": 5.4,
+        "elevation_low": 4.4,
+        "start_latlng": [
+          37.780412,
+          -122.403322
+        ],
+        "end_latlng": [
+          37.782007,
+          -122.401228
+        ],
+        "start_latitude": 37.780412,
+        "start_longitude": -122.403322,
+        "end_latitude": 37.782007,
+        "end_longitude": -122.401228,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": null,
+      "achievements": [],
+      "hidden": false
+    },
+    {
+      "id": 10069245977,
+      "resource_state": 2,
+      "name": "Folsom - 3rd to Hawth uphill past light",
+      "activity": {
+        "id": 418655830,
+        "resource_state": 1
+      },
+      "athlete": {
+        "id": 8403085,
+        "resource_state": 1
+      },
+      "elapsed_time": 50,
+      "moving_time": 50,
+      "start_date": "2015-10-23T15:28:29Z",
+      "start_date_local": "2015-10-23T08:28:29Z",
+      "distance": 180.1,
+      "start_index": 901,
+      "end_index": 931,
+      "device_watts": false,
+      "average_watts": 154.7,
+      "segment": {
+        "id": 6401944,
+        "resource_state": 2,
+        "name": "Folsom - 3rd to Hawth uphill past light",
+        "activity_type": "Ride",
+        "distance": 164.1,
+        "average_grade": 2.6,
+        "maximum_grade": 6.9,
+        "elevation_high": 7.8,
+        "elevation_low": 3.6,
+        "start_latlng": [
+          37.783695,
+          -122.398912
+        ],
+        "end_latlng": [
+          37.78475,
+          -122.397605
+        ],
+        "start_latitude": 37.783695,
+        "start_longitude": -122.398912,
+        "end_latitude": 37.78475,
+        "end_longitude": -122.397605,
+        "climb_category": 0,
+        "city": "San Francisco",
+        "state": "CA",
+        "country": "United States",
+        "private": false,
+        "hazardous": false,
+        "starred": false
+      },
+      "kom_rank": null,
+      "pr_rank": null,
+      "achievements": [],
+      "hidden": false
+    }
+  ],
+  "partner_logo_url": null,
+  "photos": {
+    "primary": null,
+    "count": 0
+  },
+  "device_name": "Strava iPhone App",
+  "embed_token": "d1b14e3a8dc93c1772dff7dde9d3c8323057f5fc"
+}

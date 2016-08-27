@@ -72,8 +72,7 @@ public extension Strava {
             }
         }
         else {
-            let userInfo = [NSLocalizedDescriptionKey : "Unable to create Athlete"]
-            let error = NSError(domain: "Athlete Error", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: userInfo)
+            let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(athlete: nil, error: error)
             }
@@ -88,8 +87,7 @@ public extension Strava {
             }
         }
         else {
-            let userInfo = [NSLocalizedDescriptionKey : "Unable to create Stats"]
-            let error = NSError(domain: "Stats Error", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: userInfo)
+            let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(stats: nil, error: error)
             }

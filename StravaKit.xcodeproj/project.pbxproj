@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2655C56D1D711EEE00715ADE /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56C1D711EEE00715ADE /* activity-good.json */; };
+		2655C56F1D711F3000715ADE /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56E1D711F3000715ADE /* activity-bad.json */; };
+		2655C5711D71210500715ADE /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5701D71210500715ADE /* activities-following.json */; };
 		26AEBF671D664A2E00481015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBF661D664A2E00481015 /* AppDelegate.swift */; };
 		26AEBF6C1D664A2E00481015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6A1D664A2E00481015 /* Main.storyboard */; };
 		26AEBF6E1D664A2E00481015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6D1D664A2E00481015 /* Assets.xcassets */; };
@@ -62,6 +65,14 @@
 		26C92C391D6CBA9600C5D491 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
 		26C92C3A1D6CBAB100C5D491 /* JSONRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C181D6C028000C5D491 /* JSONRequestor.swift */; };
 		26C92C3B1D6CBAB100C5D491 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C211D6C0E6700C5D491 /* JSONLoader.swift */; };
+		26F521DF1D70D4DE00EB4162 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521DE1D70D4DE00EB4162 /* Map.swift */; };
+		26F521E11D70D65D00EB4162 /* Polyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521E01D70D65D00EB4162 /* Polyline.swift */; };
+		26F521E31D70DA9300EB4162 /* PolylineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521E21D70DA9300EB4162 /* PolylineTests.swift */; };
+		26F521E51D70DC6200EB4162 /* polylines.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E41D70DC6200EB4162 /* polylines.json */; };
+		26F521E71D70EAE700EB4162 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521E61D70EAE700EB4162 /* Photo.swift */; };
+		26F521E91D710BC600EB4162 /* photo-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E81D710BC600EB4162 /* photo-light.json */; };
+		26F521EB1D710BF000EB4162 /* photo-heavy.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521EA1D710BF000EB4162 /* photo-heavy.json */; };
+		26F521ED1D710C6700EB4162 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521EC1D710C6700EB4162 /* PhotoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +121,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2655C56C1D711EEE00715ADE /* activity-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-good.json"; sourceTree = "<group>"; };
+		2655C56E1D711F3000715ADE /* activity-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-bad.json"; sourceTree = "<group>"; };
+		2655C5701D71210500715ADE /* activities-following.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activities-following.json"; sourceTree = "<group>"; };
 		26AEBF631D664A2E00481015 /* StravaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AEBF661D664A2E00481015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AEBF6B1D664A2E00481015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +171,14 @@
 		26C92C251D6C11D900C5D491 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		26C92C271D6C163700C5D491 /* KeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainTests.swift; sourceTree = "<group>"; };
 		26C92C291D6C2E3000C5D491 /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
+		26F521DE1D70D4DE00EB4162 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		26F521E01D70D65D00EB4162 /* Polyline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polyline.swift; sourceTree = "<group>"; };
+		26F521E21D70DA9300EB4162 /* PolylineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolylineTests.swift; sourceTree = "<group>"; };
+		26F521E41D70DC6200EB4162 /* polylines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = polylines.json; sourceTree = "<group>"; };
+		26F521E61D70EAE700EB4162 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		26F521E81D710BC600EB4162 /* photo-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "photo-light.json"; sourceTree = "<group>"; };
+		26F521EA1D710BF000EB4162 /* photo-heavy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "photo-heavy.json"; sourceTree = "<group>"; };
+		26F521EC1D710C6700EB4162 /* PhotoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +289,8 @@
 				26C92BFF1D6B853F00C5D491 /* StravaStatsTests.swift */,
 				26C92C121D6BF42C00C5D491 /* StravaActivityTests.swift */,
 				26C92C271D6C163700C5D491 /* KeychainTests.swift */,
+				26F521E21D70DA9300EB4162 /* PolylineTests.swift */,
+				26F521EC1D710C6700EB4162 /* PhotoTests.swift */,
 			);
 			path = StravaKitTests;
 			sourceTree = "<group>";
@@ -277,14 +301,20 @@
 				26C92BF31D6ADB8300C5D491 /* athlete-other.json */,
 				26AEBFC61D6AB4E500481015 /* athlete-good.json */,
 				26AEBFC71D6AB4E500481015 /* athlete-bad.json */,
-				26C92BFD1D6B7E9900C5D491 /* stats-good.json */,
-				26C92C011D6B85B000C5D491 /* stats-bad.json */,
 				26C92C0E1D6BE4CC00C5D491 /* activities-good.json */,
 				26C92C141D6BF50F00C5D491 /* activities-bad.json */,
+				2655C56C1D711EEE00715ADE /* activity-good.json */,
+				2655C56E1D711F3000715ADE /* activity-bad.json */,
+				2655C5701D71210500715ADE /* activities-following.json */,
+				26C92BFD1D6B7E9900C5D491 /* stats-good.json */,
+				26C92C011D6B85B000C5D491 /* stats-bad.json */,
 				26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */,
 				26C92C231D6C111C00C5D491 /* exchange-token-bad.json */,
 				26C92C251D6C11D900C5D491 /* empty.json */,
 				26C92C291D6C2E3000C5D491 /* invalid.json */,
+				26F521E41D70DC6200EB4162 /* polylines.json */,
+				26F521E81D710BC600EB4162 /* photo-light.json */,
+				26F521EA1D710BF000EB4162 /* photo-heavy.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -294,6 +324,7 @@
 			children = (
 				26C92C051D6BDCF200C5D491 /* Keychain.swift */,
 				26C92C161D6BFF6D00C5D491 /* Requestor.swift */,
+				26F521E01D70D65D00EB4162 /* Polyline.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -305,6 +336,8 @@
 				26C92C0A1D6BDE6700C5D491 /* Stats.swift */,
 				26C92C081D6BDE5500C5D491 /* StatsDetail.swift */,
 				26C92C101D6BE4DB00C5D491 /* Activity.swift */,
+				26F521DE1D70D4DE00EB4162 /* Map.swift */,
+				26F521E61D70EAE700EB4162 /* Photo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -498,11 +531,17 @@
 				26C92BFE1D6B7E9900C5D491 /* stats-good.json in Resources */,
 				26C92C2A1D6C2E3000C5D491 /* invalid.json in Resources */,
 				26C92C0F1D6BE4CC00C5D491 /* activities-good.json in Resources */,
+				26F521E91D710BC600EB4162 /* photo-light.json in Resources */,
 				26AEBFC81D6AB4E500481015 /* athlete-good.json in Resources */,
 				26C92C241D6C111C00C5D491 /* exchange-token-bad.json in Resources */,
 				26C92C201D6C0CFF00C5D491 /* exchange-token-good.json in Resources */,
 				26AEBFC91D6AB4E500481015 /* athlete-bad.json in Resources */,
+				2655C56F1D711F3000715ADE /* activity-bad.json in Resources */,
+				26F521E51D70DC6200EB4162 /* polylines.json in Resources */,
+				2655C5711D71210500715ADE /* activities-following.json in Resources */,
+				2655C56D1D711EEE00715ADE /* activity-good.json in Resources */,
 				26C92C021D6B85B000C5D491 /* stats-bad.json in Resources */,
+				26F521EB1D710BF000EB4162 /* photo-heavy.json in Resources */,
 				26C92BF41D6ADB8300C5D491 /* athlete-other.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F521E71D70EAE700EB4162 /* Photo.swift in Sources */,
 				26C92C0B1D6BDE6700C5D491 /* Stats.swift in Sources */,
 				26C92BF61D6B7B2B00C5D491 /* StravaActivity.swift in Sources */,
 				26C92BFA1D6B7B4B00C5D491 /* StravaClub.swift in Sources */,
@@ -543,6 +583,8 @@
 				26C92C0D1D6BDE7800C5D491 /* Athlete.swift in Sources */,
 				26C92C171D6BFF6D00C5D491 /* Requestor.swift in Sources */,
 				26C92C061D6BDCF200C5D491 /* Keychain.swift in Sources */,
+				26F521E11D70D65D00EB4162 /* Polyline.swift in Sources */,
+				26F521DF1D70D4DE00EB4162 /* Map.swift in Sources */,
 				26C92BF21D6ADA2200C5D491 /* StravaAthlete.swift in Sources */,
 				26C92BF81D6B7B3C00C5D491 /* StravaSegment.swift in Sources */,
 				26AEBFAA1D664D3600481015 /* Strava.swift in Sources */,
@@ -555,6 +597,8 @@
 			files = (
 				26C92C1C1D6C063E00C5D491 /* StravaOAuthTests.swift in Sources */,
 				26C92C191D6C028000C5D491 /* JSONRequestor.swift in Sources */,
+				26F521ED1D710C6700EB4162 /* PhotoTests.swift in Sources */,
+				26F521E31D70DA9300EB4162 /* PolylineTests.swift in Sources */,
 				26C92C001D6B853F00C5D491 /* StravaStatsTests.swift in Sources */,
 				26C92C131D6BF42C00C5D491 /* StravaActivityTests.swift in Sources */,
 				26AEBFC51D6AB16000481015 /* StravaAthleteTests.swift in Sources */,

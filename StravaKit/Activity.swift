@@ -35,9 +35,7 @@ public struct Activity {
     public let commentCount: Int
     public let athleteCount: Int
     public let photoCount: Int
-    public let mapId: String
-    public let mapSummaryPolyline: String
-    public let mapResourceState: Int
+    public let map: Map
     public let trainer: Bool
     public let commute: Bool
     public let manual: Bool
@@ -83,9 +81,7 @@ public struct Activity {
             let athleteCount = dictionary["athlete_count"] as? Int,
             let photoCount = dictionary["photo_count"] as? Int,
             let mapDictionary = dictionary["map"] as? JSONDictionary,
-            let mapId = mapDictionary["id"] as? String,
-            let mapSummaryPolyline = mapDictionary["summary_polyline"] as? String,
-            let mapResourceState = mapDictionary["resource_state"] as? Int,
+            let map = Map(dictionary: mapDictionary),
             let trainer = dictionary["trainer"] as? Bool,
             let commute = dictionary["commute"] as? Bool,
             let manual = dictionary["manual"] as? Bool,
@@ -126,9 +122,7 @@ public struct Activity {
             self.commentCount = commentCount
             self.athleteCount = athleteCount
             self.photoCount = photoCount
-            self.mapId = mapId
-            self.mapSummaryPolyline = mapSummaryPolyline
-            self.mapResourceState = mapResourceState
+            self.map = map
             self.trainer = trainer
             self.commute = commute
             self.manual = manual

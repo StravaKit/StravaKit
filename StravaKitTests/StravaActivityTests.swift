@@ -21,6 +21,7 @@ class StravaActivityTests: XCTestCase {
 
         let activities = Activity.activities(dictionaries)
         XCTAssertNotNil(activities)
+        XCTAssertNotNil(activities?.count == dictionaries.count)
 
         if let activity = activities?.first {
             let startCoordinate = activity.startCoordinate
@@ -51,7 +52,6 @@ class StravaActivityTests: XCTestCase {
         XCTAssertNil(activities)
     }
 
-
     func testActivityCreationFromEmptyDictionary() {
         // required values are missing from the JSON file
         guard let dictionary = JSONLoader.sharedInstance.loadJSON("empty") as? JSONDictionary else {
@@ -62,6 +62,129 @@ class StravaActivityTests: XCTestCase {
         let activity = Activity(dictionary: dictionary)
         XCTAssertNil(activity)
     }
+
+    func testGetActivitiesGood() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("activities-good")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getActivities() { (activities, error) in
+            XCTAssertNotNil(activities)
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetActivitiesBad() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("activities-bad")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getActivities() { (activities, error) in
+            XCTAssertNotNil(activities)
+            XCTAssertTrue(activities?.count == 0)
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetActivityGood() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("activity-good")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getActivity(1) { (activity, error) in
+            XCTAssertNotNil(activity)
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetActivityBad() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("activity-bad")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getActivity(1) { (activity, error) in
+            XCTAssertNil(activity)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetFollowingActivitiesGood() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("activities-following")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getFollowingActivities() { (activities, error) in
+            XCTAssertNotNil(activities)
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetFollowingActivitiesBad() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("empty")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getFollowingActivities() { (activities, error) in
+            XCTAssertNotNil(activities)
+            XCTAssertTrue(activities?.count == 0)
+            XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
 
     // MARK: - Private Functions -
 

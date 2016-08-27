@@ -18,6 +18,7 @@ public typealias JSONArray = [JSONDictionary]
 public typealias ParamsDictionary = [String : AnyObject]
 
 public let StravaBaseURL = "https://www.strava.com"
+public let StravaErrorDomain = "StravaKit"
 
 public enum HTTPMethod: String {
     case GET = "GET"
@@ -69,6 +70,12 @@ public class Strava {
     }
 
     // MARK: - Internal Functions -
+
+    internal static func error(code: StravaErrorCode, reason: String) -> NSError {
+        let userInfo: [String : String] = [NSLocalizedDescriptionKey : reason]
+        let error = NSError(domain: StravaErrorDomain, code: code.rawValue, userInfo: userInfo)
+        return error
+    }
 
     internal static func urlWithString(string: String?, parameters: JSONDictionary?) -> NSURL? {
         guard let string = string else {

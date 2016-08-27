@@ -31,7 +31,8 @@ public class DefaultRequestor : Requestor {
 
                 return processRequest(request, authenticated: authenticated, completionHandler: completionHandler)
             } catch {
-                completionHandler?(response: nil, error: NSError(domain: "Body JSON Serialization Failed", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: nil))
+                let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
+                completionHandler?(response: nil, error: error)
                 return nil
             }
         }
@@ -45,7 +46,7 @@ public class DefaultRequestor : Requestor {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         if authenticated {
             guard let accessToken = Strava.sharedInstance.accessToken else {
-                let error = NSError(domain: "No Access Token", code: StravaErrorCode.NoAccessToken.rawValue, userInfo: nil)
+                let error = Strava.error(.NoAccessToken, reason: "No Access Token")
                 completionHandler?(response: nil, error: error)
                 return nil
             }
@@ -61,12 +62,12 @@ public class DefaultRequestor : Requestor {
                         let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
                         completionHandler?(response: response, error: error)
                     } catch {
-                        let error = NSError(domain: "Response JSON Serialization Failed", code: StravaErrorCode.InvalidResponse.rawValue, userInfo: nil)
+                        let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
                         completionHandler?(response: nil, error: error)
                     }
                 }
             } else {
-                let error = NSError(domain: "No Data", code: StravaErrorCode.NoResponse.rawValue, userInfo: nil)
+                let error = Strava.error(.NoResponse, reason: "No Response")
                 completionHandler?(response: nil, error: error)
             }
         }
