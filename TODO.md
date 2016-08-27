@@ -4,13 +4,17 @@
    1. ~~Make requests testable~~
    1. ~~Test calls to API endpoints~~
    1. ~~Increase code coverage~~
+1. Add support to use as a dependency
+   1. CocoaPods
+   1. Carthage   
 1. Implement full API
    1. ~~/v3/oauth~~
    1. ~~Implement secure access data storage~~
    1. ~~/v3/athlete~~
    1. ~~/v3/athletes/:id~~
-   1. /v3/activities/:id
-   1. /v3/activities/:id/streams
+   1. ~~/v3/athlete/activities/~~
+   1. ~~/v3/activities/:id~~
+   1. ~~/v3/activities/following~~
    1. /v3/clubs/:id
    1. /v3/segments/:id
    1. /v3/segments/:id/leaderboard
@@ -20,8 +24,9 @@
    1. ~~/v3/oauth~~
    1. ~~/v3/athlete~~
    1. ~~/v3/athletes/:id~~
+   1. /v3/athlete/activities/
    1. /v3/activities/:id
-   1. /v3/activities/:id/streams
+   1. /v3/activities/following
    1. /v3/clubs/:id
    1. /v3/segments/:id
    1. /v3/segments/:id/leaderboard
