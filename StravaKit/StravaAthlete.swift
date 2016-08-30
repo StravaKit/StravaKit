@@ -23,7 +23,9 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                completionHandler?(athlete: nil, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(athlete: nil, error: error)
+                }
                 return
             }
 
@@ -38,7 +40,9 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                completionHandler?(athlete: nil, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(athlete: nil, error: error)
+                }
                 return
             }
 
@@ -53,7 +57,9 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                completionHandler?(stats: nil, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(stats: nil, error: error)
+                }
                 return
             }
 
@@ -68,7 +74,9 @@ public extension Strava {
         if let dictionary = response as? JSONDictionary,
             let athlete = Athlete(dictionary: dictionary) {
             dispatch_async(dispatch_get_main_queue()) {
-                completionHandler?(athlete: athlete, error: nil)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(athlete: athlete, error: nil)
+                }
             }
         }
         else {

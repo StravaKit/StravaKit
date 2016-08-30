@@ -23,7 +23,9 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                completionHandler?(activities: nil, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(activities: nil, error: error)
+                }
                 return
             }
 
@@ -38,7 +40,9 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                completionHandler?(activity: nil, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(activity: nil, error: error)
+                }
                 return
             }
 
@@ -53,13 +57,17 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                completionHandler?(activities: nil, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(activities: nil, error: error)
+                }
                 return
             }
 
             handleActivitiesResponse(response, completionHandler: completionHandler)
         }
     }
+
+    // MARK: - Internal Functions -
 
     internal static func handleActivitiesResponse(response: AnyObject?, completionHandler: ((activities: [Activity]?, error: NSError?) -> ())?) {
         var activities: [Activity] = []

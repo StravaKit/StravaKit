@@ -24,7 +24,7 @@ class StravaAthleteTests: XCTestCase {
 
     func testAthleteCreationFromGoodDictionary() {
         // all required values are in the JSON file
-        guard let dictionary = athleteDictionary("athlete-good") else {
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("athlete-good") as? JSONDictionary else {
             XCTFail()
             return
         }
@@ -35,7 +35,7 @@ class StravaAthleteTests: XCTestCase {
 
     func testAthleteCreationFromBadDictionary() {
         // required values are missing from the JSON file
-        guard let dictionary = athleteDictionary("athlete-bad") else {
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("athlete-bad") as? JSONDictionary else {
             XCTFail()
             return
         }
@@ -46,7 +46,7 @@ class StravaAthleteTests: XCTestCase {
 
     func testAthleteDictionary() {
         // all required values are in the JSON file
-        guard let dictionary = athleteDictionary("athlete-good") else {
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("athlete-good") as? JSONDictionary else {
             XCTFail()
             return
         }
@@ -66,7 +66,7 @@ class StravaAthleteTests: XCTestCase {
 
     func testAthleteCreationFromOtherDictionary() {
         // other athlete JSON which is not as full
-        guard let dictionary = athleteDictionary("athlete-other") else {
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("athlete-other") as? JSONDictionary else {
             XCTFail()
             return
         }
@@ -192,17 +192,6 @@ class StravaAthleteTests: XCTestCase {
         let timeout: NSTimeInterval = 30
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
-        }
-    }
-
-    // MARK: - Private Functions -
-
-    private func athleteDictionary(name: String) -> JSONDictionary? {
-        if let json = JSONLoader.sharedInstance.loadJSON(name) as? JSONDictionary {
-            return json
-        }
-        else {
-            return nil
         }
     }
 

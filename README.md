@@ -65,16 +65,16 @@ If the URL which opened the app includes a code to use for getting an access tok
 ```swift
 internal func stravaAuthorizationCompleted(notification: NSNotification?) {
     self.safariViewController?.dismissViewControllerAnimated(true, completion: nil)
-    self.safariViewController = nil
-    if let userInfo = notification?.userInfo {
-        if let status = userInfo[StravaStatusKey] as? String {
-            if status == StravaStatusSuccessValue {
-                // TODO: change UI for authorized state
-            }
-            else if let error = userInfo[StravaErrorKey] as? NSError {
-                print("Error: \(error.localizedDescription)")
-            }
-        }
+    safariViewController = nil
+    guard let userInfo = notification?.userInfo,
+        let status = userInfo[StravaStatusKey] as? String else {
+        return
+    }
+    if status == StravaStatusSuccessValue {
+        self.statusLabel.text = "Authorization successful!"
+    }
+    else if let error = userInfo[StravaErrorKey] as? NSError {
+        print("Error: \(error.localizedDescription)")
     }
 }
 ```
@@ -85,7 +85,6 @@ Once the authorization steps have beenc completed successfully the access token 
 
 ```swift
 Strava.deauthorize { (success, error) in
-    self.refreshUI()
     if success {
         // TODO: change UI for authorized state
     }
@@ -148,6 +147,22 @@ Fetches activities for other athletes the current athlete is following.
 Strava.getFollowingActivities { (activities, error) in }
 ```
 
+### Get Club
+
+Fetches details of a club given the ID.
+
+```swift
+Strava.getClub(1) { (club, error) in }
+```
+
+### Get Clubs for Current Athlete
+
+Fetches clubs for the current athlete
+
+```swift
+Strava.getClubs { (clubs, error) in }
+```
+
 Not all endpoints have been implemented in StravaKit. See Contributions below.
 
 ## Contributions
@@ -161,7 +176,9 @@ If there is a feature that you feel is important and would like it implemented s
 
 ## Purpose and Goals
 
-The StravaKit framework is meanted to be a Swift implementation of a Strava API client. The goal is to make it fully functional so that it can be used to build any iOS or potentially Mac, Apple TV or watchOS app. Dependencies will be kept at a minimum. While StravaKit will be made available via CocoaPods and Carthage, it will not have any dependencies itself. It will also not load in UIKit so that it will be possible to use for developing a Mac app.
+The StravaKit framework is intended to be a Swift implementation of a Strava API client. The goal is to make it fully functional so that it can be used to build any iOS or potentially Mac, Apple TV or watchOS app. Dependencies will be kept at a minimum. While StravaKit will be made available via CocoaPods and Carthage, it will not have any dependencies itself. It will also not load in UIKit so that it will be possible to use for developing a Mac app.
+
+While StravaKit does store the the OAuth access token and the athlete profile which comes with in the Keychain, this framework does not provide other data store solutions. Either another entirely separate framework will be built on top of StravaKit or optional features will be defined as submodules 
 
 ## License
 

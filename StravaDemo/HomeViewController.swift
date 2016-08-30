@@ -137,20 +137,20 @@ class HomeViewController: UIViewController {
         safariViewController?.dismissViewControllerAnimated(true, completion: nil)
         safariViewController = nil
         refreshUI()
-        if let userInfo = notification?.userInfo {
-            if let status = userInfo[StravaStatusKey] as? String {
-                if status == StravaStatusSuccessValue {
-                    self.statusLabel.text = "Authorization successful!"
-                }
-                else if let error = userInfo[StravaErrorKey] as? NSError {
-                    print("Error: \(error.localizedDescription)")
-                }
-            }
+        guard let userInfo = notification?.userInfo,
+            let status = userInfo[StravaStatusKey] as? String else {
+            return
+        }
+        if status == StravaStatusSuccessValue {
+            self.statusLabel.text = "Authorization successful!"
+        }
+        else if let error = userInfo[StravaErrorKey] as? NSError {
+            print("Error: \(error.localizedDescription)")
         }
     }
 
     internal func runTests() {
-        let total: Int = 5
+        let total: Int = 7
 
         // reset test count
         testCount = 0
@@ -169,6 +169,12 @@ class HomeViewController: UIViewController {
             self.handleTestResult(success, total: total, error: error)
         }
         getFollowingActivities { (success, error) in
+            self.handleTestResult(success, total: total, error: error)
+        }
+        getClub { (success, error) in
+            self.handleTestResult(success, total: total, error: error)
+        }
+        getClubs { (success, error) in
             self.handleTestResult(success, total: total, error: error)
         }
     }
@@ -247,6 +253,28 @@ class HomeViewController: UIViewController {
     internal func getFollowingActivities(completionHandler: ((success: Bool, error: NSError?) -> ())) {
         Strava.getFollowingActivities { (activities, error) in
             if let _ = activities {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    internal func getClub(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getClub(1000) { (club, error) in
+            if let _ = club {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    internal func getClubs(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getClubs { (clubs, error) in
+            if let _ = clubs {
                 completionHandler(success: true, error: nil)
             }
             else if let error = error {

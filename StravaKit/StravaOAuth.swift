@@ -123,7 +123,9 @@ public extension Strava {
         guard let clientId = sharedInstance.clientId,
             clientSecret = sharedInstance.clientSecret else {
                 let error = Strava.error(.MissingCredentials, reason: "Missing Credentials")
-                completionHandler?(success: false, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(success: false, error: error)
+                }
                 return
         }
 
@@ -136,7 +138,9 @@ public extension Strava {
 
         request(.POST, authenticated: false, path: path, params: params) { (response, error) in
             if let error = error {
-                completionHandler?(success: false, error: error)
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(success: false, error: error)
+                }
                 return
             }
             
