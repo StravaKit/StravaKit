@@ -197,6 +197,56 @@ class StravaDemoTests: XCTestCase {
         }
     }
 
+    func testGetClub() {
+        let expectation = self.expectationWithDescription("UI")
+
+        let requestor = JSONRequestor()
+        requestor.response = JSONLoader.sharedInstance.loadJSON("club-good")
+        requestor.error = nil
+        Strava.sharedInstance.alternateRequestor = requestor
+        Strava.sharedInstance.accessToken = AccessToken
+
+        guard let vc = getHomeViewController() else {
+            XCTFail()
+            return
+        }
+
+        vc.getClub { (success, error) in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetClubs() {
+        let expectation = self.expectationWithDescription("UI")
+
+        let requestor = JSONRequestor()
+        requestor.response = JSONLoader.sharedInstance.loadJSON("clubs-good")
+        requestor.error = nil
+        Strava.sharedInstance.alternateRequestor = requestor
+        Strava.sharedInstance.accessToken = AccessToken
+
+        guard let vc = getHomeViewController() else {
+            XCTFail()
+            return
+        }
+
+        vc.getClubs { (success, error) in
+            XCTAssertTrue(success)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
     // MARK: - Private Functions -
 
     private func getHomeViewController() -> HomeViewController? {

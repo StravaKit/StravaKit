@@ -16,7 +16,7 @@ public struct Club {
     let profileURL: NSURL
     let coverPhotoURL: NSURL
     let coverPhotoSmallURL: NSURL
-    let clubDescription: String
+    let clubDescription: String?
     let clubType: String
     let sportType: String
     let city: String
@@ -26,10 +26,10 @@ public struct Club {
     let memberCount: Int
     let featured: Bool
     let verified: Bool
-    let membership: String
-    let admin: Bool
-    let owner: Bool
-    let followingCount: Int
+    let membership: String?
+    let admin: Bool?
+    let owner: Bool?
+    let followingCount: Int?
     let url: String
 
     init?(dictionary: JSONDictionary) {
@@ -44,7 +44,6 @@ public struct Club {
             let coverPhotoURL = NSURL(string: coverPhoto),
             let coverPhotoSmall = dictionary["cover_photo_small"] as? String,
             let coverPhotoSmallURL = NSURL(string: coverPhotoSmall),
-            let clubDescription = dictionary["description"] as? String,
             let clubType = dictionary["club_type"] as? String,
             let sportType = dictionary["sport_type"] as? String,
             let city = dictionary["city"] as? String,
@@ -54,10 +53,6 @@ public struct Club {
             let memberCount = dictionary["member_count"] as? Int,
             let featured = dictionary["featured"] as? Bool,
             let verified = dictionary["verified"] as? Bool,
-            let membership = dictionary["membership"] as? String,
-            let admin = dictionary["admin"] as? Bool,
-            let owner = dictionary["owner"] as? Bool,
-            let followingCount = dictionary["following_count"] as? Int,
             let url = dictionary["url"] as? String {
             self.clubId = clubId
             self.resourceState = resourceState
@@ -66,7 +61,6 @@ public struct Club {
             self.profileURL = profileURL
             self.coverPhotoURL = coverPhotoURL
             self.coverPhotoSmallURL = coverPhotoSmallURL
-            self.clubDescription = clubDescription
             self.clubType = clubType
             self.sportType = sportType
             self.city = city
@@ -76,11 +70,14 @@ public struct Club {
             self.memberCount = memberCount
             self.featured = featured
             self.verified = verified
-            self.membership = membership
-            self.admin = admin
-            self.owner = owner
-            self.followingCount = followingCount
             self.url = url
+
+            // Optional properties
+            self.clubDescription = dictionary["description"] as? String
+            self.membership = dictionary["membership"] as? String
+            self.admin = dictionary["admin"] as? Bool
+            self.owner = dictionary["owner"] as? Bool
+            self.followingCount = dictionary["following_count"] as? Int
         }
         else {
             return nil

@@ -36,6 +36,8 @@
 		2655C5EF1D75030500715ADE /* club-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5E91D75027900715ADE /* club-good.json */; };
 		2655C5F21D75073D00715ADE /* clubs-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F01D75073D00715ADE /* clubs-bad.json */; };
 		2655C5F31D75073D00715ADE /* clubs-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F11D75073D00715ADE /* clubs-good.json */; };
+		2655C5F41D750D6200715ADE /* clubs-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F01D75073D00715ADE /* clubs-bad.json */; };
+		2655C5F51D750D6200715ADE /* clubs-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F11D75073D00715ADE /* clubs-good.json */; };
 		26AEBF671D664A2E00481015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBF661D664A2E00481015 /* AppDelegate.swift */; };
 		26AEBF6C1D664A2E00481015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6A1D664A2E00481015 /* Main.storyboard */; };
 		26AEBF6E1D664A2E00481015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6D1D664A2E00481015 /* Assets.xcassets */; };
@@ -549,6 +551,8 @@
 				2655C5B11D7224A500715ADE /* exchange-token-good.json in Resources */,
 				2655C5AC1D7224A500715ADE /* activity-good.json in Resources */,
 				2655C5EF1D75030500715ADE /* club-good.json in Resources */,
+				2655C5F41D750D6200715ADE /* clubs-bad.json in Resources */,
+				2655C5F51D750D6200715ADE /* clubs-good.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
