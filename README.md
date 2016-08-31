@@ -180,7 +180,11 @@ If there is a feature that you feel is important and would like it implemented s
 
 The StravaKit framework is intended to be a Swift implementation of a Strava API client. The goal is to make it fully functional so that it can be used to build any iOS or potentially Mac, Apple TV or watchOS app. Dependencies will be kept at a minimum. While StravaKit will be made available via CocoaPods and Carthage, it will not have any dependencies itself. It will also not load in UIKit so that it will be possible to use for developing a Mac app.
 
-While StravaKit does store the the OAuth access token and the athlete profile which comes with in the Keychain, this framework does not provide other data store solutions. Either another entirely separate framework will be built on top of StravaKit or optional features will be defined as submodules 
+StravaKit will also track with the current version of Swift once 3.0 is released without any priority for older versions of Swift or Objective-C and iOS releases. If an app requires older versions of iOS or Objective-C it is recommended to use [FRDStravaClient](https://github.com/sebastienwindal/FRDStravaClient) which is built with Objective-C and will be more appropriate for backward compatibility.
+
+## Architecture
+
+The response returned when authorizing access to the Strava API the access token and the athlete profile is returned. While these values are stored in the Keychain, this framework does not provide other data store solutions. Either another entirely separate framework will be built on top of StravaKit or optional features will be defined as submodules. With CocoaPods it is possible to define subspecs. For Carthage and SPM submodules may not be supported currently. It may make most sense to create extension frameworks which work with StravaKit. A data store solution would use StravaKit and wrap all interactions with the API so the the app and view controllers would not directly interact with the API and would instead submit requests to the data store for what is needed and get a deferred result when the data is ready, either from locally stored data which is still fresh or after pulling a fresh copy from the API.
 
 ## License
 
