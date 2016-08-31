@@ -6,7 +6,7 @@
 //  Copyright © 2016 SmallSharpTools LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for StravaKit.
 FOUNDATION_EXPORT double StravaKitVersionNumber;

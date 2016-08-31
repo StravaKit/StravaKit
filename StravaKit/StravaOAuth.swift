@@ -10,7 +10,6 @@
 // Docs: http://strava.github.io/api/v3/oauth/
 
 import Foundation
-import SafariServices
 
 public let StravaAuthorizationCompletedNotification : String = "StravaAuthorizationCompleted"
 

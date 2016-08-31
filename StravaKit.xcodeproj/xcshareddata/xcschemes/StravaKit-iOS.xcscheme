@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "26AEBF621D664A2E00481015"
-               BuildableName = "StravaDemo.app"
-               BlueprintName = "StravaDemo"
+               BlueprintIdentifier = "26AEBF8A1D664B9500481015"
+               BuildableName = "StravaKit.framework"
+               BlueprintName = "StravaKit-iOS"
                ReferencedContainer = "container:StravaKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,39 +26,9 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "26AEBF761D664A2E00481015"
-               BuildableName = "StravaDemoTests.xctest"
-               BlueprintName = "StravaDemoTests"
-               ReferencedContainer = "container:StravaKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "26AEBF931D664B9500481015"
-               BuildableName = "StravaKitTests-iOS.xctest"
-               BlueprintName = "StravaKitTests-iOS"
-               ReferencedContainer = "container:StravaKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26AEBF621D664A2E00481015"
-            BuildableName = "StravaDemo.app"
-            BlueprintName = "StravaDemo"
-            ReferencedContainer = "container:StravaKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -72,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26AEBF621D664A2E00481015"
-            BuildableName = "StravaDemo.app"
-            BlueprintName = "StravaDemo"
+            BlueprintIdentifier = "26AEBF8A1D664B9500481015"
+            BuildableName = "StravaKit.framework"
+            BlueprintName = "StravaKit-iOS"
             ReferencedContainer = "container:StravaKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -91,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "26AEBF621D664A2E00481015"
-            BuildableName = "StravaDemo.app"
-            BlueprintName = "StravaDemo"
+            BlueprintIdentifier = "26AEBF8A1D664B9500481015"
+            BuildableName = "StravaKit.framework"
+            BlueprintName = "StravaKit-iOS"
             ReferencedContainer = "container:StravaKit.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

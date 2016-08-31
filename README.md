@@ -4,6 +4,8 @@ API client for Strava written in Swift.
 
 ![](Strava.png)
 
+See [CHANGELOG](CHANGELLOG.md) for updates.
+
 ## CocoaPods
 
 [StravaKit](https://github.com/brennanMKE/StravaKit) is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
