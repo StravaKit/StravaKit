@@ -11,7 +11,7 @@ See [CHANGELOG](CHANGELLOG.md) for updates.
 [StravaKit](https://github.com/brennanMKE/StravaKit) is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'StravaKit', '~> 0.1'
+pod 'StravaKit', '~> 0.2'
 ```
 
 ## Carthage
@@ -21,7 +21,7 @@ StravaKit can also be built using [Carthage](https://github.com/carthage/carthag
 Add the following line to your Cartfile:
 
 ```sh
-github "brennanMKE/StravaKit" ~> 0.1
+github "brennanMKE/StravaKit" ~> 0.2
 ```
 
 ## Docs
