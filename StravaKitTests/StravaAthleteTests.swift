@@ -113,7 +113,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 3
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -133,7 +133,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 3
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -153,7 +153,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 3
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -173,7 +173,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 3
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -193,7 +193,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 3
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -213,7 +213,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 30
+        let timeout: NSTimeInterval = 150
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -234,7 +234,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 3
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -255,7 +255,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 3
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -275,7 +275,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 3
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
