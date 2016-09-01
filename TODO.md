@@ -1,5 +1,7 @@
 # TODO
 
+Note: Initially only the GET requests which are accessible from the Public scope will be implemented. Later the ability to use other scopes will be supported. 
+
 1. ~~Add test automation~~
    1. ~~Make requests testable~~
    1. ~~Test calls to API endpoints~~
@@ -21,7 +23,7 @@
    1. ~~/v3/segments/:id~~
    1. ~~/v3/segments/:id/leaderboard~~
    1. ~~/v3/segments/starred~~
-   1. /v3/segments/:id/all_efforts
+   1. ~~/v3/segments/:id/all_efforts~~
    1. /v3/uploads
    1. ~~Add support for paging for all paged resources~~
 1. Implement full demo app (live integration testing)
@@ -36,7 +38,7 @@
    1. ~~/v3/segments/:id~~
    1. ~~/v3/segments/:id/leaderboard~~
    1. ~~/v3/segments/starred~~
-   1. /v3/segments/:id/all_efforts
+   1. ~~/v3/segments/:id/all_efforts~~
    1. /v3/uploads
 1. Review performance
    1. implement rate limiting support (retry logic)
