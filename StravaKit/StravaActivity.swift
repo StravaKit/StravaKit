@@ -52,10 +52,18 @@ public extension Strava {
 
     // Gets following activities (friends)
     // Docs: http://strava.github.io/api/v3/activities/#get-feed
-    static func getFollowingActivities(completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    static func getFollowingActivities(page: Page? = nil, completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = ActivityResourcePath.Following.rawValue
 
-        return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
+        var params: ParamsDictionary? = nil
+        if let page = page {
+            params = [
+                PageKey: page.page,
+                PerPageKey: page.perPage
+            ]
+        }
+
+        return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
                 dispatch_async(dispatch_get_main_queue()) {
                     completionHandler?(activities: nil, error: error)

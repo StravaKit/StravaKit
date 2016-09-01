@@ -11,6 +11,7 @@ import Foundation
 internal enum AthleteResourcePath: String {
     case Athlete = "/api/v3/athlete"
     case Athletes = "/api/v3/athletes/:id"
+    case Friends = "/api/v3/athlete/friends"
     case Stats = "/api/v3/athletes/:id/stats"
 }
 
@@ -68,7 +69,49 @@ public extension Strava {
 
     }
 
+    // Gets friends of current athlete
+    // Docs: http://strava.github.io/api/v3/follow/#friends
+    static func getAthleteFriends(page: Page? = nil, completionHandler: ((athletes: [Athlete]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+        let path = AthleteResourcePath.Friends.rawValue
+
+        var params: ParamsDictionary? = nil
+        if let page = page {
+            params = [
+                PageKey: page.page,
+                PerPageKey: page.perPage
+            ]
+        }
+
+        return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
+            if let error = error {
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(athletes: nil, error: error)
+                }
+                return
+            }
+
+            handleAthleteFriendsResponse(response, completionHandler: completionHandler)
+        }
+    }
+
     // MARK: - Internal Functions -
+
+    internal static func handleAthleteFriendsResponse(response: AnyObject?, completionHandler: ((athletes: [Athlete]?, error: NSError?) -> ())?) {
+        if let dictionaries = response as? JSONArray {
+            let athletes = Athlete.athletes(dictionaries)
+            dispatch_async(dispatch_get_main_queue()) {
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(athletes: athletes, error: nil)
+                }
+            }
+        }
+        else {
+            let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler?(athletes: nil, error: error)
+            }
+        }
+    }
 
     internal static func handleAthleteResponse(response: AnyObject?, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) {
         if let dictionary = response as? JSONDictionary,

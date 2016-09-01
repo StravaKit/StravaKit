@@ -75,6 +75,30 @@ class StravaAthleteTests: XCTestCase {
         XCTAssertNotNil(athlete)
     }
 
+    func testAthleteFriendsCreationFromGoodDictionary() {
+        // all required values are in the JSON file
+        guard let dictionaries = JSONLoader.sharedInstance.loadJSON("athlete-friends-good") as? JSONArray else {
+            XCTFail()
+            return
+        }
+
+        let athletes = Athlete.athletes(dictionaries)
+        XCTAssertNotNil(athletes)
+        XCTAssertTrue(athletes.count == 3)
+    }
+
+    func testAthleteFriendsCreationFromBadDictionary() {
+        // required values are missing from the JSON file
+        guard let dictionaries = JSONLoader.sharedInstance.loadJSON("athlete-friends-bad") as? JSONArray else {
+            XCTFail()
+            return
+        }
+
+        let athletes = Athlete.athletes(dictionaries)
+        XCTAssertNotNil(athletes)
+        XCTAssertTrue(athletes.count == 0)
+    }
+
     func testGetAthleteGood() {
         let expectation = self.expectationWithDescription("API Call")
 
@@ -190,6 +214,68 @@ class StravaAthleteTests: XCTestCase {
         }
 
         let timeout: NSTimeInterval = 30
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetAthleteFriendsGood() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("athlete-friends-good")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getAthleteFriends() { (athletes, error) in
+            XCTAssertNotNil(athletes)
+            XCTAssertNil(error)
+            XCTAssertTrue(athletes?.count == 3)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetAthleteFriendsBad() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("athlete-friends-bad")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getAthleteFriends() { (athletes, error) in
+            XCTAssertNotNil(athletes)
+            XCTAssertNil(error)
+            XCTAssertTrue(athletes?.count == 0)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetAthleteFriendsWithError() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = nil
+        jsonRequestor.error = NSError(domain: "Testing", code: 500, userInfo: nil)
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getAthleteFriends() { (athletes, error) in
+            XCTAssertNil(athletes)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 3
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }

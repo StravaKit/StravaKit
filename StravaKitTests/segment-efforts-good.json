@@ -1,0 +1,179 @@
+[
+  {
+    "id": 7829345119,
+    "resource_state": 2,
+    "name": "Twin Peaks from Portola",
+    "activity": {
+      "id": 330458196,
+      "resource_state": 1
+    },
+    "athlete": {
+      "id": 8709,
+      "resource_state": 1
+    },
+    "elapsed_time": 366,
+    "moving_time": 366,
+    "start_date": "2005-11-06T22:37:49Z",
+    "start_date_local": "2005-11-06T14:37:49Z",
+    "distance": 1828.4,
+    "start_index": 799,
+    "end_index": 836,
+    "device_watts": false,
+    "average_watts": 266.3,
+    "segment": {
+      "id": 141491,
+      "resource_state": 2,
+      "name": "Twin Peaks from Portola",
+      "activity_type": "Ride",
+      "distance": 1892.49,
+      "average_grade": 4.3,
+      "maximum_grade": 11.3,
+      "elevation_high": 258.7,
+      "elevation_low": 172.7,
+      "start_latlng": [
+        37.7461255,
+        -122.4507595
+      ],
+      "end_latlng": [
+        37.7538588,
+        -122.4469306
+      ],
+      "start_latitude": 37.7461255,
+      "start_longitude": -122.4507595,
+      "end_latitude": 37.7538588,
+      "end_longitude": -122.4469306,
+      "climb_category": 1,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": true
+    },
+    "kom_rank": null,
+    "pr_rank": 3,
+    "achievements": [
+      {
+        "type_id": 3,
+        "type": "pr",
+        "rank": 3
+      }
+    ]
+  },
+  {
+    "id": 8165563,
+    "resource_state": 2,
+    "name": "Twin Peaks from Portola",
+    "activity": {
+      "id": 540350,
+      "resource_state": 1
+    },
+    "athlete": {
+      "id": 6427,
+      "resource_state": 1
+    },
+    "elapsed_time": 437,
+    "moving_time": 437,
+    "start_date": "2006-05-03T00:23:38Z",
+    "start_date_local": "2006-05-02T17:23:38Z",
+    "distance": 1869.14,
+    "start_index": 133,
+    "end_index": 182,
+    "device_watts": false,
+    "average_watts": 188.0,
+    "segment": {
+      "id": 141491,
+      "resource_state": 2,
+      "name": "Twin Peaks from Portola",
+      "activity_type": "Ride",
+      "distance": 1892.49,
+      "average_grade": 4.3,
+      "maximum_grade": 11.3,
+      "elevation_high": 258.7,
+      "elevation_low": 172.7,
+      "start_latlng": [
+        37.7461255,
+        -122.4507595
+      ],
+      "end_latlng": [
+        37.7538588,
+        -122.4469306
+      ],
+      "start_latitude": 37.7461255,
+      "start_longitude": -122.4507595,
+      "end_latitude": 37.7538588,
+      "end_longitude": -122.4469306,
+      "climb_category": 1,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": true
+    },
+    "kom_rank": null,
+    "pr_rank": null,
+    "achievements": []
+  },
+  {
+    "id": 8165634,
+    "resource_state": 2,
+    "name": "Twin Peaks from Portola",
+    "activity": {
+      "id": 540353,
+      "resource_state": 1
+    },
+    "athlete": {
+      "id": 6427,
+      "resource_state": 1
+    },
+    "elapsed_time": 437,
+    "moving_time": 437,
+    "start_date": "2006-05-03T01:23:38Z",
+    "start_date_local": "2006-05-02T18:23:38Z",
+    "distance": 1869.14,
+    "start_index": 133,
+    "end_index": 182,
+    "device_watts": false,
+    "average_watts": 188.0,
+    "segment": {
+      "id": 141491,
+      "resource_state": 2,
+      "name": "Twin Peaks from Portola",
+      "activity_type": "Ride",
+      "distance": 1892.49,
+      "average_grade": 4.3,
+      "maximum_grade": 11.3,
+      "elevation_high": 258.7,
+      "elevation_low": 172.7,
+      "start_latlng": [
+        37.7461255,
+        -122.4507595
+      ],
+      "end_latlng": [
+        37.7538588,
+        -122.4469306
+      ],
+      "start_latitude": 37.7461255,
+      "start_longitude": -122.4507595,
+      "end_latitude": 37.7538588,
+      "end_longitude": -122.4469306,
+      "climb_category": 1,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": true
+    },
+    "kom_rank": null,
+    "pr_rank": 2,
+    "achievements": [
+      {
+        "type_id": 3,
+        "type": "pr",
+        "rank": 2
+      }
+    ]
+   }
+]

@@ -178,5 +178,4 @@ class StravaClubTests: XCTestCase {
         }
     }
 
-
 }

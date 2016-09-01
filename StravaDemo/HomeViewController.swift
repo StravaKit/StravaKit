@@ -152,7 +152,7 @@ class HomeViewController: UIViewController {
 
     internal func runTests() {
         Strava.isDebugging = true
-        let total: Int = 11
+        let total: Int = 13
 
         // reset test count
         testCount = 0
@@ -163,6 +163,9 @@ class HomeViewController: UIViewController {
         }
         getAthleteByID { (success, error) in
             self.handleTestResult(success, total: total, name: "Get Athlete by ID", error: error)
+        }
+        getAthleteFriends { (success, error) in
+            self.handleTestResult(success, total: total, name: "Get Athlete Friends", error: error)
         }
         getStats { (success, error) in
             self.handleTestResult(success, total: total, name: "Get Stats", error: error)
@@ -189,6 +192,9 @@ class HomeViewController: UIViewController {
             self.handleTestResult(success, total: total, name: "Get Starred Segments", error: error)
         }
         getSegmentLeaderboard { (success, error) in
+            self.handleTestResult(success, total: total, name: "Get Segment Leaderboard", error: error)
+        }
+        getSegmentEfforts{ (success, error) in
             self.handleTestResult(success, total: total, name: "Get Segment Leaderboard", error: error)
         }
     }
@@ -228,6 +234,17 @@ class HomeViewController: UIViewController {
                 else if let error = error {
                     completionHandler(success: false, error: error)
                 }
+            }
+        }
+    }
+
+    internal func getAthleteFriends(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getAthleteFriends { (athletes, error) in
+            if let _ = athletes {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
             }
         }
     }
@@ -346,6 +363,17 @@ class HomeViewController: UIViewController {
     internal func getSegmentLeaderboard(completionHandler: ((success: Bool, error: NSError?) -> ())) {
         Strava.getSegmentLeaderboard(141491) { (leaderboard, error) in
             if let _ = leaderboard {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    internal func getSegmentEfforts(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getSegmentEfforts(141491) { (efforts, error) in
+            if let _ = efforts {
                 completionHandler(success: true, error: nil)
             }
             else if let error = error {

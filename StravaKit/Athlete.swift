@@ -71,7 +71,6 @@ public struct Athlete {
             let profileMediumImageURL = NSURL(string: profileMedium),
             let sex = dictionary["sex"] as? String,
             let premium = dictionary["premium"] as? Bool {
-
             self.athleteId = athleteId
             self.resourceState = resourceState
             self.firstName = firstName
@@ -108,6 +107,17 @@ public struct Athlete {
         else {
             return nil
         }
+    }
+
+    public static func athletes(dictionaries: JSONArray) -> [Athlete] {
+        var athletes: [Athlete] = []
+        for dictionary in dictionaries {
+            if let athlete = Athlete(dictionary: dictionary) {
+                athletes.append(athlete)
+            }
+        }
+
+        return athletes
     }
 
 }

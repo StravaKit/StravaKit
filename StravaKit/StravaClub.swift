@@ -34,10 +34,18 @@ public extension Strava {
 
     // Gets clubs for current athlete
     // Docs: http://strava.github.io/api/v3/clubs/#get-athletes
-    static func getClubs(completionHandler:((clubs: [Club]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    static func getClubs(page: Page? = nil, completionHandler:((clubs: [Club]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = ClubResourcePath.Clubs.rawValue
 
-        return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
+        var params: ParamsDictionary? = nil
+        if let page = page {
+            params = [
+                PageKey: page.page,
+                PerPageKey: page.perPage
+            ]
+        }
+
+        return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
                 dispatch_async(dispatch_get_main_queue()) {
                     completionHandler?(clubs: nil, error: error)

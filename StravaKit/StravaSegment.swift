@@ -37,11 +37,16 @@ public extension Strava {
 
     // Gets segments for a given map bounds
     // Docs: http://strava.github.io/api/v3/segments/#explore
-    static func getSegments(mapBounds: MapBounds, completionHandler:((segments: [Segment]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    static func getSegments(mapBounds: MapBounds, page: Page? = nil, completionHandler:((segments: [Segment]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = SegmentResourcePath.Segments.rawValue
-        let params: ParamsDictionary = [
+        var params: ParamsDictionary = [
             "bounds" : "\(mapBounds.coordinate1.latitude),\(mapBounds.coordinate1.longitude),\(mapBounds.coordinate2.latitude),\(mapBounds.coordinate2.longitude)"
         ]
+
+        if let page = page {
+            params[PageKey] = page.page
+            params[PerPageKey] = page.perPage
+        }
 
         return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
@@ -57,10 +62,18 @@ public extension Strava {
 
     // Gets starred segments for current athlete
     // Docs: http://strava.github.io/api/v3/segments/#starred
-    static func getStarredSegments(completionHandler:((segments: [Segment]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    static func getStarredSegments(page: Page? = nil, completionHandler:((segments: [Segment]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = SegmentResourcePath.StarredSegments.rawValue
 
-        return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
+        var params: ParamsDictionary? = nil
+        if let page = page {
+            params = [
+                PageKey: page.page,
+                PerPageKey: page.perPage
+            ]
+        }
+
+        return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
                 dispatch_async(dispatch_get_main_queue()) {
                     completionHandler?(segments: nil, error: error)
@@ -74,10 +87,18 @@ public extension Strava {
 
     // Gets leaderboard segments
     // Docs: http://strava.github.io/api/v3/segments/#leaderboard
-    static func getSegmentLeaderboard(segmentId: Int, completionHandler:((leaderboard: Leaderboard?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    static func getSegmentLeaderboard(segmentId: Int, page: Page? = nil, completionHandler:((leaderboard: Leaderboard?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = SegmentResourcePath.Leaderboard.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(segmentId))
 
-        return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
+        var params: ParamsDictionary? = nil
+        if let page = page {
+            params = [
+                PageKey: page.page,
+                PerPageKey: page.perPage
+            ]
+        }
+
+        return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
                 dispatch_async(dispatch_get_main_queue()) {
                     completionHandler?(leaderboard: nil, error: error)
@@ -86,6 +107,31 @@ public extension Strava {
             }
 
             handleSegmentLeaderboardResponse(response, completionHandler: completionHandler)
+        }
+    }
+
+    // Gets all efforts for a segment
+    // Docs: http://strava.github.io/api/v3/segments/#efforts
+    static func getSegmentEfforts(segmentId: Int, page: Page? = nil, completionHandler:((efforts: [SegmentEffort]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+        let path = SegmentResourcePath.AllEfforts.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(segmentId))
+
+        var params: ParamsDictionary? = nil
+        if let page = page {
+            params = [
+                PageKey: page.page,
+                PerPageKey: page.perPage
+            ]
+        }
+
+        return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
+            if let error = error {
+                dispatch_async(dispatch_get_main_queue()) {
+                    completionHandler?(efforts: nil, error: error)
+                }
+                return
+            }
+
+            handleSegmentEffortsResponse(response, completionHandler: completionHandler)
         }
     }
 
@@ -147,6 +193,21 @@ public extension Strava {
             dispatch_async(dispatch_get_main_queue()) {
                 let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
                 completionHandler?(leaderboard: nil, error: error)
+            }
+        }
+    }
+
+    internal static func handleSegmentEffortsResponse(response: AnyObject?, completionHandler:((efforts: [SegmentEffort]?, error: NSError?) -> ())?) {
+        if let dictionaries = response as? JSONArray {
+            let efforts = SegmentEffort.efforts(dictionaries)
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler?(efforts: efforts, error: nil)
+            }
+        }
+        else {
+            dispatch_async(dispatch_get_main_queue()) {
+                let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
+                completionHandler?(efforts: nil, error: error)
             }
         }
     }
