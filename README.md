@@ -117,6 +117,14 @@ Fetches an athlete profile using their ID.
 Strava.getAthlete(athleteId) { (athlete, error) in }
 ```
 
+### Get Athlete Friends
+
+Fetches friends of hte current athlete.
+
+```swift
+Strava.getAthleteFriends { (athletes, error) in }
+```
+
 ## Get Stats
 
 Fetches stats for the currently authorized athlete. 
