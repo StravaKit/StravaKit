@@ -1,18 +1,18 @@
 Pod::Spec.new do |s|
   s.name             = "StravaKit"
-  s.version          = "0.3.1"
+  s.version          = "0.3.2"
   s.summary          = "API client for Strava written in Swift."
   s.description      = "Strava framework for interacting with the Strava API."
   s.module_name      = "StravaKit"
   s.homepage         = "https://github.com/brennanMKE/StravaKit"
   s.license          = 'MIT'
   s.author           = { "Brennan Stehling" => "brennan@smallsharptools.com" }
-  s.source           = { :git => "https://github.com/brennanMKE/StravaKit.git", :tag => "v0.3.1" }
+  s.source           = { :git => "https://github.com/brennanMKE/StravaKit.git", :tag => "v0.3.2" }
   s.social_media_url = 'https://twitter.com/smallsharptools'
   s.ios.deployment_target = '9.0'
   s.source_files = 'StravaKit/*.swift'
   s.cocoapods_version = '>= 1.0'
-  s.platform = :ios
   s.ios.deployment_target = '9.0'
+  s.osx.deployment_target = '10.11'
   s.frameworks = 'Foundation', 'CoreLocation', 'Security', 'SafariServices'
 end
