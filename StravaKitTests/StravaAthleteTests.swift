@@ -213,7 +213,7 @@ class StravaAthleteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 150
+        let timeout: NSTimeInterval = 15
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
