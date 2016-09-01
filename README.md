@@ -4,7 +4,7 @@ API client for Strava written in Swift.
 
 ![](Strava.png)
 
-See [CHANGELOG](CHANGELOG.md) for updates.
+See [CHANGELOG](CHANGELOG.md) and [TODO](TODO.md) for completed features and future plans.
 
 ## CocoaPods
 
