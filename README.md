@@ -165,6 +165,38 @@ Fetches clubs for the current athlete
 Strava.getClubs { (clubs, error) in }
 ```
 
+### Get Segment Detail
+
+Fetches segment detail by ID
+
+```swift
+Strava.getSegment(1) { (segment, error) in }
+```
+
+### Get Segments in a bounded map area 
+
+Fetches segments within a bounding box
+
+```swift
+Strava.getSegments(mapBounds) { (segments, error) in }
+```
+
+### Get Starred Segments 
+
+Fetches segments the current athlete has starred
+
+```swift
+Strava.getStarredSegments() { (segments, error) in }
+```
+
+### Get Segment Leaderboard 
+
+Fetches leaderboard for a segment
+
+```swift
+Strava.getSegmentLeaderboard(1) { (leaderboard, error) in }
+```
+
 Not all endpoints have been implemented in StravaKit. See Contributions below.
 
 ## Contributions
