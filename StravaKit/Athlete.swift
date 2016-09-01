@@ -84,7 +84,7 @@ public struct Athlete {
             self.sex = sex
             self.premium = premium
 
-            // optional values
+            // Optional properties
             if let followerCount = dictionary["follower_count"] as? Int,
                 let friendCount = dictionary["friend_count"] as? Int,
                 let mutualFriendCount = dictionary["mutual_friend_count"] as? Int,

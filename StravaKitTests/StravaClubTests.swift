@@ -12,7 +12,7 @@ import XCTest
 
 class StravaClubTests: XCTestCase {
 
-    func testAthleteCreationFromGoodDictionary() {
+    func testClubCreationFromGoodDictionary() {
         // all required values are in the JSON file
         guard let dictionary = JSONLoader.sharedInstance.loadJSON("club-good") as? JSONDictionary else {
             XCTFail()
@@ -23,7 +23,7 @@ class StravaClubTests: XCTestCase {
         XCTAssertNotNil(club)
     }
 
-    func testAthleteCreationFromBadDictionary() {
+    func testClubCreationFromBadDictionary() {
         // required values are missing from the JSON file
         guard let dictionary = JSONLoader.sharedInstance.loadJSON("club-bad") as? JSONDictionary else {
             XCTFail()
@@ -34,6 +34,30 @@ class StravaClubTests: XCTestCase {
         XCTAssertNil(club)
     }
 
+    func testClubsCreationFromGoodDictionary() {
+        // all required values are in the JSON file
+        guard let dictionaries = JSONLoader.sharedInstance.loadJSON("clubs-good") as? JSONArray else {
+            XCTFail()
+            return
+        }
+
+        let clubs = Club.clubs(dictionaries)
+        XCTAssertNotNil(clubs)
+        XCTAssertTrue(clubs.count == 1)
+    }
+
+    func testClubsCreationFromBadDictionary() {
+        // required values are missing from the JSON file
+        guard let dictionaries = JSONLoader.sharedInstance.loadJSON("clubs-bad") as? JSONArray else {
+            XCTFail()
+            return
+        }
+
+        let clubs = Club.clubs(dictionaries)
+        XCTAssertNotNil(clubs)
+        XCTAssertTrue(clubs.count == 0)
+    }
+    
     func testGetClubGood() {
         let expectation = self.expectationWithDescription("API Call")
 

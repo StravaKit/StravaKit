@@ -66,6 +66,16 @@ public class DefaultRequestor : Requestor {
                     return
             }
 
+            if Strava.isDebugging {
+                debugPrint("Status Code: \(httpResponse.statusCode)")
+                if let MIMEType = httpResponse.MIMEType {
+                    debugPrint("Status Code: \(MIMEType)")
+                }
+                if let string = String(data: data, encoding: NSUTF8StringEncoding) {
+                    debugPrint("Response: \(string)")
+                }
+            }
+
             if httpResponse.statusCode != 200 {
                 if httpResponse.statusCode == 404 {
                     let error = Strava.error(.RecordNotFound, reason: "Record Not Found")

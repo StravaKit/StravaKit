@@ -16,8 +16,6 @@ public struct Club {
     let profileURL: NSURL
     let coverPhotoURL: NSURL
     let coverPhotoSmallURL: NSURL
-    let clubDescription: String?
-    let clubType: String
     let sportType: String
     let city: String
     let state: String
@@ -26,11 +24,14 @@ public struct Club {
     let memberCount: Int
     let featured: Bool
     let verified: Bool
+    let url: String
+
+    let clubDescription: String?
+    let clubType: String?
     let membership: String?
+    let followingCount: Int?
     let admin: Bool?
     let owner: Bool?
-    let followingCount: Int?
-    let url: String
 
     init?(dictionary: JSONDictionary) {
         if let clubId = dictionary["id"] as? Int,
@@ -44,7 +45,6 @@ public struct Club {
             let coverPhotoURL = NSURL(string: coverPhoto),
             let coverPhotoSmall = dictionary["cover_photo_small"] as? String,
             let coverPhotoSmallURL = NSURL(string: coverPhotoSmall),
-            let clubType = dictionary["club_type"] as? String,
             let sportType = dictionary["sport_type"] as? String,
             let city = dictionary["city"] as? String,
             let state = dictionary["state"] as? String,
@@ -61,7 +61,6 @@ public struct Club {
             self.profileURL = profileURL
             self.coverPhotoURL = coverPhotoURL
             self.coverPhotoSmallURL = coverPhotoSmallURL
-            self.clubType = clubType
             self.sportType = sportType
             self.city = city
             self.state = state
@@ -74,14 +73,25 @@ public struct Club {
 
             // Optional properties
             self.clubDescription = dictionary["description"] as? String
+            self.clubType = dictionary["club_type"] as? String
             self.membership = dictionary["membership"] as? String
+            self.followingCount = dictionary["following_count"] as? Int
             self.admin = dictionary["admin"] as? Bool
             self.owner = dictionary["owner"] as? Bool
-            self.followingCount = dictionary["following_count"] as? Int
         }
         else {
             return nil
         }
+    }
+
+    public static func clubs(dictionaries: JSONArray) -> [Club] {
+        var clubs: [Club] = []
+        for dictionary in dictionaries {
+            if let club = Club(dictionary: dictionary) {
+                clubs.append(club)
+            }
+        }
+        return clubs
     }
 
 }

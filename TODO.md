@@ -18,11 +18,13 @@
    1. ~~/v3/activities/following~~
    1. ~~/v3/clubs/:id~~
    1. ~~/v3/athlete/clubs~~
-   1. /v3/segments/:id
-   1. /v3/segments/:id/leaderboard
+   1. ~~/v3/segments/:id~~
+   1. ~~/v3/segments/:id/leaderboard~~
+   1. ~~/v3/segments/starred~~
    1. /v3/segments/:id/all_efforts
    1. /v3/uploads
-1. Implement full demo app
+   1. Add support for paging for all paged resources
+1. Implement full demo app (live integration testing)
    1. ~~/v3/oauth~~
    1. ~~/v3/athlete~~
    1. ~~/v3/athletes/:id~~
@@ -31,10 +33,12 @@
    1. ~~/v3/activities/following~~
    1. ~~/v3/clubs/:id~~
    1. ~~/v3/athlete/clubs~~
-   1. /v3/segments/:id
-   1. /v3/segments/:id/leaderboard
+   1. ~~/v3/segments/:id~~
+   1. ~~/v3/segments/:id/leaderboard~~
+   1. ~~/v3/segments/starred~~
    1. /v3/segments/:id/all_efforts
    1. /v3/uploads
+   1. Add support for paging for all paged resources
 1. Review performance
    1. implement rate limiting support (retry logic)
    1. profile API calls for various calls

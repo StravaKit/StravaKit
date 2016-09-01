@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2655C6031D7664C000715ADE"
-               BuildableName = "StravaKitTests-Mac.xctest"
+               BuildableName = "StravaKitTests.xctest"
                BlueprintName = "StravaKitTests-Mac"
                ReferencedContainer = "container:StravaKit.xcodeproj">
             </BuildableReference>

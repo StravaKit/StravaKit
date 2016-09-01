@@ -53,6 +53,7 @@ public class Strava {
     internal var athlete: Athlete?
     internal var defaultRequestor: Requestor = DefaultRequestor()
     internal var alternateRequestor: Requestor?
+    internal var isDebugging: Bool = false
 
     init() {
         loadAccessData()
@@ -70,7 +71,22 @@ public class Strava {
         }
     }
 
+    public static var isDebugging: Bool {
+        get {
+            return sharedInstance.isDebugging
+        }
+        set {
+            sharedInstance.isDebugging = newValue
+        }
+    }
+
     public static func request(method: HTTPMethod, authenticated: Bool, path: String, params: [String: AnyObject]?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+        if isDebugging {
+            debugPrint("Method: \(method.rawValue), Path: \(path), Authenticated: \(authenticated)")
+            if let params = params {
+                debugPrint("Params: \(params)")
+            }
+        }
         if let alternateRequestor = sharedInstance.alternateRequestor {
             return alternateRequestor.request(method, authenticated: authenticated, path: path, params: params, completionHandler: completionHandler)
         }

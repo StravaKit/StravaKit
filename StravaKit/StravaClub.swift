@@ -9,7 +9,7 @@
 import Foundation
 
 internal enum ClubResourcePath: String {
-    case Club = "/v3/clubs/:id"
+    case Club = "/api/v3/clubs/:id"
     case Clubs = "/api/v3/athlete/clubs"
 }
 
@@ -68,12 +68,7 @@ public extension Strava {
 
     internal static func handleClubsResponse(response: AnyObject?, completionHandler:((clubs: [Club]?, error: NSError?) -> ())?) {
         if let dictionaries = response as? JSONArray {
-            var clubs: [Club] = []
-            for dictionary in dictionaries {
-                if let club = Club(dictionary: dictionary) {
-                    clubs.append(club)
-                }
-            }
+            let clubs = Club.clubs(dictionaries)
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(clubs: clubs, error: nil)
             }

@@ -1,0 +1,135 @@
+[
+  {
+    "id": 141491,
+    "resource_state": 2,
+    "name": "Twin Peaks from Portola",
+    "activity_type": "Ride",
+    "distance": 1892.49,
+    "average_grade": 4.3,
+    "maximum_grade": 11.3,
+    "elevation_high": 258.7,
+    "elevation_low": 172.7,
+    "start_latlng": [
+      37.7461255,
+      -122.4507595
+    ],
+    "end_latlng": [
+      37.7538588,
+      -122.4469306
+    ],
+    "start_latitude": 37.7461255,
+    "start_longitude": -122.4507595,
+    "end_latitude": 37.7538588,
+    "end_longitude": -122.4469306,
+    "climb_category": 1,
+    "city": "San Francisco",
+    "state": "CA",
+    "country": "United States",
+    "private": false,
+    "hazardous": false,
+    "starred": true,
+    "starred_date": "2016-08-31T02:04:34Z"
+  },
+  {
+    "id": 642405,
+    "resource_state": 2,
+    "name": "O'Shaughnessy Blvd - Elk to Portola",
+    "activity_type": "Ride",
+    "distance": 1890.18,
+    "average_grade": 4.9,
+    "maximum_grade": 9.9,
+    "elevation_high": 181.8,
+    "elevation_low": 89.5,
+    "start_latlng": [
+      37.735084,
+      -122.4405706
+    ],
+    "end_latlng": [
+      37.7452357,
+      -122.4512824
+    ],
+    "start_latitude": 37.735084,
+    "start_longitude": -122.4405706,
+    "end_latitude": 37.7452357,
+    "end_longitude": -122.4512824,
+    "climb_category": 1,
+    "city": "San Francisco",
+    "state": "CA",
+    "country": "United States",
+    "private": false,
+    "hazardous": false,
+    "starred": true,
+    "starred_date": "2016-08-31T02:04:01Z"
+  },
+  {
+    "id": 1637002,
+    "resource_state": 2,
+    "name": "The Molehill",
+    "activity_type": "Ride",
+    "distance": 972.931,
+    "average_grade": 3.8,
+    "maximum_grade": 9.2,
+    "elevation_high": 67.9,
+    "elevation_low": 31.0,
+    "start_latlng": [
+      37.74391302,
+      -122.42288268
+    ],
+    "end_latlng": [
+      37.73619726,
+      -122.4271883
+    ],
+    "start_latitude": 37.74391302,
+    "start_longitude": -122.42288268,
+    "end_latitude": 37.73619726,
+    "end_longitude": -122.4271883,
+    "climb_category": 0,
+    "city": "San Francisco",
+    "state": "CA",
+    "country": "United States",
+    "private": false,
+    "hazardous": false,
+    "starred": true,
+    "starred_date": "2016-08-31T02:03:45Z"
+  },
+  {
+    "id": 8379359,
+    "resource_state": 2,
+    "name": "24th and Valencia Sprint",
+    "activity_type": "Ride",
+    "distance": 327.8,
+    "average_grade": -0.6,
+    "maximum_grade": 0.6,
+    "elevation_high": 27.1,
+    "elevation_low": 24.8,
+    "start_latlng": [
+      37.751441,
+      -122.420597
+    ],
+    "end_latlng": [
+      37.748498,
+      -122.42036
+    ],
+    "start_latitude": 37.751441,
+    "start_longitude": -122.420597,
+    "end_latitude": 37.748498,
+    "end_longitude": -122.42036,
+    "climb_category": 0,
+    "city": "San Francisco",
+    "state": "California",
+    "country": "United States",
+    "private": false,
+    "hazardous": false,
+    "starred": true,
+    "pr_time": 47,
+    "athlete_pr_effort": {
+      "id": 9308912977,
+      "elapsed_time": 47,
+      "distance": 324.9,
+      "start_date": "2015-09-10T03:52:26Z",
+      "start_date_local": "2015-09-09T20:52:26Z",
+      "is_kom": false
+    },
+    "starred_date": "2016-08-31T02:04:08Z"
+  }
+]

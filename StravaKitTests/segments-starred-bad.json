@@ -1,0 +1,62 @@
+[
+  {
+    "resource_state": 2,
+    "name": "Twin Peaks from Portola",
+    "activity_type": "Ride",
+    "distance": 1892.49,
+    "average_grade": 4.3,
+    "maximum_grade": 11.3,
+    "elevation_high": 258.7,
+    "elevation_low": 172.7,
+    "start_latlng": [
+      37.7461255,
+      -122.4507595
+    ],
+    "end_latlng": [
+      37.7538588,
+      -122.4469306
+    ],
+    "start_latitude": 37.7461255,
+    "start_longitude": -122.4507595,
+    "end_latitude": 37.7538588,
+    "end_longitude": -122.4469306,
+    "climb_category": 1,
+    "city": "San Francisco",
+    "state": "CA",
+    "country": "United States",
+    "private": false,
+    "hazardous": false,
+    "starred": true,
+    "starred_date": "2016-08-31T02:04:34Z"
+  },
+  {
+    "resource_state": 2,
+    "name": "O'Shaughnessy Blvd - Elk to Portola",
+    "activity_type": "Ride",
+    "distance": 1890.18,
+    "average_grade": 4.9,
+    "maximum_grade": 9.9,
+    "elevation_high": 181.8,
+    "elevation_low": 89.5,
+    "start_latlng": [
+      37.735084,
+      -122.4405706
+    ],
+    "end_latlng": [
+      37.7452357,
+      -122.4512824
+    ],
+    "start_latitude": 37.735084,
+    "start_longitude": -122.4405706,
+    "end_latitude": 37.7452357,
+    "end_longitude": -122.4512824,
+    "climb_category": 1,
+    "city": "San Francisco",
+    "state": "CA",
+    "country": "United States",
+    "private": false,
+    "hazardous": false,
+    "starred": true,
+    "starred_date": "2016-08-31T02:04:01Z"
+  }
+]

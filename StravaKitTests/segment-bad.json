@@ -1,0 +1,37 @@
+{
+  "id": 141491,
+  "resource_state": 3,
+  "distance": 1892.49,
+  "average_grade": 4.3,
+  "maximum_grade": 11.3,
+  "elevation_high": 258.7,
+  "elevation_low": 172.7,
+  "start_latlng": [
+    37.7461255,
+    -122.4507595
+  ],
+  "end_latlng": [
+    37.7538588,
+    -122.4469306
+  ],
+  "start_latitude": 37.7461255,
+  "start_longitude": -122.4507595,
+  "end_latitude": 37.7538588,
+  "end_longitude": -122.4469306,
+  "climb_category": 1,
+  "city": "San Francisco",
+  "state": "CA",
+  "country": "United States",
+  "private": false,
+  "hazardous": false,
+  "starred": true,
+  "created_at": "2009-09-16T18:36:00Z",
+  "updated_at": "2016-08-30T08:03:30Z",
+  "total_elevation_gain": 97.0933,
+  "star_count": 276,
+  "athlete_segment_stats": {
+    "pr_elapsed_time": null,
+    "pr_date": null,
+    "effort_count": 0
+  }
+}

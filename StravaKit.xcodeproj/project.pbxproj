@@ -89,6 +89,44 @@
 		2655C6431D766A5500715ADE /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521DE1D70D4DE00EB4162 /* Map.swift */; };
 		2655C6441D766A5500715ADE /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521E61D70EAE700EB4162 /* Photo.swift */; };
 		2655C6451D766A5500715ADE /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C5E61D74FD3D00715ADE /* Club.swift */; };
+		2655C6471D7671A700715ADE /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6461D7671A700715ADE /* Segment.swift */; };
+		2655C6481D7671A700715ADE /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6461D7671A700715ADE /* Segment.swift */; };
+		2655C6501D767B2100715ADE /* SegmentStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C64F1D767B2100715ADE /* SegmentStats.swift */; };
+		2655C6511D767B2100715ADE /* SegmentStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C64F1D767B2100715ADE /* SegmentStats.swift */; };
+		2655C6531D768F4000715ADE /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6521D768F4000715ADE /* Leaderboard.swift */; };
+		2655C6541D768F4000715ADE /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6521D768F4000715ADE /* Leaderboard.swift */; };
+		2655C6561D768F4D00715ADE /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6551D768F4D00715ADE /* LeaderboardEntry.swift */; };
+		2655C6571D768F4D00715ADE /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6551D768F4D00715ADE /* LeaderboardEntry.swift */; };
+		2655C65C1D776E7200715ADE /* StravaSegmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C65B1D776E7200715ADE /* StravaSegmentTests.swift */; };
+		2655C65D1D776E7200715ADE /* StravaSegmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C65B1D776E7200715ADE /* StravaSegmentTests.swift */; };
+		2655C6931D776F4600715ADE /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6491D7677B400715ADE /* segment-good.json */; };
+		2655C6941D776F4600715ADE /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65F1D776EFA00715ADE /* segment-bad.json */; };
+		2655C6951D776F4600715ADE /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C64A1D7677B400715ADE /* segments-good.json */; };
+		2655C6961D776F4600715ADE /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65E1D776EFA00715ADE /* segments-bad.json */; };
+		2655C6971D776F4600715ADE /* leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6581D7693A500715ADE /* leaderboard-good.json */; };
+		2655C6981D776F4600715ADE /* leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6641D776F2F00715ADE /* leaderboard-bad.json */; };
+		2655C6991D776F4800715ADE /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6491D7677B400715ADE /* segment-good.json */; };
+		2655C69A1D776F4800715ADE /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65F1D776EFA00715ADE /* segment-bad.json */; };
+		2655C69B1D776F4800715ADE /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C64A1D7677B400715ADE /* segments-good.json */; };
+		2655C69C1D776F4800715ADE /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65E1D776EFA00715ADE /* segments-bad.json */; };
+		2655C69D1D776F4800715ADE /* leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6581D7693A500715ADE /* leaderboard-good.json */; };
+		2655C69E1D776F4800715ADE /* leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6641D776F2F00715ADE /* leaderboard-bad.json */; };
+		2655C69F1D776F4800715ADE /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6491D7677B400715ADE /* segment-good.json */; };
+		2655C6A01D776F4800715ADE /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65F1D776EFA00715ADE /* segment-bad.json */; };
+		2655C6A11D776F4800715ADE /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C64A1D7677B400715ADE /* segments-good.json */; };
+		2655C6A21D776F4800715ADE /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65E1D776EFA00715ADE /* segments-bad.json */; };
+		2655C6A31D776F4800715ADE /* leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6581D7693A500715ADE /* leaderboard-good.json */; };
+		2655C6A41D776F4800715ADE /* leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6641D776F2F00715ADE /* leaderboard-bad.json */; };
+		2655C6A61D7772A800715ADE /* MapBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6A51D7772A800715ADE /* MapBounds.swift */; };
+		2655C6A71D7772A800715ADE /* MapBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6A51D7772A800715ADE /* MapBounds.swift */; };
+		2655C6A91D77773700715ADE /* MapBoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6A81D77773700715ADE /* MapBoundsTests.swift */; };
+		2655C6AA1D77773700715ADE /* MapBoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6A81D77773700715ADE /* MapBoundsTests.swift */; };
+		2655C6B11D77A96600715ADE /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AB1D77A92500715ADE /* segments-starred-good.json */; };
+		2655C6B21D77A96600715ADE /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AC1D77A92500715ADE /* segments-starred-bad.json */; };
+		2655C6B31D77A96700715ADE /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AB1D77A92500715ADE /* segments-starred-good.json */; };
+		2655C6B41D77A96700715ADE /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AC1D77A92500715ADE /* segments-starred-bad.json */; };
+		2655C6B51D77A96700715ADE /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AB1D77A92500715ADE /* segments-starred-good.json */; };
+		2655C6B61D77A96700715ADE /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AC1D77A92500715ADE /* segments-starred-bad.json */; };
 		26AEBF671D664A2E00481015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBF661D664A2E00481015 /* AppDelegate.swift */; };
 		26AEBF6C1D664A2E00481015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6A1D664A2E00481015 /* Main.storyboard */; };
 		26AEBF6E1D664A2E00481015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6D1D664A2E00481015 /* Assets.xcassets */; };
@@ -208,6 +246,21 @@
 		2655C5F11D75073D00715ADE /* clubs-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "clubs-good.json"; sourceTree = "<group>"; };
 		2655C5FB1D7664C000715ADE /* StravaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StravaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2655C6041D7664C000715ADE /* StravaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StravaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2655C6461D7671A700715ADE /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		2655C6491D7677B400715ADE /* segment-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segment-good.json"; sourceTree = "<group>"; };
+		2655C64A1D7677B400715ADE /* segments-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segments-good.json"; sourceTree = "<group>"; };
+		2655C64F1D767B2100715ADE /* SegmentStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentStats.swift; sourceTree = "<group>"; };
+		2655C6521D768F4000715ADE /* Leaderboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
+		2655C6551D768F4D00715ADE /* LeaderboardEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
+		2655C6581D7693A500715ADE /* leaderboard-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "leaderboard-good.json"; sourceTree = "<group>"; };
+		2655C65B1D776E7200715ADE /* StravaSegmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaSegmentTests.swift; sourceTree = "<group>"; };
+		2655C65E1D776EFA00715ADE /* segments-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segments-bad.json"; sourceTree = "<group>"; };
+		2655C65F1D776EFA00715ADE /* segment-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segment-bad.json"; sourceTree = "<group>"; };
+		2655C6641D776F2F00715ADE /* leaderboard-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "leaderboard-bad.json"; sourceTree = "<group>"; };
+		2655C6A51D7772A800715ADE /* MapBounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBounds.swift; sourceTree = "<group>"; };
+		2655C6A81D77773700715ADE /* MapBoundsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBoundsTests.swift; sourceTree = "<group>"; };
+		2655C6AB1D77A92500715ADE /* segments-starred-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segments-starred-good.json"; sourceTree = "<group>"; };
+		2655C6AC1D77A92500715ADE /* segments-starred-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segments-starred-bad.json"; sourceTree = "<group>"; };
 		26AEBF631D664A2E00481015 /* StravaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AEBF661D664A2E00481015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AEBF6B1D664A2E00481015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -391,9 +444,11 @@
 				26C92BFF1D6B853F00C5D491 /* StravaStatsTests.swift */,
 				26C92C121D6BF42C00C5D491 /* StravaActivityTests.swift */,
 				2655C5EC1D75028D00715ADE /* StravaClubTests.swift */,
+				2655C65B1D776E7200715ADE /* StravaSegmentTests.swift */,
 				26C92C271D6C163700C5D491 /* KeychainTests.swift */,
 				26F521E21D70DA9300EB4162 /* PolylineTests.swift */,
 				26F521EC1D710C6700EB4162 /* PhotoTests.swift */,
+				2655C6A81D77773700715ADE /* MapBoundsTests.swift */,
 			);
 			path = StravaKitTests;
 			sourceTree = "<group>";
@@ -422,6 +477,14 @@
 				26F521E41D70DC6200EB4162 /* polylines.json */,
 				26F521E81D710BC600EB4162 /* photo-light.json */,
 				26F521EA1D710BF000EB4162 /* photo-heavy.json */,
+				2655C6491D7677B400715ADE /* segment-good.json */,
+				2655C65F1D776EFA00715ADE /* segment-bad.json */,
+				2655C64A1D7677B400715ADE /* segments-good.json */,
+				2655C65E1D776EFA00715ADE /* segments-bad.json */,
+				2655C6AB1D77A92500715ADE /* segments-starred-good.json */,
+				2655C6AC1D77A92500715ADE /* segments-starred-bad.json */,
+				2655C6581D7693A500715ADE /* leaderboard-good.json */,
+				2655C6641D776F2F00715ADE /* leaderboard-bad.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -446,6 +509,11 @@
 				26F521DE1D70D4DE00EB4162 /* Map.swift */,
 				26F521E61D70EAE700EB4162 /* Photo.swift */,
 				2655C5E61D74FD3D00715ADE /* Club.swift */,
+				2655C6461D7671A700715ADE /* Segment.swift */,
+				2655C64F1D767B2100715ADE /* SegmentStats.swift */,
+				2655C6521D768F4000715ADE /* Leaderboard.swift */,
+				2655C6551D768F4D00715ADE /* LeaderboardEntry.swift */,
+				2655C6A51D7772A800715ADE /* MapBounds.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -664,6 +732,9 @@
 				2655C6271D7665EF00715ADE /* activity-good.json in Resources */,
 				2655C62D1D7665EF00715ADE /* exchange-token-bad.json in Resources */,
 				2655C6321D7665EF00715ADE /* photo-heavy.json in Resources */,
+				2655C6A11D776F4800715ADE /* segments-good.json in Resources */,
+				2655C6A41D776F4800715ADE /* leaderboard-bad.json in Resources */,
+				2655C69F1D776F4800715ADE /* segment-good.json in Resources */,
 				2655C62C1D7665EF00715ADE /* exchange-token-good.json in Resources */,
 				2655C6221D7665EF00715ADE /* athlete-other.json in Resources */,
 				2655C6231D7665EF00715ADE /* athlete-good.json in Resources */,
@@ -671,13 +742,18 @@
 				2655C6201D7665EF00715ADE /* club-bad.json in Resources */,
 				2655C6261D7665EF00715ADE /* activities-bad.json in Resources */,
 				2655C6311D7665EF00715ADE /* photo-light.json in Resources */,
+				2655C6B61D77A96700715ADE /* segments-starred-bad.json in Resources */,
+				2655C6B51D77A96700715ADE /* segments-starred-good.json in Resources */,
 				2655C62B1D7665EF00715ADE /* stats-bad.json in Resources */,
 				2655C6281D7665EF00715ADE /* activity-bad.json in Resources */,
 				2655C6211D7665EF00715ADE /* club-good.json in Resources */,
+				2655C6A21D776F4800715ADE /* segments-bad.json in Resources */,
 				2655C61E1D7665EF00715ADE /* clubs-bad.json in Resources */,
 				2655C6251D7665EF00715ADE /* activities-good.json in Resources */,
 				2655C62E1D7665EF00715ADE /* empty.json in Resources */,
+				2655C6A31D776F4800715ADE /* leaderboard-good.json in Resources */,
 				2655C6301D7665EF00715ADE /* polylines.json in Resources */,
+				2655C6A01D776F4800715ADE /* segment-bad.json in Resources */,
 				2655C62F1D7665EF00715ADE /* invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +778,9 @@
 				2655C5B31D7224A500715ADE /* empty.json in Resources */,
 				2655C5A91D7224A500715ADE /* athlete-bad.json in Resources */,
 				2655C5AF1D7224A500715ADE /* stats-good.json in Resources */,
+				2655C6951D776F4600715ADE /* segments-good.json in Resources */,
+				2655C6981D776F4600715ADE /* leaderboard-bad.json in Resources */,
+				2655C6931D776F4600715ADE /* segment-good.json in Resources */,
 				2655C5B41D7224A500715ADE /* invalid.json in Resources */,
 				2655C5B21D7224A500715ADE /* exchange-token-bad.json in Resources */,
 				2655C5B61D7224A500715ADE /* photo-light.json in Resources */,
@@ -709,13 +788,18 @@
 				2655C5B01D7224A500715ADE /* stats-bad.json in Resources */,
 				2655C5AE1D7224A500715ADE /* activities-following.json in Resources */,
 				2655C5A71D7224A500715ADE /* athlete-other.json in Resources */,
+				2655C6B21D77A96600715ADE /* segments-starred-bad.json in Resources */,
+				2655C6B11D77A96600715ADE /* segments-starred-good.json in Resources */,
 				2655C5AA1D7224A500715ADE /* activities-good.json in Resources */,
 				2655C5B71D7224A500715ADE /* photo-heavy.json in Resources */,
 				2655C5B51D7224A500715ADE /* polylines.json in Resources */,
+				2655C6961D776F4600715ADE /* segments-bad.json in Resources */,
 				2655C5B11D7224A500715ADE /* exchange-token-good.json in Resources */,
 				2655C5AC1D7224A500715ADE /* activity-good.json in Resources */,
 				2655C5EF1D75030500715ADE /* club-good.json in Resources */,
+				2655C6971D776F4600715ADE /* leaderboard-good.json in Resources */,
 				2655C5F41D750D6200715ADE /* clubs-bad.json in Resources */,
+				2655C6941D776F4600715ADE /* segment-bad.json in Resources */,
 				2655C5F51D750D6200715ADE /* clubs-good.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,6 +821,9 @@
 				26C92BFE1D6B7E9900C5D491 /* stats-good.json in Resources */,
 				26C92C2A1D6C2E3000C5D491 /* invalid.json in Resources */,
 				26C92C0F1D6BE4CC00C5D491 /* activities-good.json in Resources */,
+				2655C69B1D776F4800715ADE /* segments-good.json in Resources */,
+				2655C69E1D776F4800715ADE /* leaderboard-bad.json in Resources */,
+				2655C6991D776F4800715ADE /* segment-good.json in Resources */,
 				26F521E91D710BC600EB4162 /* photo-light.json in Resources */,
 				26AEBFC81D6AB4E500481015 /* athlete-good.json in Resources */,
 				26C92C241D6C111C00C5D491 /* exchange-token-bad.json in Resources */,
@@ -744,13 +831,18 @@
 				26AEBFC91D6AB4E500481015 /* athlete-bad.json in Resources */,
 				2655C56F1D711F3000715ADE /* activity-bad.json in Resources */,
 				26F521E51D70DC6200EB4162 /* polylines.json in Resources */,
+				2655C6B41D77A96700715ADE /* segments-starred-bad.json in Resources */,
+				2655C6B31D77A96700715ADE /* segments-starred-good.json in Resources */,
 				2655C5711D71210500715ADE /* activities-following.json in Resources */,
 				2655C56D1D711EEE00715ADE /* activity-good.json in Resources */,
 				26C92C021D6B85B000C5D491 /* stats-bad.json in Resources */,
+				2655C69C1D776F4800715ADE /* segments-bad.json in Resources */,
 				26F521EB1D710BF000EB4162 /* photo-heavy.json in Resources */,
 				26C92BF41D6ADB8300C5D491 /* athlete-other.json in Resources */,
 				2655C5EB1D75027900715ADE /* club-good.json in Resources */,
+				2655C69D1D776F4800715ADE /* leaderboard-good.json in Resources */,
 				2655C5F21D75073D00715ADE /* clubs-bad.json in Resources */,
+				2655C69A1D776F4800715ADE /* segment-bad.json in Resources */,
 				2655C5F31D75073D00715ADE /* clubs-good.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -763,12 +855,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2655C6441D766A5500715ADE /* Photo.swift in Sources */,
+				2655C6481D7671A700715ADE /* Segment.swift in Sources */,
+				2655C6571D768F4D00715ADE /* LeaderboardEntry.swift in Sources */,
 				2655C6391D766A4B00715ADE /* StravaClub.swift in Sources */,
 				2655C6401D766A5500715ADE /* Stats.swift in Sources */,
 				2655C6421D766A5500715ADE /* Activity.swift in Sources */,
 				2655C6371D766A4B00715ADE /* StravaAthlete.swift in Sources */,
 				2655C6381D766A4B00715ADE /* StravaActivity.swift in Sources */,
+				2655C6511D767B2100715ADE /* SegmentStats.swift in Sources */,
 				2655C6411D766A5500715ADE /* StatsDetail.swift in Sources */,
+				2655C6541D768F4000715ADE /* Leaderboard.swift in Sources */,
 				2655C63F1D766A5500715ADE /* Athlete.swift in Sources */,
 				2655C6361D766A4B00715ADE /* StravaOAuth.swift in Sources */,
 				2655C63B1D766A4B00715ADE /* StravaUpload.swift in Sources */,
@@ -777,6 +873,7 @@
 				2655C63A1D766A4B00715ADE /* StravaSegment.swift in Sources */,
 				2655C63E1D766A5000715ADE /* Polyline.swift in Sources */,
 				2655C6451D766A5500715ADE /* Club.swift in Sources */,
+				2655C6A71D7772A800715ADE /* MapBounds.swift in Sources */,
 				2655C6351D766A4B00715ADE /* Strava.swift in Sources */,
 				2655C63D1D766A5000715ADE /* Requestor.swift in Sources */,
 			);
@@ -792,10 +889,12 @@
 				2655C6171D7665CB00715ADE /* StravaActivityTests.swift in Sources */,
 				2655C6181D7665CB00715ADE /* StravaClubTests.swift in Sources */,
 				2655C6141D7665CB00715ADE /* StravaOAuthTests.swift in Sources */,
+				2655C65D1D776E7200715ADE /* StravaSegmentTests.swift in Sources */,
 				2655C6131D7665CB00715ADE /* StravaTests.swift in Sources */,
 				2655C61A1D7665CB00715ADE /* PolylineTests.swift in Sources */,
 				2655C61B1D7665CB00715ADE /* PhotoTests.swift in Sources */,
 				2655C6191D7665CB00715ADE /* KeychainTests.swift in Sources */,
+				2655C6AA1D77773700715ADE /* MapBoundsTests.swift in Sources */,
 				2655C6151D7665CB00715ADE /* StravaAthleteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,12 +924,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F521E71D70EAE700EB4162 /* Photo.swift in Sources */,
+				2655C6471D7671A700715ADE /* Segment.swift in Sources */,
+				2655C6561D768F4D00715ADE /* LeaderboardEntry.swift in Sources */,
 				26C92C0B1D6BDE6700C5D491 /* Stats.swift in Sources */,
 				26C92BF61D6B7B2B00C5D491 /* StravaActivity.swift in Sources */,
 				26C92BFA1D6B7B4B00C5D491 /* StravaClub.swift in Sources */,
 				26C92BFC1D6B7B6400C5D491 /* StravaUpload.swift in Sources */,
 				26C92C091D6BDE5500C5D491 /* StatsDetail.swift in Sources */,
+				2655C6501D767B2100715ADE /* SegmentStats.swift in Sources */,
 				26AEBFBF1D69296500481015 /* StravaOAuth.swift in Sources */,
+				2655C6531D768F4000715ADE /* Leaderboard.swift in Sources */,
 				26C92C111D6BE4DB00C5D491 /* Activity.swift in Sources */,
 				26C92C0D1D6BDE7800C5D491 /* Athlete.swift in Sources */,
 				26C92C171D6BFF6D00C5D491 /* Requestor.swift in Sources */,
@@ -839,6 +942,7 @@
 				26F521DF1D70D4DE00EB4162 /* Map.swift in Sources */,
 				26C92BF21D6ADA2200C5D491 /* StravaAthlete.swift in Sources */,
 				2655C5E71D74FD3D00715ADE /* Club.swift in Sources */,
+				2655C6A61D7772A800715ADE /* MapBounds.swift in Sources */,
 				26C92BF81D6B7B3C00C5D491 /* StravaSegment.swift in Sources */,
 				26AEBFAA1D664D3600481015 /* Strava.swift in Sources */,
 			);
@@ -854,10 +958,12 @@
 				26F521E31D70DA9300EB4162 /* PolylineTests.swift in Sources */,
 				26C92C001D6B853F00C5D491 /* StravaStatsTests.swift in Sources */,
 				26C92C131D6BF42C00C5D491 /* StravaActivityTests.swift in Sources */,
+				2655C65C1D776E7200715ADE /* StravaSegmentTests.swift in Sources */,
 				2655C5ED1D75028D00715ADE /* StravaClubTests.swift in Sources */,
 				26AEBFC51D6AB16000481015 /* StravaAthleteTests.swift in Sources */,
 				26C92C281D6C163700C5D491 /* KeychainTests.swift in Sources */,
 				26AEBFBD1D69177000481015 /* StravaTests.swift in Sources */,
+				2655C6A91D77773700715ADE /* MapBoundsTests.swift in Sources */,
 				26C92C221D6C0E6700C5D491 /* JSONLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

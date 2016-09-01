@@ -9,6 +9,7 @@
 import UIKit
 import StravaKit
 import SafariServices
+import CoreLocation
 
 class HomeViewController: UIViewController {
 
@@ -121,12 +122,12 @@ class HomeViewController: UIViewController {
             assert(NSThread.isMainThread(), "Main Thread is required")
             self.refreshUI()
             if success {
-                print("Deauthorization successful!")
+                debugPrint("Deauthorization successful!")
             }
             else {
                 // TODO: warn user
                 if let error = error {
-                    print("Error: \(error.localizedDescription)")
+                    debugPrint("Error: \(error.localizedDescription)")
                 }
             }
         }
@@ -145,41 +146,54 @@ class HomeViewController: UIViewController {
             self.statusLabel.text = "Authorization successful!"
         }
         else if let error = userInfo[StravaErrorKey] as? NSError {
-            print("Error: \(error.localizedDescription)")
+            debugPrint("Error: \(error.localizedDescription)")
         }
     }
 
     internal func runTests() {
-        let total: Int = 7
+        Strava.isDebugging = true
+        let total: Int = 11
 
         // reset test count
         testCount = 0
         statusLabel.text = "Running Tests"
 
         getAthlete { (success, error) in
-            self.handleTestResult(success, total: total, error: error)
+            self.handleTestResult(success, total: total, name: "Get Athlete", error: error)
         }
         getAthleteByID { (success, error) in
-            self.handleTestResult(success, total: total, error: error)
+            self.handleTestResult(success, total: total, name: "Get Athlete by ID", error: error)
         }
         getStats { (success, error) in
-            self.handleTestResult(success, total: total, error: error)
+            self.handleTestResult(success, total: total, name: "Get Stats", error: error)
         }
         getActivities { (success, error) in
-            self.handleTestResult(success, total: total, error: error)
+            self.handleTestResult(success, total: total, name: "Get Activities", error: error)
         }
         getFollowingActivities { (success, error) in
-            self.handleTestResult(success, total: total, error: error)
+            self.handleTestResult(success, total: total, name: "Get Following Activities", error: error)
         }
         getClub { (success, error) in
-            self.handleTestResult(success, total: total, error: error)
+            self.handleTestResult(success, total: total, name: "Get Club", error: error)
         }
         getClubs { (success, error) in
-            self.handleTestResult(success, total: total, error: error)
+            self.handleTestResult(success, total: total, name: "Get Clubs", error: error)
+        }
+        getSegment { (success, error) in
+            self.handleTestResult(success, total: total, name: "Get Segment", error: error)
+        }
+        getSegments { (success, error) in
+            self.handleTestResult(success, total: total, name: "Get Segments", error: error)
+        }
+        getStarredSegments { (success, error) in
+            self.handleTestResult(success, total: total, name: "Get Starred Segments", error: error)
+        }
+        getSegmentLeaderboard { (success, error) in
+            self.handleTestResult(success, total: total, name: "Get Segment Leaderboard", error: error)
         }
     }
 
-    internal func handleTestResult(success: Bool, total: Int, error: NSError?) {
+    internal func handleTestResult(success: Bool, total: Int, name: String, error: NSError?) {
         if success {
             testCount += 1
             if testCount == total {
@@ -188,7 +202,7 @@ class HomeViewController: UIViewController {
         }
         else {
             if let error = error {
-                print("Error: \(error.localizedDescription)")
+                debugPrint("Error with \(name): \(error.localizedDescription)")
             }
             showIntegrationResult(false)
         }
@@ -275,6 +289,63 @@ class HomeViewController: UIViewController {
     internal func getClubs(completionHandler: ((success: Bool, error: NSError?) -> ())) {
         Strava.getClubs { (clubs, error) in
             if let _ = clubs {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    internal func getSegment(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getSegment(141491) { (clubs, error) in
+            if let _ = clubs {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    internal func getSegments(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        let latitude1: CLLocationDegrees = 37.821362
+        let longitude1: CLLocationDegrees = -122.505373
+        let latitude2: CLLocationDegrees = 37.842038
+        let longitude2: CLLocationDegrees = -122.465977
+        let coordinate1 = CLLocationCoordinate2DMake(latitude1, longitude1)
+        let coordinate2 = CLLocationCoordinate2DMake(latitude2, longitude2)
+
+        guard let mapBounds = MapBounds(coordinate1: coordinate1, coordinate2: coordinate2) else {
+            let error = NSError(domain: "Testing", code: 1, userInfo: nil)
+            completionHandler(success: false, error: error)
+            return
+        }
+
+        Strava.getSegments(mapBounds) { (segments, error) in
+            if let _ = segments {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    internal func getStarredSegments(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getStarredSegments { (segments, error) in
+            if let _ = segments {
+                completionHandler(success: true, error: nil)
+            }
+            else if let error = error {
+                completionHandler(success: false, error: error)
+            }
+        }
+    }
+
+    internal func getSegmentLeaderboard(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+        Strava.getSegmentLeaderboard(141491) { (leaderboard, error) in
+            if let _ = leaderboard {
                 completionHandler(success: true, error: nil)
             }
             else if let error = error {
