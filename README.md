@@ -159,7 +159,7 @@ Strava.getClub(1) { (club, error) in }
 
 ### Get Clubs for Current Athlete
 
-Fetches clubs for the current athlete
+Fetches clubs for the current athlete.
 
 ```swift
 Strava.getClubs { (clubs, error) in }
@@ -167,7 +167,7 @@ Strava.getClubs { (clubs, error) in }
 
 ### Get Segment Detail
 
-Fetches segment detail by ID
+Fetches segment detail by ID.
 
 ```swift
 Strava.getSegment(1) { (segment, error) in }
@@ -175,7 +175,7 @@ Strava.getSegment(1) { (segment, error) in }
 
 ### Get Segments in a bounded map area 
 
-Fetches segments within a bounding box
+Fetches segments within a bounding box.
 
 ```swift
 Strava.getSegments(mapBounds) { (segments, error) in }
@@ -183,7 +183,7 @@ Strava.getSegments(mapBounds) { (segments, error) in }
 
 ### Get Starred Segments 
 
-Fetches segments the current athlete has starred
+Fetches segments the current athlete has starred.
 
 ```swift
 Strava.getStarredSegments() { (segments, error) in }
@@ -191,7 +191,7 @@ Strava.getStarredSegments() { (segments, error) in }
 
 ### Get Segment Leaderboard 
 
-Fetches leaderboard for a segment
+Fetches leaderboard for a segment.
 
 ```swift
 Strava.getSegmentLeaderboard(1) { (leaderboard, error) in }
