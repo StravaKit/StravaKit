@@ -9,19 +9,27 @@
 import Foundation
 
 public struct SegmentStats {
-    let prElapsedTime: String?
-    let prDate: String?
-    let effortCount: Int
+    public let prElapsedTime: String?
+    public let effortCount: Int
+
+    internal let prDateString: String?
 
     init?(dictionary: JSONDictionary) {
         if let effortCount = dictionary["effort_count"] as? Int {
             self.effortCount = effortCount
 
             self.prElapsedTime = dictionary["pr_elapsed_time"] as? String
-            self.prDate = dictionary["pr_date"] as? String
+            self.prDateString = dictionary["pr_date"] as? String
         }
         else {
             return nil
         }
     }
+
+    public var prDate: NSDate? {
+        get {
+            return Strava.dateFromString(prDateString)
+        }
+    }
+
 }

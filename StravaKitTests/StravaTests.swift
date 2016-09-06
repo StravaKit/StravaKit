@@ -131,4 +131,37 @@ class StravaClientTests: XCTestCase {
         }
     }
 
+    func testDateString() {
+        let string = "2016-08-21T20:11:54Z"
+        guard let timeZone = NSTimeZone(abbreviation: "GMT") else {
+            XCTFail()
+            return
+        }
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeZone = timeZone
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+
+        guard let date = dateFormatter.dateFromString(string) else {
+            XCTFail()
+            return
+        }
+
+        let unitFlags: NSCalendarUnit = [.Month, .Day, .Year, .Hour, .Minute, .Second, .TimeZone]
+        let calendar = NSCalendar.currentCalendar()
+        // Ensure the calendar uses the GMT time zone not the local time zone for the device
+        calendar.timeZone = timeZone
+
+        let components = calendar.components(unitFlags, fromDate: date)
+        XCTAssertEqual(components.month, 8)
+        XCTAssertEqual(components.day, 21)
+        XCTAssertEqual(components.year, 2016)
+        XCTAssertEqual(components.hour, 20)
+        XCTAssertEqual(components.minute, 11)
+        XCTAssertEqual(components.second, 54)
+        if let tz = components.timeZone {
+            XCTAssertTrue(tz.abbreviation == "GMT")
+        }
+    }
+
 }

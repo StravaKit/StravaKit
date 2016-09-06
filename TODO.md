@@ -28,6 +28,8 @@ Note: Initially only the GET requests which are accessible from the Public scope
    1. ~~Add support for paging for all paged resources~~
    1. Implement error handling by checking error on JSON response
    1. Support date string convertion to date object (ISO 8601 formatted)
+   1. Review for compliance with models and Strava docs for all properties and types
+   1. Define policy for types such as polylines, dates and non-optional properties
 1. Implement full demo app (live integration testing)
    1. ~~/v3/oauth~~
    1. ~~/v3/athlete~~

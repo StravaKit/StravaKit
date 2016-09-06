@@ -9,11 +9,11 @@
 import Foundation
 
 public struct Leaderboard {
-    let effortCount: Int
-    let entryCount: Int
-    let neighborhoodCount: Int
-    let komType: String
-    let entries: [LeaderboardEntry]
+    public let effortCount: Int
+    public let entryCount: Int
+    public let neighborhoodCount: Int
+    public let komType: String
+    public let entries: [LeaderboardEntry]
 
     init?(dictionary: JSONDictionary) {
         if let effortCount = dictionary["effort_count"] as? Int,

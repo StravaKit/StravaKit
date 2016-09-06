@@ -29,4 +29,5 @@ public struct MapBounds {
 
         self.init(coordinate1: coordinate1, coordinate2: coordinate2)
     }
+    
 }

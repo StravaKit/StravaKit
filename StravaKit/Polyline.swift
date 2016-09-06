@@ -7,6 +7,7 @@
 //
 // Credit: Raphaël Mor & Tom Taylor
 // GitHub: https://github.com/raphaelmor/Polyline
+// Docs: http://strava.github.io/api/#polylines
 
 import Foundation
 import CoreLocation

@@ -10,37 +10,37 @@ import Foundation
 import CoreLocation
 
 public struct Segment {
-    let segmentId: Int
-    let resourceState: Int
-    let name: String
-    let distance: Double
-    let startCoordinate: CLLocationCoordinate2D
-    let endCoordinate: CLLocationCoordinate2D
-    let climbCategory: Int
-    let starred: Bool
+    public let segmentId: Int
+    public let resourceState: Int
+    public let name: String
+    public let distance: Double
+    public let startCoordinate: CLLocationCoordinate2D
+    public let endCoordinate: CLLocationCoordinate2D
+    public let climbCategory: Int
+    public let starred: Bool
 
-    let isPrivate: Bool?
-    let hazardous: Bool?
-    let city: String?
-    let state: String?
-    let country: String?
-    let elevationHigh: Double?
-    let elevationLow: Double?
-    let elevationDifference: Double?
-    let climbCategoryDescription: String?
-    let maximumGrade: Double?
-    let averageGrade: Double?
-    let activityType: String?
-    let starredDate: String?
-    let createdAt: String?
-    let updatedAt: String?
-    let totalElevationGain: Double?
-    let map: Map?
-    let effortCount: Int?
-    let athleteCount: Int?
-    let starCount: Int?
-    let athleteSegmentStats: SegmentStats?
-    let points: String?
+    public let isPrivate: Bool?
+    public let hazardous: Bool?
+    public let city: String?
+    public let state: String?
+    public let country: String?
+    public let elevationHigh: Double?
+    public let elevationLow: Double?
+    public let elevationDifference: Double?
+    public let climbCategoryDescription: String?
+    public let maximumGrade: Double?
+    public let averageGrade: Double?
+    public let activityType: String?
+    public let starredDateString: String?
+    public let createdAtString: String?
+    public let updatedAtString: String?
+    public let totalElevationGain: Double?
+    public let map: Map?
+    public let effortCount: Int?
+    public let athleteCount: Int?
+    public let starCount: Int?
+    public let athleteSegmentStats: SegmentStats?
+    public let points: String?
 
     init?(dictionary: JSONDictionary) {
         if let segmentId = dictionary["id"] as? Int,
@@ -76,14 +76,14 @@ public struct Segment {
             self.maximumGrade = dictionary["maximum_grade"] as? Double
             self.averageGrade = dictionary["average_grade"] as? Double
             self.activityType = dictionary["activity_type"] as? String
-            self.starredDate = dictionary["starred_date"] as? String
+            self.starredDateString = dictionary["starred_date"] as? String
             self.isPrivate = dictionary["private"] as? Bool
             self.hazardous = dictionary["hazardous"] as? Bool
             self.city = dictionary["city"] as? String
             self.state = dictionary["state"] as? String
             self.country = dictionary["country"] as? String
-            self.createdAt = dictionary["created_at"] as? String
-            self.updatedAt = dictionary["updated_at"] as? String
+            self.createdAtString = dictionary["created_at"] as? String
+            self.updatedAtString = dictionary["updated_at"] as? String
             self.totalElevationGain = dictionary["total_elevation_gain"] as? Double
             self.map = dictionary["map"] as? Map
             self.effortCount = dictionary["effort_count"] as? Int
@@ -125,6 +125,24 @@ public struct Segment {
                 return coordinates
             }
             return nil
+        }
+    }
+
+    public var starredDate: NSDate? {
+        get {
+            return Strava.dateFromString(starredDateString)
+        }
+    }
+
+    public var createdAt: NSDate? {
+        get {
+            return Strava.dateFromString(createdAtString)
+        }
+    }
+
+    public var updatedAt: NSDate? {
+        get {
+            return Strava.dateFromString(updatedAtString)
         }
     }
 

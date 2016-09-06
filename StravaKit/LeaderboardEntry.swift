@@ -9,22 +9,23 @@
 import Foundation
 
 public struct LeaderboardEntry {
-    let athleteName: String
-    let athleteId: Int
-    let athleteGender: String
-    let averageWatts: Double
-    let distance: Double
-    let elapsedTime: Int
-    let movingTime: Int
-    let startDate: String
-    let startDateLocal: String
-    let activityId: Int
-    let effortId: Int
-    let rank: Int
-    let neighborhoodIndex: Int
-    let athleteProfileURL: NSURL
+    public let athleteName: String
+    public let athleteId: Int
+    public let athleteGender: String
+    public let averageWatts: Double
+    public let distance: Double
+    public let elapsedTime: Int
+    public let movingTime: Int
+    public let activityId: Int
+    public let effortId: Int
+    public let rank: Int
+    public let neighborhoodIndex: Int
+    public let athleteProfileURL: NSURL
 
-    let averageHr: Double?
+    internal let startDateString: String
+    internal let startDateLocalString: String
+
+    public let averageHr: Double?
 
     init?(dictionary: JSONDictionary) {
         if let athleteName = dictionary["athlete_name"] as? String,
@@ -49,8 +50,8 @@ public struct LeaderboardEntry {
             self.distance = distance
             self.elapsedTime = elapsedTime
             self.movingTime = movingTime
-            self.startDate = startDate
-            self.startDateLocal = startDateLocal
+            self.startDateString = startDate
+            self.startDateLocalString = startDateLocal
             self.activityId = activityId
             self.effortId = effortId
             self.rank = rank
@@ -63,4 +64,17 @@ public struct LeaderboardEntry {
             return nil
         }
     }
+
+    public var startDate: NSDate? {
+        get {
+            return Strava.dateFromString(startDateString)
+        }
+    }
+
+    public var startDateLocal: NSDate? {
+        get {
+            return Strava.dateFromString(startDateLocalString)
+        }
+    }
+    
 }

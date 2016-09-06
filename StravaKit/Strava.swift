@@ -46,6 +46,7 @@ public enum StravaErrorCode: Int {
 
 public class Strava {
     static let sharedInstance = Strava()
+    internal let dateFormatter = NSDateFormatter()
     internal var clientId: String?
     internal var clientSecret: String?
     internal var redirectURI: String?
@@ -57,6 +58,11 @@ public class Strava {
 
     init() {
         loadAccessData()
+
+        // Use ISO 8601 standard format for date strings
+        // Docs: http://strava.github.io/api/#dates
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
     }
 
     public static var isAuthorized: Bool {
@@ -141,6 +147,13 @@ public class Strava {
         components.queryItems = queryItems
 
         return components.URL
+    }
+
+    internal static func dateFromString(string: String?) -> NSDate? {
+        if let string = string {
+            return sharedInstance.dateFormatter.dateFromString(string)
+        }
+        return nil
     }
 
 }

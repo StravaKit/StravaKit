@@ -9,24 +9,25 @@
 import Foundation
 
 public struct SegmentEffort {
-    let effortId: Int
-    let resourceState: Int
-    let name: String
-    let activity: ResourceSummary
-    let athlete: ResourceSummary
-    let elapsedTime: Int
-    let movingTime: Int
-    let startDate: String
-    let startDateLocal: String
-    let distance: Double
-    let startIndex: Int
-    let endIndex: Int
-    let deviceWatts: Bool
-    let averageWatts: Double
-    let segment: Segment
+    public let effortId: Int
+    public let resourceState: Int
+    public let name: String
+    public let activity: ResourceSummary
+    public let athlete: ResourceSummary
+    public let elapsedTime: Int
+    public let movingTime: Int
+    public let distance: Double
+    public let startIndex: Int
+    public let endIndex: Int
+    public let deviceWatts: Bool
+    public let averageWatts: Double
+    public let segment: Segment
     
-    let prRank: Int?
-    let komRank: Int?
+    public let prRank: Int?
+    public let komRank: Int?
+
+    internal let startDateString: String
+    internal let startDateLocalString: String
 
     init?(dictionary: JSONDictionary) {
         if let effortId = dictionary["id"] as? Int,
@@ -54,8 +55,8 @@ public struct SegmentEffort {
             self.athlete = athlete
             self.elapsedTime = elapsedTime
             self.movingTime = movingTime
-            self.startDate = startDate
-            self.startDateLocal = startDateLocal
+            self.startDateString = startDate
+            self.startDateLocalString = startDateLocal
             self.distance = distance
             self.startIndex = startIndex
             self.endIndex = endIndex
@@ -80,6 +81,18 @@ public struct SegmentEffort {
         }
 
         return efforts
+    }
+
+    public var startDate: NSDate? {
+        get {
+            return Strava.dateFromString(startDateString)
+        }
+    }
+
+    public var startDateLocal: NSDate? {
+        get {
+            return Strava.dateFromString(startDateLocalString)
+        }
     }
 
 }

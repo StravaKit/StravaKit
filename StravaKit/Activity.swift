@@ -22,8 +22,6 @@ public struct Activity {
 
     public let totalElevationGain: Float
     public let type: String
-    public let startDate: String
-    public let startDateLocal: String
     public let timezone: String
     public let startCoordinates: [CLLocationDegrees]
     public let endCoordinates: [CLLocationDegrees]
@@ -53,6 +51,9 @@ public struct Activity {
     public let totalPhotoCount: Int
     public let hasKudoed: Bool
     public let workoutType: Int
+
+    internal let startDateString: String
+    internal let startDateLocalString: String
 
     init?(dictionary: JSONDictionary) {
         if let activityId = dictionary["id"] as? Int,
@@ -109,8 +110,8 @@ public struct Activity {
             self.elapsedTime = elapsedTime
             self.totalElevationGain = totalElevationGain
             self.type = type
-            self.startDate = startDate
-            self.startDateLocal = startDateLocal
+            self.startDateString = startDate
+            self.startDateLocalString = startDateLocal
             self.timezone = timezone
             self.startCoordinates = startCoordinates
             self.endCoordinates = endCoordinates
@@ -170,6 +171,18 @@ public struct Activity {
     public var endCoordinate: CLLocationCoordinate2D {
         get {
             return CLLocationCoordinate2DMake(self.endCoordinates.first!, endCoordinates.last!)
+        }
+    }
+
+    public var startDate: NSDate? {
+        get {
+            return Strava.dateFromString(startDateString)
+        }
+    }
+
+    public var startDateLocal: NSDate? {
+        get {
+            return Strava.dateFromString(startDateLocalString)
         }
     }
 

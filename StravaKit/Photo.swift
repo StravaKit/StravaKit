@@ -10,20 +10,33 @@ import Foundation
 import CoreLocation
 
 public struct Photo {
-    let source: Int
-    let urls: [String : String]
+    public let source: Int
+    public let urls: [String : String]
 
-    let photoId: Int?
-    let uniqueId: String?
-    let activityId: Int?
-    let resourceState: Int?
-    let ref: String?
-    let uid: String?
-    let caption: String?
-    let type: String?
-    let uploadedAt: String?
-    let createdAt: String?
-    let location: [Double]?
+    public let photoId: Int?
+    public let uniqueId: String?
+    public let activityId: Int?
+    public let resourceState: Int?
+    public let ref: String?
+    public let uid: String?
+    public let caption: String?
+    public let type: String?
+    public let location: [Double]?
+
+    internal let uploadedAtString: String?
+    internal let createdAtString: String?
+
+    public var uploadedAt: NSDate? {
+        get {
+            return Strava.dateFromString(uploadedAtString)
+        }
+    }
+
+    public var createdAt: NSDate? {
+        get {
+            return Strava.dateFromString(createdAtString)
+        }
+    }
 
     init?(dictionary: JSONDictionary) {
         if let source = dictionary["source"] as? Int,
@@ -40,8 +53,8 @@ public struct Photo {
             self.uid = dictionary["uid"] as? String
             self.caption = dictionary["caption"] as? String
             self.type = dictionary["type"] as? String
-            self.uploadedAt = dictionary["uploaded_at"] as? String
-            self.createdAt = dictionary["created_at"] as? String
+            self.uploadedAtString = dictionary["uploaded_at"] as? String
+            self.createdAtString = dictionary["created_at"] as? String
             if let location = dictionary["location"] as? [Double] where location.count == 2 {
                 self.location = location
             }

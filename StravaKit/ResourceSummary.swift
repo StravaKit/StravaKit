@@ -22,4 +22,5 @@ public struct ResourceSummary {
             return nil
         }
     }
+    
 }

@@ -450,17 +450,12 @@
 		26AEBF8C1D664B9500481015 /* StravaKit */ = {
 			isa = PBXGroup;
 			children = (
-				26C92C071D6BDD2800C5D491 /* Model */,
-				26C92C041D6BDCDF00C5D491 /* Internal */,
 				26AEBF8D1D664B9500481015 /* StravaKit.h */,
 				26AEBF8F1D664B9500481015 /* Info.plist */,
 				26AEBFA91D664D3600481015 /* Strava.swift */,
-				26AEBFBE1D69296500481015 /* StravaOAuth.swift */,
-				26C92BF11D6ADA2200C5D491 /* StravaAthlete.swift */,
-				26C92BF51D6B7B2B00C5D491 /* StravaActivity.swift */,
-				26C92BF91D6B7B4B00C5D491 /* StravaClub.swift */,
-				26C92BF71D6B7B3C00C5D491 /* StravaSegment.swift */,
-				26C92BFB1D6B7B6400C5D491 /* StravaUpload.swift */,
+				26F99AB01D7F625F00F76C84 /* Extensions */,
+				26C92C071D6BDD2800C5D491 /* Models */,
+				26C92C041D6BDCDF00C5D491 /* Internal */,
 			);
 			path = StravaKit;
 			sourceTree = "<group>";
@@ -538,26 +533,26 @@
 			name = Internal;
 			sourceTree = "<group>";
 		};
-		26C92C071D6BDD2800C5D491 /* Model */ = {
+		26C92C071D6BDD2800C5D491 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				26C92C0C1D6BDE7800C5D491 /* Athlete.swift */,
-				26C92C0A1D6BDE6700C5D491 /* Stats.swift */,
-				26C92C081D6BDE5500C5D491 /* StatsDetail.swift */,
 				26C92C101D6BE4DB00C5D491 /* Activity.swift */,
-				26F521DE1D70D4DE00EB4162 /* Map.swift */,
-				26F521E61D70EAE700EB4162 /* Photo.swift */,
+				26C92C0C1D6BDE7800C5D491 /* Athlete.swift */,
 				2655C5E61D74FD3D00715ADE /* Club.swift */,
-				2655C6461D7671A700715ADE /* Segment.swift */,
-				2655C64F1D767B2100715ADE /* SegmentStats.swift */,
 				2655C6521D768F4000715ADE /* Leaderboard.swift */,
 				2655C6551D768F4D00715ADE /* LeaderboardEntry.swift */,
+				26F521DE1D70D4DE00EB4162 /* Map.swift */,
 				2655C6A51D7772A800715ADE /* MapBounds.swift */,
-				2655C6C11D77D26800715ADE /* SegmentEffort.swift */,
-				2655C6C41D77D56F00715ADE /* ResourceSummary.swift */,
 				2655C6D31D77F99100715ADE /* Page.swift */,
+				26F521E61D70EAE700EB4162 /* Photo.swift */,
+				2655C6C41D77D56F00715ADE /* ResourceSummary.swift */,
+				2655C6461D7671A700715ADE /* Segment.swift */,
+				2655C6C11D77D26800715ADE /* SegmentEffort.swift */,
+				2655C64F1D767B2100715ADE /* SegmentStats.swift */,
+				26C92C0A1D6BDE6700C5D491 /* Stats.swift */,
+				26C92C081D6BDE5500C5D491 /* StatsDetail.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		26C92C1A1D6C028700C5D491 /* Helpers */ = {
@@ -567,6 +562,19 @@
 				26C92C211D6C0E6700C5D491 /* JSONLoader.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		26F99AB01D7F625F00F76C84 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				26AEBFBE1D69296500481015 /* StravaOAuth.swift */,
+				26C92BF11D6ADA2200C5D491 /* StravaAthlete.swift */,
+				26C92BF51D6B7B2B00C5D491 /* StravaActivity.swift */,
+				26C92BF91D6B7B4B00C5D491 /* StravaClub.swift */,
+				26C92BF71D6B7B3C00C5D491 /* StravaSegment.swift */,
+				26C92BFB1D6B7B6400C5D491 /* StravaUpload.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

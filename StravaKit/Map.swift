@@ -17,7 +17,7 @@ public struct Map {
 
     init?(dictionary: JSONDictionary) {
         if let mapId = dictionary["id"] as? String,
-        let summaryPolyline = dictionary["summary_polyline"] as? String,
+            let summaryPolyline = dictionary["summary_polyline"] as? String,
             let resourceState = dictionary["resource_state"] as? Int {
 
             self.mapId = mapId
