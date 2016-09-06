@@ -20,6 +20,10 @@ public extension Strava {
 
     /**
      Gets a segment detail.
+     
+     ```swift
+     Strava.getSegment(1) { (segment, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/segments/#retrieve
      */
@@ -40,6 +44,10 @@ public extension Strava {
 
     /**
      Gets segments for a given map bounds.
+
+     ```swift
+     Strava.getSegments(mapBounds) { (segments, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/segments/#explore
      */
@@ -69,6 +77,10 @@ public extension Strava {
     /**
      Gets starred segments for current athlete.
 
+     ```swift
+     Strava.getStarredSegments() { (segments, error) in }
+     ```
+
      Docs: http://strava.github.io/api/v3/segments/#starred
      */
     static func getStarredSegments(page: Page? = nil, completionHandler:((segments: [Segment]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
@@ -96,6 +108,10 @@ public extension Strava {
 
     /**
      Gets leaderboard segments.
+     
+     ```swift
+     Strava.getSegmentLeaderboard(1) { (leaderboard, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/segments/#leaderboard
      */
@@ -124,6 +140,10 @@ public extension Strava {
 
     /**
      Gets all efforts for a segment.
+
+     ```swift
+     getSegmentEfforts(1) { (efforts, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/segments/#efforts
      */

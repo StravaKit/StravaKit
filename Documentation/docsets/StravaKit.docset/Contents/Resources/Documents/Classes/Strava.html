@@ -318,6 +318,9 @@
                       <div class="abstract">
                         <p>Gets activities for current athlete.</p>
 
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getActivities</span> <span class="p">{</span> <span class="p">(</span><span class="n">activities</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-activities">http://strava.github.io/api/v3/activities/#get-activities</a></p>
 
                       </div>
@@ -347,6 +350,9 @@
                       <div class="abstract">
                         <p>Gets activity detail.</p>
 
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getActivity</span><span class="p">(</span><span class="n">firstActivity</span><span class="o">.</span><span class="n">activityId</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">activity</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-details">http://strava.github.io/api/v3/activities/#get-details</a></p>
 
                       </div>
@@ -375,6 +381,9 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets following activities (friends).</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getFollowingActivities</span> <span class="p">{</span> <span class="p">(</span><span class="n">activities</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
 
 <p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-feed">http://strava.github.io/api/v3/activities/#get-feed</a></p>
 
@@ -409,6 +418,9 @@
                       <div class="abstract">
                         <p>Gets club detail.</p>
 
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getClub</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">club</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/clubs/#get-details">http://strava.github.io/api/v3/clubs/#get-details</a></p>
 
                       </div>
@@ -437,6 +449,9 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets clubs for current athlete.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getClubs</span> <span class="p">{</span> <span class="p">(</span><span class="n">clubs</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
 
 <p>Docs: <a href="http://strava.github.io/api/v3/clubs/#get-athletes">http://strava.github.io/api/v3/clubs/#get-athletes</a></p>
 
@@ -498,6 +513,17 @@
                       <div class="abstract">
                         <p>Provides URL used to initiate user login for use with a Safari View Controller.</p>
 
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">redirectURI</span> <span class="o">=</span> <span class="s">"stravademo://localhost/oauth/signin"</span>
+<span class="kt">Strava</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="n">clientSecret</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="n">redirectURI</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="k">let</span> <span class="nv">URL</span> <span class="o">=</span> <span class="kt">Strava</span><span class="o">.</span><span class="nf">userLogin</span><span class="p">(</span><span class="nv">scope</span><span class="p">:</span> <span class="o">.</span><span class="kt">Public</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="kt">SFSafariViewController</span><span class="p">(</span><span class="kt">URL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">entersReaderIfAvailable</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+<span class="nf">presentViewController</span><span class="p">(</span><span class="n">vc</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="c1">// hold onto the vc to dismiss later</span>
+<span class="k">self</span><span class="o">.</span><span class="n">safariViewController</span> <span class="o">=</span> <span class="n">vc</span>
+<span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/oauth/#get-authorize">http://strava.github.io/api/v3/oauth/#get-authorize</a></p>
 
                       </div>
@@ -527,6 +553,31 @@
                       <div class="abstract">
                         <p>Handles the URL given to AppDelegate.</p>
 
+<p>When the <code>redirectURI</code> is used it will cause a method in your <code>AppDelegate</code> to be run. The <code>openURL</code> method which is provided by StravaKit will determine if an opened URL should be used for OAuth authorization.</p>
+
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">openURL</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">Strava</span><span class="o">.</span><span class="nf">openURL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="n">sourceApplication</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>If the URL which opened the app includes a code to use for getting an access token it will be used and once it is successful a notification will be broadcast to indicate that it has completed.</p>
+
+<pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">stravaAuthorizationCompleted</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">?)</span> <span class="p">{</span>
+<span class="k">self</span><span class="o">.</span><span class="n">safariViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">dismissViewControllerAnimated</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="n">safariViewController</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="k">guard</span> <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">notification</span><span class="p">?</span><span class="o">.</span><span class="n">userInfo</span><span class="p">,</span>
+    <span class="k">let</span> <span class="nv">status</span> <span class="o">=</span> <span class="n">userInfo</span><span class="p">[</span><span class="kt">StravaStatusKey</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="kt">StravaStatusSuccessValue</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">statusLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Authorization successful!"</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">userInfo</span><span class="p">[</span><span class="kt">StravaErrorKey</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">NSError</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -553,6 +604,23 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Deauthorizes Strava access token.</p>
+
+<p>Once the authorization steps have beenc completed successfully the access token and athlete profile have been securely stored in the user&rsquo;s Keychain for use whenever they use your app. If they ever want to remove the access token and athlete profile they can deauthorize their session with Strava.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">deauthorize</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+        <span class="c1">// TODO: change UI for authorized state</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// TODO: warn user that deauthorization failed</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>With a valid access token, which is managed for you by StravaKit, you can use various API endpoints.</p>
 
 <p>Docs: <a href="http://strava.github.io/api/v3/oauth/#deauthorize">http://strava.github.io/api/v3/oauth/#deauthorize</a></p>
 
@@ -587,6 +655,9 @@
                       <div class="abstract">
                         <p>Gets profile for current athlete.</p>
 
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getAthlete</span> <span class="p">{</span> <span class="p">(</span><span class="n">athlete</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/athlete/#get-details">http://strava.github.io/api/v3/athlete/#get-details</a></p>
 
                       </div>
@@ -615,6 +686,9 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets profile for athlete by ID.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getAthlete</span><span class="p">(</span><span class="n">athleteId</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">athlete</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
 
 <p>Docs: <a href="http://strava.github.io/api/v3/athlete/#get-another-details">http://strava.github.io/api/v3/athlete/#get-another-details</a></p>
 
@@ -645,6 +719,9 @@
                       <div class="abstract">
                         <p>Gets stats for athlete by ID.</p>
 
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getStats</span><span class="p">(</span><span class="n">athleteId</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/athlete/#stats">http://strava.github.io/api/v3/athlete/#stats</a></p>
 
                       </div>
@@ -673,6 +750,9 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets friends of current athlete.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getAthleteFriends</span> <span class="p">{</span> <span class="p">(</span><span class="n">athletes</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
 
 <p>Docs: <a href="http://strava.github.io/api/v3/follow/#friends">http://strava.github.io/api/v3/follow/#friends</a></p>
 
@@ -707,6 +787,9 @@
                       <div class="abstract">
                         <p>Gets a segment detail.</p>
 
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getSegment</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">segment</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/segments/#retrieve">http://strava.github.io/api/v3/segments/#retrieve</a></p>
 
                       </div>
@@ -735,6 +818,9 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets segments for a given map bounds.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getSegments</span><span class="p">(</span><span class="n">mapBounds</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
 
 <p>Docs: <a href="http://strava.github.io/api/v3/segments/#explore">http://strava.github.io/api/v3/segments/#explore</a></p>
 
@@ -765,6 +851,9 @@
                       <div class="abstract">
                         <p>Gets starred segments for current athlete.</p>
 
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getStarredSegments</span><span class="p">()</span> <span class="p">{</span> <span class="p">(</span><span class="n">segments</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/segments/#starred">http://strava.github.io/api/v3/segments/#starred</a></p>
 
                       </div>
@@ -794,6 +883,9 @@
                       <div class="abstract">
                         <p>Gets leaderboard segments.</p>
 
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getSegmentLeaderboard</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">leaderboard</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
 <p>Docs: <a href="http://strava.github.io/api/v3/segments/#leaderboard">http://strava.github.io/api/v3/segments/#leaderboard</a></p>
 
                       </div>
@@ -822,6 +914,9 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Gets all efforts for a segment.</p>
+
+<pre class="highlight swift"><code><span class="nf">getSegmentEfforts</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">efforts</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
 
 <p>Docs: <a href="http://strava.github.io/api/v3/segments/#efforts">http://strava.github.io/api/v3/segments/#efforts</a></p>
 

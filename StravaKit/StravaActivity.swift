@@ -19,6 +19,10 @@ public extension Strava {
     /**
      Gets activities for current athlete.
 
+     ```swift
+     Strava.getActivities { (activities, error) in }
+     ```
+
      Docs: http://strava.github.io/api/v3/activities/#get-activities
      */
     static func getActivities(completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
@@ -38,6 +42,10 @@ public extension Strava {
 
     /**
      Gets activity detail.
+     
+     ```swift
+     Strava.getActivity(firstActivity.activityId, completionHandler: { (activity, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/activities/#get-details
      */
@@ -58,6 +66,10 @@ public extension Strava {
 
     /**
      Gets following activities (friends).
+     
+     ```swift
+     Strava.getFollowingActivities { (activities, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/activities/#get-feed
      */

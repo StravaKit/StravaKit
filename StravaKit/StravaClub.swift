@@ -17,6 +17,10 @@ public extension Strava {
 
     /**
      Gets club detail.
+     
+     ```swift
+     Strava.getClub(1) { (club, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/clubs/#get-details
      */
@@ -37,6 +41,10 @@ public extension Strava {
 
     /**
      Gets clubs for current athlete.
+     
+     ```swift
+     Strava.getClubs { (clubs, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/clubs/#get-athletes
      */

@@ -19,6 +19,10 @@ public extension Strava {
 
     /**
      Gets profile for current athlete.
+     
+     ```swift
+     Strava.getAthlete { (athlete, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/athlete/#get-details
      */
@@ -40,6 +44,10 @@ public extension Strava {
     /**
      Gets profile for athlete by ID.
 
+     ```swift
+     Strava.getAthlete(athleteId) { (athlete, error) in }
+     ```
+
      Docs: http://strava.github.io/api/v3/athlete/#get-another-details
      */
     static func getAthlete(athleteId: Int, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) -> NSURLSessionTask? {
@@ -59,6 +67,10 @@ public extension Strava {
 
     /**
      Gets stats for athlete by ID.
+
+     ```swift
+     Strava.getStats(athleteId, completionHandler: { (stats, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/athlete/#stats
      */
@@ -80,6 +92,10 @@ public extension Strava {
 
     /**
      Gets friends of current athlete.
+     
+     ```swift
+     Strava.getAthleteFriends { (athletes, error) in }
+     ```
 
      Docs: http://strava.github.io/api/v3/follow/#friends
      */
