@@ -2,6 +2,7 @@
 
 Version | Changes
 --- | ---
+**0.4.0** | Updates model properties access to public and adds docs
 **0.3.2** | Updates Podspec to include Mac
 **0.3.1** | Adds support for segment efforts and paging
 **0.3.0** | Adds support for segments and fixes found bugs
