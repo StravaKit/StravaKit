@@ -8,12 +8,18 @@
 
 import Foundation
 
+/**
+ Model Representation of segment stats.
+ */
 public struct SegmentStats {
     public let prElapsedTime: String?
     public let effortCount: Int
 
     internal let prDateString: String?
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let effortCount = dictionary["effort_count"] as? Int {
             self.effortCount = effortCount
@@ -31,5 +37,5 @@ public struct SegmentStats {
             return Strava.dateFromString(prDateString)
         }
     }
-
+    
 }

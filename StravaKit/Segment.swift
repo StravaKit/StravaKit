@@ -9,6 +9,9 @@
 import Foundation
 import CoreLocation
 
+/**
+ Model Representation of a segment.
+ */
 public struct Segment {
     public let segmentId: Int
     public let resourceState: Int
@@ -42,6 +45,9 @@ public struct Segment {
     public let athleteSegmentStats: SegmentStats?
     public let points: String?
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let segmentId = dictionary["id"] as? Int,
             let resourceState = dictionary["resource_state"] as? Int,
@@ -145,5 +151,5 @@ public struct Segment {
             return Strava.dateFromString(updatedAtString)
         }
     }
-
+    
 }

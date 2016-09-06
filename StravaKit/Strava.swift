@@ -13,25 +13,54 @@
 import Foundation
 import Security
 
+/** JSON Dictionary */
 public typealias JSONDictionary = [String : AnyObject]
+/** JSON Array */
 public typealias JSONArray = [JSONDictionary]
+/** Params Dictionary */
 public typealias ParamsDictionary = [String : AnyObject]
 
+/** Strava Base URL */
 public let StravaBaseURL = "https://www.strava.com"
+/** Strava Error Domain */
 public let StravaErrorDomain = "StravaKit"
 
+/** Rate Limit HTTP Header Key for Limit */
 public let RateLimitLimitHeaderKey = "X-Ratelimit-Limit"
+/** Rate Limit HTTP Header Key for Usage */
 public let RateLimitUsageHeaderKey = "X-Ratelimit-Usage"
 
+/** Rate Limit Notification Key for Limit */
 public let RateLimitLimitKey = "Rate-Limit-Limit"
+/** Rate Limit Notification Key for Usage */
 public let RateLimitUsageKey = "Rate-Limit-Usage"
 
+/**
+ HTTP Methods
+
+ - GET: Get method.
+ - POST: Post method.
+ - PUT: Put method.
+ */
 public enum HTTPMethod: String {
     case GET = "GET"
     case POST = "POST"
     case PUT = "PUT"
 }
 
+/**
+ Strava Error Codes
+
+ - RemoteError: Error on backend.
+ - MissingCredentials: Required credentials were missing.
+ - NoAccessToken: Access Token was not found.
+ - NoResponse: Response was not returned.
+ - InvalidResponse: Response was not expected.
+ - RecordNotFound: Requested resource was not found.
+ - RateLimitExceeded: Request exceeded rate limit. See error for details.
+ - AccessForbidden: Access is not allowed.
+ - UndefinedError: Reason for error is not known.
+ */
 public enum StravaErrorCode: Int {
     case RemoteError = 501
     case MissingCredentials = 502
@@ -44,6 +73,9 @@ public enum StravaErrorCode: Int {
     case UndefinedError = 599
 }
 
+/**
+ Strava class for handling all API endpoint requests.
+ */
 public class Strava {
     static let sharedInstance = Strava()
     internal let dateFormatter = NSDateFormatter()
@@ -56,7 +88,10 @@ public class Strava {
     internal var alternateRequestor: Requestor?
     internal var isDebugging: Bool = false
 
-    init() {
+    /**
+     Strava initializer which should not be accessed externally.
+     */
+    internal init() {
         loadAccessData()
 
         // Use ISO 8601 standard format for date strings
@@ -65,18 +100,27 @@ public class Strava {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
     }
 
+    /**
+     Indicates if the current athlete is defined with a profile and access token.
+     */
     public static var isAuthorized: Bool {
         get {
             return sharedInstance.accessToken != nil && sharedInstance.athlete != nil
         }
     }
 
+    /**
+     Current Athlete which is authorized.
+     */
     public static var currentAthlete: Athlete? {
         get {
             return sharedInstance.athlete
         }
     }
 
+    /**
+     Allows for enabling debugging. It is false by default.
+     */
     public static var isDebugging: Bool {
         get {
             return sharedInstance.isDebugging
@@ -86,6 +130,9 @@ public class Strava {
         }
     }
 
+    /**
+     Request method for all StravaKit API endpoint calls.
+     */
     public static func request(method: HTTPMethod, authenticated: Bool, path: String, params: [String: AnyObject]?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         if isDebugging {
             debugPrint("Method: \(method.rawValue), Path: \(path), Authenticated: \(authenticated)")
@@ -96,7 +143,7 @@ public class Strava {
         if let alternateRequestor = sharedInstance.alternateRequestor {
             return alternateRequestor.request(method, authenticated: authenticated, path: path, params: params, completionHandler: completionHandler)
         }
-        
+
         return sharedInstance.defaultRequestor.request(method, authenticated: authenticated, path: path, params: params, completionHandler: completionHandler)
     }
 
@@ -155,5 +202,5 @@ public class Strava {
         }
         return nil
     }
-
+    
 }

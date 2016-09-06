@@ -15,8 +15,11 @@ internal enum ClubResourcePath: String {
 
 public extension Strava {
 
-    // Gets club detail
-    // Docs: http://strava.github.io/api/v3/clubs/#get-details
+    /**
+     Gets club detail.
+
+     Docs: http://strava.github.io/api/v3/clubs/#get-details
+     */
     static func getClub(clubId: Int, completionHandler:((club: Club?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = ClubResourcePath.Club.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(clubId))
 
@@ -32,8 +35,11 @@ public extension Strava {
         }
     }
 
-    // Gets clubs for current athlete
-    // Docs: http://strava.github.io/api/v3/clubs/#get-athletes
+    /**
+     Gets clubs for current athlete.
+
+     Docs: http://strava.github.io/api/v3/clubs/#get-athletes
+     */
     static func getClubs(page: Page? = nil, completionHandler:((clubs: [Club]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = ClubResourcePath.Clubs.rawValue
 
@@ -88,5 +94,5 @@ public extension Strava {
             }
         }
     }
-
+    
 }

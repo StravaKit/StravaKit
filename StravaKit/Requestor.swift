@@ -8,14 +8,26 @@
 
 import Foundation
 
+/**
+ Requestor protocol used to allow for default and custom requestor instances.
+ */
 public protocol Requestor {
 
+    /**
+     Request method used for all API endpoint calls.
+     */
     func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask?
 
 }
 
+/**
+ Default Requestor used by the Strava class as the real implementation for requests.
+ */
 public class DefaultRequestor : Requestor {
 
+    /**
+     Request method used for all API endpoint calls.
+     */
     public func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         if let url = Strava.urlWithString(StravaBaseURL + path, parameters: method == .GET ? params : nil) {
             let request = NSMutableURLRequest(URL: url)
@@ -36,7 +48,7 @@ public class DefaultRequestor : Requestor {
                 return nil
             }
         }
-        
+
         return nil
     }
 
@@ -122,10 +134,10 @@ public class DefaultRequestor : Requestor {
                     completionHandler?(response: nil, error: error)
                 }
             }
-
+            
         }
         task.resume()
         return task
     }
-
+    
 }

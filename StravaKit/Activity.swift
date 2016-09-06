@@ -9,6 +9,9 @@
 import Foundation
 import CoreLocation
 
+/**
+ Model Representation of an activity.
+ */
 public struct Activity {
     public let activityId: Int
     public let externalId: String
@@ -55,6 +58,9 @@ public struct Activity {
     internal let startDateString: String
     internal let startDateLocalString: String
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let activityId = dictionary["id"] as? Int,
             let externalId = dictionary["external_id"] as? String,
@@ -185,5 +191,5 @@ public struct Activity {
             return Strava.dateFromString(startDateLocalString)
         }
     }
-
+    
 }

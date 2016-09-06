@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Model Representation of an athlete.
+ */
 public struct Athlete {
     public let athleteId: Int
     public let resourceState: Int
@@ -57,6 +60,9 @@ public struct Athlete {
         }
     }
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let athleteId = dictionary["id"] as? Int,
             let resourceState = dictionary["resource_state"] as? Int,
@@ -116,8 +122,8 @@ public struct Athlete {
                 athletes.append(athlete)
             }
         }
-
+        
         return athletes
     }
-
+    
 }

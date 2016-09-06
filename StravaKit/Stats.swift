@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Model Representation of stats.
+ */
 public struct Stats {
     public let athleteId: Int
     public let biggestRideDistance: Float
@@ -25,6 +28,9 @@ public struct Stats {
     public let allRunTotals: StatsDetail
     public let allSwimTotals: StatsDetail
 
+    /**
+     Failable initializer.
+     */
     init?(athleteId: Int, dictionary: JSONDictionary) {
         if let biggestRideDistance = dictionary["biggest_ride_distance"] as? Float,
             let biggestClimbElevationGain = dictionary["biggest_climb_elevation_gain"] as? Float,
@@ -70,5 +76,5 @@ public struct Stats {
             return nil
         }
     }
-
+    
 }

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Structs  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Structs  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">StravaKit Docs</a> (25% documented)</p>
+        <p class="header-right"><a href="https://github.com/brennanMKE/StravaKit"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fstravakit%2Egithub%2Eio%2Fdocs%2Fswift%2F0%2E3%2E2%2Fapi%2Fdocsets%2FStravaKit%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">StravaKit Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Structs  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/DefaultRequestor.html">DefaultRequestor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Strava.html">Strava</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit7PageKeySS">PageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit10PerPageKeySS">PerPageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit23RateLimitLimitHeaderKeySS">RateLimitLimitHeaderKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit17RateLimitLimitKeySS">RateLimitLimitKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit23RateLimitUsageHeaderKeySS">RateLimitUsageHeaderKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit17RateLimitUsageKeySS">RateLimitUsageKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit40StravaAuthorizationCompletedNotificationSS">StravaAuthorizationCompletedNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit13StravaBaseURLSS">StravaBaseURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit17StravaErrorDomainSS">StravaErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit14StravaErrorKeySS">StravaErrorKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit24StravaStatusFailureValueSS">StravaStatusFailureValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit15StravaStatusKeySS">StravaStatusKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v9StravaKit24StravaStatusSuccessValueSS">StravaStatusSuccessValue</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/HTTPMethod.html">HTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/OAuthScope.html">OAuthScope</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/StravaErrorCode.html">StravaErrorCode</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Requestor.html">Requestor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Activity.html">Activity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Athlete.html">Athlete</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Club.html">Club</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Leaderboard.html">Leaderboard</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/LeaderboardEntry.html">LeaderboardEntry</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Map.html">Map</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/MapBounds.html">MapBounds</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:V9StravaKit4Page">Page</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Photo.html">Photo</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:V9StravaKit8PhotoURL">PhotoURL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:V9StravaKit15ResourceSummary">ResourceSummary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Segment.html">Segment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SegmentEffort.html">SegmentEffort</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SegmentStats.html">SegmentStats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Stats.html">Stats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/StatsDetail.html">StatsDetail</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:9StravaKit9JSONArray">JSONArray</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:9StravaKit14JSONDictionary">JSONDictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:9StravaKit16ParamsDictionary">ParamsDictionary</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Structs</h1>
+            <p>The following structs are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit5Photo"></a>
+                    <a name="//apple_ref/swift/Struct/Photo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit5Photo">Photo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a photo.</p>
+
+                        <a href="Structs/Photo.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Photo</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit8PhotoURL"></a>
+                    <a name="//apple_ref/swift/Struct/PhotoURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit8PhotoURL">PhotoURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit7Segment"></a>
+                    <a name="//apple_ref/swift/Struct/Segment" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit7Segment">Segment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a segment.</p>
+
+                        <a href="Structs/Segment.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Segment</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit16LeaderboardEntry"></a>
+                    <a name="//apple_ref/swift/Struct/LeaderboardEntry" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit16LeaderboardEntry">LeaderboardEntry</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a leaderboard entry.</p>
+
+                        <a href="Structs/LeaderboardEntry.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">LeaderboardEntry</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit5Stats"></a>
+                    <a name="//apple_ref/swift/Struct/Stats" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit5Stats">Stats</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of stats.</p>
+
+                        <a href="Structs/Stats.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Stats</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit15ResourceSummary"></a>
+                    <a name="//apple_ref/swift/Struct/ResourceSummary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit15ResourceSummary">ResourceSummary</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a resource summary.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ResourceSummary</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit11StatsDetail"></a>
+                    <a name="//apple_ref/swift/Struct/StatsDetail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit11StatsDetail">StatsDetail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of stats detail.</p>
+
+                        <a href="Structs/StatsDetail.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">StatsDetail</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit12SegmentStats"></a>
+                    <a name="//apple_ref/swift/Struct/SegmentStats" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit12SegmentStats">SegmentStats</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of segment stats.</p>
+
+                        <a href="Structs/SegmentStats.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SegmentStats</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit11Leaderboard"></a>
+                    <a name="//apple_ref/swift/Struct/Leaderboard" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit11Leaderboard">Leaderboard</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a leaderboard.</p>
+
+                        <a href="Structs/Leaderboard.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Leaderboard</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit8Activity"></a>
+                    <a name="//apple_ref/swift/Struct/Activity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit8Activity">Activity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of an activity.</p>
+
+                        <a href="Structs/Activity.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Activity</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit7Athlete"></a>
+                    <a name="//apple_ref/swift/Struct/Athlete" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit7Athlete">Athlete</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of an athlete.</p>
+
+                        <a href="Structs/Athlete.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Athlete</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit4Page"></a>
+                    <a name="//apple_ref/swift/Struct/Page" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit4Page">Page</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a page.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Page</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit3Map"></a>
+                    <a name="//apple_ref/swift/Struct/Map" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit3Map">Map</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a map.</p>
+
+                        <a href="Structs/Map.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Map</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit4Club"></a>
+                    <a name="//apple_ref/swift/Struct/Club" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit4Club">Club</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a club.</p>
+
+                        <a href="Structs/Club.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Club</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit13SegmentEffort"></a>
+                    <a name="//apple_ref/swift/Struct/SegmentEffort" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit13SegmentEffort">SegmentEffort</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of a segment effort.</p>
+
+                        <a href="Structs/SegmentEffort.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">SegmentEffort</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V9StravaKit9MapBounds"></a>
+                    <a name="//apple_ref/swift/Struct/MapBounds" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V9StravaKit9MapBounds">MapBounds</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Model Representation of map bounds.</p>
+
+                        <a href="Structs/MapBounds.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MapBounds</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/brennanMKE/StravaKit" target="_blank" rel="external">StravaKit</a>. All rights reserved. (Last updated: 2016-09-06)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

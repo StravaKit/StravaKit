@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Model Representation of a leaderboard.
+ */
 public struct Leaderboard {
     public let effortCount: Int
     public let entryCount: Int
@@ -15,12 +18,15 @@ public struct Leaderboard {
     public let komType: String
     public let entries: [LeaderboardEntry]
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let effortCount = dictionary["effort_count"] as? Int,
-        let entryCount = dictionary["entry_count"] as? Int,
-        let neighborhoodCount = dictionary["neighborhood_count"] as? Int,
-        let komType = dictionary["kom_type"] as? String,
-        let entryDictionaries = dictionary["entries"] as? JSONArray {
+            let entryCount = dictionary["entry_count"] as? Int,
+            let neighborhoodCount = dictionary["neighborhood_count"] as? Int,
+            let komType = dictionary["kom_type"] as? String,
+            let entryDictionaries = dictionary["entries"] as? JSONArray {
             self.effortCount = effortCount
             self.entryCount = entryCount
             self.neighborhoodCount = neighborhoodCount

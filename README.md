@@ -67,7 +67,7 @@ Brennan Stehling - 2016
 
 # Examples
 
-A demo application is included with StravaKit along with a comprehensive collection of tests which demonstrate how StravaKit can be used.
+A demo application is included with StravaKit along with a comprehensive collection of tests which demonstrate how StravaKit can be used. Refer to [Documentation](Documentation/index.html) for further details.
 
 ### Authorizing with OAuth
 

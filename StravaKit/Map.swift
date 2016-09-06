@@ -9,12 +9,18 @@
 import Foundation
 import CoreLocation
 
+/**
+ Model Representation of a map.
+ */
 public struct Map {
     public let mapId: String
     public let polyline: String?
     public let summaryPolyline: String
     public let resourceState: Int
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let mapId = dictionary["id"] as? String,
             let summaryPolyline = dictionary["summary_polyline"] as? String,
@@ -55,5 +61,5 @@ public struct Map {
             return []
         }
     }
-
+    
 }

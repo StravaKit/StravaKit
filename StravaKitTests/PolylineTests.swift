@@ -14,6 +14,9 @@ internal struct Coordinate {
     let latitude: Double
     let longitude: Double
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let latitude = dictionary["latitude"] as? Double,
             let longitude = dictionary["longitude"] as? Double {
@@ -42,6 +45,9 @@ internal struct PolylineData {
     let polyline: String
     let coordinates: [Coordinate]
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let polyline = dictionary["polyline"] as? String,
             let coordinatesDictionary = dictionary["coordinates"] as? JSONArray {

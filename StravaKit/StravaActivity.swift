@@ -16,8 +16,11 @@ internal enum ActivityResourcePath: String {
 
 public extension Strava {
 
-    // Gets activities for current athlete
-    // Docs: http://strava.github.io/api/v3/activities/#get-activities
+    /**
+     Gets activities for current athlete.
+
+     Docs: http://strava.github.io/api/v3/activities/#get-activities
+     */
     static func getActivities(completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = ActivityResourcePath.Activities.rawValue
 
@@ -33,8 +36,11 @@ public extension Strava {
         }
     }
 
-    // Gets activity detail
-    // Docs: http://strava.github.io/api/v3/activities/#get-details
+    /**
+     Gets activity detail.
+
+     Docs: http://strava.github.io/api/v3/activities/#get-details
+     */
     static func getActivity(activityId: Int, completionHandler:((activity: Activity?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = ActivityResourcePath.Activity.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(activityId))
 
@@ -50,8 +56,11 @@ public extension Strava {
         }
     }
 
-    // Gets following activities (friends)
-    // Docs: http://strava.github.io/api/v3/activities/#get-feed
+    /**
+     Gets following activities (friends).
+
+     Docs: http://strava.github.io/api/v3/activities/#get-feed
+     */
     static func getFollowingActivities(page: Page? = nil, completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = ActivityResourcePath.Following.rawValue
 
@@ -106,5 +115,5 @@ public extension Strava {
             }
         }
     }
-
+    
 }

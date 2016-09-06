@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Model Representation of a segment effort.
+ */
 public struct SegmentEffort {
     public let effortId: Int
     public let resourceState: Int
@@ -22,13 +25,16 @@ public struct SegmentEffort {
     public let deviceWatts: Bool
     public let averageWatts: Double
     public let segment: Segment
-    
+
     public let prRank: Int?
     public let komRank: Int?
 
     internal let startDateString: String
     internal let startDateLocalString: String
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let effortId = dictionary["id"] as? Int,
             let resourceState = dictionary["resource_state"] as? Int,
@@ -94,5 +100,5 @@ public struct SegmentEffort {
             return Strava.dateFromString(startDateLocalString)
         }
     }
-
+    
 }

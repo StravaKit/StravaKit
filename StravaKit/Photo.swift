@@ -9,6 +9,9 @@
 import Foundation
 import CoreLocation
 
+/**
+ Model Representation of a photo.
+ */
 public struct Photo {
     public let source: Int
     public let urls: [String : String]
@@ -38,6 +41,9 @@ public struct Photo {
         }
     }
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let source = dictionary["source"] as? Int,
             let urls = dictionary["urls"] as? [String : String] {
@@ -106,5 +112,5 @@ public struct PhotoURL {
         }
         return nil
     }
-
+    
 }

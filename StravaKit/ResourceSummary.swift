@@ -8,10 +8,16 @@
 
 import Foundation
 
+/**
+ Model Representation of a resource summary.
+ */
 public struct ResourceSummary {
     let resourceId: Int
     let resourceState: Int
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let resourceId = dictionary["id"] as? Int,
             let resourceState = dictionary["resource_state"] as? Int {
@@ -22,5 +28,5 @@ public struct ResourceSummary {
             return nil
         }
     }
-    
+
 }

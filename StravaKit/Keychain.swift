@@ -80,10 +80,10 @@ public extension Strava {
             kSecClass as String : kSecClassGenericPassword,
             kSecAttrAccount as String : StravaKeychainAccount
         ]
-        
+
         let resultCode = SecItemDelete(query as CFDictionary)
         
         return resultCode == noErr || resultCode == errSecItemNotFound
     }
-
+    
 }

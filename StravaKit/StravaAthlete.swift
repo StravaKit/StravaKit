@@ -17,8 +17,11 @@ internal enum AthleteResourcePath: String {
 
 public extension Strava {
 
-    // Gets profile for current athlete
-    // Docs: http://strava.github.io/api/v3/athlete/#get-details
+    /**
+     Gets profile for current athlete.
+
+     Docs: http://strava.github.io/api/v3/athlete/#get-details
+     */
     static func getAthlete(completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = AthleteResourcePath.Athlete.rawValue
 
@@ -34,8 +37,11 @@ public extension Strava {
         }
     }
 
-    // Gets profile for athlete by ID
-    // Docs: http://strava.github.io/api/v3/athlete/#get-another-details
+    /**
+     Gets profile for athlete by ID.
+
+     Docs: http://strava.github.io/api/v3/athlete/#get-another-details
+     */
     static func getAthlete(athleteId: Int, completionHandler: ((athlete: Athlete?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = AthleteResourcePath.Athletes.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(athleteId))
 
@@ -51,8 +57,11 @@ public extension Strava {
         }
     }
 
-    // Gets stats for athlete by ID
-    // Docs: http://strava.github.io/api/v3/athlete/#stats
+    /**
+     Gets stats for athlete by ID.
+
+     Docs: http://strava.github.io/api/v3/athlete/#stats
+     */
     static func getStats(athleteId: Int, completionHandler: ((stats: Stats?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = AthleteResourcePath.Stats.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(athleteId))
 
@@ -69,8 +78,11 @@ public extension Strava {
 
     }
 
-    // Gets friends of current athlete
-    // Docs: http://strava.github.io/api/v3/follow/#friends
+    /**
+     Gets friends of current athlete.
+
+     Docs: http://strava.github.io/api/v3/follow/#friends
+     */
     static func getAthleteFriends(page: Page? = nil, completionHandler: ((athletes: [Athlete]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = AthleteResourcePath.Friends.rawValue
 
@@ -144,5 +156,5 @@ public extension Strava {
             }
         }
     }
-
+    
 }

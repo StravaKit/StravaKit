@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Model Representation of a club.
+ */
 public struct Club {
     let clubId: Int
     let resourceState: Int
@@ -33,6 +36,9 @@ public struct Club {
     let admin: Bool?
     let owner: Bool?
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let clubId = dictionary["id"] as? Int,
             let resourceState = dictionary["resource_state"] as? Int,
@@ -93,5 +99,5 @@ public struct Club {
         }
         return clubs
     }
-
+    
 }

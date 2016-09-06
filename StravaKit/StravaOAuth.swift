@@ -5,17 +5,19 @@
 //  Created by Brennan Stehling on 8/20/16.
 //  Copyright © 2016 SmallSharpTools LLC. All rights reserved.
 //
-// Implementation influenced by LyftKit created by Genady Okrain.
-//
-// Docs: http://strava.github.io/api/v3/oauth/
 
 import Foundation
 
+/** Authorization Completed Notification */
 public let StravaAuthorizationCompletedNotification : String = "StravaAuthorizationCompleted"
 
+/** Status Key */
 public let StravaStatusKey: String = "status"
+/** Error Key */
 public let StravaErrorKey: String = "error"
+/** Success Value */
 public let StravaStatusSuccessValue: String = "success"
+/** Failure Value */
 public let StravaStatusFailureValue: String = "failure"
 
 internal enum OAuthResourcePath: String {
@@ -24,6 +26,14 @@ internal enum OAuthResourcePath: String {
     case Deauthorization = "/oauth/deauthorize"
 }
 
+/**
+ OAuth Scopes
+
+ - Public: Default, private activities are not returned, privacy zones are respected in stream requests.
+ - Write: Modify activities, upload on the user’s behalf.
+ - Private: View private activities and data within privacy zones.
+ - PrivateWrite: Both ‘view_private’ and ‘write’ access.
+ */
 public enum OAuthScope: String {
     case Public = "public"
     case Write = "write"
@@ -31,17 +41,27 @@ public enum OAuthScope: String {
     case PrivateWrite = "view_private,write"
 }
 
+/**
+ Strava OAuth extension which handles authorization actions.
+
+ Docs: http://strava.github.io/api/v3/oauth/
+ */
 public extension Strava {
-    
-    // Initialize clientId & clientSecret
+
+    /**
+     Initialize clientId, clientSecret and redirectURI.
+     */
     static func set(clientId clientId: String, clientSecret: String, redirectURI: String, sandbox: Bool? = nil) {
         sharedInstance.clientId = clientId
         sharedInstance.clientSecret = clientSecret
         sharedInstance.redirectURI = redirectURI
     }
 
-    // Provides URL used to initiate user login for use with a Safari View Controller
-    // Docs: http://strava.github.io/api/v3/oauth/#get-authorize
+    /**
+     Provides URL used to initiate user login for use with a Safari View Controller.
+
+     Docs: http://strava.github.io/api/v3/oauth/#get-authorize
+     */
     static func userLogin(scope scope: OAuthScope, state: String = "") -> NSURL? {
         guard let clientId = sharedInstance.clientId,
             _ = sharedInstance.clientSecret,
@@ -60,8 +80,10 @@ public extension Strava {
         let URL = urlWithString("\(StravaBaseURL)/\(path)", parameters: parameters)
         return URL
     }
-    
-    // Handles the URL given to AppDelegate
+
+    /**
+     Handles the URL given to AppDelegate.
+     */
     static func openURL(URL: NSURL, sourceApplication: String?) -> Bool {
         guard let _ = sharedInstance.clientId,
             _ = sharedInstance.clientSecret else {
@@ -92,8 +114,11 @@ public extension Strava {
         return true
     }
 
-    // Deauthorizes Strava access token
-    // Docs: http://strava.github.io/api/v3/oauth/#deauthorize
+    /**
+     Deauthorizes Strava access token.
+
+     Docs: http://strava.github.io/api/v3/oauth/#deauthorize
+     */
     static func deauthorize(completionHandler: ((success: Bool, error: NSError?) -> ())?) {
         let path = OAuthResourcePath.Deauthorization.rawValue
 
@@ -116,8 +141,11 @@ public extension Strava {
 
     // MARK: - Internal Functions -
 
-    // Exchanges code with the OAuth provider for the Access Token
-    // Docs: http://strava.github.io/api/v3/oauth/#post-token
+    /**
+     Exchanges code with the OAuth provider for the Access Token.
+
+     Docs: http://strava.github.io/api/v3/oauth/#post-token
+     */
     internal static func exchangeTokenWithCode(code: String, completionHandler: ((success: Bool, error: NSError?) -> ())?) {
         guard let clientId = sharedInstance.clientId,
             clientSecret = sharedInstance.clientSecret else {
@@ -142,7 +170,7 @@ public extension Strava {
                 }
                 return
             }
-            
+
             guard let response = response,
                 let accessToken = response["access_token"] as? String,
                 let athleteDictionary = response["athlete"] as? JSONDictionary else {
@@ -179,5 +207,5 @@ public extension Strava {
     internal static func queryStringValue(URL: NSURL, name: String) -> String? {
         return NSURLComponents(URL: URL, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == name }).first?.value
     }
-
+    
 }

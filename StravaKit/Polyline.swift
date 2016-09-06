@@ -19,12 +19,14 @@ enum PolylineError: ErrorType {
 
 internal class Polyline {
 
-    /// This function decodes a `String` to a `[CLLocationCoordinate2D]?`
-    ///
-    /// - parameter encodedPolyline: `String` representing the encoded Polyline
-    /// - parameter precision: The precision used to decode coordinates (default: `1e5`)
-    ///
-    /// - returns: A `[CLLocationCoordinate2D]` representing the decoded polyline if valid, `nil` otherwise
+    /**
+     This function decodes a `String` to a `[CLLocationCoordinate2D]?`.
+
+     @param encodedPolyline: `String` representing the encoded Polyline
+     @param precision: The precision used to decode coordinates (default: `1e5`)
+
+     @return: A `[CLLocationCoordinate2D]` representing the decoded polyline if valid, `nil` otherwise
+     */
     internal static func decodePolyline(encodedPolyline: String, precision: Double = 1e5) -> [CLLocationCoordinate2D]? {
         let data: NSData = encodedPolyline.dataUsingEncoding(NSUTF8StringEncoding)!
         let byteArray: UnsafePointer<Int8> = unsafeBitCast(data.bytes, UnsafePointer<Int8>.self)
@@ -53,8 +55,10 @@ internal class Polyline {
         return decodedCoordinates
     }
 
-    // We use a byte array (UnsafePointer<Int8>) here for performance reasons. Check with swift 2 if we can
-    // go back to using [Int8]
+    /**
+     We use a byte array (UnsafePointer<Int8>) here for performance reasons. 
+     Check with swift 2 if we can go back to using [Int8].
+     */
     private static func decodeSingleCoordinate(byteArray byteArray: UnsafePointer<Int8>, length: Int, inout position: Int, precision: Double = 1e5) throws -> Double {
 
         guard position < length else { throw PolylineError.SingleCoordinateDecodingError }
@@ -78,7 +82,7 @@ internal class Polyline {
         if (componentCounter == 6) && ((currentChar & 0x20) == 0x20) {
             throw PolylineError.SingleCoordinateDecodingError
         }
-
+        
         if (coordinate & 0x01) == 0x01 {
             coordinate = ~(coordinate >> 1)
         } else {
@@ -87,5 +91,5 @@ internal class Polyline {
         
         return Double(coordinate) / precision
     }
-
+    
 }

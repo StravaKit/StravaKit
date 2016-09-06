@@ -8,9 +8,14 @@
 
 import Foundation
 
+/** Page Key */
 public let PageKey: String = "page"
+/** Per Page Key */
 public let PerPageKey: String = "per_page"
 
+/**
+ Model Representation of a page.
+ */
 public struct Page {
     let page: Int
     let perPage: Int

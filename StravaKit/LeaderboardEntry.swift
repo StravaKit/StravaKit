@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Model Representation of a leaderboard entry.
+ */
 public struct LeaderboardEntry {
     public let athleteName: String
     public let athleteId: Int
@@ -27,6 +30,9 @@ public struct LeaderboardEntry {
 
     public let averageHr: Double?
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let athleteName = dictionary["athlete_name"] as? String,
             let athleteId = dictionary["athlete_id"] as? Int,

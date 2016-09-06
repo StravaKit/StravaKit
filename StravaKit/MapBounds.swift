@@ -9,10 +9,16 @@
 import Foundation
 import CoreLocation
 
+/**
+ Model Representation of map bounds.
+ */
 public struct MapBounds {
     let coordinate1: CLLocationCoordinate2D
     let coordinate2: CLLocationCoordinate2D
 
+    /**
+     Failable initializer.
+     */
     public init?(coordinate1: CLLocationCoordinate2D, coordinate2: CLLocationCoordinate2D) {
         if CLLocationCoordinate2DIsValid(coordinate1) && CLLocationCoordinate2DIsValid(coordinate2) {
             self.coordinate1 = coordinate1
@@ -23,6 +29,9 @@ public struct MapBounds {
         }
     }
 
+    /**
+     Failable initializer.
+     */
     public init?(latitude1: CLLocationDegrees, longitude1: CLLocationDegrees, latitude2: CLLocationDegrees, longitude2: CLLocationDegrees) {
         let coordinate1 = CLLocationCoordinate2DMake(latitude1, longitude1)
         let coordinate2 = CLLocationCoordinate2DMake(latitude2, longitude2)

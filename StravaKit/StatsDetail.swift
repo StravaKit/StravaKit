@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Model Representation of stats detail.
+ */
 public struct StatsDetail {
     public let count: Int
     public let distance: Float
@@ -16,6 +19,9 @@ public struct StatsDetail {
     public let elevationGain: Float
     public let achievementCount: Int?
 
+    /**
+     Failable initializer.
+     */
     init?(dictionary: JSONDictionary) {
         if let count = dictionary["count"] as? Int,
             let distance = dictionary["distance"] as? Float,
@@ -34,7 +40,7 @@ public struct StatsDetail {
         else {
             return nil
         }
-
+        
     }
-
+    
 }
