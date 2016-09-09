@@ -2,6 +2,7 @@
 
 Version | Changes
 --- | ---
+**0.5.0** | Adds support for routes and better JSON parsing support 
 **0.4.0** | Updates model properties access to public and adds docs
 **0.3.2** | Updates Podspec to include Mac
 **0.3.1** | Adds support for segment efforts and paging
