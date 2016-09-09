@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OAuthScope Enum Reference</title>
+    <title>Route Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/OAuthScope" class="dashAnchor"></a>
-    <a title="OAuthScope Enum Reference"></a>
+    <a name="//apple_ref/swift/Struct/Route" class="dashAnchor"></a>
+    <a title="Route Struct Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">StravaKit Docs</a> (27% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">StravaKit Reference</a>
         <img id="carat" src="../img/carat.png" />
-        OAuthScope Enum Reference
+        Route Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -181,21 +181,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>OAuthScope</h1>
+            <h1>Route</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
 
                 </div>
               </div>
-            <p>OAuth Scopes</p>
-
-<ul>
-<li>Public: Default, private activities are not returned, privacy zones are respected in stream requests.</li>
-<li>Write: Modify activities, upload on the user’s behalf.</li>
-<li>Private: View private activities and data within privacy zones.</li>
-<li>PrivateWrite: Both ‘view_private’ and ‘write’ access.</li>
-</ul>
+            <p>Model Representation of a club.</p>
 
           </section>
           <section class="section task-group-section">
@@ -204,9 +197,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO9StravaKit10OAuthScope6PublicFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Public" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO9StravaKit10OAuthScope6PublicFMS0_S0_">Public</a>
+                    <a name="/s:ZFV9StravaKit5Route6routesFGSaGVs10DictionarySSPs9AnyObject___GSaS0__"></a>
+                    <a name="//apple_ref/swift/Method/routes(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV9StravaKit5Route6routesFGSaGVs10DictionarySSPs9AnyObject___GSaS0__">routes(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -214,107 +207,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Creates route models from an array of dictionaries.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FO9StravaKit10OAuthScope5WriteFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Write" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO9StravaKit10OAuthScope5WriteFMS0_S0_">Write</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FO9StravaKit10OAuthScope7PrivateFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/Private" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO9StravaKit10OAuthScope7PrivateFMS0_S0_">Private</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FO9StravaKit10OAuthScope12PrivateWriteFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/PrivateWrite" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO9StravaKit10OAuthScope12PrivateWriteFMS0_S0_">PrivateWrite</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">routes</span><span class="p">(</span><span class="nv">dictionaries</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9StravaKit9JSONArray">JSONArray</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Route</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
