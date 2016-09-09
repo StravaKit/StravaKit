@@ -56,6 +56,9 @@ class PhotoTests: XCTestCase {
             let photoURLs = photo.photoURLs {
             XCTAssertTrue(photoURLs.count == 1)
 
+            XCTAssertNotNil(photo.createdAt)
+            XCTAssertNotNil(photo.uploadedAt)
+
             let coordinate = photo.coordinate
             XCTAssertTrue(CLLocationCoordinate2DIsValid(coordinate))
             XCTAssertEqualWithAccuracy(latitude, coordinate.latitude, accuracy: epsilon)

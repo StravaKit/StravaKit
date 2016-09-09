@@ -126,7 +126,9 @@ class StravaClubTests: XCTestCase {
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
-        Strava.getClubs { (clubs, error) in
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getClubs(page) { (clubs, error) in
             XCTAssertNotNil(clubs)
             XCTAssertNil(error)
             expectation.fulfill()

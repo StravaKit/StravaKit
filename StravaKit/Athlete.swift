@@ -115,6 +115,9 @@ public struct Athlete {
         }
     }
 
+    /**
+     Creates athlete models from an array of dictionaries.
+     */
     public static func athletes(dictionaries: JSONArray) -> [Athlete] {
         var athletes: [Athlete] = []
         for dictionary in dictionaries {

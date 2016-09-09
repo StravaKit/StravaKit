@@ -1,0 +1,369 @@
+{
+  "athlete": {
+    "id": 8403085,
+    "username": "bstehling",
+    "resource_state": 2,
+    "firstname": "Brennan",
+    "lastname": "Stehling",
+    "city": "Bay Area",
+    "state": "CA",
+    "country": "United States",
+    "sex": "M",
+    "premium": false,
+    "created_at": "2015-03-27T04:25:19Z",
+    "updated_at": "2016-09-07T00:17:41Z",
+    "badge_type_id": 0,
+    "profile_medium": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/8403085/2547509/3/medium.jpg",
+    "profile": "https://dgalywyr863hv.cloudfront.net/pictures/athletes/8403085/2547509/3/large.jpg",
+    "friend": null,
+    "follower": null
+  },
+  "description": "",
+  "distance": 9429.659058143381,
+  "elevation_gain": 35.78999999999998,
+  "map": {
+    "id": "r3277042",
+    "summary_polyline": "iaieFn`djVXyM}AaDlA{AyHwTe[aBaS_MaX_DmFxFr@bIwClA`D~rAuqCfMkrAqgBtFkIqQiVbDkEqBmCtAgBn@x@",
+    "resource_state": 3,
+    "polyline": "iaieFn`djVXyMGYuAgCz@}@P]}CoFc@uAOw@c@sEOm@s@w@i@a@SGaAAyBp@SCGAGQ@OLOq@JI_@eCRu@?wH]gAQ}@YePsK]Qq@IuC{@w@QyCg@aHq@eBPs@X{@l@i@l@{@vAWj@An@h@lFJd@wClA`D~rA_{@vD_I^a]vAwh@bC{CRqBuCWSgEyF{BgC}cAevAB[FKnCyDxAiBYSmCqDiLcPbDkEqBmCtAgBn@x@"
+  },
+  "name": "Downhill Work Commute",
+  "private": false,
+  "resource_state": 3,
+  "starred": false,
+  "sub_type": 1,
+  "timestamp": 1441651834,
+  "type": 1,
+  "segments": [
+    {
+      "id": 662827,
+      "resource_state": 2,
+      "name": "Market Street Sprint (7th to 6th St) to Beat the Light...",
+      "activity_type": "Ride",
+      "distance": 267.8,
+      "average_grade": 0.7,
+      "maximum_grade": 1.2,
+      "elevation_high": 8.6,
+      "elevation_low": 6.8,
+      "start_latlng": [
+        37.78062564320862,
+        -122.4122117087245
+      ],
+      "end_latlng": [
+        37.78229037299752,
+        -122.41015939973295
+      ],
+      "start_latitude": 37.78062564320862,
+      "start_longitude": -122.4122117087245,
+      "end_latitude": 37.78229037299752,
+      "end_longitude": -122.41015939973295,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 1123557,
+      "resource_state": 2,
+      "name": "Lick Chavez Merge",
+      "activity_type": "Ride",
+      "distance": 334.321,
+      "average_grade": 0.8,
+      "maximum_grade": 6.9,
+      "elevation_high": 9.1,
+      "elevation_low": 4.4,
+      "start_latlng": [
+        37.74770379066467,
+        -122.40361154079437
+      ],
+      "end_latlng": [
+        37.74897515773773,
+        -122.40635812282562
+      ],
+      "start_latitude": 37.74770379066467,
+      "start_longitude": -122.40361154079437,
+      "end_latitude": 37.74897515773773,
+      "end_longitude": -122.40635812282562,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 2378247,
+      "resource_state": 2,
+      "name": "Catch that light!",
+      "activity_type": "Ride",
+      "distance": 492.48,
+      "average_grade": 0.2,
+      "maximum_grade": 1.1,
+      "elevation_high": 14.7,
+      "elevation_low": 12.5,
+      "start_latlng": [
+        37.76559873167975,
+        -122.42193809947081
+      ],
+      "end_latlng": [
+        37.76999878713074,
+        -122.42230341329496
+      ],
+      "start_latitude": 37.76559873167975,
+      "start_longitude": -122.42193809947081,
+      "end_latitude": 37.76999878713074,
+      "end_longitude": -122.42230341329496,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 4177632,
+      "resource_state": 2,
+      "name": "Van Ness to 8th",
+      "activity_type": "Ride",
+      "distance": 738.5,
+      "average_grade": 0.0,
+      "maximum_grade": 1.3,
+      "elevation_high": 17.9,
+      "elevation_low": 16.2,
+      "start_latlng": [
+        37.774877,
+        -122.419354
+      ],
+      "end_latlng": [
+        37.778602,
+        -122.414662
+      ],
+      "start_latitude": 37.774877,
+      "start_longitude": -122.419354,
+      "end_latitude": 37.778602,
+      "end_longitude": -122.414662,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 4177637,
+      "resource_state": 2,
+      "name": "8th to 5th",
+      "activity_type": "Ride",
+      "distance": 836.7,
+      "average_grade": -0.5,
+      "maximum_grade": 0.7,
+      "elevation_high": 16.5,
+      "elevation_low": 12.3,
+      "start_latlng": [
+        37.778664,
+        -122.414612
+      ],
+      "end_latlng": [
+        37.78384,
+        -122.408009
+      ],
+      "start_latitude": 37.778664,
+      "start_longitude": -122.414612,
+      "end_latitude": 37.78384,
+      "end_longitude": -122.408009,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 6829534,
+      "resource_state": 2,
+      "name": "Bayshore Sprint ",
+      "activity_type": "Ride",
+      "distance": 393.3,
+      "average_grade": 0.1,
+      "maximum_grade": 2.2,
+      "elevation_high": 3.8,
+      "elevation_low": 2.2,
+      "start_latlng": [
+        37.743334,
+        -122.404893
+      ],
+      "end_latlng": [
+        37.746696,
+        -122.403646
+      ],
+      "start_latitude": 37.743334,
+      "start_longitude": -122.404893,
+      "end_latitude": 37.746696,
+      "end_longitude": -122.403646,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 6843749,
+      "resource_state": 2,
+      "name": "Sprint pass Lowes",
+      "activity_type": "Ride",
+      "distance": 542.7,
+      "average_grade": 0.1,
+      "maximum_grade": 1.9,
+      "elevation_high": 6.6,
+      "elevation_low": 5.4,
+      "start_latlng": [
+        37.738218,
+        -122.406726
+      ],
+      "end_latlng": [
+        37.742843,
+        -122.405274
+      ],
+      "start_latitude": 37.738218,
+      "start_longitude": -122.406726,
+      "end_latitude": 37.742843,
+      "end_longitude": -122.405274,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 7575649,
+      "resource_state": 2,
+      "name": "Maket9ThTo4Th",
+      "activity_type": "Ride",
+      "distance": 1416.7,
+      "average_grade": -0.3,
+      "maximum_grade": 2.0,
+      "elevation_high": 17.8,
+      "elevation_low": 12.4,
+      "start_latlng": [
+        37.77682,
+        -122.416996
+      ],
+      "end_latlng": [
+        37.785598,
+        -122.405694
+      ],
+      "start_latitude": 37.77682,
+      "start_longitude": -122.416996,
+      "end_latitude": 37.785598,
+      "end_longitude": -122.405694,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 7727486,
+      "resource_state": 2,
+      "name": "Sprint for The 6th Street Light",
+      "activity_type": "Ride",
+      "distance": 569.8,
+      "average_grade": -0.1,
+      "maximum_grade": 1.4,
+      "elevation_high": 13.7,
+      "elevation_low": 12.4,
+      "start_latlng": [
+        37.780369,
+        -122.412426
+      ],
+      "end_latlng": [
+        37.783933,
+        -122.408036
+      ],
+      "start_latitude": 37.780369,
+      "start_longitude": -122.412426,
+      "end_latitude": 37.783933,
+      "end_longitude": -122.408036,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 8264142,
+      "resource_state": 2,
+      "name": "Valencia - 23rd to Market",
+      "activity_type": "Ride",
+      "distance": 2073.2,
+      "average_grade": -0.4,
+      "maximum_grade": 4.1,
+      "elevation_high": 25.8,
+      "elevation_low": 12.5,
+      "start_latlng": [
+        37.754033,
+        -122.420849
+      ],
+      "end_latlng": [
+        37.772249,
+        -122.422556
+      ],
+      "start_latitude": 37.754033,
+      "start_longitude": -122.420849,
+      "end_latitude": 37.772249,
+      "end_longitude": -122.422556,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "California",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    },
+    {
+      "id": 8264154,
+      "resource_state": 2,
+      "name": "Market: Valencia to 4th",
+      "activity_type": "Ride",
+      "distance": 2126.7,
+      "average_grade": -0.2,
+      "maximum_grade": 1.3,
+      "elevation_high": 18.2,
+      "elevation_low": 12.4,
+      "start_latlng": [
+        37.772582,
+        -122.422462
+      ],
+      "end_latlng": [
+        37.785593,
+        -122.406405
+      ],
+      "start_latitude": 37.772582,
+      "start_longitude": -122.422462,
+      "end_latitude": 37.785593,
+      "end_longitude": -122.406405,
+      "climb_category": 0,
+      "city": "San Francisco",
+      "state": "California",
+      "country": "United States",
+      "private": false,
+      "hazardous": false,
+      "starred": false
+    }
+  ]
+}

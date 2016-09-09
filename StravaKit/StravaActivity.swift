@@ -25,10 +25,18 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/activities/#get-activities
      */
-    static func getActivities(completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    static func getActivities(page: Page? = nil, completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let path = ActivityResourcePath.Activities.rawValue
 
-        return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
+        var params: ParamsDictionary? = nil
+        if let page = page {
+            params = [
+                PageKey: page.page,
+                PerPageKey: page.perPage
+            ]
+        }
+
+        return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
                 dispatch_async(dispatch_get_main_queue()) {
                     completionHandler?(activities: nil, error: error)

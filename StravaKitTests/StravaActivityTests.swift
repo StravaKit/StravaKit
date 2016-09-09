@@ -71,7 +71,9 @@ class StravaActivityTests: XCTestCase {
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
-        Strava.getActivities() { (activities, error) in
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getActivities(page) { (activities, error) in
             XCTAssertNotNil(activities)
             XCTAssertNil(error)
             expectation.fulfill()
@@ -134,6 +136,8 @@ class StravaActivityTests: XCTestCase {
 
         Strava.getActivity(1) { (activity, error) in
             XCTAssertNotNil(activity)
+            XCTAssertNotNil(activity?.startDate)
+            XCTAssertNotNil(activity?.startDateLocal)
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -192,7 +196,9 @@ class StravaActivityTests: XCTestCase {
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
-        Strava.getFollowingActivities() { (activities, error) in
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getFollowingActivities(page) { (activities, error) in
             XCTAssertNotNil(activities)
             XCTAssertNil(error)
             expectation.fulfill()

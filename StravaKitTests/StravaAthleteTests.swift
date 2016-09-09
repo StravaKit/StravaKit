@@ -227,7 +227,9 @@ class StravaAthleteTests: XCTestCase {
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
-        Strava.getAthleteFriends() { (athletes, error) in
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getAthleteFriends(page) { (athletes, error) in
             XCTAssertNotNil(athletes)
             XCTAssertNil(error)
             XCTAssertTrue(athletes?.count == 3)
@@ -252,6 +254,28 @@ class StravaAthleteTests: XCTestCase {
             XCTAssertNotNil(athletes)
             XCTAssertNil(error)
             XCTAssertTrue(athletes?.count == 0)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 15
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetAthleteFriendsInvalid() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getAthleteFriends(page) { (athletes, error) in
+            XCTAssertNil(athletes)
+            XCTAssertNotNil(error)
             expectation.fulfill()
         }
 

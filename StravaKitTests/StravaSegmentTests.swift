@@ -22,6 +22,17 @@ class StravaSegmentTests: XCTestCase {
 
         let segment = Segment(dictionary: dictionary)
         XCTAssertNotNil(segment)
+        if let segment = segment {
+            XCTAssertNil(segment.coordinates)
+            XCTAssertNil(segment.starredDate)
+            XCTAssertNotNil(segment.createdAt)
+            XCTAssertNotNil(segment.updatedAt)
+            XCTAssertNotNil(segment.athleteSegmentStats)
+            if let stats = segment.athleteSegmentStats {
+                XCTAssertNil(stats.prDate)
+                XCTAssertNil(stats.prElapsedTime)
+            }
+        }
     }
 
     func testSegmentCreationFromBadDictionary() {
@@ -47,6 +58,20 @@ class StravaSegmentTests: XCTestCase {
         if let segments = segments {
             debugPrint("Count: \(segments.count)")
             XCTAssertTrue(segments.count == 10)
+
+            for segment in segments {
+                XCTAssertNotNil(segment.coordinates)
+                if segment.starred {
+                    XCTAssertNotNil(segment.starredDate)
+                }
+                else {
+                    XCTAssertNil(segment.starredDate)
+                }
+                if let stats = segment.athleteSegmentStats {
+                    XCTAssertNotNil(stats.prDate)
+                    XCTAssertNotNil(stats.prElapsedTime)
+                }
+            }
         }
     }
 
@@ -121,6 +146,10 @@ class StravaSegmentTests: XCTestCase {
         let efforts = SegmentEffort.efforts(dictionaries)
         debugPrint("Count: \(efforts.count)")
         XCTAssertTrue(efforts.count == 3)
+        for effort in efforts {
+            XCTAssertNotNil(effort.startDate)
+            XCTAssertNotNil(effort.startDateLocal)
+        }
     }
 
     func testSegmentEffortsCreationFromBadDictionary() {
@@ -245,7 +274,9 @@ class StravaSegmentTests: XCTestCase {
             return
         }
 
-        Strava.getSegments(mapBounds) { (segments, error) in
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getSegments(mapBounds, page: page) { (segments, error) in
             XCTAssertNotNil(segments)
             XCTAssertNil(error)
             expectation.fulfill()
@@ -289,6 +320,38 @@ class StravaSegmentTests: XCTestCase {
         }
     }
 
+    func testGetSegmentsInvalid() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        let latitude1: CLLocationDegrees = 37.821362
+        let longitude1: CLLocationDegrees = -122.505373
+        let latitude2: CLLocationDegrees = 37.842038
+        let longitude2: CLLocationDegrees = -122.465977
+        let coordinate1 = CLLocationCoordinate2DMake(latitude1, longitude1)
+        let coordinate2 = CLLocationCoordinate2DMake(latitude2, longitude2)
+
+        guard let mapBounds = MapBounds(coordinate1: coordinate1, coordinate2: coordinate2) else {
+            XCTFail()
+            return
+        }
+
+        Strava.getSegments(mapBounds) { (segments, error) in
+            XCTAssertNil(segments)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 15
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+    
     func testGetSegmentsError() {
         let expectation = self.expectationWithDescription("API Call")
 
@@ -329,7 +392,9 @@ class StravaSegmentTests: XCTestCase {
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
-        Strava.getStarredSegments() { (segments, error) in
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getStarredSegments(page) { (segments, error) in
             XCTAssertNotNil(segments)
             XCTAssertNil(error)
             expectation.fulfill()
@@ -352,6 +417,28 @@ class StravaSegmentTests: XCTestCase {
         Strava.getStarredSegments() { (segments, error) in
             XCTAssertTrue(segments?.count == 0)
             XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 15
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetStarredSegmentsInvalid() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getStarredSegments(page) { (segments, error) in
+            XCTAssertNil(segments)
+            XCTAssertNotNil(error)
             expectation.fulfill()
         }
 
@@ -389,8 +476,17 @@ class StravaSegmentTests: XCTestCase {
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
-        Strava.getSegmentLeaderboard(1) { (leaderboard, error) in
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getSegmentLeaderboard(1, page: page) { (leaderboard, error) in
             XCTAssertNotNil(leaderboard)
+            XCTAssertNotNil(leaderboard?.entries)
+            if let entries = leaderboard?.entries {
+                for entry in entries {
+                    XCTAssertNotNil(entry.startDate)
+                    XCTAssertNotNil(entry.startDateLocal)
+                }
+            }
             XCTAssertNil(error)
             expectation.fulfill()
         }
@@ -410,6 +506,28 @@ class StravaSegmentTests: XCTestCase {
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
         Strava.getSegmentLeaderboard(1) { (leaderboard, error) in
+            XCTAssertNil(leaderboard)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 15
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetLeaderboardInvalid() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getSegmentLeaderboard(1, page: page) { (leaderboard, error) in
             XCTAssertNil(leaderboard)
             XCTAssertNotNil(error)
             expectation.fulfill()
@@ -449,7 +567,9 @@ class StravaSegmentTests: XCTestCase {
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
-        Strava.getSegmentEfforts(1) { (efforts, error) in
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getSegmentEfforts(1, page: page) { (efforts, error) in
             XCTAssertNotNil(efforts)
             XCTAssertNil(error)
             expectation.fulfill()
@@ -473,6 +593,28 @@ class StravaSegmentTests: XCTestCase {
             XCTAssertNotNil(efforts)
             XCTAssertTrue(efforts?.count == 0)
             XCTAssertNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: NSTimeInterval = 15
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetSegmentEffortsInvalid() {
+        let expectation = self.expectationWithDescription("API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getSegmentEfforts(1, page: page) { (efforts, error) in
+            XCTAssertNil(efforts)
+            XCTAssertNotNil(error)
             expectation.fulfill()
         }
 
