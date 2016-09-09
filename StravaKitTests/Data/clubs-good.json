@@ -1,0 +1,38 @@
+[
+  {
+    "id": 52153,
+    "resource_state": 2,
+    "name": "Amazon Bay Area",
+    "profile_medium": "https://dgalywyr863hv.cloudfront.net/pictures/clubs/52153/1248338/1/medium.jpg",
+    "profile": "https://dgalywyr863hv.cloudfront.net/pictures/clubs/52153/1248338/1/large.jpg",
+    "cover_photo": null,
+    "cover_photo_small": null,
+    "sport_type": "cycling",
+    "city": "San Francisco",
+    "state": "California",
+    "country": "United States",
+    "private": false,
+    "member_count": 4,
+    "featured": false,
+    "verified": false,
+    "url": "amazon"
+  },
+  {
+    "id": 183424,
+    "resource_state": 2,
+    "name": "Bay area Cyclists",
+    "profile_medium": "https://dgalywyr863hv.cloudfront.net/pictures/clubs/183424/3908233/1/medium.jpg",
+    "profile": "https://dgalywyr863hv.cloudfront.net/pictures/clubs/183424/3908233/1/large.jpg",
+    "cover_photo": null,
+    "cover_photo_small": null,
+    "sport_type": "cycling",
+    "city": "Albany",
+    "state": "California",
+    "country": "United States",
+    "private": false,
+    "member_count": 17,
+    "featured": false,
+    "verified": false,
+    "url": "bayareacyclists"
+  }
+]

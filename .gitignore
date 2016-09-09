@@ -34,7 +34,7 @@ Pods/
 .DS_Store
 
 ## vscode
-**/.vscode/*.db
-**/.vscode/*.db-wal
-**/.vscode/*.db-shm
-
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json

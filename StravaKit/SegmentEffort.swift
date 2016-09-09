@@ -36,23 +36,24 @@ public struct SegmentEffort {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let effortId = dictionary["id"] as? Int,
-            let resourceState = dictionary["resource_state"] as? Int,
-            let name = dictionary["name"] as? String,
-            let activityDictionary = dictionary["activity"] as? JSONDictionary,
+        if let s = JSONSupport(dictionary: dictionary),
+            let effortId: Int = s.value("id"),
+            let resourceState: Int = s.value("resource_state"),
+            let name: String = s.value("name"),
+            let activityDictionary: JSONDictionary = s.value("activity"),
             let activity = ResourceSummary(dictionary: activityDictionary),
-            let athleteDictionary = dictionary["athlete"] as? JSONDictionary,
+            let athleteDictionary: JSONDictionary = s.value("athlete"),
             let athlete = ResourceSummary(dictionary: athleteDictionary),
-            let elapsedTime = dictionary["elapsed_time"] as? Int,
-            let movingTime = dictionary["moving_time"] as? Int,
-            let startDate = dictionary["start_date"] as? String,
-            let startDateLocal = dictionary["start_date_local"] as? String,
-            let distance = dictionary["distance"] as? Double,
-            let startIndex = dictionary["start_index"] as? Int,
-            let endIndex = dictionary["end_index"] as? Int,
-            let deviceWatts = dictionary["device_watts"] as? Bool,
-            let averageWatts = dictionary["average_watts"] as? Double,
-            let segmentDictionary = dictionary["segment"] as? JSONDictionary,
+            let elapsedTime: Int = s.value("elapsed_time"),
+            let movingTime: Int = s.value("moving_time"),
+            let startDate: String = s.value("start_date"),
+            let startDateLocal: String = s.value("start_date_local"),
+            let distance: Double = s.value("distance"),
+            let startIndex: Int = s.value("start_index"),
+            let endIndex: Int = s.value("end_index"),
+            let deviceWatts: Bool = s.value("device_watts"),
+            let averageWatts: Double = s.value("average_watts"),
+            let segmentDictionary: JSONDictionary = s.value("segment"),
             let segment = Segment(dictionary: segmentDictionary) {
             self.effortId = effortId
             self.resourceState = resourceState
@@ -70,8 +71,8 @@ public struct SegmentEffort {
             self.averageWatts = averageWatts
             self.segment = segment
 
-            self.prRank = dictionary["pr_rank"] as? Int
-            self.komRank = dictionary["kom_rank"] as? Int
+            self.prRank = s.value("pr_rank", required: false)
+            self.komRank = s.value("kom_rank", required: false)
         }
         else {
             return nil

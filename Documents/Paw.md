@@ -6,3 +6,7 @@ In the Paw document for Strava the credentials used for OAuth are stored in the 
 
 ![](Keychain.png)
 ![](Environment.png)
+
+Paw supports a serioes of Environment Variables which make each of the requests configurable for common variables. One key difference for an API is the is the scope used for OAuth. For Strava there are 4 different scopes and each is configured in the Paw document.
+
+![](PawScopes.png)

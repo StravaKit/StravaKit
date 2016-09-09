@@ -17,8 +17,6 @@ public struct Club {
     let name: String
     let profileMediumURL: NSURL
     let profileURL: NSURL
-    let coverPhotoURL: NSURL
-    let coverPhotoSmallURL: NSURL
     let sportType: String
     let city: String
     let state: String
@@ -29,6 +27,8 @@ public struct Club {
     let verified: Bool
     let url: String
 
+    let coverPhotoURL: NSURL?
+    let coverPhotoSmallURL: NSURL?
     let clubDescription: String?
     let clubType: String?
     let membership: String?
@@ -40,33 +40,28 @@ public struct Club {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let clubId = dictionary["id"] as? Int,
-            let resourceState = dictionary["resource_state"] as? Int,
-            let name = dictionary["name"] as? String,
-            let profileMedium = dictionary["profile_medium"] as? String,
+        if let s = JSONSupport(dictionary: dictionary),
+            let clubId: Int = s.value("id"),
+            let resourceState: Int = s.value("resource_state"),
+            let name: String = s.value("name"),
+            let profileMedium: String = s.value("profile_medium"),
             let profileMediumURL = NSURL(string: profileMedium),
-            let profile = dictionary["profile"] as? String,
+            let profile: String = s.value("profile"),
             let profileURL = NSURL(string: profile),
-            let coverPhoto = dictionary["cover_photo"] as? String,
-            let coverPhotoURL = NSURL(string: coverPhoto),
-            let coverPhotoSmall = dictionary["cover_photo_small"] as? String,
-            let coverPhotoSmallURL = NSURL(string: coverPhotoSmall),
-            let sportType = dictionary["sport_type"] as? String,
-            let city = dictionary["city"] as? String,
-            let state = dictionary["state"] as? String,
-            let country = dictionary["country"] as? String,
-            let isPrivate = dictionary["private"] as? Bool,
-            let memberCount = dictionary["member_count"] as? Int,
-            let featured = dictionary["featured"] as? Bool,
-            let verified = dictionary["verified"] as? Bool,
-            let url = dictionary["url"] as? String {
+            let sportType: String = s.value("sport_type"),
+            let city: String = s.value("city"),
+            let state: String = s.value("state"),
+            let country: String = s.value("country"),
+            let isPrivate: Bool = s.value("private"),
+            let memberCount: Int = s.value("member_count"),
+            let featured: Bool = s.value("featured"),
+            let verified: Bool = s.value("verified"),
+            let url: String = s.value("url") {
             self.clubId = clubId
             self.resourceState = resourceState
             self.name = name
             self.profileMediumURL = profileMediumURL
             self.profileURL = profileURL
-            self.coverPhotoURL = coverPhotoURL
-            self.coverPhotoSmallURL = coverPhotoSmallURL
             self.sportType = sportType
             self.city = city
             self.state = state
@@ -77,13 +72,28 @@ public struct Club {
             self.verified = verified
             self.url = url
 
-            // Optional properties
-            self.clubDescription = dictionary["description"] as? String
-            self.clubType = dictionary["club_type"] as? String
-            self.membership = dictionary["membership"] as? String
-            self.followingCount = dictionary["following_count"] as? Int
-            self.admin = dictionary["admin"] as? Bool
-            self.owner = dictionary["owner"] as? Bool
+            // Optional Properties
+
+            if let coverPhoto: String = s.value("cover_photo", required: false) {
+                self.coverPhotoURL = NSURL(string: coverPhoto)
+            }
+            else {
+                self.coverPhotoURL = nil
+            }
+
+            if let coverPhotoSmall: String = s.value("cover_photo_small", required: false) {
+                self.coverPhotoSmallURL = NSURL(string: coverPhotoSmall)
+            }
+            else {
+                self.coverPhotoSmallURL = nil
+            }
+
+            self.clubDescription = s.value("description", required: false)
+            self.clubType = s.value("club_type", required: false)
+            self.membership = s.value("membership", required: false)
+            self.followingCount = s.value("following_count", required: false)
+            self.admin = s.value("admin", required: false)
+            self.owner = s.value("owner", required: false)
         }
         else {
             return nil
@@ -99,5 +109,5 @@ public struct Club {
         }
         return clubs
     }
-    
+
 }

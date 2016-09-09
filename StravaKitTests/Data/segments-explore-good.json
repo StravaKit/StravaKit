@@ -1,0 +1,204 @@
+{
+  "segments": [
+    {
+      "id": 229781,
+      "resource_state": 2,
+      "name": "Hawk Hill",
+      "climb_category": 1,
+      "climb_category_desc": "4",
+      "avg_grade": 5.7,
+      "start_latlng": [
+        37.8331119,
+        -122.4834356
+      ],
+      "end_latlng": [
+        37.8280722,
+        -122.4981393
+      ],
+      "elev_difference": 152.8,
+      "distance": 2684.8,
+      "points": "}g|eFnpqjVl@En@Md@HbAd@d@^h@Xx@VbARjBDh@OPQf@w@d@k@XKXDFPH\\EbGT`AV`@v@|@NTNb@?XOb@cAxAWLuE@eAFMBoAv@eBt@q@b@}@tAeAt@i@dAC`AFZj@dB?~@[h@MbAVn@b@b@\\d@Eh@Qb@_@d@eB|@c@h@WfBK|AMpA?VF\\\\t@f@t@h@j@|@b@hCb@b@XTd@Bl@GtA?jAL`ALp@Tr@RXd@Rx@Pn@^Zh@Tx@Zf@`@FTCzDy@f@Yx@m@n@Op@VJr@",
+      "starred": false
+    },
+    {
+      "id": 632535,
+      "resource_state": 2,
+      "name": "Hawk Hill Upper Conzelman to Summit",
+      "climb_category": 0,
+      "climb_category_desc": "NC",
+      "avg_grade": 8.1,
+      "start_latlng": [
+        37.8334451,
+        -122.4941994
+      ],
+      "end_latlng": [
+        37.8281297,
+        -122.4980005
+      ],
+      "elev_difference": 67.3,
+      "distance": 829.8,
+      "points": "_j|eFvssjV\\l@`@j@h@b@vD~@^b@Nt@GdBDxAL|@VhAXf@d@PdATTNb@f@^dA\\^b@JV?lCc@p@SbAu@h@Qn@?RTDH",
+      "starred": false
+    },
+    {
+      "id": 2371095,
+      "resource_state": 2,
+      "name": "McCullough Rd. (Headlands)",
+      "climb_category": 1,
+      "climb_category_desc": "4",
+      "avg_grade": 8.5,
+      "start_latlng": [
+        37.836073,
+        -122.5023015
+      ],
+      "end_latlng": [
+        37.8338899,
+        -122.4941542
+      ],
+      "elev_difference": 116.8,
+      "distance": 1368.9,
+      "points": "mz|eFlfujV|@iB`@cANs@HyDAOOs@Uc@e@]u@Uc@[Kk@Dk@n@aBZeAl@_BHi@C[S_@]Mq@Fy@Nw@D[QQ]Km@Uu@c@_@i@Y[a@Ai@Pa@JE^AXTv@xAj@b@f@Jh@C`@Of@a@hByCjBcBl@q@n@a@z@Qr@U",
+      "starred": false
+    },
+    {
+      "id": 638282,
+      "resource_state": 2,
+      "name": "Hawk Hill Final Sprint",
+      "climb_category": 0,
+      "climb_category_desc": "NC",
+      "avg_grade": 5.6,
+      "start_latlng": [
+        37.83061,
+        -122.49829
+      ],
+      "end_latlng": [
+        37.82825,
+        -122.49805
+      ],
+      "elev_difference": 23.3,
+      "distance": 287.9,
+      "points": "ix{eFhmtjVHPJJh@XPAHB`@?\\OjAOPEFEd@K\\Mv@a@r@SXEHJBJ",
+      "starred": false
+    },
+    {
+      "id": 11345963,
+      "resource_state": 2,
+      "name": "Hawk Top",
+      "climb_category": 0,
+      "climb_category_desc": "NC",
+      "avg_grade": 5.2,
+      "start_latlng": [
+        37.832571,
+        -122.491626
+      ],
+      "end_latlng": [
+        37.83362,
+        -122.493605
+      ],
+      "elev_difference": 12.8,
+      "distance": 237.7,
+      "points": "qd|eFtcsjVSZeCdAOLINKd@@n@AXQzC",
+      "starred": false
+    },
+    {
+      "id": 4957941,
+      "resource_state": 2,
+      "name": "Alexander Uphill Smash",
+      "climb_category": 0,
+      "climb_category_desc": "NC",
+      "avg_grade": -0.3,
+      "start_latlng": [
+        37.838181,
+        -122.482944
+      ],
+      "end_latlng": [
+        37.840009,
+        -122.478403
+      ],
+      "elev_difference": 10.4,
+      "distance": 530.9,
+      "points": "sg}eFlmqjV{@D]AYC[GYMq@g@k@o@e@w@O_@WcAMeAAc@@iAFgALoFE_AM{@IY",
+      "starred": false
+    },
+    {
+      "id": 7805335,
+      "resource_state": 2,
+      "name": "Upper McCullough",
+      "climb_category": 0,
+      "climb_category_desc": "NC",
+      "avg_grade": 8.8,
+      "start_latlng": [
+        37.837605,
+        -122.49609
+      ],
+      "end_latlng": [
+        37.833928,
+        -122.494164
+      ],
+      "elev_difference": 49.6,
+      "distance": 561.4,
+      "points": "_d}eFp_tjVIKGOCQ?[DOPQRAZJbAbBVVLHZJ\\BVA\\K`@WV[lB_DzCuCb@WtA[TG",
+      "starred": false
+    },
+    {
+      "id": 635252,
+      "resource_state": 2,
+      "name": "Hawk Hill False Flats",
+      "climb_category": 0,
+      "climb_category_desc": "NC",
+      "avg_grade": 3.5,
+      "start_latlng": [
+        37.8297126665711,
+        -122.483360655606
+      ],
+      "end_latlng": [
+        37.8337470442057,
+        -122.494189823046
+      ],
+      "elev_difference": 50.0,
+      "distance": 1413.0,
+      "points": "ur{eF`pqjVXLDFDT?zBKvA?JHb@L`@JPjApATXDV@VGh@MV_@j@Ur@UT[F[CsABk@BkA@_@Bm@R_Ar@sAf@cAr@MR_@r@aAv@i@z@MZC^@NBNj@~@Pj@D^E\\q@fAA^BNLZ`A|@JZB^ANIXYZYRcBx@MLQ\\Mh@MpBSfBI^Wr@BVFD",
+      "starred": false
+    },
+    {
+      "id": 960626,
+      "resource_state": 2,
+      "name": "Ft. Baker to GGB NW Parking Lot",
+      "climb_category": 0,
+      "climb_category_desc": "NC",
+      "avg_grade": 7.9,
+      "start_latlng": [
+        37.8312661,
+        -122.47889
+      ],
+      "end_latlng": [
+        37.8322157,
+        -122.4822012
+      ],
+      "elev_difference": 63.9,
+      "distance": 808.7,
+      "points": "k|{eF`tpjV^v@f@t@|@l@\\`@NVLr@OPe@HWT_@j@YH_BG]LIPCv@Xd@`@Td@Ln@@h@Ml@Wf@AFBT^Cd@Yb@c@PeFbAm@AeAO",
+      "starred": false
+    },
+    {
+      "id": 11338416,
+      "resource_state": 2,
+      "name": "Discovery Museum Left Turn Sprint",
+      "climb_category": 0,
+      "climb_category_desc": "NC",
+      "avg_grade": -4.2,
+      "start_latlng": [
+        37.836079,
+        -122.474159
+      ],
+      "end_latlng": [
+        37.834231,
+        -122.478445
+      ],
+      "elev_difference": 21.0,
+      "distance": 496.5,
+      "points": "mz|eFnvojVFlHHdHD`@L\\p@d@n@PVJnE`C",
+      "starred": false
+    }
+  ]
+}

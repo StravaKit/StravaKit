@@ -19,8 +19,9 @@ public struct ResourceSummary {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let resourceId = dictionary["id"] as? Int,
-            let resourceState = dictionary["resource_state"] as? Int {
+        if let s = JSONSupport(dictionary: dictionary),
+            let resourceId: Int = s.value("id"),
+            let resourceState: Int = s.value("resource_state") {
             self.resourceId = resourceId
             self.resourceState = resourceState
         }

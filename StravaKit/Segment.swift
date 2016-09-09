@@ -49,18 +49,19 @@ public struct Segment {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let segmentId = dictionary["id"] as? Int,
-            let resourceState = dictionary["resource_state"] as? Int,
-            let name = dictionary["name"] as? String,
-            let distance = dictionary["distance"] as? Double,
-            let start_latlng = dictionary["start_latlng"] as? [Double] where start_latlng.count == 2,
-            let end_latlng = dictionary["end_latlng"] as? [Double] where end_latlng.count == 2,
-            let startLatitude = start_latlng.first,
-            let startLongitude = start_latlng.last,
-            let endLatitude = end_latlng.first,
-            let endLongitude = end_latlng.last,
-            let climbCategory = dictionary["climb_category"] as? Int,
-            let starred = dictionary["starred"] as? Bool {
+        if let s = JSONSupport(dictionary: dictionary),
+            let segmentId: Int = s.value("id"),
+            let resourceState: Int = s.value("resource_state"),
+            let name: String = s.value("name"),
+            let distance: Double = s.value("distance"),
+            let start_latlng: [Double] = s.value("start_latlng") where start_latlng.count == 2,
+            let end_latlng: [Double] = s.value("end_latlng") where end_latlng.count == 2,
+            let startLatitude: Double = start_latlng.first,
+            let startLongitude: Double = start_latlng.last,
+            let endLatitude: Double = end_latlng.first,
+            let endLongitude: Double = end_latlng.last,
+            let climbCategory: Int = s.value("climb_category"),
+            let starred: Bool = s.value("starred") {
             let startCoordinate = CLLocationCoordinate2DMake(startLatitude, startLongitude)
             let endCoordinate = CLLocationCoordinate2DMake(endLatitude, endLongitude)
 
@@ -73,29 +74,30 @@ public struct Segment {
             self.climbCategory = climbCategory
             self.starred = starred
 
-            // Optional properties
-            self.points = dictionary["points"] as? String
-            self.climbCategoryDescription = dictionary["climb_category_desc"] as? String
-            self.elevationHigh = dictionary["elevation_high"] as? Double
-            self.elevationLow = dictionary["elevation_low"] as? Double
-            self.elevationDifference = dictionary["elev_difference"] as? Double
-            self.maximumGrade = dictionary["maximum_grade"] as? Double
-            self.averageGrade = dictionary["average_grade"] as? Double
-            self.activityType = dictionary["activity_type"] as? String
-            self.starredDateString = dictionary["starred_date"] as? String
-            self.isPrivate = dictionary["private"] as? Bool
-            self.hazardous = dictionary["hazardous"] as? Bool
-            self.city = dictionary["city"] as? String
-            self.state = dictionary["state"] as? String
-            self.country = dictionary["country"] as? String
-            self.createdAtString = dictionary["created_at"] as? String
-            self.updatedAtString = dictionary["updated_at"] as? String
-            self.totalElevationGain = dictionary["total_elevation_gain"] as? Double
-            self.map = dictionary["map"] as? Map
-            self.effortCount = dictionary["effort_count"] as? Int
-            self.athleteCount = dictionary["athlete_count"] as? Int
-            self.starCount = dictionary["star_count"] as? Int
-            if let statsDictionary = dictionary["athlete_segment_stats"] as? JSONDictionary {
+            // Optional Properties
+
+            self.points = s.value("points")
+            self.climbCategoryDescription = s.value("climb_category_desc")
+            self.elevationHigh = s.value("elevation_high")
+            self.elevationLow = s.value("elevation_low")
+            self.elevationDifference = s.value("elev_difference")
+            self.maximumGrade = s.value("maximum_grade")
+            self.averageGrade = s.value("average_grade")
+            self.activityType = s.value("activity_type")
+            self.starredDateString = s.value("starred_date")
+            self.isPrivate = s.value("private")
+            self.hazardous = s.value("hazardous")
+            self.city = s.value("city")
+            self.state = s.value("state")
+            self.country = s.value("country")
+            self.createdAtString = s.value("created_at")
+            self.updatedAtString = s.value("updated_at")
+            self.totalElevationGain = s.value("total_elevation_gain")
+            self.map = s.value("map")
+            self.effortCount = s.value("effort_count")
+            self.athleteCount = s.value("athlete_count")
+            self.starCount = s.value("star_count")
+            if let statsDictionary: JSONDictionary = s.value("athlete_segment_stats") {
                 self.athleteSegmentStats = SegmentStats(dictionary: statsDictionary)
             }
             else {
@@ -108,7 +110,8 @@ public struct Segment {
     }
 
     public static func segments(dictionary: JSONDictionary) -> [Segment]? {
-        if let dictionaries = dictionary["segments"] as? JSONArray {
+        if let s = JSONSupport(dictionary: dictionary),
+        let dictionaries: JSONArray = s.value("segments")  {
             return Segment.segments(dictionaries)
         }
         return nil

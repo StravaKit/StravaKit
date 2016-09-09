@@ -27,10 +27,10 @@ class StravaActivityTests: XCTestCase {
             let startCoordinate = activity.startCoordinate
             let endCoordinate = activity.endCoordinate
 
-            XCTAssertTrue(startCoordinate.latitude == 37.73697)
-            XCTAssertTrue(startCoordinate.longitude == -122.416727)
-            XCTAssertTrue(endCoordinate.latitude == 37.786237)
-            XCTAssertTrue(endCoordinate.longitude == -122.398677)
+            XCTAssertTrue(startCoordinate.latitude == 37.729999999999997)
+            XCTAssertTrue(startCoordinate.longitude == -122.41)
+            XCTAssertTrue(endCoordinate.latitude == 37.799999999999997)
+            XCTAssertTrue(endCoordinate.longitude == -122.44)
         }
     }
 

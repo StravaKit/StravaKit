@@ -45,23 +45,24 @@ public struct Photo {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let source = dictionary["source"] as? Int,
-            let urls = dictionary["urls"] as? [String : String] {
+        if let s = JSONSupport(dictionary: dictionary),
+            let source: Int = s.value("source"),
+            let urls: [String : String] = s.value("urls") {
 
             self.source = source
             self.urls = urls
 
-            self.photoId = dictionary["id"] as? Int
-            self.uniqueId = dictionary["unique_id"] as? String
-            self.activityId = dictionary["activity_id"] as? Int
-            self.resourceState = dictionary["resource_state"] as? Int
-            self.ref = dictionary["ref"] as? String
-            self.uid = dictionary["uid"] as? String
-            self.caption = dictionary["caption"] as? String
-            self.type = dictionary["type"] as? String
-            self.uploadedAtString = dictionary["uploaded_at"] as? String
-            self.createdAtString = dictionary["created_at"] as? String
-            if let location = dictionary["location"] as? [Double] where location.count == 2 {
+            self.photoId = s.value("id", required: false)
+            self.uniqueId = s.value("unique_id", required: false)
+            self.activityId = s.value("activity_id", required: false)
+            self.resourceState = s.value("resource_state", required: false)
+            self.ref = s.value("ref", required: false)
+            self.uid = s.value("uid", required: false)
+            self.caption = s.value("caption", required: false)
+            self.type = s.value("type", required: false)
+            self.uploadedAtString = s.value("uploaded_at", required: false)
+            self.createdAtString = s.value("created_at", required: false)
+            if let location: [Double] = s.value("location") where location.count == 2 {
                 self.location = location
             }
             else {

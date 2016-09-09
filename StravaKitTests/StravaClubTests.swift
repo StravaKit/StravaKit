@@ -43,7 +43,7 @@ class StravaClubTests: XCTestCase {
 
         let clubs = Club.clubs(dictionaries)
         XCTAssertNotNil(clubs)
-        XCTAssertTrue(clubs.count == 1)
+        XCTAssertTrue(clubs.count == 2)
     }
 
     func testClubsCreationFromBadDictionary() {

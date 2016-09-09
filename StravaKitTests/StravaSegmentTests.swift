@@ -91,7 +91,7 @@ class StravaSegmentTests: XCTestCase {
 
     func testLeaderboardCreationFromGoodDictionary() {
         // all required values are in the JSON file
-        guard let dictionary = JSONLoader.sharedInstance.loadJSON("leaderboard-good") as? JSONDictionary else {
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("segment-leaderboard-good") as? JSONDictionary else {
             XCTFail()
             return
         }
@@ -102,7 +102,7 @@ class StravaSegmentTests: XCTestCase {
 
     func testLeaderboardCreationFromBadDictionary() {
         // required values are missing from the JSON file
-        guard let dictionary = JSONLoader.sharedInstance.loadJSON("leaderboard-bad") as? JSONDictionary else {
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("segment-leaderboard-bad") as? JSONDictionary else {
             XCTFail()
             return
         }
@@ -385,7 +385,7 @@ class StravaSegmentTests: XCTestCase {
         let expectation = self.expectationWithDescription("API Call")
 
         let jsonRequestor = JSONRequestor()
-        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("leaderboard-good")
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segment-leaderboard-good")
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
@@ -405,7 +405,7 @@ class StravaSegmentTests: XCTestCase {
         let expectation = self.expectationWithDescription("API Call")
 
         let jsonRequestor = JSONRequestor()
-        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("leaderboard-bad")
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segment-leaderboard-bad")
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 

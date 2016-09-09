@@ -21,11 +21,12 @@ public struct SegmentStats {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let effortCount = dictionary["effort_count"] as? Int {
+        if let s = JSONSupport(dictionary: dictionary),
+        let effortCount: Int = s.value("effort_count") {
             self.effortCount = effortCount
 
-            self.prElapsedTime = dictionary["pr_elapsed_time"] as? String
-            self.prDateString = dictionary["pr_date"] as? String
+            self.prElapsedTime = s.value("pr_elapsed_time", required: false)
+            self.prDateString = s.value("pr_date", required: false)
         }
         else {
             return nil

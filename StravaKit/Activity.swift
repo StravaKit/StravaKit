@@ -45,66 +45,67 @@ public struct Activity {
     public let gearId: Int?
     public let averageSpeed: Float
     public let maxSpeed: Float
-    public let averageWatts: Float
-    public let kilojoules: Float
     public let deviceWatts: Bool
     public let hasHeartrate: Bool
     public let elevationHigh: Float
     public let elevationLow: Float
     public let totalPhotoCount: Int
     public let hasKudoed: Bool
-    public let workoutType: Int
 
     internal let startDateString: String
     internal let startDateLocalString: String
+
+    public let averageWatts: Float?
+    public let weightedAverageWatts: Float?
+    public let kilojoules: Float?
+    public let workoutType: Int?
 
     /**
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let activityId = dictionary["id"] as? Int,
-            let externalId = dictionary["external_id"] as? String,
-            let uploadId = dictionary["upload_id"] as? Int,
-            let athleteDictionary = dictionary["athlete"] as? JSONDictionary,
-            let athleteId = athleteDictionary["id"] as? Int,
-            let athleteResourceState = athleteDictionary["resource_state"] as? Int,
-            let name = dictionary["name"] as? String,
-            let distance = dictionary["distance"] as? Float,
-            let movingTime = dictionary["moving_time"] as? Int,
-            let elapsedTime = dictionary["elapsed_time"] as? Int,
-            let totalElevationGain = dictionary["total_elevation_gain"] as? Float,
-            let type = dictionary["type"] as? String,
-            let startDate = dictionary["start_date"] as? String,
-            let startDateLocal = dictionary["start_date_local"] as? String,
-            let timezone = dictionary["timezone"] as? String,
-            let startCoordinates = dictionary["start_latlng"] as? [CLLocationDegrees] where startCoordinates.count == 2,
-            let endCoordinates = dictionary["end_latlng"] as? [CLLocationDegrees] where endCoordinates.count == 2,
-            let city = dictionary["location_city"] as? String,
-            let state = dictionary["location_state"] as? String,
-            let country = dictionary["location_country"] as? String,
-            let achievementCount = dictionary["achievement_count"] as? Int,
-            let kudosCount = dictionary["kudos_count"] as? Int,
-            let commentCount = dictionary["comment_count"] as? Int,
-            let athleteCount = dictionary["athlete_count"] as? Int,
-            let photoCount = dictionary["photo_count"] as? Int,
-            let mapDictionary = dictionary["map"] as? JSONDictionary,
+        if let s = JSONSupport(dictionary: dictionary),
+            let activityId: Int = s.value("id"),
+            let externalId: String = s.value("external_id"),
+            let uploadId: Int = s.value("upload_id"),
+            let athleteDictionary: JSONDictionary = s.value("athlete"),
+            let a = JSONSupport(dictionary: athleteDictionary),
+            let athleteId: Int = a.value("id"),
+            let athleteResourceState: Int = a.value("resource_state"),
+            let name: String = s.value("name"),
+            let distance: Float = s.value("distance"),
+            let movingTime: Int = s.value("moving_time"),
+            let elapsedTime: Int = s.value("elapsed_time"),
+            let totalElevationGain: Float = s.value("total_elevation_gain"),
+            let type: String = s.value("type"),
+            let startDate: String = s.value("start_date"),
+            let startDateLocal: String = s.value("start_date_local"),
+            let timezone: String = s.value("timezone"),
+            let startCoordinates: [CLLocationDegrees] = s.value("start_latlng") where startCoordinates.count == 2,
+            let endCoordinates: [CLLocationDegrees] = s.value("end_latlng") where endCoordinates.count == 2,
+            let city: String = s.value("location_city"),
+            let state: String = s.value("location_state"),
+            let country: String = s.value("location_country"),
+            let achievementCount: Int = s.value("achievement_count"),
+            let kudosCount: Int = s.value("kudos_count"),
+            let commentCount: Int = s.value("comment_count"),
+            let athleteCount: Int = s.value("athlete_count"),
+            let photoCount: Int = s.value("photo_count"),
+            let mapDictionary: JSONDictionary = s.value("map"),
             let map = Map(dictionary: mapDictionary),
-            let trainer = dictionary["trainer"] as? Bool,
-            let commute = dictionary["commute"] as? Bool,
-            let manual = dictionary["manual"] as? Bool,
-            let privateActivity = dictionary["private"] as? Bool,
-            let flagged = dictionary["flagged"] as? Bool,
-            let averageSpeed = dictionary["average_speed"] as? Float,
-            let maxSpeed = dictionary["max_speed"] as? Float,
-            let averageWatts = dictionary["average_watts"] as? Float,
-            let kilojoules = dictionary["kilojoules"] as? Float,
-            let deviceWatts = dictionary["device_watts"] as? Bool,
-            let hasHeartrate = dictionary["has_heartrate"] as? Bool,
-            let elevationHigh = dictionary["elev_high"] as? Float,
-            let elevationLow = dictionary["elev_low"] as? Float,
-            let totalPhotoCount = dictionary["total_photo_count"] as? Int,
-            let hasKudoed = dictionary["has_kudoed"] as? Bool,
-            let workoutType = dictionary["workout_type"] as? Int {
+            let trainer: Bool = s.value("trainer"),
+            let commute: Bool = s.value("commute"),
+            let manual: Bool = s.value("manual"),
+            let privateActivity: Bool = s.value("private"),
+            let flagged: Bool = s.value("flagged"),
+            let averageSpeed: Float = s.value("average_speed"),
+            let maxSpeed: Float = s.value("max_speed"),
+            let deviceWatts: Bool = s.value("device_watts"),
+            let hasHeartrate: Bool = s.value("has_heartrate"),
+            let elevationHigh: Float = s.value("elev_high"),
+            let elevationLow: Float = s.value("elev_low"),
+            let totalPhotoCount: Int = s.value("total_photo_count"),
+            let hasKudoed: Bool = s.value("has_kudoed") {
             self.activityId = activityId
             self.externalId = externalId
             self.uploadId = uploadId
@@ -135,18 +136,22 @@ public struct Activity {
             self.manual = manual
             self.privateActivity = privateActivity
             self.flagged = flagged
-            self.gearId = dictionary["gear_id"] as? Int
             self.averageSpeed = averageSpeed
             self.maxSpeed = maxSpeed
-            self.averageWatts = averageWatts
-            self.kilojoules = kilojoules
             self.deviceWatts = deviceWatts
             self.hasHeartrate = hasHeartrate
             self.elevationHigh = elevationHigh
             self.elevationLow = elevationLow
             self.totalPhotoCount = totalPhotoCount
             self.hasKudoed = hasKudoed
-            self.workoutType = workoutType
+
+            // Optional Properties
+
+            self.gearId = s.value("gear_id", required: false)
+            self.averageWatts = s.value("average_watts", required: false)
+            self.weightedAverageWatts = s.value("weighted_average_watts", required: false)
+            self.kilojoules = s.value("kilojoules", required: false)
+            self.workoutType = s.value("workout_type", required: false)
         }
         else {
             return nil

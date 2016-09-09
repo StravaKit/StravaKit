@@ -17,25 +17,29 @@ public struct StatsDetail {
     public let movingTime: Int
     public let elapsedTime: Int
     public let elevationGain: Float
+    
     public let achievementCount: Int?
 
     /**
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let count = dictionary["count"] as? Int,
-            let distance = dictionary["distance"] as? Float,
-            let movingTime = dictionary["moving_time"] as? Int,
-            let elapsedTime = dictionary["elapsed_time"] as? Int,
-            let elevationGain = dictionary["elevation_gain"] as? Float {
-            let achievementCount = dictionary["achievement_count"] as? Int
+        if let s = JSONSupport(dictionary: dictionary),
+            let count: Int = s.value("count"),
+            let distance: Float = s.value("distance"),
+            let movingTime: Int = s.value("moving_time"),
+            let elapsedTime: Int = s.value("elapsed_time"),
+            let elevationGain: Float = s.value("elevation_gain") {
 
             self.count = count
             self.distance = distance
             self.movingTime = movingTime
             self.elapsedTime = elapsedTime
             self.elevationGain = elevationGain
-            self.achievementCount = achievementCount
+
+            // Optional Properties
+
+            self.achievementCount = s.value("achievement_count", required: false)
         }
         else {
             return nil

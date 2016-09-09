@@ -22,20 +22,18 @@ public struct Map {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let mapId = dictionary["id"] as? String,
-            let summaryPolyline = dictionary["summary_polyline"] as? String,
-            let resourceState = dictionary["resource_state"] as? Int {
+        if let s = JSONSupport(dictionary: dictionary),
+            let mapId: String = s.value("id"),
+            let summaryPolyline: String = s.value("summary_polyline"),
+            let resourceState: Int = s.value("resource_state") {
 
             self.mapId = mapId
             self.summaryPolyline = summaryPolyline
             self.resourceState = resourceState
-            // Note: The polyline property is not included in all API responses
-            if let polyline = dictionary["polyline"] as? String {
-                self.polyline = polyline
-            }
-            else {
-                self.polyline = nil
-            }
+
+            // Optional Properties
+
+            self.polyline = s.value("polyline", required: false)
         }
         else {
             return nil

@@ -7,37 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2655C56D1D711EEE00715ADE /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56C1D711EEE00715ADE /* activity-good.json */; };
-		2655C56F1D711F3000715ADE /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56E1D711F3000715ADE /* activity-bad.json */; };
-		2655C5711D71210500715ADE /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5701D71210500715ADE /* activities-following.json */; };
-		2655C5A71D7224A500715ADE /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BF31D6ADB8300C5D491 /* athlete-other.json */; };
-		2655C5A81D7224A500715ADE /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC61D6AB4E500481015 /* athlete-good.json */; };
-		2655C5A91D7224A500715ADE /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC71D6AB4E500481015 /* athlete-bad.json */; };
-		2655C5AA1D7224A500715ADE /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C0E1D6BE4CC00C5D491 /* activities-good.json */; };
-		2655C5AB1D7224A500715ADE /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C141D6BF50F00C5D491 /* activities-bad.json */; };
-		2655C5AC1D7224A500715ADE /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56C1D711EEE00715ADE /* activity-good.json */; };
-		2655C5AD1D7224A500715ADE /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56E1D711F3000715ADE /* activity-bad.json */; };
-		2655C5AE1D7224A500715ADE /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5701D71210500715ADE /* activities-following.json */; };
-		2655C5AF1D7224A500715ADE /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BFD1D6B7E9900C5D491 /* stats-good.json */; };
-		2655C5B01D7224A500715ADE /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C011D6B85B000C5D491 /* stats-bad.json */; };
-		2655C5B11D7224A500715ADE /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */; };
-		2655C5B21D7224A500715ADE /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C231D6C111C00C5D491 /* exchange-token-bad.json */; };
-		2655C5B31D7224A500715ADE /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C251D6C11D900C5D491 /* empty.json */; };
-		2655C5B41D7224A500715ADE /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
-		2655C5B51D7224A500715ADE /* polylines.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E41D70DC6200EB4162 /* polylines.json */; };
-		2655C5B61D7224A500715ADE /* photo-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E81D710BC600EB4162 /* photo-light.json */; };
-		2655C5B71D7224A500715ADE /* photo-heavy.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521EA1D710BF000EB4162 /* photo-heavy.json */; };
 		2655C5B91D72293C00715ADE /* StravaStyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C5B81D72293C00715ADE /* StravaStyleKit.swift */; };
 		2655C5E71D74FD3D00715ADE /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C5E61D74FD3D00715ADE /* Club.swift */; };
-		2655C5EA1D75027900715ADE /* club-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5E81D75027900715ADE /* club-bad.json */; };
-		2655C5EB1D75027900715ADE /* club-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5E91D75027900715ADE /* club-good.json */; };
 		2655C5ED1D75028D00715ADE /* StravaClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C5EC1D75028D00715ADE /* StravaClubTests.swift */; };
-		2655C5EE1D75030500715ADE /* club-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5E81D75027900715ADE /* club-bad.json */; };
-		2655C5EF1D75030500715ADE /* club-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5E91D75027900715ADE /* club-good.json */; };
-		2655C5F21D75073D00715ADE /* clubs-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F01D75073D00715ADE /* clubs-bad.json */; };
-		2655C5F31D75073D00715ADE /* clubs-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F11D75073D00715ADE /* clubs-good.json */; };
-		2655C5F41D750D6200715ADE /* clubs-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F01D75073D00715ADE /* clubs-bad.json */; };
-		2655C5F51D750D6200715ADE /* clubs-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F11D75073D00715ADE /* clubs-good.json */; };
 		2655C6051D7664C000715ADE /* StravaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2655C5FB1D7664C000715ADE /* StravaKit.framework */; };
 		2655C6131D7665CB00715ADE /* StravaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBFBC1D69177000481015 /* StravaTests.swift */; };
 		2655C6141D7665CB00715ADE /* StravaOAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C1B1D6C063E00C5D491 /* StravaOAuthTests.swift */; };
@@ -50,27 +22,6 @@
 		2655C61B1D7665CB00715ADE /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521EC1D710C6700EB4162 /* PhotoTests.swift */; };
 		2655C61C1D7665E700715ADE /* JSONRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C181D6C028000C5D491 /* JSONRequestor.swift */; };
 		2655C61D1D7665E700715ADE /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C211D6C0E6700C5D491 /* JSONLoader.swift */; };
-		2655C61E1D7665EF00715ADE /* clubs-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F01D75073D00715ADE /* clubs-bad.json */; };
-		2655C61F1D7665EF00715ADE /* clubs-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5F11D75073D00715ADE /* clubs-good.json */; };
-		2655C6201D7665EF00715ADE /* club-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5E81D75027900715ADE /* club-bad.json */; };
-		2655C6211D7665EF00715ADE /* club-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5E91D75027900715ADE /* club-good.json */; };
-		2655C6221D7665EF00715ADE /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BF31D6ADB8300C5D491 /* athlete-other.json */; };
-		2655C6231D7665EF00715ADE /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC61D6AB4E500481015 /* athlete-good.json */; };
-		2655C6241D7665EF00715ADE /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC71D6AB4E500481015 /* athlete-bad.json */; };
-		2655C6251D7665EF00715ADE /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C0E1D6BE4CC00C5D491 /* activities-good.json */; };
-		2655C6261D7665EF00715ADE /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C141D6BF50F00C5D491 /* activities-bad.json */; };
-		2655C6271D7665EF00715ADE /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56C1D711EEE00715ADE /* activity-good.json */; };
-		2655C6281D7665EF00715ADE /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C56E1D711F3000715ADE /* activity-bad.json */; };
-		2655C6291D7665EF00715ADE /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C5701D71210500715ADE /* activities-following.json */; };
-		2655C62A1D7665EF00715ADE /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BFD1D6B7E9900C5D491 /* stats-good.json */; };
-		2655C62B1D7665EF00715ADE /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C011D6B85B000C5D491 /* stats-bad.json */; };
-		2655C62C1D7665EF00715ADE /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */; };
-		2655C62D1D7665EF00715ADE /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C231D6C111C00C5D491 /* exchange-token-bad.json */; };
-		2655C62E1D7665EF00715ADE /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C251D6C11D900C5D491 /* empty.json */; };
-		2655C62F1D7665EF00715ADE /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
-		2655C6301D7665EF00715ADE /* polylines.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E41D70DC6200EB4162 /* polylines.json */; };
-		2655C6311D7665EF00715ADE /* photo-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E81D710BC600EB4162 /* photo-light.json */; };
-		2655C6321D7665EF00715ADE /* photo-heavy.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521EA1D710BF000EB4162 /* photo-heavy.json */; };
 		2655C6341D7669AD00715ADE /* StravaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 26AEBF8D1D664B9500481015 /* StravaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2655C6351D766A4B00715ADE /* Strava.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBFA91D664D3600481015 /* Strava.swift */; };
 		2655C6361D766A4B00715ADE /* StravaOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBFBE1D69296500481015 /* StravaOAuth.swift */; };
@@ -99,58 +50,134 @@
 		2655C6571D768F4D00715ADE /* LeaderboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6551D768F4D00715ADE /* LeaderboardEntry.swift */; };
 		2655C65C1D776E7200715ADE /* StravaSegmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C65B1D776E7200715ADE /* StravaSegmentTests.swift */; };
 		2655C65D1D776E7200715ADE /* StravaSegmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C65B1D776E7200715ADE /* StravaSegmentTests.swift */; };
-		2655C6931D776F4600715ADE /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6491D7677B400715ADE /* segment-good.json */; };
-		2655C6941D776F4600715ADE /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65F1D776EFA00715ADE /* segment-bad.json */; };
-		2655C6951D776F4600715ADE /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C64A1D7677B400715ADE /* segments-good.json */; };
-		2655C6961D776F4600715ADE /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65E1D776EFA00715ADE /* segments-bad.json */; };
-		2655C6971D776F4600715ADE /* leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6581D7693A500715ADE /* leaderboard-good.json */; };
-		2655C6981D776F4600715ADE /* leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6641D776F2F00715ADE /* leaderboard-bad.json */; };
-		2655C6991D776F4800715ADE /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6491D7677B400715ADE /* segment-good.json */; };
-		2655C69A1D776F4800715ADE /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65F1D776EFA00715ADE /* segment-bad.json */; };
-		2655C69B1D776F4800715ADE /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C64A1D7677B400715ADE /* segments-good.json */; };
-		2655C69C1D776F4800715ADE /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65E1D776EFA00715ADE /* segments-bad.json */; };
-		2655C69D1D776F4800715ADE /* leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6581D7693A500715ADE /* leaderboard-good.json */; };
-		2655C69E1D776F4800715ADE /* leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6641D776F2F00715ADE /* leaderboard-bad.json */; };
-		2655C69F1D776F4800715ADE /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6491D7677B400715ADE /* segment-good.json */; };
-		2655C6A01D776F4800715ADE /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65F1D776EFA00715ADE /* segment-bad.json */; };
-		2655C6A11D776F4800715ADE /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C64A1D7677B400715ADE /* segments-good.json */; };
-		2655C6A21D776F4800715ADE /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C65E1D776EFA00715ADE /* segments-bad.json */; };
-		2655C6A31D776F4800715ADE /* leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6581D7693A500715ADE /* leaderboard-good.json */; };
-		2655C6A41D776F4800715ADE /* leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6641D776F2F00715ADE /* leaderboard-bad.json */; };
 		2655C6A61D7772A800715ADE /* MapBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6A51D7772A800715ADE /* MapBounds.swift */; };
 		2655C6A71D7772A800715ADE /* MapBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6A51D7772A800715ADE /* MapBounds.swift */; };
 		2655C6A91D77773700715ADE /* MapBoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6A81D77773700715ADE /* MapBoundsTests.swift */; };
 		2655C6AA1D77773700715ADE /* MapBoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6A81D77773700715ADE /* MapBoundsTests.swift */; };
-		2655C6B11D77A96600715ADE /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AB1D77A92500715ADE /* segments-starred-good.json */; };
-		2655C6B21D77A96600715ADE /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AC1D77A92500715ADE /* segments-starred-bad.json */; };
-		2655C6B31D77A96700715ADE /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AB1D77A92500715ADE /* segments-starred-good.json */; };
-		2655C6B41D77A96700715ADE /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AC1D77A92500715ADE /* segments-starred-bad.json */; };
-		2655C6B51D77A96700715ADE /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AB1D77A92500715ADE /* segments-starred-good.json */; };
-		2655C6B61D77A96700715ADE /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6AC1D77A92500715ADE /* segments-starred-bad.json */; };
-		2655C6BB1D77D1F000715ADE /* segment-efforts-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6B71D77D1D900715ADE /* segment-efforts-bad.json */; };
-		2655C6BC1D77D1F000715ADE /* segment-efforts-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6B81D77D1D900715ADE /* segment-efforts-good.json */; };
-		2655C6BD1D77D1F100715ADE /* segment-efforts-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6B71D77D1D900715ADE /* segment-efforts-bad.json */; };
-		2655C6BE1D77D1F100715ADE /* segment-efforts-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6B81D77D1D900715ADE /* segment-efforts-good.json */; };
-		2655C6BF1D77D1F100715ADE /* segment-efforts-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6B71D77D1D900715ADE /* segment-efforts-bad.json */; };
-		2655C6C01D77D1F100715ADE /* segment-efforts-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6B81D77D1D900715ADE /* segment-efforts-good.json */; };
 		2655C6C21D77D26800715ADE /* SegmentEffort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6C11D77D26800715ADE /* SegmentEffort.swift */; };
 		2655C6C31D77D26800715ADE /* SegmentEffort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6C11D77D26800715ADE /* SegmentEffort.swift */; };
 		2655C6C51D77D56F00715ADE /* ResourceSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6C41D77D56F00715ADE /* ResourceSummary.swift */; };
 		2655C6C61D77D56F00715ADE /* ResourceSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6C41D77D56F00715ADE /* ResourceSummary.swift */; };
-		2655C6CD1D77F35600715ADE /* resource-summary-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6C71D77F30400715ADE /* resource-summary-bad.json */; };
-		2655C6CE1D77F35600715ADE /* resource-summary-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6C81D77F30400715ADE /* resource-summary-good.json */; };
-		2655C6CF1D77F35700715ADE /* resource-summary-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6C71D77F30400715ADE /* resource-summary-bad.json */; };
-		2655C6D01D77F35700715ADE /* resource-summary-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6C81D77F30400715ADE /* resource-summary-good.json */; };
-		2655C6D11D77F35700715ADE /* resource-summary-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6C71D77F30400715ADE /* resource-summary-bad.json */; };
-		2655C6D21D77F35700715ADE /* resource-summary-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6C81D77F30400715ADE /* resource-summary-good.json */; };
 		2655C6D41D77F99100715ADE /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6D31D77F99100715ADE /* Page.swift */; };
 		2655C6D51D77F99100715ADE /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2655C6D31D77F99100715ADE /* Page.swift */; };
-		2655C6DC1D78083A00715ADE /* athlete-friends-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6D61D78065B00715ADE /* athlete-friends-bad.json */; };
-		2655C6DD1D78083A00715ADE /* athlete-friends-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6D71D78065B00715ADE /* athlete-friends-good.json */; };
-		2655C6DE1D78083B00715ADE /* athlete-friends-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6D61D78065B00715ADE /* athlete-friends-bad.json */; };
-		2655C6DF1D78083B00715ADE /* athlete-friends-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6D71D78065B00715ADE /* athlete-friends-good.json */; };
-		2655C6E01D78083B00715ADE /* athlete-friends-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6D61D78065B00715ADE /* athlete-friends-bad.json */; };
-		2655C6E11D78083B00715ADE /* athlete-friends-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2655C6D71D78065B00715ADE /* athlete-friends-good.json */; };
+		26746BDF1D8235EB007FA0A4 /* route-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB61D8235DE007FA0A4 /* route-good.json */; };
+		26746BE01D8235EB007FA0A4 /* routes-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB71D8235DE007FA0A4 /* routes-good.json */; };
+		26746BE11D8235EB007FA0A4 /* segments-explore-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB81D8235DE007FA0A4 /* segments-explore-good.json */; };
+		26746BE21D8235EB007FA0A4 /* route-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB61D8235DE007FA0A4 /* route-good.json */; };
+		26746BE31D8235EB007FA0A4 /* routes-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB71D8235DE007FA0A4 /* routes-good.json */; };
+		26746BE41D8235EB007FA0A4 /* segments-explore-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB81D8235DE007FA0A4 /* segments-explore-good.json */; };
+		26746BE51D8235EC007FA0A4 /* route-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB61D8235DE007FA0A4 /* route-good.json */; };
+		26746BE61D8235EC007FA0A4 /* routes-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB71D8235DE007FA0A4 /* routes-good.json */; };
+		26746BE71D8235EC007FA0A4 /* segments-explore-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26746BB81D8235DE007FA0A4 /* segments-explore-good.json */; };
+		26746BE91D825C2C007FA0A4 /* JSONSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26746BE81D825C2C007FA0A4 /* JSONSupport.swift */; };
+		26746BEA1D825C2C007FA0A4 /* JSONSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26746BE81D825C2C007FA0A4 /* JSONSupport.swift */; };
+		2678DC081D808FCA00A75C5B /* StravaRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678DC071D808FCA00A75C5B /* StravaRoute.swift */; };
+		2678DC091D808FCA00A75C5B /* StravaRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678DC071D808FCA00A75C5B /* StravaRoute.swift */; };
+		2678DC731D80962300A75C5B /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0A1D80961B00A75C5B /* activities-bad.json */; };
+		2678DC741D80962300A75C5B /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0B1D80961B00A75C5B /* activities-following.json */; };
+		2678DC751D80962300A75C5B /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0C1D80961B00A75C5B /* activities-good.json */; };
+		2678DC761D80962300A75C5B /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0D1D80961B00A75C5B /* activity-bad.json */; };
+		2678DC771D80962300A75C5B /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0E1D80961B00A75C5B /* activity-good.json */; };
+		2678DC781D80962300A75C5B /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0F1D80961B00A75C5B /* athlete-bad.json */; };
+		2678DC791D80962300A75C5B /* athlete-friends-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC101D80961B00A75C5B /* athlete-friends-bad.json */; };
+		2678DC7A1D80962300A75C5B /* athlete-friends-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC111D80961B00A75C5B /* athlete-friends-good.json */; };
+		2678DC7B1D80962300A75C5B /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC121D80961B00A75C5B /* athlete-good.json */; };
+		2678DC7C1D80962300A75C5B /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC131D80961B00A75C5B /* athlete-other.json */; };
+		2678DC7D1D80962300A75C5B /* club-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC141D80961B00A75C5B /* club-bad.json */; };
+		2678DC7E1D80962300A75C5B /* club-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC151D80961B00A75C5B /* club-good.json */; };
+		2678DC7F1D80962300A75C5B /* clubs-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC161D80961B00A75C5B /* clubs-bad.json */; };
+		2678DC801D80962300A75C5B /* clubs-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC171D80961B00A75C5B /* clubs-good.json */; };
+		2678DC811D80962300A75C5B /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC181D80961B00A75C5B /* empty.json */; };
+		2678DC821D80962300A75C5B /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC191D80961B00A75C5B /* exchange-token-bad.json */; };
+		2678DC831D80962300A75C5B /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1A1D80961B00A75C5B /* exchange-token-good.json */; };
+		2678DC841D80962300A75C5B /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1B1D80961B00A75C5B /* invalid.json */; };
+		2678DC851D80962300A75C5B /* segment-leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1C1D80961B00A75C5B /* segment-leaderboard-bad.json */; };
+		2678DC861D80962300A75C5B /* segment-leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1D1D80961B00A75C5B /* segment-leaderboard-good.json */; };
+		2678DC871D80962300A75C5B /* photo-heavy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1E1D80961B00A75C5B /* photo-heavy.json */; };
+		2678DC881D80962300A75C5B /* photo-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1F1D80961B00A75C5B /* photo-light.json */; };
+		2678DC891D80962300A75C5B /* polylines.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC201D80961B00A75C5B /* polylines.json */; };
+		2678DC8A1D80962300A75C5B /* resource-summary-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC211D80961B00A75C5B /* resource-summary-bad.json */; };
+		2678DC8B1D80962300A75C5B /* resource-summary-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC221D80961B00A75C5B /* resource-summary-good.json */; };
+		2678DC8C1D80962300A75C5B /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC231D80961B00A75C5B /* segment-bad.json */; };
+		2678DC8D1D80962300A75C5B /* segment-efforts-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC241D80961B00A75C5B /* segment-efforts-bad.json */; };
+		2678DC8E1D80962300A75C5B /* segment-efforts-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC251D80961B00A75C5B /* segment-efforts-good.json */; };
+		2678DC8F1D80962300A75C5B /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC261D80961B00A75C5B /* segment-good.json */; };
+		2678DC901D80962300A75C5B /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC271D80961B00A75C5B /* segments-bad.json */; };
+		2678DC911D80962300A75C5B /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC281D80961B00A75C5B /* segments-good.json */; };
+		2678DC921D80962300A75C5B /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC291D80961B00A75C5B /* segments-starred-bad.json */; };
+		2678DC931D80962300A75C5B /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2A1D80961B00A75C5B /* segments-starred-good.json */; };
+		2678DC941D80962300A75C5B /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2B1D80961B00A75C5B /* stats-bad.json */; };
+		2678DC951D80962300A75C5B /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2C1D80961B00A75C5B /* stats-good.json */; };
+		2678DC961D80962500A75C5B /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0A1D80961B00A75C5B /* activities-bad.json */; };
+		2678DC971D80962500A75C5B /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0B1D80961B00A75C5B /* activities-following.json */; };
+		2678DC981D80962500A75C5B /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0C1D80961B00A75C5B /* activities-good.json */; };
+		2678DC991D80962500A75C5B /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0D1D80961B00A75C5B /* activity-bad.json */; };
+		2678DC9A1D80962500A75C5B /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0E1D80961B00A75C5B /* activity-good.json */; };
+		2678DC9B1D80962500A75C5B /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0F1D80961B00A75C5B /* athlete-bad.json */; };
+		2678DC9C1D80962500A75C5B /* athlete-friends-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC101D80961B00A75C5B /* athlete-friends-bad.json */; };
+		2678DC9D1D80962500A75C5B /* athlete-friends-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC111D80961B00A75C5B /* athlete-friends-good.json */; };
+		2678DC9E1D80962500A75C5B /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC121D80961B00A75C5B /* athlete-good.json */; };
+		2678DC9F1D80962500A75C5B /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC131D80961B00A75C5B /* athlete-other.json */; };
+		2678DCA01D80962500A75C5B /* club-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC141D80961B00A75C5B /* club-bad.json */; };
+		2678DCA11D80962500A75C5B /* club-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC151D80961B00A75C5B /* club-good.json */; };
+		2678DCA21D80962500A75C5B /* clubs-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC161D80961B00A75C5B /* clubs-bad.json */; };
+		2678DCA31D80962500A75C5B /* clubs-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC171D80961B00A75C5B /* clubs-good.json */; };
+		2678DCA41D80962500A75C5B /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC181D80961B00A75C5B /* empty.json */; };
+		2678DCA51D80962500A75C5B /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC191D80961B00A75C5B /* exchange-token-bad.json */; };
+		2678DCA61D80962500A75C5B /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1A1D80961B00A75C5B /* exchange-token-good.json */; };
+		2678DCA71D80962500A75C5B /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1B1D80961B00A75C5B /* invalid.json */; };
+		2678DCA81D80962500A75C5B /* segment-leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1C1D80961B00A75C5B /* segment-leaderboard-bad.json */; };
+		2678DCA91D80962500A75C5B /* segment-leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1D1D80961B00A75C5B /* segment-leaderboard-good.json */; };
+		2678DCAA1D80962500A75C5B /* photo-heavy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1E1D80961B00A75C5B /* photo-heavy.json */; };
+		2678DCAB1D80962500A75C5B /* photo-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1F1D80961B00A75C5B /* photo-light.json */; };
+		2678DCAC1D80962500A75C5B /* polylines.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC201D80961B00A75C5B /* polylines.json */; };
+		2678DCAD1D80962500A75C5B /* resource-summary-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC211D80961B00A75C5B /* resource-summary-bad.json */; };
+		2678DCAE1D80962500A75C5B /* resource-summary-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC221D80961B00A75C5B /* resource-summary-good.json */; };
+		2678DCAF1D80962500A75C5B /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC231D80961B00A75C5B /* segment-bad.json */; };
+		2678DCB01D80962500A75C5B /* segment-efforts-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC241D80961B00A75C5B /* segment-efforts-bad.json */; };
+		2678DCB11D80962500A75C5B /* segment-efforts-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC251D80961B00A75C5B /* segment-efforts-good.json */; };
+		2678DCB21D80962500A75C5B /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC261D80961B00A75C5B /* segment-good.json */; };
+		2678DCB31D80962500A75C5B /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC271D80961B00A75C5B /* segments-bad.json */; };
+		2678DCB41D80962500A75C5B /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC281D80961B00A75C5B /* segments-good.json */; };
+		2678DCB51D80962500A75C5B /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC291D80961B00A75C5B /* segments-starred-bad.json */; };
+		2678DCB61D80962500A75C5B /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2A1D80961B00A75C5B /* segments-starred-good.json */; };
+		2678DCB71D80962500A75C5B /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2B1D80961B00A75C5B /* stats-bad.json */; };
+		2678DCB81D80962500A75C5B /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2C1D80961B00A75C5B /* stats-good.json */; };
+		2678DCB91D80962500A75C5B /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0A1D80961B00A75C5B /* activities-bad.json */; };
+		2678DCBA1D80962500A75C5B /* activities-following.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0B1D80961B00A75C5B /* activities-following.json */; };
+		2678DCBB1D80962500A75C5B /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0C1D80961B00A75C5B /* activities-good.json */; };
+		2678DCBC1D80962500A75C5B /* activity-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0D1D80961B00A75C5B /* activity-bad.json */; };
+		2678DCBD1D80962500A75C5B /* activity-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0E1D80961B00A75C5B /* activity-good.json */; };
+		2678DCBE1D80962500A75C5B /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC0F1D80961B00A75C5B /* athlete-bad.json */; };
+		2678DCBF1D80962500A75C5B /* athlete-friends-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC101D80961B00A75C5B /* athlete-friends-bad.json */; };
+		2678DCC01D80962500A75C5B /* athlete-friends-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC111D80961B00A75C5B /* athlete-friends-good.json */; };
+		2678DCC11D80962500A75C5B /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC121D80961B00A75C5B /* athlete-good.json */; };
+		2678DCC21D80962500A75C5B /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC131D80961B00A75C5B /* athlete-other.json */; };
+		2678DCC31D80962500A75C5B /* club-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC141D80961B00A75C5B /* club-bad.json */; };
+		2678DCC41D80962500A75C5B /* club-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC151D80961B00A75C5B /* club-good.json */; };
+		2678DCC51D80962500A75C5B /* clubs-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC161D80961B00A75C5B /* clubs-bad.json */; };
+		2678DCC61D80962500A75C5B /* clubs-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC171D80961B00A75C5B /* clubs-good.json */; };
+		2678DCC71D80962500A75C5B /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC181D80961B00A75C5B /* empty.json */; };
+		2678DCC81D80962500A75C5B /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC191D80961B00A75C5B /* exchange-token-bad.json */; };
+		2678DCC91D80962500A75C5B /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1A1D80961B00A75C5B /* exchange-token-good.json */; };
+		2678DCCA1D80962500A75C5B /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1B1D80961B00A75C5B /* invalid.json */; };
+		2678DCCB1D80962500A75C5B /* segment-leaderboard-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1C1D80961B00A75C5B /* segment-leaderboard-bad.json */; };
+		2678DCCC1D80962500A75C5B /* segment-leaderboard-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1D1D80961B00A75C5B /* segment-leaderboard-good.json */; };
+		2678DCCD1D80962500A75C5B /* photo-heavy.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1E1D80961B00A75C5B /* photo-heavy.json */; };
+		2678DCCE1D80962500A75C5B /* photo-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC1F1D80961B00A75C5B /* photo-light.json */; };
+		2678DCCF1D80962500A75C5B /* polylines.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC201D80961B00A75C5B /* polylines.json */; };
+		2678DCD01D80962500A75C5B /* resource-summary-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC211D80961B00A75C5B /* resource-summary-bad.json */; };
+		2678DCD11D80962500A75C5B /* resource-summary-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC221D80961B00A75C5B /* resource-summary-good.json */; };
+		2678DCD21D80962500A75C5B /* segment-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC231D80961B00A75C5B /* segment-bad.json */; };
+		2678DCD31D80962500A75C5B /* segment-efforts-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC241D80961B00A75C5B /* segment-efforts-bad.json */; };
+		2678DCD41D80962500A75C5B /* segment-efforts-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC251D80961B00A75C5B /* segment-efforts-good.json */; };
+		2678DCD51D80962500A75C5B /* segment-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC261D80961B00A75C5B /* segment-good.json */; };
+		2678DCD61D80962500A75C5B /* segments-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC271D80961B00A75C5B /* segments-bad.json */; };
+		2678DCD71D80962500A75C5B /* segments-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC281D80961B00A75C5B /* segments-good.json */; };
+		2678DCD81D80962500A75C5B /* segments-starred-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC291D80961B00A75C5B /* segments-starred-bad.json */; };
+		2678DCD91D80962500A75C5B /* segments-starred-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2A1D80961B00A75C5B /* segments-starred-good.json */; };
+		2678DCDA1D80962500A75C5B /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2B1D80961B00A75C5B /* stats-bad.json */; };
+		2678DCDB1D80962500A75C5B /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 2678DC2C1D80961B00A75C5B /* stats-good.json */; };
 		26AEBF671D664A2E00481015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBF661D664A2E00481015 /* AppDelegate.swift */; };
 		26AEBF6C1D664A2E00481015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6A1D664A2E00481015 /* Main.storyboard */; };
 		26AEBF6E1D664A2E00481015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6D1D664A2E00481015 /* Assets.xcassets */; };
@@ -165,43 +192,29 @@
 		26AEBFBF1D69296500481015 /* StravaOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBFBE1D69296500481015 /* StravaOAuth.swift */; };
 		26AEBFC11D692F7800481015 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBFC01D692F7800481015 /* HomeViewController.swift */; };
 		26AEBFC51D6AB16000481015 /* StravaAthleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBFC41D6AB16000481015 /* StravaAthleteTests.swift */; };
-		26AEBFC81D6AB4E500481015 /* athlete-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC61D6AB4E500481015 /* athlete-good.json */; };
-		26AEBFC91D6AB4E500481015 /* athlete-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBFC71D6AB4E500481015 /* athlete-bad.json */; };
 		26C92BF21D6ADA2200C5D491 /* StravaAthlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92BF11D6ADA2200C5D491 /* StravaAthlete.swift */; };
-		26C92BF41D6ADB8300C5D491 /* athlete-other.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BF31D6ADB8300C5D491 /* athlete-other.json */; };
 		26C92BF61D6B7B2B00C5D491 /* StravaActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92BF51D6B7B2B00C5D491 /* StravaActivity.swift */; };
 		26C92BF81D6B7B3C00C5D491 /* StravaSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92BF71D6B7B3C00C5D491 /* StravaSegment.swift */; };
 		26C92BFA1D6B7B4B00C5D491 /* StravaClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92BF91D6B7B4B00C5D491 /* StravaClub.swift */; };
 		26C92BFC1D6B7B6400C5D491 /* StravaUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92BFB1D6B7B6400C5D491 /* StravaUpload.swift */; };
-		26C92BFE1D6B7E9900C5D491 /* stats-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92BFD1D6B7E9900C5D491 /* stats-good.json */; };
 		26C92C001D6B853F00C5D491 /* StravaStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92BFF1D6B853F00C5D491 /* StravaStatsTests.swift */; };
-		26C92C021D6B85B000C5D491 /* stats-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C011D6B85B000C5D491 /* stats-bad.json */; };
 		26C92C061D6BDCF200C5D491 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C051D6BDCF200C5D491 /* Keychain.swift */; };
 		26C92C091D6BDE5500C5D491 /* StatsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C081D6BDE5500C5D491 /* StatsDetail.swift */; };
 		26C92C0B1D6BDE6700C5D491 /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C0A1D6BDE6700C5D491 /* Stats.swift */; };
 		26C92C0D1D6BDE7800C5D491 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C0C1D6BDE7800C5D491 /* Athlete.swift */; };
-		26C92C0F1D6BE4CC00C5D491 /* activities-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C0E1D6BE4CC00C5D491 /* activities-good.json */; };
 		26C92C111D6BE4DB00C5D491 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C101D6BE4DB00C5D491 /* Activity.swift */; };
 		26C92C131D6BF42C00C5D491 /* StravaActivityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C121D6BF42C00C5D491 /* StravaActivityTests.swift */; };
-		26C92C151D6BF50F00C5D491 /* activities-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C141D6BF50F00C5D491 /* activities-bad.json */; };
 		26C92C171D6BFF6D00C5D491 /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C161D6BFF6D00C5D491 /* Requestor.swift */; };
 		26C92C191D6C028000C5D491 /* JSONRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C181D6C028000C5D491 /* JSONRequestor.swift */; };
 		26C92C1C1D6C063E00C5D491 /* StravaOAuthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C1B1D6C063E00C5D491 /* StravaOAuthTests.swift */; };
-		26C92C201D6C0CFF00C5D491 /* exchange-token-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */; };
 		26C92C221D6C0E6700C5D491 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C211D6C0E6700C5D491 /* JSONLoader.swift */; };
-		26C92C241D6C111C00C5D491 /* exchange-token-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C231D6C111C00C5D491 /* exchange-token-bad.json */; };
-		26C92C261D6C11D900C5D491 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C251D6C11D900C5D491 /* empty.json */; };
 		26C92C281D6C163700C5D491 /* KeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C271D6C163700C5D491 /* KeychainTests.swift */; };
-		26C92C2A1D6C2E3000C5D491 /* invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = 26C92C291D6C2E3000C5D491 /* invalid.json */; };
 		26C92C3A1D6CBAB100C5D491 /* JSONRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C181D6C028000C5D491 /* JSONRequestor.swift */; };
 		26C92C3B1D6CBAB100C5D491 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C211D6C0E6700C5D491 /* JSONLoader.swift */; };
 		26F521DF1D70D4DE00EB4162 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521DE1D70D4DE00EB4162 /* Map.swift */; };
 		26F521E11D70D65D00EB4162 /* Polyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521E01D70D65D00EB4162 /* Polyline.swift */; };
 		26F521E31D70DA9300EB4162 /* PolylineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521E21D70DA9300EB4162 /* PolylineTests.swift */; };
-		26F521E51D70DC6200EB4162 /* polylines.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E41D70DC6200EB4162 /* polylines.json */; };
 		26F521E71D70EAE700EB4162 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521E61D70EAE700EB4162 /* Photo.swift */; };
-		26F521E91D710BC600EB4162 /* photo-light.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521E81D710BC600EB4162 /* photo-light.json */; };
-		26F521EB1D710BF000EB4162 /* photo-heavy.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F521EA1D710BF000EB4162 /* photo-heavy.json */; };
 		26F521ED1D710C6700EB4162 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521EC1D710C6700EB4162 /* PhotoTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -258,42 +271,61 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2655C56C1D711EEE00715ADE /* activity-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-good.json"; sourceTree = "<group>"; };
-		2655C56E1D711F3000715ADE /* activity-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activity-bad.json"; sourceTree = "<group>"; };
-		2655C5701D71210500715ADE /* activities-following.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activities-following.json"; sourceTree = "<group>"; };
 		2655C5B81D72293C00715ADE /* StravaStyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaStyleKit.swift; sourceTree = "<group>"; };
 		2655C5E61D74FD3D00715ADE /* Club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
-		2655C5E81D75027900715ADE /* club-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "club-bad.json"; sourceTree = "<group>"; };
-		2655C5E91D75027900715ADE /* club-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "club-good.json"; sourceTree = "<group>"; };
 		2655C5EC1D75028D00715ADE /* StravaClubTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaClubTests.swift; sourceTree = "<group>"; };
-		2655C5F01D75073D00715ADE /* clubs-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "clubs-bad.json"; sourceTree = "<group>"; };
-		2655C5F11D75073D00715ADE /* clubs-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "clubs-good.json"; sourceTree = "<group>"; };
 		2655C5FB1D7664C000715ADE /* StravaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StravaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2655C6041D7664C000715ADE /* StravaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StravaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2655C6461D7671A700715ADE /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
-		2655C6491D7677B400715ADE /* segment-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segment-good.json"; sourceTree = "<group>"; };
-		2655C64A1D7677B400715ADE /* segments-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segments-good.json"; sourceTree = "<group>"; };
 		2655C64F1D767B2100715ADE /* SegmentStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentStats.swift; sourceTree = "<group>"; };
 		2655C6521D768F4000715ADE /* Leaderboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
 		2655C6551D768F4D00715ADE /* LeaderboardEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardEntry.swift; sourceTree = "<group>"; };
-		2655C6581D7693A500715ADE /* leaderboard-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "leaderboard-good.json"; sourceTree = "<group>"; };
 		2655C65B1D776E7200715ADE /* StravaSegmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaSegmentTests.swift; sourceTree = "<group>"; };
-		2655C65E1D776EFA00715ADE /* segments-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segments-bad.json"; sourceTree = "<group>"; };
-		2655C65F1D776EFA00715ADE /* segment-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segment-bad.json"; sourceTree = "<group>"; };
-		2655C6641D776F2F00715ADE /* leaderboard-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "leaderboard-bad.json"; sourceTree = "<group>"; };
 		2655C6A51D7772A800715ADE /* MapBounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBounds.swift; sourceTree = "<group>"; };
 		2655C6A81D77773700715ADE /* MapBoundsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBoundsTests.swift; sourceTree = "<group>"; };
-		2655C6AB1D77A92500715ADE /* segments-starred-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segments-starred-good.json"; sourceTree = "<group>"; };
-		2655C6AC1D77A92500715ADE /* segments-starred-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segments-starred-bad.json"; sourceTree = "<group>"; };
-		2655C6B71D77D1D900715ADE /* segment-efforts-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segment-efforts-bad.json"; sourceTree = "<group>"; };
-		2655C6B81D77D1D900715ADE /* segment-efforts-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "segment-efforts-good.json"; sourceTree = "<group>"; };
 		2655C6C11D77D26800715ADE /* SegmentEffort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentEffort.swift; sourceTree = "<group>"; };
 		2655C6C41D77D56F00715ADE /* ResourceSummary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceSummary.swift; sourceTree = "<group>"; };
-		2655C6C71D77F30400715ADE /* resource-summary-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "resource-summary-bad.json"; sourceTree = "<group>"; };
-		2655C6C81D77F30400715ADE /* resource-summary-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "resource-summary-good.json"; sourceTree = "<group>"; };
 		2655C6D31D77F99100715ADE /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
-		2655C6D61D78065B00715ADE /* athlete-friends-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "athlete-friends-bad.json"; sourceTree = "<group>"; };
-		2655C6D71D78065B00715ADE /* athlete-friends-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "athlete-friends-good.json"; sourceTree = "<group>"; };
+		26746BB61D8235DE007FA0A4 /* route-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "route-good.json"; path = "Data/route-good.json"; sourceTree = "<group>"; };
+		26746BB71D8235DE007FA0A4 /* routes-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "routes-good.json"; path = "Data/routes-good.json"; sourceTree = "<group>"; };
+		26746BB81D8235DE007FA0A4 /* segments-explore-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segments-explore-good.json"; path = "Data/segments-explore-good.json"; sourceTree = "<group>"; };
+		26746BE81D825C2C007FA0A4 /* JSONSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSupport.swift; sourceTree = "<group>"; };
+		2678DC071D808FCA00A75C5B /* StravaRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaRoute.swift; sourceTree = "<group>"; };
+		2678DC0A1D80961B00A75C5B /* activities-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "activities-bad.json"; path = "Data/activities-bad.json"; sourceTree = "<group>"; };
+		2678DC0B1D80961B00A75C5B /* activities-following.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "activities-following.json"; path = "Data/activities-following.json"; sourceTree = "<group>"; };
+		2678DC0C1D80961B00A75C5B /* activities-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "activities-good.json"; path = "Data/activities-good.json"; sourceTree = "<group>"; };
+		2678DC0D1D80961B00A75C5B /* activity-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "activity-bad.json"; path = "Data/activity-bad.json"; sourceTree = "<group>"; };
+		2678DC0E1D80961B00A75C5B /* activity-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "activity-good.json"; path = "Data/activity-good.json"; sourceTree = "<group>"; };
+		2678DC0F1D80961B00A75C5B /* athlete-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "athlete-bad.json"; path = "Data/athlete-bad.json"; sourceTree = "<group>"; };
+		2678DC101D80961B00A75C5B /* athlete-friends-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "athlete-friends-bad.json"; path = "Data/athlete-friends-bad.json"; sourceTree = "<group>"; };
+		2678DC111D80961B00A75C5B /* athlete-friends-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "athlete-friends-good.json"; path = "Data/athlete-friends-good.json"; sourceTree = "<group>"; };
+		2678DC121D80961B00A75C5B /* athlete-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "athlete-good.json"; path = "Data/athlete-good.json"; sourceTree = "<group>"; };
+		2678DC131D80961B00A75C5B /* athlete-other.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "athlete-other.json"; path = "Data/athlete-other.json"; sourceTree = "<group>"; };
+		2678DC141D80961B00A75C5B /* club-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "club-bad.json"; path = "Data/club-bad.json"; sourceTree = "<group>"; };
+		2678DC151D80961B00A75C5B /* club-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "club-good.json"; path = "Data/club-good.json"; sourceTree = "<group>"; };
+		2678DC161D80961B00A75C5B /* clubs-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "clubs-bad.json"; path = "Data/clubs-bad.json"; sourceTree = "<group>"; };
+		2678DC171D80961B00A75C5B /* clubs-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "clubs-good.json"; path = "Data/clubs-good.json"; sourceTree = "<group>"; };
+		2678DC181D80961B00A75C5B /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = empty.json; path = Data/empty.json; sourceTree = "<group>"; };
+		2678DC191D80961B00A75C5B /* exchange-token-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "exchange-token-bad.json"; path = "Data/exchange-token-bad.json"; sourceTree = "<group>"; };
+		2678DC1A1D80961B00A75C5B /* exchange-token-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "exchange-token-good.json"; path = "Data/exchange-token-good.json"; sourceTree = "<group>"; };
+		2678DC1B1D80961B00A75C5B /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = invalid.json; path = Data/invalid.json; sourceTree = "<group>"; };
+		2678DC1C1D80961B00A75C5B /* segment-leaderboard-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segment-leaderboard-bad.json"; path = "Data/segment-leaderboard-bad.json"; sourceTree = "<group>"; };
+		2678DC1D1D80961B00A75C5B /* segment-leaderboard-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segment-leaderboard-good.json"; path = "Data/segment-leaderboard-good.json"; sourceTree = "<group>"; };
+		2678DC1E1D80961B00A75C5B /* photo-heavy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "photo-heavy.json"; path = "Data/photo-heavy.json"; sourceTree = "<group>"; };
+		2678DC1F1D80961B00A75C5B /* photo-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "photo-light.json"; path = "Data/photo-light.json"; sourceTree = "<group>"; };
+		2678DC201D80961B00A75C5B /* polylines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = polylines.json; path = Data/polylines.json; sourceTree = "<group>"; };
+		2678DC211D80961B00A75C5B /* resource-summary-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "resource-summary-bad.json"; path = "Data/resource-summary-bad.json"; sourceTree = "<group>"; };
+		2678DC221D80961B00A75C5B /* resource-summary-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "resource-summary-good.json"; path = "Data/resource-summary-good.json"; sourceTree = "<group>"; };
+		2678DC231D80961B00A75C5B /* segment-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segment-bad.json"; path = "Data/segment-bad.json"; sourceTree = "<group>"; };
+		2678DC241D80961B00A75C5B /* segment-efforts-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segment-efforts-bad.json"; path = "Data/segment-efforts-bad.json"; sourceTree = "<group>"; };
+		2678DC251D80961B00A75C5B /* segment-efforts-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segment-efforts-good.json"; path = "Data/segment-efforts-good.json"; sourceTree = "<group>"; };
+		2678DC261D80961B00A75C5B /* segment-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segment-good.json"; path = "Data/segment-good.json"; sourceTree = "<group>"; };
+		2678DC271D80961B00A75C5B /* segments-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segments-bad.json"; path = "Data/segments-bad.json"; sourceTree = "<group>"; };
+		2678DC281D80961B00A75C5B /* segments-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segments-good.json"; path = "Data/segments-good.json"; sourceTree = "<group>"; };
+		2678DC291D80961B00A75C5B /* segments-starred-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segments-starred-bad.json"; path = "Data/segments-starred-bad.json"; sourceTree = "<group>"; };
+		2678DC2A1D80961B00A75C5B /* segments-starred-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "segments-starred-good.json"; path = "Data/segments-starred-good.json"; sourceTree = "<group>"; };
+		2678DC2B1D80961B00A75C5B /* stats-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "stats-bad.json"; path = "Data/stats-bad.json"; sourceTree = "<group>"; };
+		2678DC2C1D80961B00A75C5B /* stats-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "stats-good.json"; path = "Data/stats-good.json"; sourceTree = "<group>"; };
 		26AEBF631D664A2E00481015 /* StravaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AEBF661D664A2E00481015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AEBF6B1D664A2E00481015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -313,41 +345,27 @@
 		26AEBFBE1D69296500481015 /* StravaOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaOAuth.swift; sourceTree = "<group>"; };
 		26AEBFC01D692F7800481015 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		26AEBFC41D6AB16000481015 /* StravaAthleteTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaAthleteTests.swift; sourceTree = "<group>"; };
-		26AEBFC61D6AB4E500481015 /* athlete-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "athlete-good.json"; sourceTree = "<group>"; };
-		26AEBFC71D6AB4E500481015 /* athlete-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "athlete-bad.json"; sourceTree = "<group>"; };
 		26C92BF11D6ADA2200C5D491 /* StravaAthlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaAthlete.swift; sourceTree = "<group>"; };
-		26C92BF31D6ADB8300C5D491 /* athlete-other.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "athlete-other.json"; sourceTree = "<group>"; };
 		26C92BF51D6B7B2B00C5D491 /* StravaActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaActivity.swift; sourceTree = "<group>"; };
 		26C92BF71D6B7B3C00C5D491 /* StravaSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaSegment.swift; sourceTree = "<group>"; };
 		26C92BF91D6B7B4B00C5D491 /* StravaClub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaClub.swift; sourceTree = "<group>"; };
 		26C92BFB1D6B7B6400C5D491 /* StravaUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaUpload.swift; sourceTree = "<group>"; };
-		26C92BFD1D6B7E9900C5D491 /* stats-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stats-good.json"; sourceTree = "<group>"; };
 		26C92BFF1D6B853F00C5D491 /* StravaStatsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaStatsTests.swift; sourceTree = "<group>"; };
-		26C92C011D6B85B000C5D491 /* stats-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "stats-bad.json"; sourceTree = "<group>"; };
 		26C92C051D6BDCF200C5D491 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		26C92C081D6BDE5500C5D491 /* StatsDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsDetail.swift; sourceTree = "<group>"; };
 		26C92C0A1D6BDE6700C5D491 /* Stats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		26C92C0C1D6BDE7800C5D491 /* Athlete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
-		26C92C0E1D6BE4CC00C5D491 /* activities-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activities-good.json"; sourceTree = "<group>"; };
 		26C92C101D6BE4DB00C5D491 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		26C92C121D6BF42C00C5D491 /* StravaActivityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaActivityTests.swift; sourceTree = "<group>"; };
-		26C92C141D6BF50F00C5D491 /* activities-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "activities-bad.json"; sourceTree = "<group>"; };
 		26C92C161D6BFF6D00C5D491 /* Requestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Requestor.swift; sourceTree = "<group>"; };
 		26C92C181D6C028000C5D491 /* JSONRequestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRequestor.swift; sourceTree = "<group>"; };
 		26C92C1B1D6C063E00C5D491 /* StravaOAuthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaOAuthTests.swift; sourceTree = "<group>"; };
-		26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "exchange-token-good.json"; sourceTree = "<group>"; };
 		26C92C211D6C0E6700C5D491 /* JSONLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
-		26C92C231D6C111C00C5D491 /* exchange-token-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "exchange-token-bad.json"; sourceTree = "<group>"; };
-		26C92C251D6C11D900C5D491 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		26C92C271D6C163700C5D491 /* KeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainTests.swift; sourceTree = "<group>"; };
-		26C92C291D6C2E3000C5D491 /* invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = invalid.json; sourceTree = "<group>"; };
 		26F521DE1D70D4DE00EB4162 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		26F521E01D70D65D00EB4162 /* Polyline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polyline.swift; sourceTree = "<group>"; };
 		26F521E21D70DA9300EB4162 /* PolylineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolylineTests.swift; sourceTree = "<group>"; };
-		26F521E41D70DC6200EB4162 /* polylines.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = polylines.json; sourceTree = "<group>"; };
 		26F521E61D70EAE700EB4162 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		26F521E81D710BC600EB4162 /* photo-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "photo-light.json"; sourceTree = "<group>"; };
-		26F521EA1D710BF000EB4162 /* photo-heavy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "photo-heavy.json"; sourceTree = "<group>"; };
 		26F521EC1D710C6700EB4162 /* PhotoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -484,41 +502,44 @@
 		26C92C031D6BAD1100C5D491 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2655C5F01D75073D00715ADE /* clubs-bad.json */,
-				2655C5F11D75073D00715ADE /* clubs-good.json */,
-				2655C5E81D75027900715ADE /* club-bad.json */,
-				2655C5E91D75027900715ADE /* club-good.json */,
-				26C92BF31D6ADB8300C5D491 /* athlete-other.json */,
-				26AEBFC61D6AB4E500481015 /* athlete-good.json */,
-				26AEBFC71D6AB4E500481015 /* athlete-bad.json */,
-				2655C6D61D78065B00715ADE /* athlete-friends-bad.json */,
-				2655C6D71D78065B00715ADE /* athlete-friends-good.json */,
-				26C92C0E1D6BE4CC00C5D491 /* activities-good.json */,
-				26C92C141D6BF50F00C5D491 /* activities-bad.json */,
-				2655C56C1D711EEE00715ADE /* activity-good.json */,
-				2655C56E1D711F3000715ADE /* activity-bad.json */,
-				2655C5701D71210500715ADE /* activities-following.json */,
-				26C92BFD1D6B7E9900C5D491 /* stats-good.json */,
-				26C92C011D6B85B000C5D491 /* stats-bad.json */,
-				26C92C1F1D6C0CFF00C5D491 /* exchange-token-good.json */,
-				26C92C231D6C111C00C5D491 /* exchange-token-bad.json */,
-				26C92C251D6C11D900C5D491 /* empty.json */,
-				26C92C291D6C2E3000C5D491 /* invalid.json */,
-				26F521E41D70DC6200EB4162 /* polylines.json */,
-				26F521E81D710BC600EB4162 /* photo-light.json */,
-				26F521EA1D710BF000EB4162 /* photo-heavy.json */,
-				2655C6491D7677B400715ADE /* segment-good.json */,
-				2655C65F1D776EFA00715ADE /* segment-bad.json */,
-				2655C64A1D7677B400715ADE /* segments-good.json */,
-				2655C65E1D776EFA00715ADE /* segments-bad.json */,
-				2655C6AB1D77A92500715ADE /* segments-starred-good.json */,
-				2655C6AC1D77A92500715ADE /* segments-starred-bad.json */,
-				2655C6B71D77D1D900715ADE /* segment-efforts-bad.json */,
-				2655C6B81D77D1D900715ADE /* segment-efforts-good.json */,
-				2655C6581D7693A500715ADE /* leaderboard-good.json */,
-				2655C6641D776F2F00715ADE /* leaderboard-bad.json */,
-				2655C6C71D77F30400715ADE /* resource-summary-bad.json */,
-				2655C6C81D77F30400715ADE /* resource-summary-good.json */,
+				26746BB61D8235DE007FA0A4 /* route-good.json */,
+				26746BB71D8235DE007FA0A4 /* routes-good.json */,
+				26746BB81D8235DE007FA0A4 /* segments-explore-good.json */,
+				2678DC0A1D80961B00A75C5B /* activities-bad.json */,
+				2678DC0B1D80961B00A75C5B /* activities-following.json */,
+				2678DC0C1D80961B00A75C5B /* activities-good.json */,
+				2678DC0D1D80961B00A75C5B /* activity-bad.json */,
+				2678DC0E1D80961B00A75C5B /* activity-good.json */,
+				2678DC0F1D80961B00A75C5B /* athlete-bad.json */,
+				2678DC101D80961B00A75C5B /* athlete-friends-bad.json */,
+				2678DC111D80961B00A75C5B /* athlete-friends-good.json */,
+				2678DC121D80961B00A75C5B /* athlete-good.json */,
+				2678DC131D80961B00A75C5B /* athlete-other.json */,
+				2678DC141D80961B00A75C5B /* club-bad.json */,
+				2678DC151D80961B00A75C5B /* club-good.json */,
+				2678DC161D80961B00A75C5B /* clubs-bad.json */,
+				2678DC171D80961B00A75C5B /* clubs-good.json */,
+				2678DC181D80961B00A75C5B /* empty.json */,
+				2678DC191D80961B00A75C5B /* exchange-token-bad.json */,
+				2678DC1A1D80961B00A75C5B /* exchange-token-good.json */,
+				2678DC1B1D80961B00A75C5B /* invalid.json */,
+				2678DC1C1D80961B00A75C5B /* segment-leaderboard-bad.json */,
+				2678DC1D1D80961B00A75C5B /* segment-leaderboard-good.json */,
+				2678DC1E1D80961B00A75C5B /* photo-heavy.json */,
+				2678DC1F1D80961B00A75C5B /* photo-light.json */,
+				2678DC201D80961B00A75C5B /* polylines.json */,
+				2678DC211D80961B00A75C5B /* resource-summary-bad.json */,
+				2678DC221D80961B00A75C5B /* resource-summary-good.json */,
+				2678DC231D80961B00A75C5B /* segment-bad.json */,
+				2678DC241D80961B00A75C5B /* segment-efforts-bad.json */,
+				2678DC251D80961B00A75C5B /* segment-efforts-good.json */,
+				2678DC261D80961B00A75C5B /* segment-good.json */,
+				2678DC271D80961B00A75C5B /* segments-bad.json */,
+				2678DC281D80961B00A75C5B /* segments-good.json */,
+				2678DC291D80961B00A75C5B /* segments-starred-bad.json */,
+				2678DC2A1D80961B00A75C5B /* segments-starred-good.json */,
+				2678DC2B1D80961B00A75C5B /* stats-bad.json */,
+				2678DC2C1D80961B00A75C5B /* stats-good.json */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -526,9 +547,10 @@
 		26C92C041D6BDCDF00C5D491 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				26746BE81D825C2C007FA0A4 /* JSONSupport.swift */,
 				26C92C051D6BDCF200C5D491 /* Keychain.swift */,
-				26C92C161D6BFF6D00C5D491 /* Requestor.swift */,
 				26F521E01D70D65D00EB4162 /* Polyline.swift */,
+				26C92C161D6BFF6D00C5D491 /* Requestor.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -571,6 +593,7 @@
 				26C92BF11D6ADA2200C5D491 /* StravaAthlete.swift */,
 				26C92BF51D6B7B2B00C5D491 /* StravaActivity.swift */,
 				26C92BF91D6B7B4B00C5D491 /* StravaClub.swift */,
+				2678DC071D808FCA00A75C5B /* StravaRoute.swift */,
 				26C92BF71D6B7B3C00C5D491 /* StravaSegment.swift */,
 				26C92BFB1D6B7B6400C5D491 /* StravaUpload.swift */,
 			);
@@ -776,41 +799,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2655C6291D7665EF00715ADE /* activities-following.json in Resources */,
-				2655C62A1D7665EF00715ADE /* stats-good.json in Resources */,
-				2655C61F1D7665EF00715ADE /* clubs-good.json in Resources */,
-				2655C6271D7665EF00715ADE /* activity-good.json in Resources */,
-				2655C62D1D7665EF00715ADE /* exchange-token-bad.json in Resources */,
-				2655C6321D7665EF00715ADE /* photo-heavy.json in Resources */,
-				2655C6A11D776F4800715ADE /* segments-good.json in Resources */,
-				2655C6A41D776F4800715ADE /* leaderboard-bad.json in Resources */,
-				2655C69F1D776F4800715ADE /* segment-good.json in Resources */,
-				2655C62C1D7665EF00715ADE /* exchange-token-good.json in Resources */,
-				2655C6221D7665EF00715ADE /* athlete-other.json in Resources */,
-				2655C6231D7665EF00715ADE /* athlete-good.json in Resources */,
-				2655C6241D7665EF00715ADE /* athlete-bad.json in Resources */,
-				2655C6201D7665EF00715ADE /* club-bad.json in Resources */,
-				2655C6261D7665EF00715ADE /* activities-bad.json in Resources */,
-				2655C6311D7665EF00715ADE /* photo-light.json in Resources */,
-				2655C6B61D77A96700715ADE /* segments-starred-bad.json in Resources */,
-				2655C6B51D77A96700715ADE /* segments-starred-good.json in Resources */,
-				2655C62B1D7665EF00715ADE /* stats-bad.json in Resources */,
-				2655C6281D7665EF00715ADE /* activity-bad.json in Resources */,
-				2655C6211D7665EF00715ADE /* club-good.json in Resources */,
-				2655C6A21D776F4800715ADE /* segments-bad.json in Resources */,
-				2655C61E1D7665EF00715ADE /* clubs-bad.json in Resources */,
-				2655C6BF1D77D1F100715ADE /* segment-efforts-bad.json in Resources */,
-				2655C6CD1D77F35600715ADE /* resource-summary-bad.json in Resources */,
-				2655C6251D7665EF00715ADE /* activities-good.json in Resources */,
-				2655C6CE1D77F35600715ADE /* resource-summary-good.json in Resources */,
-				2655C6E01D78083B00715ADE /* athlete-friends-bad.json in Resources */,
-				2655C62E1D7665EF00715ADE /* empty.json in Resources */,
-				2655C6A31D776F4800715ADE /* leaderboard-good.json in Resources */,
-				2655C6E11D78083B00715ADE /* athlete-friends-good.json in Resources */,
-				2655C6C01D77D1F100715ADE /* segment-efforts-good.json in Resources */,
-				2655C6301D7665EF00715ADE /* polylines.json in Resources */,
-				2655C6A01D776F4800715ADE /* segment-bad.json in Resources */,
-				2655C62F1D7665EF00715ADE /* invalid.json in Resources */,
+				26746BE71D8235EC007FA0A4 /* segments-explore-good.json in Resources */,
+				2678DCD41D80962500A75C5B /* segment-efforts-good.json in Resources */,
+				2678DCBA1D80962500A75C5B /* activities-following.json in Resources */,
+				2678DCC71D80962500A75C5B /* empty.json in Resources */,
+				2678DCC31D80962500A75C5B /* club-bad.json in Resources */,
+				2678DCD51D80962500A75C5B /* segment-good.json in Resources */,
+				2678DCD21D80962500A75C5B /* segment-bad.json in Resources */,
+				2678DCBD1D80962500A75C5B /* activity-good.json in Resources */,
+				2678DCC81D80962500A75C5B /* exchange-token-bad.json in Resources */,
+				2678DCCF1D80962500A75C5B /* polylines.json in Resources */,
+				2678DCDB1D80962500A75C5B /* stats-good.json in Resources */,
+				2678DCDA1D80962500A75C5B /* stats-bad.json in Resources */,
+				2678DCCE1D80962500A75C5B /* photo-light.json in Resources */,
+				2678DCD11D80962500A75C5B /* resource-summary-good.json in Resources */,
+				2678DCCD1D80962500A75C5B /* photo-heavy.json in Resources */,
+				2678DCD01D80962500A75C5B /* resource-summary-bad.json in Resources */,
+				2678DCBF1D80962500A75C5B /* athlete-friends-bad.json in Resources */,
+				2678DCBB1D80962500A75C5B /* activities-good.json in Resources */,
+				2678DCBE1D80962500A75C5B /* athlete-bad.json in Resources */,
+				2678DCCC1D80962500A75C5B /* segment-leaderboard-good.json in Resources */,
+				2678DCC91D80962500A75C5B /* exchange-token-good.json in Resources */,
+				26746BE51D8235EC007FA0A4 /* route-good.json in Resources */,
+				2678DCC61D80962500A75C5B /* clubs-good.json in Resources */,
+				2678DCD71D80962500A75C5B /* segments-good.json in Resources */,
+				2678DCD31D80962500A75C5B /* segment-efforts-bad.json in Resources */,
+				2678DCBC1D80962500A75C5B /* activity-bad.json in Resources */,
+				2678DCC21D80962500A75C5B /* athlete-other.json in Resources */,
+				26746BE61D8235EC007FA0A4 /* routes-good.json in Resources */,
+				2678DCCB1D80962500A75C5B /* segment-leaderboard-bad.json in Resources */,
+				2678DCD61D80962500A75C5B /* segments-bad.json in Resources */,
+				2678DCC01D80962500A75C5B /* athlete-friends-good.json in Resources */,
+				2678DCC51D80962500A75C5B /* clubs-bad.json in Resources */,
+				2678DCD91D80962500A75C5B /* segments-starred-good.json in Resources */,
+				2678DCB91D80962500A75C5B /* activities-bad.json in Resources */,
+				2678DCC41D80962500A75C5B /* club-good.json in Resources */,
+				2678DCD81D80962500A75C5B /* segments-starred-bad.json in Resources */,
+				2678DCC11D80962500A75C5B /* athlete-good.json in Resources */,
+				2678DCCA1D80962500A75C5B /* invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,41 +854,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2655C5AB1D7224A500715ADE /* activities-bad.json in Resources */,
-				2655C5EE1D75030500715ADE /* club-bad.json in Resources */,
-				2655C5AD1D7224A500715ADE /* activity-bad.json in Resources */,
-				2655C5B31D7224A500715ADE /* empty.json in Resources */,
-				2655C5A91D7224A500715ADE /* athlete-bad.json in Resources */,
-				2655C5AF1D7224A500715ADE /* stats-good.json in Resources */,
-				2655C6951D776F4600715ADE /* segments-good.json in Resources */,
-				2655C6981D776F4600715ADE /* leaderboard-bad.json in Resources */,
-				2655C6931D776F4600715ADE /* segment-good.json in Resources */,
-				2655C5B41D7224A500715ADE /* invalid.json in Resources */,
-				2655C5B21D7224A500715ADE /* exchange-token-bad.json in Resources */,
-				2655C5B61D7224A500715ADE /* photo-light.json in Resources */,
-				2655C5A81D7224A500715ADE /* athlete-good.json in Resources */,
-				2655C5B01D7224A500715ADE /* stats-bad.json in Resources */,
-				2655C5AE1D7224A500715ADE /* activities-following.json in Resources */,
-				2655C5A71D7224A500715ADE /* athlete-other.json in Resources */,
-				2655C6B21D77A96600715ADE /* segments-starred-bad.json in Resources */,
-				2655C6B11D77A96600715ADE /* segments-starred-good.json in Resources */,
-				2655C5AA1D7224A500715ADE /* activities-good.json in Resources */,
-				2655C5B71D7224A500715ADE /* photo-heavy.json in Resources */,
-				2655C5B51D7224A500715ADE /* polylines.json in Resources */,
-				2655C6961D776F4600715ADE /* segments-bad.json in Resources */,
-				2655C5B11D7224A500715ADE /* exchange-token-good.json in Resources */,
-				2655C6BB1D77D1F000715ADE /* segment-efforts-bad.json in Resources */,
-				2655C6D11D77F35700715ADE /* resource-summary-bad.json in Resources */,
-				2655C5AC1D7224A500715ADE /* activity-good.json in Resources */,
-				2655C6D21D77F35700715ADE /* resource-summary-good.json in Resources */,
-				2655C6DC1D78083A00715ADE /* athlete-friends-bad.json in Resources */,
-				2655C5EF1D75030500715ADE /* club-good.json in Resources */,
-				2655C6971D776F4600715ADE /* leaderboard-good.json in Resources */,
-				2655C6DD1D78083A00715ADE /* athlete-friends-good.json in Resources */,
-				2655C6BC1D77D1F000715ADE /* segment-efforts-good.json in Resources */,
-				2655C5F41D750D6200715ADE /* clubs-bad.json in Resources */,
-				2655C6941D776F4600715ADE /* segment-bad.json in Resources */,
-				2655C5F51D750D6200715ADE /* clubs-good.json in Resources */,
+				26746BE11D8235EB007FA0A4 /* segments-explore-good.json in Resources */,
+				2678DC8E1D80962300A75C5B /* segment-efforts-good.json in Resources */,
+				2678DC741D80962300A75C5B /* activities-following.json in Resources */,
+				2678DC811D80962300A75C5B /* empty.json in Resources */,
+				2678DC7D1D80962300A75C5B /* club-bad.json in Resources */,
+				2678DC8F1D80962300A75C5B /* segment-good.json in Resources */,
+				2678DC8C1D80962300A75C5B /* segment-bad.json in Resources */,
+				2678DC771D80962300A75C5B /* activity-good.json in Resources */,
+				2678DC821D80962300A75C5B /* exchange-token-bad.json in Resources */,
+				2678DC891D80962300A75C5B /* polylines.json in Resources */,
+				2678DC951D80962300A75C5B /* stats-good.json in Resources */,
+				2678DC941D80962300A75C5B /* stats-bad.json in Resources */,
+				2678DC881D80962300A75C5B /* photo-light.json in Resources */,
+				2678DC8B1D80962300A75C5B /* resource-summary-good.json in Resources */,
+				2678DC871D80962300A75C5B /* photo-heavy.json in Resources */,
+				2678DC8A1D80962300A75C5B /* resource-summary-bad.json in Resources */,
+				2678DC791D80962300A75C5B /* athlete-friends-bad.json in Resources */,
+				2678DC751D80962300A75C5B /* activities-good.json in Resources */,
+				2678DC781D80962300A75C5B /* athlete-bad.json in Resources */,
+				2678DC861D80962300A75C5B /* segment-leaderboard-good.json in Resources */,
+				2678DC831D80962300A75C5B /* exchange-token-good.json in Resources */,
+				26746BDF1D8235EB007FA0A4 /* route-good.json in Resources */,
+				2678DC801D80962300A75C5B /* clubs-good.json in Resources */,
+				2678DC911D80962300A75C5B /* segments-good.json in Resources */,
+				2678DC8D1D80962300A75C5B /* segment-efforts-bad.json in Resources */,
+				2678DC761D80962300A75C5B /* activity-bad.json in Resources */,
+				2678DC7C1D80962300A75C5B /* athlete-other.json in Resources */,
+				26746BE01D8235EB007FA0A4 /* routes-good.json in Resources */,
+				2678DC851D80962300A75C5B /* segment-leaderboard-bad.json in Resources */,
+				2678DC901D80962300A75C5B /* segments-bad.json in Resources */,
+				2678DC7A1D80962300A75C5B /* athlete-friends-good.json in Resources */,
+				2678DC7F1D80962300A75C5B /* clubs-bad.json in Resources */,
+				2678DC931D80962300A75C5B /* segments-starred-good.json in Resources */,
+				2678DC731D80962300A75C5B /* activities-bad.json in Resources */,
+				2678DC7E1D80962300A75C5B /* club-good.json in Resources */,
+				2678DC921D80962300A75C5B /* segments-starred-bad.json in Resources */,
+				2678DC7B1D80962300A75C5B /* athlete-good.json in Resources */,
+				2678DC841D80962300A75C5B /* invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,41 +906,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26C92C151D6BF50F00C5D491 /* activities-bad.json in Resources */,
-				2655C5EA1D75027900715ADE /* club-bad.json in Resources */,
-				26C92C261D6C11D900C5D491 /* empty.json in Resources */,
-				26C92BFE1D6B7E9900C5D491 /* stats-good.json in Resources */,
-				26C92C2A1D6C2E3000C5D491 /* invalid.json in Resources */,
-				26C92C0F1D6BE4CC00C5D491 /* activities-good.json in Resources */,
-				2655C69B1D776F4800715ADE /* segments-good.json in Resources */,
-				2655C69E1D776F4800715ADE /* leaderboard-bad.json in Resources */,
-				2655C6991D776F4800715ADE /* segment-good.json in Resources */,
-				26F521E91D710BC600EB4162 /* photo-light.json in Resources */,
-				26AEBFC81D6AB4E500481015 /* athlete-good.json in Resources */,
-				26C92C241D6C111C00C5D491 /* exchange-token-bad.json in Resources */,
-				26C92C201D6C0CFF00C5D491 /* exchange-token-good.json in Resources */,
-				26AEBFC91D6AB4E500481015 /* athlete-bad.json in Resources */,
-				2655C56F1D711F3000715ADE /* activity-bad.json in Resources */,
-				26F521E51D70DC6200EB4162 /* polylines.json in Resources */,
-				2655C6B41D77A96700715ADE /* segments-starred-bad.json in Resources */,
-				2655C6B31D77A96700715ADE /* segments-starred-good.json in Resources */,
-				2655C5711D71210500715ADE /* activities-following.json in Resources */,
-				2655C56D1D711EEE00715ADE /* activity-good.json in Resources */,
-				26C92C021D6B85B000C5D491 /* stats-bad.json in Resources */,
-				2655C69C1D776F4800715ADE /* segments-bad.json in Resources */,
-				26F521EB1D710BF000EB4162 /* photo-heavy.json in Resources */,
-				2655C6BD1D77D1F100715ADE /* segment-efforts-bad.json in Resources */,
-				2655C6CF1D77F35700715ADE /* resource-summary-bad.json in Resources */,
-				26C92BF41D6ADB8300C5D491 /* athlete-other.json in Resources */,
-				2655C6D01D77F35700715ADE /* resource-summary-good.json in Resources */,
-				2655C6DE1D78083B00715ADE /* athlete-friends-bad.json in Resources */,
-				2655C5EB1D75027900715ADE /* club-good.json in Resources */,
-				2655C69D1D776F4800715ADE /* leaderboard-good.json in Resources */,
-				2655C6DF1D78083B00715ADE /* athlete-friends-good.json in Resources */,
-				2655C6BE1D77D1F100715ADE /* segment-efforts-good.json in Resources */,
-				2655C5F21D75073D00715ADE /* clubs-bad.json in Resources */,
-				2655C69A1D776F4800715ADE /* segment-bad.json in Resources */,
-				2655C5F31D75073D00715ADE /* clubs-good.json in Resources */,
+				26746BE41D8235EB007FA0A4 /* segments-explore-good.json in Resources */,
+				2678DCB11D80962500A75C5B /* segment-efforts-good.json in Resources */,
+				2678DC971D80962500A75C5B /* activities-following.json in Resources */,
+				2678DCA41D80962500A75C5B /* empty.json in Resources */,
+				2678DCA01D80962500A75C5B /* club-bad.json in Resources */,
+				2678DCB21D80962500A75C5B /* segment-good.json in Resources */,
+				2678DCAF1D80962500A75C5B /* segment-bad.json in Resources */,
+				2678DC9A1D80962500A75C5B /* activity-good.json in Resources */,
+				2678DCA51D80962500A75C5B /* exchange-token-bad.json in Resources */,
+				2678DCAC1D80962500A75C5B /* polylines.json in Resources */,
+				2678DCB81D80962500A75C5B /* stats-good.json in Resources */,
+				2678DCB71D80962500A75C5B /* stats-bad.json in Resources */,
+				2678DCAB1D80962500A75C5B /* photo-light.json in Resources */,
+				2678DCAE1D80962500A75C5B /* resource-summary-good.json in Resources */,
+				2678DCAA1D80962500A75C5B /* photo-heavy.json in Resources */,
+				2678DCAD1D80962500A75C5B /* resource-summary-bad.json in Resources */,
+				2678DC9C1D80962500A75C5B /* athlete-friends-bad.json in Resources */,
+				2678DC981D80962500A75C5B /* activities-good.json in Resources */,
+				2678DC9B1D80962500A75C5B /* athlete-bad.json in Resources */,
+				2678DCA91D80962500A75C5B /* segment-leaderboard-good.json in Resources */,
+				2678DCA61D80962500A75C5B /* exchange-token-good.json in Resources */,
+				26746BE21D8235EB007FA0A4 /* route-good.json in Resources */,
+				2678DCA31D80962500A75C5B /* clubs-good.json in Resources */,
+				2678DCB41D80962500A75C5B /* segments-good.json in Resources */,
+				2678DCB01D80962500A75C5B /* segment-efforts-bad.json in Resources */,
+				2678DC991D80962500A75C5B /* activity-bad.json in Resources */,
+				2678DC9F1D80962500A75C5B /* athlete-other.json in Resources */,
+				26746BE31D8235EB007FA0A4 /* routes-good.json in Resources */,
+				2678DCA81D80962500A75C5B /* segment-leaderboard-bad.json in Resources */,
+				2678DCB31D80962500A75C5B /* segments-bad.json in Resources */,
+				2678DC9D1D80962500A75C5B /* athlete-friends-good.json in Resources */,
+				2678DCA21D80962500A75C5B /* clubs-bad.json in Resources */,
+				2678DCB61D80962500A75C5B /* segments-starred-good.json in Resources */,
+				2678DC961D80962500A75C5B /* activities-bad.json in Resources */,
+				2678DCA11D80962500A75C5B /* club-good.json in Resources */,
+				2678DCB51D80962500A75C5B /* segments-starred-bad.json in Resources */,
+				2678DC9E1D80962500A75C5B /* athlete-good.json in Resources */,
+				2678DCA71D80962500A75C5B /* invalid.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,6 +960,7 @@
 				2655C6391D766A4B00715ADE /* StravaClub.swift in Sources */,
 				2655C6401D766A5500715ADE /* Stats.swift in Sources */,
 				2655C6421D766A5500715ADE /* Activity.swift in Sources */,
+				2678DC091D808FCA00A75C5B /* StravaRoute.swift in Sources */,
 				2655C6C61D77D56F00715ADE /* ResourceSummary.swift in Sources */,
 				2655C6371D766A4B00715ADE /* StravaAthlete.swift in Sources */,
 				2655C6381D766A4B00715ADE /* StravaActivity.swift in Sources */,
@@ -941,6 +974,7 @@
 				2655C63C1D766A5000715ADE /* Keychain.swift in Sources */,
 				2655C6431D766A5500715ADE /* Map.swift in Sources */,
 				2655C63A1D766A4B00715ADE /* StravaSegment.swift in Sources */,
+				26746BEA1D825C2C007FA0A4 /* JSONSupport.swift in Sources */,
 				2655C63E1D766A5000715ADE /* Polyline.swift in Sources */,
 				2655C6451D766A5500715ADE /* Club.swift in Sources */,
 				2655C6C31D77D26800715ADE /* SegmentEffort.swift in Sources */,
@@ -1000,6 +1034,7 @@
 				26C92C0B1D6BDE6700C5D491 /* Stats.swift in Sources */,
 				26C92BF61D6B7B2B00C5D491 /* StravaActivity.swift in Sources */,
 				26C92BFA1D6B7B4B00C5D491 /* StravaClub.swift in Sources */,
+				2678DC081D808FCA00A75C5B /* StravaRoute.swift in Sources */,
 				2655C6C51D77D56F00715ADE /* ResourceSummary.swift in Sources */,
 				26C92BFC1D6B7B6400C5D491 /* StravaUpload.swift in Sources */,
 				26C92C091D6BDE5500C5D491 /* StatsDetail.swift in Sources */,
@@ -1013,6 +1048,7 @@
 				26C92C061D6BDCF200C5D491 /* Keychain.swift in Sources */,
 				26F521E11D70D65D00EB4162 /* Polyline.swift in Sources */,
 				26F521DF1D70D4DE00EB4162 /* Map.swift in Sources */,
+				26746BE91D825C2C007FA0A4 /* JSONSupport.swift in Sources */,
 				26C92BF21D6ADA2200C5D491 /* StravaAthlete.swift in Sources */,
 				2655C5E71D74FD3D00715ADE /* Club.swift in Sources */,
 				2655C6C21D77D26800715ADE /* SegmentEffort.swift in Sources */,

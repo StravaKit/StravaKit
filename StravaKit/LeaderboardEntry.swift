@@ -34,20 +34,21 @@ public struct LeaderboardEntry {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let athleteName = dictionary["athlete_name"] as? String,
-            let athleteId = dictionary["athlete_id"] as? Int,
-            let athleteGender = dictionary["athlete_gender"] as? String,
-            let averageWatts = dictionary["average_watts"] as? Double,
-            let distance = dictionary["distance"] as? Double,
-            let elapsedTime = dictionary["elapsed_time"] as? Int,
-            let movingTime = dictionary["moving_time"] as? Int,
-            let startDate = dictionary["start_date"] as? String,
-            let startDateLocal = dictionary["start_date_local"] as? String,
-            let activityId = dictionary["activity_id"] as? Int,
-            let effortId = dictionary["effort_id"] as? Int,
-            let rank = dictionary["rank"] as? Int,
-            let neighborhoodIndex = dictionary["neighborhood_index"] as? Int,
-            let athleteProfile = dictionary["athlete_profile"] as? String,
+        if let s = JSONSupport(dictionary: dictionary),
+            let athleteName: String = s.value("athlete_name"),
+            let athleteId: Int = s.value("athlete_id"),
+            let athleteGender: String = s.value("athlete_gender"),
+            let averageWatts: Double = s.value("average_watts"),
+            let distance: Double = s.value("distance"),
+            let elapsedTime: Int = s.value("elapsed_time"),
+            let movingTime: Int = s.value("moving_time"),
+            let startDate: String = s.value("start_date"),
+            let startDateLocal: String = s.value("start_date_local"),
+            let activityId: Int = s.value("activity_id"),
+            let effortId: Int = s.value("effort_id"),
+            let rank: Int = s.value("rank"),
+            let neighborhoodIndex: Int = s.value("neighborhood_index"),
+            let athleteProfile: String = s.value("athlete_profile"),
             let athleteProfileURL = NSURL(string: athleteProfile) {
             self.athleteName = athleteName
             self.athleteId = athleteId
@@ -64,7 +65,9 @@ public struct LeaderboardEntry {
             self.neighborhoodIndex = neighborhoodIndex
             self.athleteProfileURL = athleteProfileURL
 
-            self.averageHr = dictionary["average_hr"] as? Double
+            // Optional Properties
+
+            self.averageHr = s.value("average_hr", required: false)
         }
         else {
             return nil

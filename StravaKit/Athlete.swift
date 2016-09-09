@@ -23,11 +23,12 @@ public struct Athlete {
     public let profileMediumImageURL : NSURL
     public let sex: String
     public let premium: Bool
-    public let followerCount: Int
-    public let friendCount: Int
-    public let mutualFriendCount: Int
-    public let measurementPreference: String
-    internal let email: String
+
+    public let followerCount: Int?
+    public let friendCount: Int?
+    public let mutualFriendCount: Int?
+    public let measurementPreference: String?
+    internal let email: String?
 
     public var fullName: String {
         get {
@@ -37,7 +38,7 @@ public struct Athlete {
 
     public var dictionary: JSONDictionary {
         get {
-            let dictionary: JSONDictionary = [
+            var dictionary: JSONDictionary = [
                 "id" : athleteId,
                 "resource_state" : resourceState,
                 "firstname" : firstName,
@@ -48,13 +49,24 @@ public struct Athlete {
                 "profile" : String(profileImageURL),
                 "profile_medium" : String(profileMediumImageURL),
                 "sex" : sex,
-                "premium" : premium,
-                "follower_count" : followerCount,
-                "friend_count" : friendCount,
-                "mutual_friend_count" : mutualFriendCount,
-                "measurement_preference" : measurementPreference,
-                "email" : email
+                "premium" : premium
             ]
+
+            if let followerCount = followerCount {
+                dictionary["follower_count"] = followerCount
+            }
+            if let friendCount = friendCount {
+                dictionary["friend_count"] = friendCount
+            }
+            if let mutualFriendCount = mutualFriendCount {
+                dictionary["mutual_friend_count"] = mutualFriendCount
+            }
+            if let measurementPreference = measurementPreference {
+                dictionary["measurement_preference"] = measurementPreference
+            }
+            if let email = email {
+                dictionary["email"] = email
+            }
 
             return dictionary
         }
@@ -64,19 +76,20 @@ public struct Athlete {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let athleteId = dictionary["id"] as? Int,
-            let resourceState = dictionary["resource_state"] as? Int,
-            let firstName = dictionary["firstname"] as? String,
-            let lastName = dictionary["lastname"] as? String,
-            let city = dictionary["city"] as? String,
-            let state = dictionary["state"] as? String,
-            let country = dictionary["country"] as? String,
-            let profile = dictionary["profile"] as? String,
+        if let s = JSONSupport(dictionary: dictionary),
+            let athleteId: Int = s.value("id"),
+            let resourceState: Int = s.value("resource_state"),
+            let firstName: String = s.value("firstname"),
+            let lastName: String = s.value("lastname"),
+            let city: String = s.value("city"),
+            let state: String = s.value("state"),
+            let country: String = s.value("country"),
+            let profile: String = s.value("profile"),
             let profileImageURL = NSURL(string: profile),
-            let profileMedium = dictionary["profile_medium"] as? String,
+            let profileMedium: String = s.value("profile_medium"),
             let profileMediumImageURL = NSURL(string: profileMedium),
-            let sex = dictionary["sex"] as? String,
-            let premium = dictionary["premium"] as? Bool {
+            let sex: String = s.value("sex"),
+            let premium: Bool = s.value("premium") {
             self.athleteId = athleteId
             self.resourceState = resourceState
             self.firstName = firstName
@@ -89,26 +102,13 @@ public struct Athlete {
             self.sex = sex
             self.premium = premium
 
-            // Optional properties
-            if let followerCount = dictionary["follower_count"] as? Int,
-                let friendCount = dictionary["friend_count"] as? Int,
-                let mutualFriendCount = dictionary["mutual_friend_count"] as? Int,
-                let measurementPreference = dictionary["measurement_preference"] as? String,
-                let email = dictionary["email"] as? String {
-                self.followerCount = followerCount
-                self.friendCount = friendCount
-                self.mutualFriendCount = mutualFriendCount
-                self.measurementPreference = measurementPreference
-                self.email = email
-            }
-            else {
-                // default values for optional properties
-                self.followerCount = 0
-                self.friendCount = 0
-                self.mutualFriendCount = 0
-                self.measurementPreference = "meters"
-                self.email = ""
-            }
+            // Optional Properties
+
+            self.followerCount = s.value("follower_count", required: false, nilValue: 0)
+            self.friendCount = s.value("friend_count", required: false, nilValue: 0)
+            self.mutualFriendCount = s.value("mutual_friend_count", required: false, nilValue: 0)
+            self.measurementPreference = s.value("measurement_preference", required: false, nilValue: "meters")
+            self.email = s.value("email", required: false, nilValue: nil)
         }
         else {
             return nil

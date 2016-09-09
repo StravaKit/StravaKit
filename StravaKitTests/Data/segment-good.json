@@ -28,16 +28,16 @@
   "hazardous": false,
   "starred": true,
   "created_at": "2009-09-16T18:36:00Z",
-  "updated_at": "2016-08-30T08:03:30Z",
+  "updated_at": "2016-09-07T08:03:21Z",
   "total_elevation_gain": 97.0933,
   "map": {
     "id": "s141491",
     "polyline": "ghkeFfdkjVGUCs@[uASm@q@{A][u@[i@Ge@My@]k@Oy@e@_CiAyAw@Yi@Ji@DKdBmCVk@J{AUq@a@Oa@HKFs@hA}A|CS|@k@vCBp@JTZZ^ZbAl@~@t@PVH\\G`@WX[Jq@Bg@IuBw@_@c@e@gAKiAJuAMgAc@i@uAeAiAQi@Ve@`@w@Pi@QqAwAw@_@m@Le@Z",
     "resource_state": 3
   },
-  "effort_count": 38255,
-  "athlete_count": 5051,
-  "star_count": 276,
+  "effort_count": 38489,
+  "athlete_count": 5069,
+  "star_count": 278,
   "athlete_segment_stats": {
     "pr_elapsed_time": null,
     "pr_date": null,

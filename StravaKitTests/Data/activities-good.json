@@ -1,5 +1,182 @@
 [
   {
+    "id": 701909030,
+    "resource_state": 2,
+    "external_id": "DB6F8FA9-628E-4DCA-B82B-94DF4C0BF088",
+    "upload_id": 773274749,
+    "athlete": {
+      "id": 8403085,
+      "resource_state": 1
+    },
+    "name": "Afternoon Ride",
+    "distance": 14690.2,
+    "moving_time": 3884,
+    "elapsed_time": 4194,
+    "total_elevation_gain": 86.3,
+    "type": "Ride",
+    "start_date": "2016-09-05T20:44:09Z",
+    "start_date_local": "2016-09-05T13:44:09Z",
+    "timezone": "(GMT-08:00) America/Los_Angeles",
+    "start_latlng": [
+      37.8,
+      -122.43
+    ],
+    "end_latlng": [
+      37.74,
+      -122.41
+    ],
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "start_latitude": 37.8,
+    "start_longitude": -122.43,
+    "achievement_count": 4,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 1,
+    "map": {
+      "id": "a701909030",
+      "summary_polyline": "u`veFnugjVaCs\\_Ek@}AgRkDe@cNcuBpNwUjx@qp@rLmPtFcB|JeMxGqCdf@jBdB`FneA|xAl`@_BjAn]ffA_F`Bjh@nRInBbg@bMOvNhIF}D|QnK|Ik[f@gK`Jf@h@gKjERXcCtE~@}@BD_BGtA|AAaAS",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "flagged": false,
+    "gear_id": null,
+    "average_speed": 3.782,
+    "max_speed": 11.0,
+    "average_watts": 85.6,
+    "kilojoules": 332.4,
+    "device_watts": false,
+    "has_heartrate": false,
+    "elev_high": 71.0,
+    "elev_low": 1.4,
+    "total_photo_count": 1,
+    "has_kudoed": false,
+    "workout_type": 10
+  },
+  {
+    "id": 701780071,
+    "resource_state": 2,
+    "external_id": "DDF04550-B112-4E46-A0FC-5C2A31420E75",
+    "upload_id": 773137363,
+    "athlete": {
+      "id": 8403085,
+      "resource_state": 1
+    },
+    "name": "Lunch Ride",
+    "distance": 8857.9,
+    "moving_time": 3149,
+    "elapsed_time": 3995,
+    "total_elevation_gain": 30.8,
+    "type": "Ride",
+    "start_date": "2016-09-05T18:37:58Z",
+    "start_date_local": "2016-09-05T11:37:58Z",
+    "timezone": "(GMT-08:00) America/Los_Angeles",
+    "start_latlng": [
+      37.81,
+      -122.45
+    ],
+    "end_latlng": [
+      37.8,
+      -122.44
+    ],
+    "location_city": null,
+    "location_state": null,
+    "location_country": "United States",
+    "start_latitude": 37.81,
+    "start_longitude": -122.45,
+    "achievement_count": 0,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 2,
+    "photo_count": 0,
+    "map": {
+      "id": "a701780071",
+      "summary_polyline": "ozveFxmjjVz@rFbBdAbIpTdOkZhEO?rIeB|H|@r@oP|h@lEvScB|RzBdCjAbGe@zB}H_@eDtCmA_AaD|DaJtBwDfGmFzBtDmGlFmBlCmInA\\~CiLcFghAzBgEhBO_CiXhH[vAbB`BaD^vBj@oBdC[g@iGcStCqBk^`FgMdGsD`DiHdIa@",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "flagged": false,
+    "gear_id": null,
+    "average_speed": 2.813,
+    "max_speed": 7.6,
+    "average_watts": 49.0,
+    "kilojoules": 154.4,
+    "device_watts": false,
+    "has_heartrate": false,
+    "elev_high": 33.4,
+    "elev_low": 1.1,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "workout_type": 10
+  },
+  {
+    "id": 701567394,
+    "resource_state": 2,
+    "external_id": "B39039B4-44B7-481A-8518-7D0F2E3B9DA0",
+    "upload_id": 772915734,
+    "athlete": {
+      "id": 8403085,
+      "resource_state": 1
+    },
+    "name": "Morning Ride",
+    "distance": 10243.2,
+    "moving_time": 2885,
+    "elapsed_time": 3475,
+    "total_elevation_gain": 145.9,
+    "type": "Ride",
+    "start_date": "2016-09-05T16:27:59Z",
+    "start_date_local": "2016-09-05T09:27:59Z",
+    "timezone": "(GMT-08:00) America/Los_Angeles",
+    "start_latlng": [
+      37.73,
+      -122.41
+    ],
+    "end_latlng": [
+      37.8,
+      -122.44
+    ],
+    "location_city": "San Francisco",
+    "location_state": "California",
+    "location_country": "United States",
+    "start_latitude": 37.73,
+    "start_longitude": -122.41,
+    "achievement_count": 1,
+    "kudos_count": 0,
+    "comment_count": 0,
+    "athlete_count": 1,
+    "photo_count": 0,
+    "map": {
+      "id": "a701567394",
+      "summary_polyline": "saieFnbdjVsAnq@_KbGcMc@ue@aWyrCrM{Bx@J|J_F|BewAjQhEx|@y]dEQ|HiH`B{AaIe_AnKtEm@]{HJtA",
+      "resource_state": 2
+    },
+    "trainer": false,
+    "commute": false,
+    "manual": false,
+    "private": false,
+    "flagged": false,
+    "gear_id": null,
+    "average_speed": 3.551,
+    "max_speed": 11.2,
+    "average_watts": 95.6,
+    "kilojoules": 275.7,
+    "device_watts": false,
+    "has_heartrate": false,
+    "elev_high": 92.3,
+    "elev_low": 5.4,
+    "total_photo_count": 0,
+    "has_kudoed": false,
+    "workout_type": 10
+  },
+  {
     "id": 418655830,
     "resource_state": 2,
     "external_id": "7E6CFFE0-F1A7-4645-AB7B-55DDEBC06369",
@@ -18,18 +195,18 @@
     "start_date_local": "2015-10-23T08:07:14Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.73697,
-      -122.416727
+      37.74,
+      -122.42
     ],
     "end_latlng": [
-      37.786237,
-      -122.398677
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.73697,
-    "start_longitude": -122.416727,
+    "start_latitude": 37.74,
+    "start_longitude": -122.42,
     "achievement_count": 6,
     "kudos_count": 0,
     "comment_count": 0,
@@ -77,18 +254,18 @@
     "start_date_local": "2015-10-21T09:32:29Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.734994,
-      -122.417552
+      37.73,
+      -122.42
     ],
     "end_latlng": [
-      37.786428,
-      -122.397813
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.734994,
-    "start_longitude": -122.417552,
+    "start_latitude": 37.73,
+    "start_longitude": -122.42,
     "achievement_count": 6,
     "kudos_count": 0,
     "comment_count": 0,
@@ -136,18 +313,18 @@
     "start_date_local": "2015-10-20T23:08:57Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.764462,
-      -122.407372
+      37.76,
+      -122.41
     ],
     "end_latlng": [
-      37.73503,
-      -122.414387
+      37.74,
+      -122.41
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.764462,
-    "start_longitude": -122.407372,
+    "start_latitude": 37.76,
+    "start_longitude": -122.41,
     "achievement_count": 1,
     "kudos_count": 0,
     "comment_count": 0,
@@ -195,18 +372,18 @@
     "start_date_local": "2015-10-20T08:32:54Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.735031,
-      -122.41853
+      37.74,
+      -122.42
     ],
     "end_latlng": [
-      37.786478,
-      -122.398586
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.735031,
-    "start_longitude": -122.41853,
+    "start_latitude": 37.74,
+    "start_longitude": -122.42,
     "achievement_count": 9,
     "kudos_count": 0,
     "comment_count": 0,
@@ -254,18 +431,18 @@
     "start_date_local": "2015-10-13T08:30:59Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.734893,
-      -122.415844
+      37.73,
+      -122.42
     ],
     "end_latlng": [
-      37.7864,
-      -122.398442
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.734893,
-    "start_longitude": -122.415844,
+    "start_latitude": 37.73,
+    "start_longitude": -122.42,
     "achievement_count": 9,
     "kudos_count": 0,
     "comment_count": 0,
@@ -313,18 +490,18 @@
     "start_date_local": "2015-09-30T08:26:30Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.734917,
-      -122.414361
+      37.73,
+      -122.41
     ],
     "end_latlng": [
-      37.786551,
-      -122.398467
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.734917,
-    "start_longitude": -122.414361,
+    "start_latitude": 37.73,
+    "start_longitude": -122.41,
     "achievement_count": 8,
     "kudos_count": 0,
     "comment_count": 0,
@@ -372,18 +549,18 @@
     "start_date_local": "2015-09-29T08:40:55Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.73703,
-      -122.415366
+      37.74,
+      -122.42
     ],
     "end_latlng": [
-      37.786541,
-      -122.39848
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.73703,
-    "start_longitude": -122.415366,
+    "start_latitude": 37.74,
+    "start_longitude": -122.42,
     "achievement_count": 14,
     "kudos_count": 0,
     "comment_count": 0,
@@ -431,18 +608,18 @@
     "start_date_local": "2015-09-28T08:32:08Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.748984,
-      -122.417854
+      37.75,
+      -122.42
     ],
     "end_latlng": [
-      37.786538,
-      -122.398485
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.748984,
-    "start_longitude": -122.417854,
+    "start_latitude": 37.75,
+    "start_longitude": -122.42,
     "achievement_count": 3,
     "kudos_count": 0,
     "comment_count": 0,
@@ -490,18 +667,18 @@
     "start_date_local": "2015-09-18T08:43:23Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.735294,
-      -122.414317
+      37.74,
+      -122.41
     ],
     "end_latlng": [
-      37.786281,
-      -122.399065
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.735294,
-    "start_longitude": -122.414317,
+    "start_latitude": 37.74,
+    "start_longitude": -122.41,
     "achievement_count": 12,
     "kudos_count": 1,
     "comment_count": 0,
@@ -549,18 +726,18 @@
     "start_date_local": "2015-09-17T08:34:33Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.734701,
-      -122.414575
+      37.73,
+      -122.41
     ],
     "end_latlng": [
-      37.786409,
-      -122.398746
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.734701,
-    "start_longitude": -122.414575,
+    "start_latitude": 37.73,
+    "start_longitude": -122.41,
     "achievement_count": 12,
     "kudos_count": 0,
     "comment_count": 0,
@@ -608,18 +785,18 @@
     "start_date_local": "2015-09-15T08:45:02Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.739157,
-      -122.4165
+      37.74,
+      -122.42
     ],
     "end_latlng": [
-      37.786345,
-      -122.399144
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.739157,
-    "start_longitude": -122.4165,
+    "start_latitude": 37.74,
+    "start_longitude": -122.42,
     "achievement_count": 4,
     "kudos_count": 0,
     "comment_count": 0,
@@ -667,18 +844,18 @@
     "start_date_local": "2015-09-14T16:54:50Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.786242,
-      -122.398847
+      37.79,
+      -122.4
     ],
     "end_latlng": [
-      37.739175,
-      -122.417645
+      37.74,
+      -122.42
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.786242,
-    "start_longitude": -122.398847,
+    "start_latitude": 37.79,
+    "start_longitude": -122.4,
     "achievement_count": 3,
     "kudos_count": 0,
     "comment_count": 0,
@@ -726,23 +903,23 @@
     "start_date_local": "2015-09-14T08:41:13Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.734765,
-      -122.414863
+      37.73,
+      -122.41
     ],
     "end_latlng": [
-      37.773416,
-      -122.421319
+      37.77,
+      -122.42
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.734765,
-    "start_longitude": -122.414863,
+    "start_latitude": 37.73,
+    "start_longitude": -122.41,
     "achievement_count": 1,
     "kudos_count": 0,
     "comment_count": 0,
     "athlete_count": 2,
-    "photo_count": 0,
+    "photo_count": 2,
     "map": {
       "id": "a392152319",
       "summary_polyline": "gaieF|cdjV{@hKmXiA]~K{IrYsQwJFfIaHwA{Np@[}LguC|M_GsF",
@@ -762,7 +939,7 @@
     "has_heartrate": false,
     "elev_high": 71.0,
     "elev_low": 12.5,
-    "total_photo_count": 1,
+    "total_photo_count": 3,
     "has_kudoed": false,
     "workout_type": 0
   },
@@ -785,18 +962,18 @@
     "start_date_local": "2015-09-12T15:59:16Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.735001,
-      -122.416949
+      37.74,
+      -122.42
     ],
     "end_latlng": [
-      37.750691,
-      -122.440538
+      37.75,
+      -122.44
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.735001,
-    "start_longitude": -122.416949,
+    "start_latitude": 37.74,
+    "start_longitude": -122.42,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
@@ -844,18 +1021,18 @@
     "start_date_local": "2015-09-10T08:28:04Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.734993,
-      -122.414383
+      37.73,
+      -122.41
     ],
     "end_latlng": [
-      37.786454,
-      -122.398612
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.734993,
-    "start_longitude": -122.414383,
+    "start_latitude": 37.73,
+    "start_longitude": -122.41,
     "achievement_count": 8,
     "kudos_count": 0,
     "comment_count": 0,
@@ -903,18 +1080,18 @@
     "start_date_local": "2015-09-09T20:35:57Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.783298,
-      -122.402525
+      37.78,
+      -122.4
     ],
     "end_latlng": [
-      37.734889,
-      -122.414409
+      37.73,
+      -122.41
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.783298,
-    "start_longitude": -122.402525,
+    "start_latitude": 37.78,
+    "start_longitude": -122.4,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
@@ -962,18 +1139,18 @@
     "start_date_local": "2015-09-09T08:33:35Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.737632,
-      -122.407236
+      37.74,
+      -122.41
     ],
     "end_latlng": [
-      37.786356,
-      -122.398674
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.737632,
-    "start_longitude": -122.407236,
+    "start_latitude": 37.74,
+    "start_longitude": -122.41,
     "achievement_count": 2,
     "kudos_count": 0,
     "comment_count": 0,
@@ -1021,18 +1198,18 @@
     "start_date_local": "2015-09-08T09:21:59Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.734993,
-      -122.414335
+      37.73,
+      -122.41
     ],
     "end_latlng": [
-      37.747199,
-      -122.403591
+      37.75,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.734993,
-    "start_longitude": -122.414335,
+    "start_latitude": 37.73,
+    "start_longitude": -122.41,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
@@ -1080,18 +1257,18 @@
     "start_date_local": "2015-09-06T14:05:28Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.742843,
-      -122.422332
+      37.74,
+      -122.42
     ],
     "end_latlng": [
-      37.735001,
-      -122.414358
+      37.74,
+      -122.41
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.742843,
-    "start_longitude": -122.422332,
+    "start_latitude": 37.74,
+    "start_longitude": -122.42,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
@@ -1139,18 +1316,18 @@
     "start_date_local": "2015-08-31T17:57:41Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.786505,
-      -122.398656
+      37.79,
+      -122.4
     ],
     "end_latlng": [
-      37.786507,
-      -122.397334
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.786505,
-    "start_longitude": -122.398656,
+    "start_latitude": 37.79,
+    "start_longitude": -122.4,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
@@ -1198,23 +1375,23 @@
     "start_date_local": "2015-08-31T08:25:47Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.733025,
-      -122.404834
+      37.73,
+      -122.4
     ],
     "end_latlng": [
-      37.786683,
-      -122.398426
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.733025,
-    "start_longitude": -122.404834,
+    "start_latitude": 37.73,
+    "start_longitude": -122.4,
     "achievement_count": 1,
     "kudos_count": 0,
     "comment_count": 0,
     "athlete_count": 1,
-    "photo_count": 0,
+    "photo_count": 1,
     "map": {
       "id": "a381808419",
       "summary_polyline": "kvheFfebjVbMkGpHgOqEaGhDmk@gyA__@{K{@b@aEqrBfJoHeGyMkE{BbCin@vHHjLiIxI{QaT}c@{B}MjAkSdQhWb^_Al@bDhA|GvJ",
@@ -1234,7 +1411,7 @@
     "has_heartrate": false,
     "elev_high": 27.4,
     "elev_low": 0.0,
-    "total_photo_count": 0,
+    "total_photo_count": 1,
     "has_kudoed": false,
     "workout_type": 0
   },
@@ -1257,23 +1434,23 @@
     "start_date_local": "2015-08-30T19:47:43Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.419636,
-      -122.070259
+      37.42,
+      -122.07
     ],
     "end_latlng": [
-      37.394077,
-      -122.074863
+      37.39,
+      -122.07
     ],
     "location_city": "Mountain View",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.419636,
-    "start_longitude": -122.070259,
+    "start_latitude": 37.42,
+    "start_longitude": -122.07,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
     "athlete_count": 1,
-    "photo_count": 0,
+    "photo_count": 1,
     "map": {
       "id": "a381466774",
       "summary_polyline": "uokcFbz`hVSkG`_AxAfHmAr]rD~HsBtNJlP_EpE|DnMqAf@`AcBSlOPsCT}J~]}@g@yBrC",
@@ -1293,7 +1470,7 @@
     "has_heartrate": false,
     "elev_high": 27.7,
     "elev_low": 3.3,
-    "total_photo_count": 1,
+    "total_photo_count": 2,
     "has_kudoed": false,
     "workout_type": 0
   },
@@ -1316,18 +1493,18 @@
     "start_date_local": "2015-08-30T13:39:35Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.397774,
-      -122.080565
+      37.4,
+      -122.08
     ],
     "end_latlng": [
-      37.415583,
-      -122.071944
+      37.42,
+      -122.07
     ],
     "location_city": "Mountain View",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.397774,
-    "start_longitude": -122.080565,
+    "start_latitude": 37.4,
+    "start_longitude": -122.08,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
@@ -1375,23 +1552,23 @@
     "start_date_local": "2015-08-25T20:23:06Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.771357,
-      -122.4056
+      37.77,
+      -122.41
     ],
     "end_latlng": [
-      37.776422,
-      -122.395182
+      37.78,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.771357,
-    "start_longitude": -122.4056,
+    "start_latitude": 37.77,
+    "start_longitude": -122.41,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
     "athlete_count": 1,
-    "photo_count": 0,
+    "photo_count": 1,
     "map": {
       "id": "a377576342",
       "summary_polyline": "}epeF~ibjVxHqIek@yt@tAU",
@@ -1411,7 +1588,7 @@
     "has_heartrate": false,
     "elev_high": 4.4,
     "elev_low": 2.3,
-    "total_photo_count": 0,
+    "total_photo_count": 1,
     "has_kudoed": false,
     "workout_type": 0
   },
@@ -1434,23 +1611,23 @@
     "start_date_local": "2015-08-11T09:00:39Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.776104,
-      -122.39413
+      37.78,
+      -122.39
     ],
     "end_latlng": [
-      37.786529,
-      -122.39845
+      37.79,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.776104,
-    "start_longitude": -122.39413,
+    "start_latitude": 37.78,
+    "start_longitude": -122.39,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
     "athlete_count": 1,
-    "photo_count": 0,
+    "photo_count": 1,
     "map": {
       "id": "a366570229",
       "summary_polyline": "scqeFhb`jVgXe_@qGmDoj@w@}DhA_SzPbe@dm@",
@@ -1470,7 +1647,7 @@
     "has_heartrate": false,
     "elev_high": 8.2,
     "elev_low": 2.8,
-    "total_photo_count": 1,
+    "total_photo_count": 2,
     "has_kudoed": false,
     "workout_type": 0
   },
@@ -1493,18 +1670,18 @@
     "start_date_local": "2015-08-05T18:46:19Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.786122,
-      -122.397551
+      37.79,
+      -122.4
     ],
     "end_latlng": [
-      37.776803,
-      -122.395324
+      37.78,
+      -122.4
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.786122,
-    "start_longitude": -122.397551,
+    "start_latitude": 37.79,
+    "start_longitude": -122.4,
     "achievement_count": 0,
     "kudos_count": 1,
     "comment_count": 0,
@@ -1552,18 +1729,18 @@
     "start_date_local": "2015-08-04T18:14:00Z",
     "timezone": "(GMT-08:00) America/Los_Angeles",
     "start_latlng": [
-      37.785965,
-      -122.399059
+      37.79,
+      -122.4
     ],
     "end_latlng": [
-      37.776412,
-      -122.394799
+      37.78,
+      -122.39
     ],
     "location_city": "San Francisco",
     "location_state": "California",
     "location_country": "United States",
-    "start_latitude": 37.785965,
-    "start_longitude": -122.399059,
+    "start_latitude": 37.79,
+    "start_longitude": -122.4,
     "achievement_count": 0,
     "kudos_count": 0,
     "comment_count": 0,
@@ -1588,183 +1765,6 @@
     "has_heartrate": false,
     "elev_high": 9.6,
     "elev_low": 3.4,
-    "total_photo_count": 0,
-    "has_kudoed": false,
-    "workout_type": 0
-  },
-  {
-    "id": 361069624,
-    "resource_state": 2,
-    "external_id": "37501F54-00D1-4FB9-AAD2-DD8A3DC23515",
-    "upload_id": 408256616,
-    "athlete": {
-      "id": 8403085,
-      "resource_state": 1
-    },
-    "name": "New morning commute",
-    "distance": 2034.6,
-    "moving_time": 455,
-    "elapsed_time": 546,
-    "total_elevation_gain": 13.7,
-    "type": "Ride",
-    "start_date": "2015-08-04T15:36:33Z",
-    "start_date_local": "2015-08-04T08:36:33Z",
-    "timezone": "(GMT-08:00) America/Los_Angeles",
-    "start_latlng": [
-      37.777753,
-      -122.394159
-    ],
-    "end_latlng": [
-      37.786575,
-      -122.398612
-    ],
-    "location_city": "San Francisco",
-    "location_state": "California",
-    "location_country": "United States",
-    "start_latitude": 37.777753,
-    "start_longitude": -122.394159,
-    "achievement_count": 0,
-    "kudos_count": 0,
-    "comment_count": 0,
-    "athlete_count": 1,
-    "photo_count": 0,
-    "map": {
-      "id": "a361069624",
-      "summary_polyline": "}mqeFnb`jV{PqUye@ro@fAr@wJuA`JzA",
-      "resource_state": 2
-    },
-    "trainer": false,
-    "commute": false,
-    "manual": false,
-    "private": false,
-    "flagged": false,
-    "gear_id": null,
-    "average_speed": 4.472,
-    "max_speed": 10.5,
-    "average_watts": 105.4,
-    "kilojoules": 48.0,
-    "device_watts": false,
-    "has_heartrate": false,
-    "elev_high": 18.8,
-    "elev_low": 4.7,
-    "total_photo_count": 0,
-    "has_kudoed": false,
-    "workout_type": 0
-  },
-  {
-    "id": 358374394,
-    "resource_state": 2,
-    "external_id": "E3DCCEA5-BCD2-4CCE-9878-25B7DB44BAA0",
-    "upload_id": 405353025,
-    "athlete": {
-      "id": 8403085,
-      "resource_state": 1
-    },
-    "name": "Gotta get to Happy Hour!",
-    "distance": 2913.9,
-    "moving_time": 512,
-    "elapsed_time": 520,
-    "total_elevation_gain": 0.0,
-    "type": "Ride",
-    "start_date": "2015-08-01T02:16:00Z",
-    "start_date_local": "2015-07-31T19:16:00Z",
-    "timezone": "(GMT-08:00) America/Los_Angeles",
-    "start_latlng": [
-      37.776477,
-      -122.415771
-    ],
-    "end_latlng": [
-      37.776631,
-      -122.395357
-    ],
-    "location_city": "San Francisco",
-    "location_state": "California",
-    "location_country": "United States",
-    "start_latitude": 37.776477,
-    "start_longitude": -122.415771,
-    "achievement_count": 3,
-    "kudos_count": 1,
-    "comment_count": 0,
-    "athlete_count": 1,
-    "photo_count": 0,
-    "map": {
-      "id": "a358374394",
-      "summary_polyline": "}eqeFridjVxBxCxQgVcLkPh_@me@yi@kt@",
-      "resource_state": 2
-    },
-    "trainer": false,
-    "commute": false,
-    "manual": false,
-    "private": false,
-    "flagged": false,
-    "gear_id": null,
-    "average_speed": 5.691,
-    "max_speed": 11.5,
-    "average_watts": 112.9,
-    "kilojoules": 57.8,
-    "device_watts": false,
-    "has_heartrate": false,
-    "elev_high": 16.9,
-    "elev_low": 2.3,
-    "total_photo_count": 0,
-    "has_kudoed": false,
-    "workout_type": 0
-  },
-  {
-    "id": 357312012,
-    "resource_state": 2,
-    "external_id": "B54E0BC0-9258-4C7F-82FC-34707D55522C",
-    "upload_id": 404238347,
-    "athlete": {
-      "id": 8403085,
-      "resource_state": 1
-    },
-    "name": "Morning Ride",
-    "distance": 2318.4,
-    "moving_time": 403,
-    "elapsed_time": 403,
-    "total_elevation_gain": 0.0,
-    "type": "Ride",
-    "start_date": "2015-07-30T14:32:07Z",
-    "start_date_local": "2015-07-30T07:32:07Z",
-    "timezone": "(GMT-08:00) America/Los_Angeles",
-    "start_latlng": [
-      37.47164,
-      -122.225083
-    ],
-    "end_latlng": [
-      37.48583,
-      -122.231353
-    ],
-    "location_city": "Redwood City",
-    "location_state": "California",
-    "location_country": "United States",
-    "start_latitude": 37.47164,
-    "start_longitude": -122.225083,
-    "achievement_count": 0,
-    "kudos_count": 1,
-    "comment_count": 0,
-    "athlete_count": 1,
-    "photo_count": 0,
-    "map": {
-      "id": "a357312012",
-      "summary_polyline": "wtucFxa_iV{CpFsHeJmBbCkA}AqDvE}JqMkDrEoS`KwL_Aa@rEsFzLqAfK",
-      "resource_state": 2
-    },
-    "trainer": false,
-    "commute": false,
-    "manual": false,
-    "private": false,
-    "flagged": false,
-    "gear_id": null,
-    "average_speed": 5.753,
-    "max_speed": 12.8,
-    "average_watts": 100.0,
-    "kilojoules": 40.3,
-    "device_watts": false,
-    "has_heartrate": false,
-    "elev_high": 9.6,
-    "elev_low": 3.5,
     "total_photo_count": 0,
     "has_kudoed": false,
     "workout_type": 0
