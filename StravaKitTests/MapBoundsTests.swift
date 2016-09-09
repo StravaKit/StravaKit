@@ -13,6 +13,19 @@ import CoreLocation
 
 class MapBoundsTests: XCTestCase {
 
+    func testMapWithoutSummaryPolylinePoints() {
+        let dictionary: JSONDictionary = [
+            "id": "101",
+            "resource_state" : 1,
+            "summary_polyline" : ""
+        ]
+
+        let map = Map(dictionary: dictionary)
+
+        XCTAssertNotNil(map)
+        XCTAssertTrue(map?.summaryCoordinates.count == 0)
+    }
+
     func testMapBoundsGood1() {
         let latitude1: CLLocationDegrees = 37.821362
         let longitude1: CLLocationDegrees = -122.505373

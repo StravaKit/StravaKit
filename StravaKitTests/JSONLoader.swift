@@ -13,6 +13,16 @@ internal class JSONLoader : NSObject {
     static let sharedInstance: JSONLoader = JSONLoader()
 
     func loadJSON(name: String) -> AnyObject? {
+        let data = loadData(name)
+
+        if let data = data {
+            return try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+        }
+
+        return nil
+    }
+
+    func loadData(name: String) -> NSData? {
         let bundle = NSBundle(forClass: self.classForCoder)
         guard let path = bundle.pathForResource(name, ofType: "json") else {
             return nil
@@ -22,13 +32,8 @@ internal class JSONLoader : NSObject {
             guard let data = fm.contentsAtPath(path) else {
                 return nil
             }
-            do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                return json
-            }
-            catch {
-                // do nothing
-            }
+
+            return data
         }
 
         return nil

@@ -13,6 +13,8 @@ import Foundation
  */
 public protocol Requestor {
 
+    var baseUrl: String { get set }
+
     /**
      Request method used for all API endpoint calls.
      */
@@ -25,31 +27,29 @@ public protocol Requestor {
  */
 public class DefaultRequestor : Requestor {
 
+    public var baseUrl: String
+
+    init() {
+        baseUrl = StravaBaseURL
+    }
+
     /**
      Request method used for all API endpoint calls.
      */
     public func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        if let url = Strava.urlWithString(StravaBaseURL + path, parameters: method == .GET ? params : nil) {
-            let request = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = method.rawValue
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-            do {
-                // Place parameters in body for POST and PUT methods
-                if let params = params  where method == .POST || method == .PUT {
-                    let body = try NSJSONSerialization.dataWithJSONObject(params, options: [])
-                    request.HTTPBody = body
-                }
-
-                return processRequest(request, authenticated: authenticated, completionHandler: completionHandler)
-            } catch {
-                let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
-                completionHandler?(response: nil, error: error)
-                return nil
-            }
+        guard let url = Strava.urlWithString(baseUrl + path, parameters: method == .GET ? params : nil) else {
+            return nil
         }
 
-        return nil
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = method.rawValue
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let params = params where method == .POST || method == .PUT {
+            request.HTTPBody = convertParametersForBody(params)
+        }
+
+        return processRequest(request, authenticated: authenticated, completionHandler: completionHandler)
+
     }
 
     // MARK: - Internal Functions -
@@ -68,13 +68,8 @@ public class DefaultRequestor : Requestor {
         let task = session.dataTaskWithRequest(request) { data, response, error in
             guard let httpResponse = response as? NSHTTPURLResponse,
                 let data = data else {
-                    if let error = error {
-                        completionHandler?(response: response, error: error)
-                    }
-                    else {
-                        let error = Strava.error(.UndefinedError, reason: "Undefined Error")
-                        completionHandler?(response: nil, error: error)
-                    }
+                    let error = Strava.error(.UndefinedError, reason: "Undefined Error")
+                    completionHandler?(response: nil, error: error)
                     return
             }
 
@@ -101,43 +96,47 @@ public class DefaultRequestor : Requestor {
                 }
             }
 
-            if data.length == 0 {
-                completionHandler?(response: [:], error: error)
-            } else {
-                do {
-                    let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                    if httpResponse.statusCode == 403 {
-                        if let json = response as? JSONDictionary,
-                            let message = json["message"] as? String where message == "Rate Limit Exceeded" {
-                            var userInfo: [String : AnyObject]? = nil
-                            if let limit = httpResponse.allHeaderFields[RateLimitLimitHeaderKey] as? String,
-                                let usage = httpResponse.allHeaderFields[RateLimitUsageHeaderKey] as? String {
-                                userInfo = [
-                                    RateLimitLimitKey : limit,
-                                    RateLimitUsageKey : usage
-                                ]
-                            }
+            let response = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
 
-                            let error = Strava.error(.RateLimitExceeded, reason: "Rate Limit Exceeded", userInfo: userInfo)
-                            completionHandler?(response: response, error: error)
-                        }
-                        else {
-                            let error = Strava.error(.AccessForbidden, reason: "Access Forbidden")
-                            completionHandler?(response: response, error: error)
-                        }
+            if httpResponse.statusCode == 403 {
+                if let json = response as? JSONDictionary,
+                    let message = json["message"] as? String where message == "Rate Limit Exceeded" {
+                    var userInfo: [String : AnyObject]? = nil
+                    if let limit = httpResponse.allHeaderFields[RateLimitLimitHeaderKey] as? String,
+                        let usage = httpResponse.allHeaderFields[RateLimitUsageHeaderKey] as? String {
+                        userInfo = [
+                            RateLimitLimitKey : limit,
+                            RateLimitUsageKey : usage
+                        ]
                     }
-                    else {
-                        completionHandler?(response: response, error: error)
-                    }
-                } catch {
-                    let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
+
+                    let error = Strava.error(.RateLimitExceeded, reason: "Rate Limit Exceeded", userInfo: userInfo)
+                    completionHandler?(response: nil, error: error)
+                }
+                else {
+                    let error = Strava.error(.AccessForbidden, reason: "Access Forbidden")
                     completionHandler?(response: nil, error: error)
                 }
             }
-            
+            else if httpResponse.statusCode == 401 {
+                let error = Strava.error(.AccessForbidden, reason: "Access Forbidden")
+                completionHandler?(response: nil, error: error)
+            }
+            else if response != nil {
+                completionHandler?(response: response, error: error)
+            }
+            else {
+                debugPrint("Status Code: \(httpResponse.statusCode)")
+                let error = Strava.error(.UndefinedError, reason: "Unknown Error")
+                completionHandler?(response: nil, error: error)
+            }
         }
         task.resume()
         return task
     }
-    
+
+    internal func convertParametersForBody(params: ParamsDictionary) -> NSData? {
+        return try? NSJSONSerialization.dataWithJSONObject(params, options: [])
+    }
+
 }

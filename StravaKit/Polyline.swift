@@ -52,7 +52,11 @@ internal class Polyline {
             decodedCoordinates.append(CLLocationCoordinate2D(latitude: lat, longitude: lon))
         }
 
-        return decodedCoordinates
+        if decodedCoordinates.count > 0 {
+            return decodedCoordinates
+        }
+        
+        return nil
     }
 
     /**

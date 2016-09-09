@@ -16,6 +16,12 @@ public class JSONRequestor : Requestor {
     public var error: NSError?
     public var callback: (() -> ())?
 
+    public var baseUrl: String
+
+    init() {
+        baseUrl = StravaBaseURL
+    }
+
     public func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         dispatch_async(dispatch_get_main_queue()) {
             if self.response == nil {
