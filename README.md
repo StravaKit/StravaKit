@@ -32,7 +32,7 @@ github "brennanMKE/StravaKit" ~> 0.5
 
 ## Beta Status
 
-While the StravaKit version is less than 1.0.0 it is considered beta. Breaking changes will follow [Semantic Versioning](http://semver.org) standards with some caveats while it is still in beta. All versions in the 0.5.x series will be compatible while a bump to 0.6 or 0.7 may include breaking changes in model properties as those details are worked out. Once the version has reached 1.0.0 strict Semantic Versioning will be followed.
+While the StravaKit version is less than 1.0.0 it is considered beta. Breaking changes will follow [Semantic Versioning](http://semver.org) standards with some exceptions while it is still in beta. All versions in the 0.5.x series will be compatible while a bump to 0.6 or 0.7 may include breaking changes in model properties as those details are worked out. Once the version has reached 1.0.0 strict Semantic Versioning will be followed.
 
 ## Docs
 
