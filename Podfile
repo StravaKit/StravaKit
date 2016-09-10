@@ -1,4 +1,5 @@
 platform :ios, '9.0'
+platform :osx, '10.11'
 
 target 'StravaDemo' do
   use_frameworks!
