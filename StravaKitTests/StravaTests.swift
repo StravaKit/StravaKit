@@ -90,47 +90,6 @@ class StravaClientTests: XCTestCase {
         }
     }
 
-    func testGetBaseURL() {
-        // get base URL which is a web page and not JSON data
-        let expectation = self.expectationWithDescription("API Call")
-
-        // use default requestor
-        Strava.sharedInstance.alternateRequestor = nil
-
-        Strava.request(.GET, authenticated: false, path: "/", params: nil) { (response, error) in
-            XCTAssertNotNil(error)
-            XCTAssertTrue(error?.code == StravaErrorCode.InvalidResponse.rawValue)
-            expectation.fulfill()
-        }
-
-        let timeout: NSTimeInterval = 15
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
-            // do nothing
-        }
-    }
-
-    func testGetBaseURLAuthenticatedBad() {
-        // get base URL which is a web page and not JSON data
-        let expectation = self.expectationWithDescription("API Call")
-
-        // use default requestor
-        Strava.sharedInstance.alternateRequestor = nil
-
-        // delete access token
-        Strava.sharedInstance.accessToken = nil
-
-        Strava.request(.GET, authenticated: true, path: "/", params: nil) { (response, error) in
-            XCTAssertNotNil(error)
-            XCTAssertTrue(error?.code == StravaErrorCode.NoAccessToken.rawValue)
-            expectation.fulfill()
-        }
-
-        let timeout: NSTimeInterval = 15
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
-            // do nothing
-        }
-    }
-
     func testDateString() {
         let string = "2016-08-21T20:11:54Z"
         guard let timeZone = NSTimeZone(abbreviation: "GMT") else {

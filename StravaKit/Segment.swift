@@ -111,7 +111,7 @@ public struct Segment {
 
     public static func segments(dictionary: JSONDictionary) -> [Segment]? {
         if let s = JSONSupport(dictionary: dictionary),
-        let dictionaries: JSONArray = s.value("segments")  {
+        let dictionaries: JSONArray = s.value("segments") where dictionaries.count > 0 {
             return Segment.segments(dictionaries)
         }
         return nil
