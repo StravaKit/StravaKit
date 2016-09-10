@@ -557,6 +557,7 @@
 				26C92C1A1D6C028700C5D491 /* Helpers */,
 				26AEBF9D1D664B9500481015 /* Info.plist */,
 				26AEBFBC1D69177000481015 /* StravaTests.swift */,
+				26EC73B41D8354E10022B3B5 /* RequestorTests.swift */,
 				26C92C1B1D6C063E00C5D491 /* StravaOAuthTests.swift */,
 				26AEBFC41D6AB16000481015 /* StravaAthleteTests.swift */,
 				26746BEE1D829B2E007FA0A4 /* StravaRouteTests.swift */,
@@ -568,7 +569,6 @@
 				26F521E21D70DA9300EB4162 /* PolylineTests.swift */,
 				26F521EC1D710C6700EB4162 /* PhotoTests.swift */,
 				2655C6A81D77773700715ADE /* MapBoundsTests.swift */,
-				26EC73B41D8354E10022B3B5 /* RequestorTests.swift */,
 			);
 			path = StravaKitTests;
 			sourceTree = "<group>";

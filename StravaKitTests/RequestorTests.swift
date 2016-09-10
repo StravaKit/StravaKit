@@ -21,9 +21,10 @@ class RequestorTests: XCTestCase {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         if !server.isStarted {
             Strava.isDebugging = true
-            requestor.baseUrl = BaseURL
             server.start()
         }
+
+        requestor.baseUrl = BaseURL
 
         Strava.sharedInstance.athlete = nil
         Strava.sharedInstance.accessToken = nil
@@ -53,6 +54,48 @@ class RequestorTests: XCTestCase {
                 else {
                     XCTFail("Data is expected")
                 }
+
+                expectation.fulfill()
+            }
+        }
+
+        let timeout: NSTimeInterval = 120
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testBadBaseURLRequest() {
+        let expectation = expectationWithDescription("Request")
+
+        requestor.baseUrl = "null"
+
+        requestor.request(.GET, authenticated: false, path: "/data", params: nil) { (response, error) in
+            dispatch_async(dispatch_get_main_queue()) {
+                XCTAssertNil(response)
+                XCTAssertNotNil(error)
+
+                expectation.fulfill()
+            }
+        }
+
+        let timeout: NSTimeInterval = 120
+        self.waitForExpectationsWithTimeout(timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testAuthenticatedWithAccessTokenRequest() {
+        let expectation = expectationWithDescription("Request")
+
+        Strava.sharedInstance.accessToken = "abc123"
+
+        requestor.request(.GET, authenticated: true, path: "/data", params: nil) { (response, error) in
+            dispatch_async(dispatch_get_main_queue()) {
+                debugPrint("Error: \(error)")
+                debugPrint("Response: \(response)")
+                XCTAssertNotNil(response)
+                XCTAssertNil(error)
 
                 expectation.fulfill()
             }
@@ -131,7 +174,11 @@ class RequestorTests: XCTestCase {
     func testPutRequest() {
         let expectation = expectationWithDescription("Request")
 
-        requestor.request(.PUT, authenticated: false, path: "/put", params: nil) { (response, error) in
+        let params: [String : String] = [
+            "data" : "123"
+        ]
+
+        requestor.request(.PUT, authenticated: false, path: "/put", params: params) { (response, error) in
             dispatch_async(dispatch_get_main_queue()) {
                 XCTAssertNotNil(response)
                 XCTAssertNil(error)

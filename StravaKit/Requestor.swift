@@ -38,6 +38,8 @@ public class DefaultRequestor : Requestor {
      */
     public func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         guard let url = Strava.urlWithString(baseUrl + path, parameters: method == .GET ? params : nil) else {
+            let error = Strava.error(.UnsupportedRequest, reason: "Unsupported Request")
+            completionHandler?(response: nil, error: error)
             return nil
         }
 
@@ -66,25 +68,27 @@ public class DefaultRequestor : Requestor {
         }
         let session = NSURLSession(configuration: sessionConfiguration)
         let task = session.dataTaskWithRequest(request) { data, response, error in
-            guard let httpResponse = response as? NSHTTPURLResponse,
-                let data = data else {
-                    let error = Strava.error(.UndefinedError, reason: "Undefined Error")
-                    completionHandler?(response: nil, error: error)
-                    return
-            }
+            let httpResponse = response as! NSHTTPURLResponse
 
             if Strava.isDebugging {
                 debugPrint("Status Code: \(httpResponse.statusCode)")
                 if let MIMEType = httpResponse.MIMEType {
                     debugPrint("Status Code: \(MIMEType)")
                 }
-                if let string = String(data: data, encoding: NSUTF8StringEncoding) {
-                    debugPrint("Response: \(string)")
+                if let data = data {
+                    if let string = String(data: data, encoding: NSUTF8StringEncoding) {
+                        debugPrint("Response: \(string)")
+                    }
                 }
             }
 
             if httpResponse.statusCode != 200 {
-                if httpResponse.statusCode == 404 {
+                if httpResponse.statusCode == 401 {
+                    let error = Strava.error(.AccessForbidden, reason: "Access Forbidden")
+                    completionHandler?(response: nil, error: error)
+                    return
+                }
+                else if httpResponse.statusCode == 404 {
                     let error = Strava.error(.RecordNotFound, reason: "Record Not Found")
                     completionHandler?(response: response, error: error)
                     return
@@ -96,7 +100,10 @@ public class DefaultRequestor : Requestor {
                 }
             }
 
-            let response = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            var response: AnyObject? = nil
+            if let data = data {
+                response = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            }
 
             if httpResponse.statusCode == 403 {
                 if let json = response as? JSONDictionary,
@@ -118,15 +125,10 @@ public class DefaultRequestor : Requestor {
                     completionHandler?(response: nil, error: error)
                 }
             }
-            else if httpResponse.statusCode == 401 {
-                let error = Strava.error(.AccessForbidden, reason: "Access Forbidden")
-                completionHandler?(response: nil, error: error)
-            }
             else if response != nil {
                 completionHandler?(response: response, error: error)
             }
             else {
-                debugPrint("Status Code: \(httpResponse.statusCode)")
                 let error = Strava.error(.UndefinedError, reason: "Unknown Error")
                 completionHandler?(response: nil, error: error)
             }

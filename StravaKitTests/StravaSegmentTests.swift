@@ -87,6 +87,12 @@ class StravaSegmentTests: XCTestCase {
         XCTAssertEqual(segments?.count, 0)
     }
 
+    func testSegmentsCreationFromEmptyArray() {
+        let dictionary: JSONDictionary = ["segments" : []]
+        let segments = Segment.segments(dictionary)
+        XCTAssertNil(segments)
+    }
+
     func testStarredSegmentsCreationFromGoodDictionary() {
         // all required values are in the JSON file
         guard let dictionaries = JSONLoader.sharedInstance.loadJSON("segments-starred-good") as? JSONArray else {
@@ -208,7 +214,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -228,7 +234,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -248,7 +254,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -282,7 +288,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -314,7 +320,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -346,7 +352,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -378,7 +384,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -400,7 +406,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -420,7 +426,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -442,7 +448,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -462,7 +468,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -491,7 +497,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -511,7 +517,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -533,7 +539,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -553,7 +559,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -575,7 +581,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -596,7 +602,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -618,7 +624,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }
@@ -638,7 +644,7 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 15
+        let timeout: NSTimeInterval = 120
         self.waitForExpectationsWithTimeout(timeout) { (error) in
             // do nothing
         }

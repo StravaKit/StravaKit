@@ -59,18 +59,19 @@ public enum HTTPMethod: String {
  - RecordNotFound: Requested resource was not found.
  - RateLimitExceeded: Request exceeded rate limit. See error for details.
  - AccessForbidden: Access is not allowed.
+ - UnsupportedRequest: Request is not supported.
  - UndefinedError: Reason for error is not known.
  */
 public enum StravaErrorCode: Int {
     case RemoteError = 501
-    case InvalidParameters = 502
-    case MissingCredentials = 503
-    case NoAccessToken = 504
-    case NoResponse = 505
-    case InvalidResponse = 506
-    case RecordNotFound = 507
-    case RateLimitExceeded = 508
-    case AccessForbidden = 509
+    case MissingCredentials = 502
+    case NoAccessToken = 503
+    case NoResponse = 504
+    case InvalidResponse = 505
+    case RecordNotFound = 506
+    case RateLimitExceeded = 507
+    case AccessForbidden = 508
+    case UnsupportedRequest = 509
     case UndefinedError = 599
 }
 
@@ -164,6 +165,10 @@ public class Strava {
         }
 
         let URL = NSURL(string: string)
+        if URL?.scheme != "http" && URL?.scheme != "https" {
+            return nil
+        }
+
         if let parameters = parameters {
             return appendQueryParameters(parameters, URL: URL)
         }
