@@ -1,8 +1,7 @@
-platform :ios, '9.0'
-platform :osx, '10.11'
 
 target 'StravaDemo' do
   use_frameworks!
+  platform :ios, '9.0'
 
   # Pods for StravaDemo
 
@@ -16,6 +15,7 @@ end
 
 target 'StravaKit-iOS' do
   use_frameworks!
+  platform :ios, '9.0'
 
   # Pods for StravaKit-iOS
 
@@ -30,6 +30,7 @@ end
 
 target 'StravaKit-Mac' do
   use_frameworks!
+  platform :osx, '10.11'
 
   # Pods for StravaKit-Mac
 
