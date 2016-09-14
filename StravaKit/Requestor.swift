@@ -46,8 +46,10 @@ public class DefaultRequestor : Requestor {
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = method.rawValue
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        if let params = params where method == .POST || method == .PUT {
-            request.HTTPBody = convertParametersForBody(params)
+        if method == .POST || method == .PUT {
+            if let params = params {
+                request.HTTPBody = convertParametersForBody(params)
+            }
         }
 
         return processRequest(request, authenticated: authenticated, completionHandler: completionHandler)
@@ -107,18 +109,24 @@ public class DefaultRequestor : Requestor {
 
             if httpResponse.statusCode == 403 {
                 if let json = response as? JSONDictionary,
-                    let message = json["message"] as? String where message == "Rate Limit Exceeded" {
-                    var userInfo: [String : AnyObject]? = nil
-                    if let limit = httpResponse.allHeaderFields[RateLimitLimitHeaderKey] as? String,
-                        let usage = httpResponse.allHeaderFields[RateLimitUsageHeaderKey] as? String {
-                        userInfo = [
-                            RateLimitLimitKey : limit,
-                            RateLimitUsageKey : usage
-                        ]
-                    }
+                    let message = json["message"] as? String {
+                    if message == "Rate Limit Exceeded" {
+                        var userInfo: [String : AnyObject]? = nil
+                        if let limit = httpResponse.allHeaderFields[RateLimitLimitHeaderKey] as? String,
+                            let usage = httpResponse.allHeaderFields[RateLimitUsageHeaderKey] as? String {
+                            userInfo = [
+                                RateLimitLimitKey : limit,
+                                RateLimitUsageKey : usage
+                            ]
+                        }
 
-                    let error = Strava.error(.RateLimitExceeded, reason: "Rate Limit Exceeded", userInfo: userInfo)
-                    completionHandler?(response: nil, error: error)
+                        let error = Strava.error(.RateLimitExceeded, reason: "Rate Limit Exceeded", userInfo: userInfo)
+                        completionHandler?(response: nil, error: error)
+                    }
+                    else {
+                        let error = Strava.error(.AccessForbidden, reason: "Access Forbidden", userInfo: nil)
+                        completionHandler?(response: nil, error: error)
+                    }
                 }
                 else {
                     let error = Strava.error(.AccessForbidden, reason: "Access Forbidden")

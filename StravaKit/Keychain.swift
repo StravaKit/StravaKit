@@ -82,8 +82,8 @@ public extension Strava {
         ]
 
         let resultCode = SecItemDelete(query as CFDictionary)
-        
+
         return resultCode == noErr || resultCode == errSecItemNotFound
     }
-    
+
 }
