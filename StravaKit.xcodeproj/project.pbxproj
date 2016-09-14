@@ -858,9 +858,11 @@
 				TargetAttributes = {
 					2655C5FA1D7664C000715ADE = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					2655C6031D7664C000715ADE = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					26AEBF621D664A2E00481015 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1533,6 +1535,7 @@
 				PRODUCT_NAME = StravaKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1559,6 +1562,7 @@
 				PRODUCT_NAME = StravaKit;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1577,6 +1581,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smallsharptools.StravaKit-Tests";
 				PRODUCT_NAME = StravaKitTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -1593,6 +1598,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.smallsharptools.StravaKit-Tests";
 				PRODUCT_NAME = StravaKitTests;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
