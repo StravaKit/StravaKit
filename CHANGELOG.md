@@ -2,6 +2,7 @@
 
 Version | Changes
 --- | ---
+**0.6.0** | Updates for Xcode 8 and Swift 2.3
 **0.5.3** | Fixes support for iOS and Mac in Podfile 
 **0.5.2** | Fixes support for Mac 
 **0.5.1** | Increases code coverage to 99% 
