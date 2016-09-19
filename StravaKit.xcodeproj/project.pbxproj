@@ -874,11 +874,15 @@
 				TargetAttributes = {
 					2655C5FA1D7664C000715ADE = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M3FCT79SM9;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					2655C6031D7664C000715ADE = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M3FCT79SM9;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					26AEBF621D664A2E00481015 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -893,7 +897,9 @@
 					};
 					26AEBF8A1D664B9500481015 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = M3FCT79SM9;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					26AEBF931D664B9500481015 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1774,10 +1780,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6B9BD6B6458244E288BEB116 /* Pods-StravaKit-Mac.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1801,10 +1808,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA8E133182A00AB05D092569 /* Pods-StravaKit-Mac.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1829,8 +1837,9 @@
 			baseConfigurationReference = 1EFF69C1CF8CB58F80C1F120 /* Pods-StravaKitTests-Mac.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = StravaKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1846,8 +1855,9 @@
 			baseConfigurationReference = E074033684503BF0746D8D01 /* Pods-StravaKitTests-Mac.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = StravaKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -2017,9 +2027,10 @@
 			baseConfigurationReference = 4A43EBD430FEDBF4B1B7341C /* Pods-StravaKit-iOS.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -2042,9 +2053,10 @@
 			baseConfigurationReference = F3CB982A852CE4F29520C8BB /* Pods-StravaKit-iOS.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = M3FCT79SM9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
