@@ -134,7 +134,8 @@ public extension Strava {
 
         guard let sa = sourceApplication where sa == "com.apple.SafariViewService",
             let uri = sharedInstance.redirectURI,
-            let _ = URL.absoluteString.rangeOfString(uri) else {
+            let absoluteString = URL.absoluteString,
+            let _ = absoluteString.rangeOfString(uri) else {
                 return false
         }
 

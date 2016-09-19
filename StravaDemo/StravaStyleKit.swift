@@ -187,13 +187,13 @@ public class StravaStyleKit : NSObject {
 
         //// Symbol Drawing
         let symbolRect = CGRect(x: 0, y: 0, width: 150, height: 30)
-        CGContextSaveGState(context)
+        CGContextSaveGState(context!)
         UIRectClip(symbolRect)
-        CGContextTranslateCTM(context, symbolRect.origin.x, symbolRect.origin.y)
-        CGContextScaleCTM(context, symbolRect.size.width / 460, symbolRect.size.height / 95)
+        CGContextTranslateCTM(context!, symbolRect.origin.x, symbolRect.origin.y)
+        CGContextScaleCTM(context!, symbolRect.size.width / 460, symbolRect.size.height / 95)
 
         StravaStyleKit.drawStrava()
-        CGContextRestoreGState(context)
+        CGContextRestoreGState(context!)
     }
 
     //// Generated Images
@@ -206,7 +206,7 @@ public class StravaStyleKit : NSObject {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 460, height: 95), false, 0)
             StravaStyleKit.drawStrava()
 
-        Cache.imageOfStrava = UIGraphicsGetImageFromCurrentImageContext().imageWithRenderingMode(.AlwaysTemplate)
+        Cache.imageOfStrava = UIGraphicsGetImageFromCurrentImageContext()!.imageWithRenderingMode(.AlwaysTemplate)
         UIGraphicsEndImageContext()
 
         return Cache.imageOfStrava!
