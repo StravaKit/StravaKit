@@ -16,7 +16,7 @@
       <div class="content-wrapper">
         <p><a href="../index.html">StravaKit Docs</a> (27% documented)</p>
         <p class="header-right"><a href="https://github.com/brennanMKE/StravaKit"><img src="../img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fstravakit%2Egithub%2Eio%2Fdocs%2Fswift%2F0%2E5%2E3%2Fapi%2Fdocsets%2FStravaKit%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fstravakit%2Egithub%2Eio%2Fdocs%2Fswift%2F0%2E6%2E0%2Fapi%2Fdocsets%2FStravaKit%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -309,174 +309,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZFC9StravaKit6Strava13getActivitiesERR"></a>
-                    <a name="//apple_ref/swift/Method/getActivities(page:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava13getActivitiesERR">getActivities(page:completionHandler:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Gets activities for current athlete.</p>
-
-<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getActivities</span> <span class="p">{</span> <span class="p">(</span><span class="n">activities</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
-</code></pre>
-
-<p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-activities">http://strava.github.io/api/v3/activities/#get-activities</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getActivities</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">activities</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Activity.html">Activity</a></span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFC9StravaKit6Strava11getActivityERR"></a>
-                    <a name="//apple_ref/swift/Method/getActivity(activityId:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava11getActivityERR">getActivity(activityId:completionHandler:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Gets activity detail.</p>
-
-<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getActivity</span><span class="p">(</span><span class="n">firstActivity</span><span class="o">.</span><span class="n">activityId</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">activity</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
-</code></pre>
-
-<p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-details">http://strava.github.io/api/v3/activities/#get-details</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getActivity</span><span class="p">(</span><span class="nv">activityId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">activity</span><span class="p">:</span> <span class="kt"><a href="../Structs/Activity.html">Activity</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFC9StravaKit6Strava22getFollowingActivitiesERR"></a>
-                    <a name="//apple_ref/swift/Method/getFollowingActivities(page:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava22getFollowingActivitiesERR">getFollowingActivities(page:completionHandler:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Gets following activities (friends).</p>
-
-<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getFollowingActivities</span> <span class="p">{</span> <span class="p">(</span><span class="n">activities</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
-</code></pre>
-
-<p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-feed">http://strava.github.io/api/v3/activities/#get-feed</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getFollowingActivities</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">activities</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Activity.html">Activity</a></span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFC9StravaKit6Strava7getClubERR"></a>
-                    <a name="//apple_ref/swift/Method/getClub(clubId:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava7getClubERR">getClub(clubId:completionHandler:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Gets club detail.</p>
-
-<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getClub</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">club</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
-</code></pre>
-
-<p>Docs: <a href="http://strava.github.io/api/v3/clubs/#get-details">http://strava.github.io/api/v3/clubs/#get-details</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getClub</span><span class="p">(</span><span class="nv">clubId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">club</span><span class="p">:</span> <span class="kt"><a href="../Structs/Club.html">Club</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFC9StravaKit6Strava8getClubsERR"></a>
-                    <a name="//apple_ref/swift/Method/getClubs(page:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava8getClubsERR">getClubs(page:completionHandler:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Gets clubs for current athlete.</p>
-
-<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getClubs</span> <span class="p">{</span> <span class="p">(</span><span class="n">clubs</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
-</code></pre>
-
-<p>Docs: <a href="http://strava.github.io/api/v3/clubs/#get-athletes">http://strava.github.io/api/v3/clubs/#get-athletes</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getClubs</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">clubs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Club.html">Club</a></span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:ZFC9StravaKit6Strava8getRouteERR"></a>
                     <a name="//apple_ref/swift/Method/getRoute(routeId:completionHandler:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:ZFC9StravaKit6Strava8getRouteERR">getRoute(routeId:completionHandler:)</a>
@@ -532,175 +364,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getRoutes</span><span class="p">(</span><span class="nv">athleteId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">clubs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Route.html">Route</a></span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFC9StravaKit6Strava3setFT8clientIdSS12clientSecretSS11redirectURISS7sandboxGSqSb__T_"></a>
-                    <a name="//apple_ref/swift/Method/set(clientId:clientSecret:redirectURI:sandbox:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava3setFT8clientIdSS12clientSecretSS11redirectURISS7sandboxGSqSb__T_">set(clientId:clientSecret:redirectURI:sandbox:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initialize clientId, clientSecret and redirectURI.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="n">clientId</span> <span class="nv">clientId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sandbox</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFC9StravaKit6Strava9userLoginFT5scopeOS_10OAuthScope5stateSS_GSqCSo5NSURL_"></a>
-                    <a name="//apple_ref/swift/Method/userLogin(scope:state:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava9userLoginFT5scopeOS_10OAuthScope5stateSS_GSqCSo5NSURL_">userLogin(scope:state:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Provides URL used to initiate user login for use with a Safari View Controller.</p>
-
-<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">redirectURI</span> <span class="o">=</span> <span class="s">"stravademo://localhost/oauth/signin"</span>
-<span class="kt">Strava</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="n">clientSecret</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="n">redirectURI</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="k">let</span> <span class="nv">URL</span> <span class="o">=</span> <span class="kt">Strava</span><span class="o">.</span><span class="nf">userLogin</span><span class="p">(</span><span class="nv">scope</span><span class="p">:</span> <span class="o">.</span><span class="kt">Public</span><span class="p">)</span> <span class="p">{</span>
-<span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="kt">SFSafariViewController</span><span class="p">(</span><span class="kt">URL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">entersReaderIfAvailable</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
-<span class="nf">presentViewController</span><span class="p">(</span><span class="n">vc</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-<span class="c1">// hold onto the vc to dismiss later</span>
-<span class="k">self</span><span class="o">.</span><span class="n">safariViewController</span> <span class="o">=</span> <span class="n">vc</span>
-<span class="p">}</span>
-</code></pre>
-
-<p>Docs: <a href="http://strava.github.io/api/v3/oauth/#get-authorize">http://strava.github.io/api/v3/oauth/#get-authorize</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">userLogin</span><span class="p">(</span><span class="n">scope</span> <span class="nv">scope</span><span class="p">:</span> <span class="kt"><a href="../Enums/OAuthScope.html">OAuthScope</a></span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFC9StravaKit6Strava7openURLFT3URLCSo5NSURL17sourceApplicationGSqSS__Sb"></a>
-                    <a name="//apple_ref/swift/Method/openURL(URL:sourceApplication:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava7openURLFT3URLCSo5NSURL17sourceApplicationGSqSS__Sb">openURL(URL:sourceApplication:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Handles the URL given to AppDelegate.</p>
-
-<p>When the <code>redirectURI</code> is used it will cause a method in your <code>AppDelegate</code> to be run. The <code>openURL</code> method which is provided by StravaKit will determine if an opened URL should be used for OAuth authorization.</p>
-
-<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">openURL</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="kt">Strava</span><span class="o">.</span><span class="nf">openURL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="n">sourceApplication</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
-
-<p>If the URL which opened the app includes a code to use for getting an access token it will be used and once it is successful a notification will be broadcast to indicate that it has completed.</p>
-
-<pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">stravaAuthorizationCompleted</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">?)</span> <span class="p">{</span>
-<span class="k">self</span><span class="o">.</span><span class="n">safariViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">dismissViewControllerAnimated</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
-<span class="n">safariViewController</span> <span class="o">=</span> <span class="kc">nil</span>
-<span class="k">guard</span> <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">notification</span><span class="p">?</span><span class="o">.</span><span class="n">userInfo</span><span class="p">,</span>
-    <span class="k">let</span> <span class="nv">status</span> <span class="o">=</span> <span class="n">userInfo</span><span class="p">[</span><span class="kt">StravaStatusKey</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">return</span>
-<span class="p">}</span>
-<span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="kt">StravaStatusSuccessValue</span> <span class="p">{</span>
-    <span class="k">self</span><span class="o">.</span><span class="n">statusLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Authorization successful!"</span>
-<span class="p">}</span>
-<span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">userInfo</span><span class="p">[</span><span class="kt">StravaErrorKey</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">NSError</span> <span class="p">{</span>
-    <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">openURL</span><span class="p">(</span><span class="kt">URL</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFC9StravaKit6Strava11deauthorizeFT17completionHandlerGSqFTSbGSqCSo7NSError__T___T_"></a>
-                    <a name="//apple_ref/swift/Method/deauthorize(completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava11deauthorizeFT17completionHandlerGSqFTSbGSqCSo7NSError__T___T_">deauthorize(completionHandler:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Deauthorizes Strava access token.</p>
-
-<p>Once the authorization steps have beenc completed successfully the access token and athlete profile have been securely stored in the user&rsquo;s Keychain for use whenever they use your app. If they ever want to remove the access token and athlete profile they can deauthorize their session with Strava.</p>
-
-<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">deauthorize</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
-    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
-        <span class="c1">// TODO: change UI for authorized state</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// TODO: warn user that deauthorization failed</span>
-        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
-            <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-
-<p>With a valid access token, which is managed for you by StravaKit, you can use various API endpoints.</p>
-
-<p>Docs: <a href="http://strava.github.io/api/v3/oauth/#deauthorize">http://strava.github.io/api/v3/oauth/#deauthorize</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">deauthorize</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="nv">success</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span></code></pre>
 
                         </div>
                       </div>
@@ -1005,10 +668,347 @@
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava13getActivitiesERR"></a>
+                    <a name="//apple_ref/swift/Method/getActivities(page:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava13getActivitiesERR">getActivities(page:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets activities for current athlete.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getActivities</span> <span class="p">{</span> <span class="p">(</span><span class="n">activities</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-activities">http://strava.github.io/api/v3/activities/#get-activities</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getActivities</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">activities</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Activity.html">Activity</a></span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava11getActivityERR"></a>
+                    <a name="//apple_ref/swift/Method/getActivity(activityId:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava11getActivityERR">getActivity(activityId:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets activity detail.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getActivity</span><span class="p">(</span><span class="n">firstActivity</span><span class="o">.</span><span class="n">activityId</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">activity</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-details">http://strava.github.io/api/v3/activities/#get-details</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getActivity</span><span class="p">(</span><span class="nv">activityId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">activity</span><span class="p">:</span> <span class="kt"><a href="../Structs/Activity.html">Activity</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava22getFollowingActivitiesERR"></a>
+                    <a name="//apple_ref/swift/Method/getFollowingActivities(page:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava22getFollowingActivitiesERR">getFollowingActivities(page:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets following activities (friends).</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getFollowingActivities</span> <span class="p">{</span> <span class="p">(</span><span class="n">activities</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/activities/#get-feed">http://strava.github.io/api/v3/activities/#get-feed</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getFollowingActivities</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">activities</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Activity.html">Activity</a></span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava3setFT8clientIdSS12clientSecretSS11redirectURISS7sandboxGSqSb__T_"></a>
+                    <a name="//apple_ref/swift/Method/set(clientId:clientSecret:redirectURI:sandbox:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava3setFT8clientIdSS12clientSecretSS11redirectURISS7sandboxGSqSb__T_">set(clientId:clientSecret:redirectURI:sandbox:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialize clientId, clientSecret and redirectURI.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">set</span><span class="p">(</span><span class="n">clientId</span> <span class="nv">clientId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sandbox</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava9userLoginFT5scopeOS_10OAuthScope5stateSS_GSqCSo5NSURL_"></a>
+                    <a name="//apple_ref/swift/Method/userLogin(scope:state:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava9userLoginFT5scopeOS_10OAuthScope5stateSS_GSqCSo5NSURL_">userLogin(scope:state:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides URL used to initiate user login for use with a Safari View Controller.</p>
+
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">redirectURI</span> <span class="o">=</span> <span class="s">"stravademo://localhost/oauth/signin"</span>
+<span class="kt">Strava</span><span class="o">.</span><span class="nf">set</span><span class="p">(</span><span class="nv">clientId</span><span class="p">:</span> <span class="n">clientId</span><span class="p">,</span> <span class="nv">clientSecret</span><span class="p">:</span> <span class="n">clientSecret</span><span class="p">,</span> <span class="nv">redirectURI</span><span class="p">:</span> <span class="n">redirectURI</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="k">let</span> <span class="nv">URL</span> <span class="o">=</span> <span class="kt">Strava</span><span class="o">.</span><span class="nf">userLogin</span><span class="p">(</span><span class="nv">scope</span><span class="p">:</span> <span class="o">.</span><span class="kt">Public</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">let</span> <span class="nv">vc</span> <span class="o">=</span> <span class="kt">SFSafariViewController</span><span class="p">(</span><span class="kt">URL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">entersReaderIfAvailable</span><span class="p">:</span> <span class="kc">false</span><span class="p">)</span>
+<span class="nf">presentViewController</span><span class="p">(</span><span class="n">vc</span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="c1">// hold onto the vc to dismiss later</span>
+<span class="k">self</span><span class="o">.</span><span class="n">safariViewController</span> <span class="o">=</span> <span class="n">vc</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/oauth/#get-authorize">http://strava.github.io/api/v3/oauth/#get-authorize</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">userLogin</span><span class="p">(</span><span class="n">scope</span> <span class="nv">scope</span><span class="p">:</span> <span class="kt"><a href="../Enums/OAuthScope.html">OAuthScope</a></span><span class="p">,</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">""</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSURL</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava7openURLFT3URLCSo5NSURL17sourceApplicationGSqSS__Sb"></a>
+                    <a name="//apple_ref/swift/Method/openURL(URL:sourceApplication:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava7openURLFT3URLCSo5NSURL17sourceApplicationGSqSS__Sb">openURL(URL:sourceApplication:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles the URL given to AppDelegate.</p>
+
+<p>When the <code>redirectURI</code> is used it will cause a method in your <code>AppDelegate</code> to be run. The <code>openURL</code> method which is provided by StravaKit will determine if an opened URL should be used for OAuth authorization.</p>
+
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">openURL</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">annotation</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">Strava</span><span class="o">.</span><span class="nf">openURL</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="n">sourceApplication</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>If the URL which opened the app includes a code to use for getting an access token it will be used and once it is successful a notification will be broadcast to indicate that it has completed.</p>
+
+<pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">stravaAuthorizationCompleted</span><span class="p">(</span><span class="nv">notification</span><span class="p">:</span> <span class="kt">NSNotification</span><span class="p">?)</span> <span class="p">{</span>
+<span class="k">self</span><span class="o">.</span><span class="n">safariViewController</span><span class="p">?</span><span class="o">.</span><span class="nf">dismissViewControllerAnimated</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="n">safariViewController</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="k">guard</span> <span class="k">let</span> <span class="nv">userInfo</span> <span class="o">=</span> <span class="n">notification</span><span class="p">?</span><span class="o">.</span><span class="n">userInfo</span><span class="p">,</span>
+    <span class="k">let</span> <span class="nv">status</span> <span class="o">=</span> <span class="n">userInfo</span><span class="p">[</span><span class="kt">StravaStatusKey</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">String</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="kt">StravaStatusSuccessValue</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">statusLabel</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">"Authorization successful!"</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">userInfo</span><span class="p">[</span><span class="kt">StravaErrorKey</span><span class="p">]</span> <span class="k">as?</span> <span class="kt">NSError</span> <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">openURL</span><span class="p">(</span><span class="kt">URL</span><span class="p">:</span> <span class="kt">NSURL</span><span class="p">,</span> <span class="nv">sourceApplication</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava11deauthorizeFT17completionHandlerGSqFTSbGSqCSo7NSError__T___T_"></a>
+                    <a name="//apple_ref/swift/Method/deauthorize(completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava11deauthorizeFT17completionHandlerGSqFTSbGSqCSo7NSError__T___T_">deauthorize(completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Deauthorizes Strava access token.</p>
+
+<p>Once the authorization steps have beenc completed successfully the access token and athlete profile have been securely stored in the user&rsquo;s Keychain for use whenever they use your app. If they ever want to remove the access token and athlete profile they can deauthorize their session with Strava.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">deauthorize</span> <span class="p">{</span> <span class="p">(</span><span class="n">success</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+        <span class="c1">// TODO: change UI for authorized state</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// TODO: warn user that deauthorization failed</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">error</span> <span class="p">{</span>
+            <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">localizedDescription</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>With a valid access token, which is managed for you by StravaKit, you can use various API endpoints.</p>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/oauth/#deauthorize">http://strava.github.io/api/v3/oauth/#deauthorize</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">deauthorize</span><span class="p">(</span><span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="nv">success</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava7getClubERR"></a>
+                    <a name="//apple_ref/swift/Method/getClub(clubId:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava7getClubERR">getClub(clubId:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets club detail.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getClub</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="p">(</span><span class="n">club</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/clubs/#get-details">http://strava.github.io/api/v3/clubs/#get-details</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getClub</span><span class="p">(</span><span class="nv">clubId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">club</span><span class="p">:</span> <span class="kt"><a href="../Structs/Club.html">Club</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava8getClubsERR"></a>
+                    <a name="//apple_ref/swift/Method/getClubs(page:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava8getClubsERR">getClubs(page:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets clubs for current athlete.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getClubs</span> <span class="p">{</span> <span class="p">(</span><span class="n">clubs</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/clubs/#get-athletes">http://strava.github.io/api/v3/clubs/#get-athletes</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getClubs</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:((</span><span class="nv">clubs</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Club.html">Club</a></span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://github.com/brennanMKE/StravaKit" target="_blank" rel="external">StravaKit</a>. All rights reserved. (Last updated: 2016-09-18)</p>
+          <p>&copy; 2016 <a class="link" href="https://github.com/brennanMKE/StravaKit" target="_blank" rel="external">StravaKit</a>. All rights reserved. (Last updated: 2016-09-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
