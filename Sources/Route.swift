@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- Model Representation of a club.
+ Model Representation of a route.
  */
 public struct Route {
     let routeId: Int
@@ -17,12 +17,12 @@ public struct Route {
     let routeDescription: String
     let athlete: Athlete
     let distance: Double
-    let elevation_gain: Double
+    let elevationGain: Double
     let map: Map
     let isPrivate: Bool
-    let resource_state: Int
+    let resourceState: Int
     let starred: Bool
-    let sub_type: Int
+    let subType: Int
     let timestamp: Int
     let type: Int
 
@@ -39,13 +39,13 @@ public struct Route {
             let athleteDictionary: JSONDictionary = s.value("athlete"),
             let athlete = Athlete(dictionary: athleteDictionary),
             let distance: Double = s.value("distance"),
-            let elevation_gain: Double = s.value("distance"),
+            let elevationGain: Double = s.value("elevation_gain"),
             let mapDictionary: JSONDictionary = s.value("map"),
             let map: Map = Map(dictionary: mapDictionary),
             let isPrivate: Bool = s.value("private"),
-            let resource_state: Int = s.value("resource_state"),
+            let resourceState: Int = s.value("resource_state"),
             let starred: Bool = s.value("starred"),
-            let sub_type: Int = s.value("sub_type"),
+            let subType: Int = s.value("sub_type"),
             let timestamp: Int = s.value("timestamp"),
             let type: Int = s.value("type") {
             self.routeId = routeId
@@ -53,12 +53,12 @@ public struct Route {
             self.routeDescription = routeDescription
             self.athlete = athlete
             self.distance = distance
-            self.elevation_gain = elevation_gain
+            self.elevationGain = elevationGain
             self.map = map
             self.isPrivate = isPrivate
-            self.resource_state = resource_state
+            self.resourceState = resourceState
             self.starred = starred
-            self.sub_type = sub_type
+            self.subType = subType
             self.timestamp = timestamp
             self.type = type
 
