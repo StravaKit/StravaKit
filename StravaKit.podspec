@@ -9,7 +9,6 @@ Pod::Spec.new do |s|
   s.author           = { "Brennan Stehling" => "brennan@smallsharptools.com" }
   s.source           = { :git => "https://github.com/brennanMKE/StravaKit.git", :tag => "v0.6.0" }
   s.social_media_url = 'https://twitter.com/smallsharptools'
-  s.ios.deployment_target = '9.0'
   s.source_files = 'Sources/*.swift'
   s.cocoapods_version = '>= 1.0'
   s.ios.deployment_target = '9.0'
