@@ -28,7 +28,10 @@ internal class Polyline {
      @return: A `[CLLocationCoordinate2D]` representing the decoded polyline if valid, `nil` otherwise
      */
     internal static func decodePolyline(encodedPolyline: String, precision: Double = 1e5) -> [CLLocationCoordinate2D]? {
-        let data: NSData = encodedPolyline.dataUsingEncoding(NSUTF8StringEncoding)!
+        guard let data: NSData = encodedPolyline.dataUsingEncoding(NSUTF8StringEncoding) else {
+            debugPrint("🔥🔥🔥")
+            return nil
+        }
         let byteArray: UnsafePointer<Int8> = unsafeBitCast(data.bytes, UnsafePointer<Int8>.self)
         let length: Int = Int(data.length)
         var position: Int = Int(0)

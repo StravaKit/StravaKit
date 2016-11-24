@@ -23,22 +23,25 @@ public class JSONRequestor : Requestor {
     }
 
     public func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        dispatch_async(dispatch_get_main_queue()) {
-            if self.response == nil {
-                if let responses = self.responses,
+        dispatch_async(dispatch_get_main_queue()) { [weak self] in
+            guard let s = self else {
+                return
+            }
+            if s.response == nil {
+                if let responses = s.responses,
                     let firstResponse = responses.first {
-                    self.response = firstResponse
+                    s.response = firstResponse
                     var responses = responses
                     responses.removeFirst()
-                    self.responses = responses
+                    s.responses = responses
                 }
             }
-            completionHandler?(response: self.response, error: self.error)
-            self.callback?()
+            completionHandler?(response: s.response, error: s.error)
+            s.callback?()
 
             // advance to the next response if there are responses defined
-            if self.responses != nil {
-                self.response = nil
+            if s.responses != nil {
+                s.response = nil
             }
         }
         return nil

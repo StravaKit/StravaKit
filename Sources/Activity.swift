@@ -175,13 +175,23 @@ public struct Activity {
 
     public var startCoordinate: CLLocationCoordinate2D {
         get {
-            return CLLocationCoordinate2DMake(self.startCoordinates.first!, startCoordinates.last!)
+            guard let latitude = startCoordinates.first,
+                let longitude = startCoordinates.last else {
+                    debugPrint("🔥🔥🔥")
+                    return kCLLocationCoordinate2DInvalid
+            }
+            return CLLocationCoordinate2DMake(latitude, longitude)
         }
     }
 
     public var endCoordinate: CLLocationCoordinate2D {
         get {
-            return CLLocationCoordinate2DMake(self.endCoordinates.first!, endCoordinates.last!)
+            guard let latitude = endCoordinates.first,
+                let longitude = endCoordinates.last else {
+                    debugPrint("🔥🔥🔥")
+                    return kCLLocationCoordinate2DInvalid
+            }
+            return CLLocationCoordinate2DMake(latitude, longitude)
         }
     }
 

@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.titleView = UIImageView(image: StravaStyleKit.imageOfTitleLogo)
+        navigationItem.titleView = UIImageView(image: StravaStyleKit.imageOfTitleLogo())
 
         loadDefaults()
         refreshUI()
@@ -140,7 +140,8 @@ class HomeViewController: UIViewController {
         refreshUI()
         guard let userInfo = notification?.userInfo,
             let status = userInfo[StravaStatusKey] as? String else {
-            return
+                debugPrint("🔥🔥🔥")
+                return
         }
         if status == StravaStatusSuccessValue {
             self.statusLabel.text = "Authorization successful!"

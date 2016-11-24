@@ -23,7 +23,7 @@ internal class JSONLoader : NSObject {
     }
 
     func loadData(name: String) -> NSData? {
-        let bundle = NSBundle(forClass: self.classForCoder)
+        let bundle = NSBundle(forClass: classForCoder)
         guard let path = bundle.pathForResource(name, ofType: "json") else {
             return nil
         }

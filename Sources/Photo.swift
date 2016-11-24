@@ -68,7 +68,6 @@ public struct Photo {
             else {
                 self.location = nil
             }
-
         }
         else {
             return nil

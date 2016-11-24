@@ -71,6 +71,7 @@ public class DefaultRequestor : Requestor {
         let session = NSURLSession(configuration: sessionConfiguration)
         let task = session.dataTaskWithRequest(request) { data, response, error in
             guard let httpResponse = response as? NSHTTPURLResponse else {
+                debugPrint("🔥🔥🔥")
                 fatalError("Response must be an instance of NSHTTPURLResponse")
             }
 
