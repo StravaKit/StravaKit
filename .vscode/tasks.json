@@ -1,0 +1,77 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "0.1.0",
+  "isShellCommand": true,
+  "showOutput": "always",
+  "command": "sh",
+  "args": [
+    "-c"
+  ],
+  "suppressTaskName": true,
+  "tasks": [
+    {
+      "taskName": "A: Build iOS Project",
+      "isBuildCommand": true,
+      "args": [
+        "${workspaceRoot}/tasks.sh build"
+      ]
+    },
+    {
+      "taskName": "B: Run Tests",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/tasks.sh test"
+      ]
+    },
+    {
+      "taskName": "C: Clean Build",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/tasks.sh clean"
+      ]
+    },
+    {
+      "taskName": "D: Set Up Dependencies",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/tasks.sh setup"
+      ]
+    },
+    {
+      "taskName": "E: Open Project/Workspace",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/tasks.sh open"
+      ]
+    },
+    {
+      "taskName": "F: Run All",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/tasks.sh all"
+      ]
+    },
+    {
+      "taskName": "G: Install Gems",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/tasks.sh bundle-install"
+      ]
+    },
+    {
+      "taskName": "H: Install CocoaPod Dependencies",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/tasks.sh pod-install"
+      ]
+    },
+    {
+      "taskName": "I: Update CocoaPod Dependencies",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/tasks.sh pod-update"
+      ]
+    }
+  ]
+}
