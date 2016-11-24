@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qTC-bS-5J0">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qTC-bS-5J0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,32 +21,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-KI-KWa">
-                                <frame key="frameInset" minX="40" minY="72" width="520" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddg-KI-KWa">
+                                <rect key="frame" x="36" y="72" width="303" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Secret" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-BB-IN0">
-                                <frame key="frameInset" minX="40" minY="110" width="520" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Secret" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-BB-IN0">
+                                <rect key="frame" x="36" y="110" width="303" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUB-aL-BDO">
-                                <frame key="frameInset" minX="244" minY="148" width="112" height="41"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUB-aL-BDO">
+                                <rect key="frame" x="131.5" y="148" width="112" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="Authorize"/>
                                 <connections>
                                     <action selector="accessButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6I9-0Z-aI1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFq-7Q-RRV">
-                                <frame key="frameInset" minX="40" minY="197" width="520" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFq-7Q-RRV">
+                                <rect key="frame" x="36" y="197" width="303" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1So-dd-0Zh">
-                                <frame key="frameInset" minX="227" minY="226" width="146" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1So-dd-0Zh">
+                                <rect key="frame" x="114.5" y="226" width="146" height="30"/>
                                 <state key="normal" title="Run Integration Tests"/>
                                 <connections>
                                     <action selector="runTestsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YsW-Co-AGm"/>
@@ -76,11 +79,30 @@
                         <outlet property="clientSecretTextField" destination="0uV-BB-IN0" id="SOf-ko-A4S"/>
                         <outlet property="runTestsButton" destination="1So-dd-0Zh" id="Cqh-DA-52o"/>
                         <outlet property="statusLabel" destination="pFq-7Q-RRV" id="lSy-lk-H3t"/>
+                        <segue destination="6nr-Zg-PQu" kind="show" identifier="hjjhjhj" id="iiC-HO-j7c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1006" y="-367"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tkw-GV-0rD">
+            <objects>
+                <viewController id="6nr-Zg-PQu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="39W-b5-dgB"/>
+                        <viewControllerLayoutGuide type="bottom" id="0CV-HB-755"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VXA-HG-kuK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cXg-tC-Wbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786" y="-377"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HYy-MQ-Kaf">

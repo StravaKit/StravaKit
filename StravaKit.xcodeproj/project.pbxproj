@@ -869,7 +869,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "SmallSharpTools LLC";
 				TargetAttributes = {
 					2655C5FA1D7664C000715ADE = {
@@ -1778,8 +1778,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6B9BD6B6458244E288BEB116 /* Pods-StravaKit-Mac.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1808,7 +1807,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA8E133182A00AB05D092569 /* Pods-StravaKit-Mac.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1838,7 +1836,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1EFF69C1CF8CB58F80C1F120 /* Pods-StravaKitTests-Mac.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
@@ -1856,7 +1853,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E074033684503BF0746D8D01 /* Pods-StravaKitTests-Mac.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
@@ -1915,6 +1911,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = StravaDemo;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1957,6 +1954,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = StravaDemo;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1966,7 +1964,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 49B41B017CC59DB9375CE6B7 /* Pods-StravaDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = StravaDemo/Info.plist;
@@ -1982,7 +1979,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF4DC333FC59544401DBD8FF /* Pods-StravaDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M3FCT79SM9;
 				INFOPLIST_FILE = StravaDemo/Info.plist;
@@ -1998,7 +1994,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D7E67F1F4E5DBBA17E39083B /* Pods-StravaDemoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
 				INFOPLIST_FILE = StravaDemoTests/Info.plist;
@@ -2014,7 +2009,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9989D2BD484EB0A31DCFC4AF /* Pods-StravaDemoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
 				INFOPLIST_FILE = StravaDemoTests/Info.plist;
@@ -2030,9 +2024,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A43EBD430FEDBF4B1B7341C /* Pods-StravaKit-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -2058,7 +2051,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3CB982A852CE4F29520C8BB /* Pods-StravaKit-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -2085,7 +2077,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C15A13B0385BF3270405E505 /* Pods-StravaKitTests-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
 				INFOPLIST_FILE = StravaKitTests/Info.plist;
@@ -2101,7 +2092,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CAB697627934F7FE1E97FF1 /* Pods-StravaKitTests-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
 				INFOPLIST_FILE = StravaKitTests/Info.plist;

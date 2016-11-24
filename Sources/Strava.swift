@@ -79,6 +79,7 @@ public enum StravaErrorCode: Int {
  Strava class for handling all API endpoint requests.
  */
 public class Strava {
+
     static let sharedInstance = Strava()
     internal let dateFormatter = NSDateFormatter()
     internal var clientId: String?
