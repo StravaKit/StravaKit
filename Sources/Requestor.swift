@@ -70,7 +70,9 @@ public class DefaultRequestor : Requestor {
         }
         let session = NSURLSession(configuration: sessionConfiguration)
         let task = session.dataTaskWithRequest(request) { data, response, error in
-            let httpResponse = response as! NSHTTPURLResponse
+            guard let httpResponse = response as? NSHTTPURLResponse else {
+                fatalError("Response must be an instance of NSHTTPURLResponse")
+            }
 
             if Strava.isDebugging {
                 debugPrint("Status Code: \(httpResponse.statusCode)")
