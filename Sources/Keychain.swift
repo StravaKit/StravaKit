@@ -12,6 +12,8 @@ internal let StravaKeychainAccount: String = "StravaKit"
 internal let StravaAccessTokenKey: String = "access_token"
 internal let StravaAthleteKey: String = "athlete"
 
+private let KnownErrSecMissingEntitlement = Int32(-34018)
+
 public extension Strava {
 
     internal func storeAccessData() -> Bool {
@@ -37,6 +39,8 @@ public extension Strava {
 
             let resultCode = SecItemAdd(query as CFDictionary, nil)
 
+            check(resultCode)
+
             success = resultCode == noErr
         }
 
@@ -58,6 +62,8 @@ public extension Strava {
         let resultCode = withUnsafeMutablePointer(&result) {
             SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
         }
+
+        check(resultCode)
 
         if resultCode == noErr {
             if let data = result as? NSData {
@@ -83,7 +89,15 @@ public extension Strava {
 
         let resultCode = SecItemDelete(query as CFDictionary)
 
+        check(resultCode)
+
         return resultCode == noErr || resultCode == errSecItemNotFound
+    }
+
+    internal func check(resultCode: OSStatus) {
+        if resultCode == KnownErrSecMissingEntitlement {
+            debugPrint("App is missing a critical entitlement. Add KeyChain Entitlement, Go to project settings -> Capabilities -> Keychain Sharing -> Add Keychain Groups+Turn On. See http://sstools.co/2ftrv0x")
+        }
     }
 
 }
