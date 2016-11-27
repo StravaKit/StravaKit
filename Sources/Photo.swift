@@ -101,7 +101,8 @@ public struct PhotoURL {
         let photoURLs: [PhotoURL] = dictionary.flatMap { (pair) in
             let size = pair.0
             guard let urlString = dictionary[size],
-                let URL = NSURL(string: urlString) else {
+                let URL = NSURL(string: urlString)
+                else {
                     return nil
             }
 

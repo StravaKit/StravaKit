@@ -169,7 +169,8 @@ public struct Activity {
     public var startCoordinate: CLLocationCoordinate2D {
         get {
             guard let latitude = startCoordinates.first,
-                let longitude = startCoordinates.last else {
+                let longitude = startCoordinates.last
+                else {
                     debugPrint("🔥🔥🔥")
                     return kCLLocationCoordinate2DInvalid
             }
@@ -180,7 +181,8 @@ public struct Activity {
     public var endCoordinate: CLLocationCoordinate2D {
         get {
             guard let latitude = endCoordinates.first,
-                let longitude = endCoordinates.last else {
+                let longitude = endCoordinates.last
+                else {
                     debugPrint("🔥🔥🔥")
                     return kCLLocationCoordinate2DInvalid
             }

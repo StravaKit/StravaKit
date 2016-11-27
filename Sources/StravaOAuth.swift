@@ -79,7 +79,8 @@ public extension Strava {
     static func userLogin(scope scope: OAuthScope, state: String = "") -> NSURL? {
         guard let clientId = sharedInstance.clientId,
             _ = sharedInstance.clientSecret,
-            redirectURI = sharedInstance.redirectURI else { return nil }
+            redirectURI = sharedInstance.redirectURI
+            else { return nil }
 
         let parameters : JSONDictionary = [
             "client_id" : clientId,
@@ -113,7 +114,8 @@ public extension Strava {
      self.safariViewController?.dismissViewControllerAnimated(true, completion: nil)
      safariViewController = nil
      guard let userInfo = notification?.userInfo,
-         let status = userInfo[StravaStatusKey] as? String else {
+         let status = userInfo[StravaStatusKey] as? String 
+         else {
          return
      }
      if status == StravaStatusSuccessValue {
@@ -128,14 +130,16 @@ public extension Strava {
      */
     static func openURL(URL: NSURL, sourceApplication: String?) -> Bool {
         guard let _ = sharedInstance.clientId,
-            _ = sharedInstance.clientSecret else {
+            _ = sharedInstance.clientSecret
+            else {
                 return false
         }
 
         guard let sa = sourceApplication where sa == "com.apple.SafariViewService",
             let uri = sharedInstance.redirectURI,
             let absoluteString = URL.absoluteString,
-            let _ = absoluteString.rangeOfString(uri) else {
+            let _ = absoluteString.rangeOfString(uri)
+            else {
                 return false
         }
 
@@ -210,7 +214,8 @@ public extension Strava {
      */
     internal static func exchangeTokenWithCode(code: String, completionHandler: ((success: Bool, error: NSError?) -> ())?) {
         guard let clientId = sharedInstance.clientId,
-            clientSecret = sharedInstance.clientSecret else {
+            clientSecret = sharedInstance.clientSecret
+            else {
                 let error = Strava.error(.MissingCredentials, reason: "Missing Credentials")
                 dispatch_async(dispatch_get_main_queue()) {
                     completionHandler?(success: false, error: error)
@@ -235,7 +240,8 @@ public extension Strava {
 
             guard let response = response,
                 let accessToken = response["access_token"] as? String,
-                let athleteDictionary = response["athlete"] as? JSONDictionary else {
+                let athleteDictionary = response["athlete"] as? JSONDictionary
+                else {
                     let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
                     dispatch_async(dispatch_get_main_queue()) {
                         completionHandler?(success: false, error: error)

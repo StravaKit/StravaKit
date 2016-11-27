@@ -37,7 +37,8 @@ public class DefaultRequestor : Requestor {
      Request method used for all API endpoint calls.
      */
     public func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        guard let url = Strava.urlWithString(baseUrl + path, parameters: method == .GET ? params : nil) else {
+        guard let url = Strava.urlWithString(baseUrl + path, parameters: method == .GET ? params : nil)
+            else {
             let error = Strava.error(.UnsupportedRequest, reason: "Unsupported Request")
             completionHandler?(response: nil, error: error)
             return nil
@@ -61,7 +62,8 @@ public class DefaultRequestor : Requestor {
     internal func processRequest(request: NSURLRequest, authenticated: Bool, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
         if authenticated {
-            guard let accessToken = Strava.sharedInstance.accessToken else {
+            guard let accessToken = Strava.sharedInstance.accessToken
+                else {
                 let error = Strava.error(.NoAccessToken, reason: "No Access Token")
                 completionHandler?(response: nil, error: error)
                 return nil
@@ -70,7 +72,8 @@ public class DefaultRequestor : Requestor {
         }
         let session = NSURLSession(configuration: sessionConfiguration)
         let task = session.dataTaskWithRequest(request) { [weak self] data, response, error in
-            guard let httpResponse = response as? NSHTTPURLResponse else {
+            guard let httpResponse = response as? NSHTTPURLResponse
+                else {
                 debugPrint("🔥🔥🔥")
                 fatalError("Response must be an instance of NSHTTPURLResponse")
             }

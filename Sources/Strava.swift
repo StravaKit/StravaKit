@@ -161,7 +161,8 @@ public class Strava {
     }
 
     internal static func urlWithString(string: String?, parameters: JSONDictionary?) -> NSURL? {
-        guard let string = string else {
+        guard let string = string
+            else {
             return nil
         }
 
@@ -179,7 +180,8 @@ public class Strava {
 
     internal static func appendQueryParameters(parameters: JSONDictionary, URL: NSURL?) -> NSURL? {
         guard let URL = URL,
-            let components = NSURLComponents(URL: URL, resolvingAgainstBaseURL: false) else {
+            let components = NSURLComponents(URL: URL, resolvingAgainstBaseURL: false)
+            else {
                 return nil
         }
 
