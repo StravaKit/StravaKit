@@ -51,6 +51,19 @@ run_clean() {
     fi
 }
 
+run_jazzy() {
+    jazzy \
+        --clean \
+        --author StravaKit \
+        --author_url https://github.com/StravaKit/StravaKit \
+        --github_url https://github.com/StravaKit/StravaKit \
+        --module-version 0.7.0 \
+        --xcodebuild-arguments -scheme,StravaKit-iOS \
+        --module StravaKit \
+        --root-url https://stravakit.github.io/docs/swift/0.7.0/api/ \
+        --output Documentation
+}
+
 run_bundle_install() {
     echo "Installing Gems..."
     bundle install
@@ -72,16 +85,6 @@ run_setup() {
     run_pod_install
 }
 
-run_open() {
-    if [ "" == "${Workspace}" ]; then
-        echo "Opening Project..."
-        open "${Project}"
-    else
-        echo "Opening Workspace..."
-        open "${Workspace}"
-    fi
-}
-
 run_all() {
     echo "Setting up..."
     run_clean
@@ -101,11 +104,11 @@ case "${Command}" in
     clean)
         run_clean
         ;;
+    jazzy)
+        run_jazzy
+        ;;
     setup)
         run_setup
-        ;;
-    open)
-        run_open
         ;;
     all)
         run_all
@@ -120,6 +123,6 @@ case "${Command}" in
         run_pod_update
         ;;
     *)
-        echo "Usage: `basename $0` { build | clean | setup | all | bundle-install | pod-install | pod-update }"
+        echo "Usage: `basename $0` { build | clean | jazzy | setup | all | bundle-install | pod-install | pod-update }"
         ;;
 esac

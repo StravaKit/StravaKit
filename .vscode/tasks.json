@@ -32,17 +32,17 @@
       ]
     },
     {
-      "taskName": "D: Set Up Dependencies",
+      "taskName": "D: Clean Build",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh setup"
+        "${workspaceRoot}/tasks.sh jazzy"
       ]
     },
     {
-      "taskName": "E: Open Project/Workspace",
+      "taskName": "E: Set Up Dependencies",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh open"
+        "${workspaceRoot}/tasks.sh setup"
       ]
     },
     {
