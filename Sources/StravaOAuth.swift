@@ -184,6 +184,10 @@ public extension Strava {
         let path = OAuthResourcePath.Deauthorization.rawValue
 
         request(.POST, authenticated: true, path: path, params: nil) { (response, error) in
+            sharedInstance.accessToken = nil
+            sharedInstance.athlete = nil
+            sharedInstance.deleteAccessData()
+
             if let error = error {
                 dispatch_async(dispatch_get_main_queue()) {
                     completionHandler?(success: false, error: error)
@@ -191,9 +195,6 @@ public extension Strava {
                 return
             }
 
-            sharedInstance.accessToken = nil
-            sharedInstance.athlete = nil
-            sharedInstance.deleteAccessData()
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler?(success: true, error: nil)
             }

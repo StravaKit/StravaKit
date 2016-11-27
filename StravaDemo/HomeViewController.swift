@@ -61,6 +61,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Strava.isDebugging = true
+        
         navigationItem.titleView = UIImageView(image: StravaStyleKit.imageOfTitleLogo())
 
         loadDefaults()

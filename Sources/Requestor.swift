@@ -69,7 +69,7 @@ public class DefaultRequestor : Requestor {
             sessionConfiguration.HTTPAdditionalHeaders = ["Authorization": "Bearer \(accessToken)"]
         }
         let session = NSURLSession(configuration: sessionConfiguration)
-        let task = session.dataTaskWithRequest(request) { data, response, error in
+        let task = session.dataTaskWithRequest(request) { [weak self] data, response, error in
             guard let httpResponse = response as? NSHTTPURLResponse else {
                 debugPrint("🔥🔥🔥")
                 fatalError("Response must be an instance of NSHTTPURLResponse")
@@ -88,6 +88,9 @@ public class DefaultRequestor : Requestor {
             }
 
             if httpResponse.statusCode != 200 {
+                if Strava.isDebugging {
+                    self?.printResponse(httpResponse, data: data)
+                }
                 if httpResponse.statusCode == 401 {
                     let error = Strava.error(.AccessForbidden, reason: "Access Forbidden")
                     completionHandler?(response: nil, error: error)
@@ -150,6 +153,15 @@ public class DefaultRequestor : Requestor {
 
     internal func convertParametersForBody(params: ParamsDictionary) -> NSData? {
         return try? NSJSONSerialization.dataWithJSONObject(params, options: [])
+    }
+
+    internal func printResponse(response: NSHTTPURLResponse, data: NSData?) {
+        guard let data = data else {
+            return
+        }
+
+        let string = String(data: data, encoding: NSUTF8StringEncoding)
+        print("Response: \(string)")
     }
 
 }
