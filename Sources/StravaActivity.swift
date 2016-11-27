@@ -107,17 +107,11 @@ public extension Strava {
     // MARK: - Internal Functions -
 
     internal static func handleActivitiesResponse(response: AnyObject?, completionHandler: ((activities: [Activity]?, error: NSError?) -> ())?) {
-        var activities: [Activity] = []
-        if let json = response as? JSONArray {
-            for dictionary in json {
-                if let activity = Activity(dictionary: dictionary) {
-                    activities.append(activity)
-                }
-            }
+        let activities = (response as? JSONArray)?.flatMap { (d) in
+            return Activity(dictionary: d)
         }
-
         dispatch_async(dispatch_get_main_queue()) {
-            completionHandler?(activities: activities, error: nil)
+            completionHandler?(activities: activities ?? [], error: nil)
         }
     }
 

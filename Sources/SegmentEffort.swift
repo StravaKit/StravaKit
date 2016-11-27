@@ -80,14 +80,9 @@ public struct SegmentEffort {
     }
 
     public static func efforts(dictionaries: [JSONDictionary]) -> [SegmentEffort] {
-        var efforts: [SegmentEffort] = []
-        for dictionary in dictionaries {
-            if let effort = SegmentEffort(dictionary: dictionary) {
-                efforts.append(effort)
-            }
+        return dictionaries.flatMap { (d) in
+            return SegmentEffort(dictionary: d)
         }
-
-        return efforts
     }
 
     public var startDate: NSDate? {

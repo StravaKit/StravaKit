@@ -80,14 +80,9 @@ public struct Route {
      Creates route models from an array of dictionaries.
      */
     public static func routes(dictionaries: JSONArray) -> [Route] {
-        var routes: [Route] = []
-        for dictionary in dictionaries {
-            if let route = Route(dictionary: dictionary) {
-                routes.append(route)
-            }
+        return dictionaries.flatMap { (d) in
+            return Route(dictionary: d)
         }
-
-        return routes
     }
 
 }

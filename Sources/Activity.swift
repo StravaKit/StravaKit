@@ -159,18 +159,11 @@ public struct Activity {
     }
 
     public static func activities(dictionaries: [JSONDictionary]) -> [Activity]? {
-        var activities: [Activity] = []
-        for dictionary in dictionaries {
-            if let activity = Activity(dictionary: dictionary) {
-                activities.append(activity)
-            }
+        let activities = dictionaries.flatMap { (d) in
+            return Activity(dictionary: d)
         }
 
-        if activities.count > 0 {
-            return activities
-        }
-
-        return nil
+        return activities.count > 0 ? activities : nil
     }
 
     public var startCoordinate: CLLocationCoordinate2D {

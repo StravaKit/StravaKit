@@ -32,13 +32,9 @@ public struct Leaderboard {
             self.entryCount = entryCount
             self.neighborhoodCount = neighborhoodCount
             self.komType = komType
-            var entries: [LeaderboardEntry] = []
-            for entryDictionary in entryDictionaries {
-                if let entry = LeaderboardEntry(dictionary: entryDictionary) {
-                    entries.append(entry)
-                }
+            self.entries = entryDictionaries.flatMap { (d) in
+                return LeaderboardEntry(dictionary: d)
             }
-            self.entries = entries
         }
         else {
             return nil

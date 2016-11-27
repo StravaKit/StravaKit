@@ -101,13 +101,9 @@ public struct Club {
     }
 
     public static func clubs(dictionaries: JSONArray) -> [Club] {
-        var clubs: [Club] = []
-        for dictionary in dictionaries {
-            if let club = Club(dictionary: dictionary) {
-                clubs.append(club)
-            }
+        return dictionaries.flatMap { (d) in
+            return Club(dictionary: d)
         }
-        return clubs
     }
 
 }

@@ -118,13 +118,9 @@ public struct Segment {
     }
 
     public static func segments(dictionaries: JSONArray) -> [Segment]? {
-        var segments: [Segment] = []
-        for segmentDictionary in dictionaries {
-            if let segment = Segment(dictionary: segmentDictionary) {
-                segments.append(segment)
-            }
+        return dictionaries.flatMap { (d) in
+            return Segment(dictionary: d)
         }
-        return segments
     }
 
     public var coordinates: [CLLocationCoordinate2D]? {

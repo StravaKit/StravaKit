@@ -98,19 +98,17 @@ public struct PhotoURL {
     let URL: NSURL
 
     internal static func photoURLs(dictionary: [String : String]) -> [PhotoURL]? {
-        var photoURLs: [PhotoURL] = []
-        for size in dictionary.keys {
-            if let urlString = dictionary[size],
-                let URL = NSURL(string: urlString) {
-                let photoURL = PhotoURL(size: size, URL: URL)
-                photoURLs.append(photoURL)
+        let photoURLs: [PhotoURL] = dictionary.flatMap { (pair) in
+            let size = pair.0
+            guard let urlString = dictionary[size],
+                let URL = NSURL(string: urlString) else {
+                    return nil
             }
+
+            return PhotoURL(size: size, URL: URL)
         }
 
-        if photoURLs.count > 0 {
-            return photoURLs
-        }
-        return nil
+        return photoURLs.count > 0 ? photoURLs : nil
     }
     
 }
