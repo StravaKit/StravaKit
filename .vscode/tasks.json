@@ -32,7 +32,7 @@
       ]
     },
     {
-      "taskName": "D: Clean Build",
+      "taskName": "D: Run Jazzy",
       "isBuildCommand": false,
       "args": [
         "${workspaceRoot}/tasks.sh jazzy"

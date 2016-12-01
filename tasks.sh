@@ -4,6 +4,7 @@ set -e
 
 Command="$1"
 
+AppVersion="0.7.0"
 ProjectName="StravaKit"
 ProjectDir="`dirname \"$0\"`"
 Workspace="${ProjectName}.xcworkspace"
@@ -57,12 +58,14 @@ run_jazzy() {
         --author StravaKit \
         --author_url https://github.com/StravaKit/StravaKit \
         --github_url https://github.com/StravaKit/StravaKit \
-        --module-version 0.7.0 \
+        --module-version ${AppVersion} \
         --xcodebuild-arguments -scheme,StravaKit-iOS \
         --module StravaKit \
-        --root-url https://stravakit.github.io/docs/swift/0.7.0/api/ \
+        --root-url http://cocoadocs.org/docsets/StravaKit/${AppVersion}/ \
         --output Documentation
 }
+
+
 
 run_bundle_install() {
     echo "Installing Gems..."
