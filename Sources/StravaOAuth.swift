@@ -26,18 +26,15 @@ internal enum OAuthResourcePath: String {
     case Deauthorization = "/oauth/deauthorize"
 }
 
-/**
- OAuth Scopes
-
- - Public: Default, private activities are not returned, privacy zones are respected in stream requests.
- - Write: Modify activities, upload on the user’s behalf.
- - Private: View private activities and data within privacy zones.
- - PrivateWrite: Both ‘view_private’ and ‘write’ access.
- */
+/** OAuth Scopes */
 public enum OAuthScope: String {
+    /** Default, private activities are not returned, privacy zones are respected in stream requests. */
     case Public = "public"
+    /** Modify activities, upload on the user’s behalf. */
     case Write = "write"
+    /** View private activities and data within privacy zones. */
     case Private = "view_private"
+    /** Both ‘view_private’ and ‘write’ access. */
     case PrivateWrite = "view_private,write"
 }
 
@@ -113,8 +110,7 @@ public extension Strava {
      internal func stravaAuthorizationCompleted(notification: NSNotification?) {
      self.safariViewController?.dismissViewControllerAnimated(true, completion: nil)
      safariViewController = nil
-     guard let userInfo = notification?.userInfo,
-         let status = userInfo[StravaStatusKey] as? String 
+     guard let status = notification.userInfo?[StravaStatusKey] as? String
          else {
          return
      }
@@ -137,8 +133,7 @@ public extension Strava {
 
         guard let sa = sourceApplication where sa == "com.apple.SafariViewService",
             let uri = sharedInstance.redirectURI,
-            let absoluteString = URL.absoluteString,
-            let _ = absoluteString.rangeOfString(uri)
+            let _ = URL.absoluteString?.rangeOfString(uri)
             else {
                 return false
         }

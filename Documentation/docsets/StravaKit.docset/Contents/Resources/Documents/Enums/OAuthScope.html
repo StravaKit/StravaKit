@@ -14,9 +14,9 @@
     <a title="OAuthScope Enum Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">StravaKit Docs</a> (27% documented)</p>
+        <p><a href="../index.html">StravaKit Docs</a> (32% documented)</p>
         <p class="header-right"><a href="https://github.com/StravaKit/StravaKit"><img src="../img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fstravakit%2Egithub%2Eio%2Fdocs%2Fswift%2F0%2E7%2E0%2Fapi%2Fdocsets%2FStravaKit%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Fcocoadocs%2Eorg%2Fdocsets%2FStravaKit%2F0%2E7%2E0%2Fdocsets%2FStravaKit%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -190,13 +190,6 @@
               </div>
             <p>OAuth Scopes</p>
 
-<ul>
-<li>Public: Default, private activities are not returned, privacy zones are respected in stream requests.</li>
-<li>Write: Modify activities, upload on the user’s behalf.</li>
-<li>Private: View private activities and data within privacy zones.</li>
-<li>PrivateWrite: Both ‘view_private’ and ‘write’ access.</li>
-</ul>
-
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -214,14 +207,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Default, private activities are not returned, privacy zones are respected in stream requests.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Public</span> <span class="o">=</span> <span class="s">"public"</span></code></pre>
 
                         </div>
                       </div>
@@ -245,14 +238,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Modify activities, upload on the user’s behalf.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Write</span> <span class="o">=</span> <span class="s">"write"</span></code></pre>
 
                         </div>
                       </div>
@@ -276,14 +269,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>View private activities and data within privacy zones.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Private</span> <span class="o">=</span> <span class="s">"view_private"</span></code></pre>
 
                         </div>
                       </div>
@@ -307,14 +300,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Both ‘view_private’ and ‘write’ access.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">OAuthScope</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">PrivateWrite</span> <span class="o">=</span> <span class="s">"view_private,write"</span></code></pre>
 
                         </div>
                       </div>
@@ -326,7 +319,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://github.com/StravaKit/StravaKit" target="_blank" rel="external">StravaKit</a>. All rights reserved. (Last updated: 2016-11-26)</p>
+          <p>&copy; 2016 <a class="link" href="https://github.com/StravaKit/StravaKit" target="_blank" rel="external">StravaKit</a>. All rights reserved. (Last updated: 2016-12-04)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -743,20 +743,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Requestor.swift",
-      "line": 16,
-      "symbol": "Requestor.baseUrl",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Requestor.swift",
-      "line": 30,
-      "symbol": "DefaultRequestor.baseUrl",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
       "line": 16,
       "symbol": "Segment.segmentId",
@@ -1299,104 +1285,6 @@
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
       "line": 48,
       "symbol": "HTTPMethod.PUT",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 66,
-      "symbol": "StravaErrorCode.RemoteError",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 67,
-      "symbol": "StravaErrorCode.MissingCredentials",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 68,
-      "symbol": "StravaErrorCode.NoAccessToken",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 69,
-      "symbol": "StravaErrorCode.NoResponse",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 70,
-      "symbol": "StravaErrorCode.InvalidResponse",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 71,
-      "symbol": "StravaErrorCode.RecordNotFound",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 72,
-      "symbol": "StravaErrorCode.RateLimitExceeded",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 73,
-      "symbol": "StravaErrorCode.AccessForbidden",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 74,
-      "symbol": "StravaErrorCode.UnsupportedRequest",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
-      "line": 75,
-      "symbol": "StravaErrorCode.UndefinedError",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StravaOAuth.swift",
-      "line": 38,
-      "symbol": "OAuthScope.Public",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StravaOAuth.swift",
-      "line": 39,
-      "symbol": "OAuthScope.Write",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StravaOAuth.swift",
-      "line": 40,
-      "symbol": "OAuthScope.Private",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StravaOAuth.swift",
-      "line": 41,
-      "symbol": "OAuthScope.PrivateWrite",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     }

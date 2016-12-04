@@ -71,10 +71,9 @@ class StravaOAuthTests: XCTestCase {
         let nc = NSNotificationCenter.defaultCenter()
         var observer: NSObjectProtocol? = nil
         observer = nc.addObserverForName(StravaAuthorizationCompletedNotification, object: nil, queue: nil) { (notification) in
-            if let userInfo = notification.userInfo,
-                let status = userInfo[StravaStatusKey] as? String {
+            if let status = notification.userInfo?[StravaStatusKey] as? String {
                 XCTAssertTrue(status == StravaStatusSuccessValue)
-                XCTAssertNil(userInfo[StravaErrorKey])
+                XCTAssertNil(notification.userInfo?[StravaErrorKey])
             }
 
             if let observer = observer {
@@ -289,10 +288,9 @@ class StravaOAuthTests: XCTestCase {
         let nc = NSNotificationCenter.defaultCenter()
         var observer: NSObjectProtocol? = nil
         observer = nc.addObserverForName(StravaAuthorizationCompletedNotification, object: nil, queue: nil) { (notification) in
-            if let userInfo = notification.userInfo,
-                let status = userInfo[StravaStatusKey] as? String {
+            if let status = notification.userInfo?[StravaStatusKey] as? String {
                 XCTAssertTrue(status == StravaStatusSuccessValue)
-                XCTAssertNil(userInfo[StravaErrorKey])
+                XCTAssertNil(notification.userInfo?[StravaErrorKey])
             }
 
             if let observer = observer {
@@ -316,10 +314,9 @@ class StravaOAuthTests: XCTestCase {
         let nc = NSNotificationCenter.defaultCenter()
         var observer: NSObjectProtocol? = nil
         observer = nc.addObserverForName(StravaAuthorizationCompletedNotification, object: nil, queue: nil) { (notification) in
-            if let userInfo = notification.userInfo,
-                let status = userInfo[StravaStatusKey] as? String {
+            if let status = notification.userInfo?[StravaStatusKey] as? String {
                 XCTAssertTrue(status == StravaStatusFailureValue)
-                XCTAssertNotNil(userInfo[StravaErrorKey])
+                XCTAssertNotNil(notification.userInfo?[StravaErrorKey])
             }
 
             if let observer = observer {

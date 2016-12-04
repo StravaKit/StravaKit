@@ -8,6 +8,12 @@
 
 import Foundation
 
+/** 
+  JSONSupport provides parsing and debugging support for JSON data. Values can
+  be treated as required with an optional value to set if the given value is nil.
+  If a value is required and debugging is enabled with the `JSONDebuggingEnabled`
+  environment variable warnings will be printed to help pinpoint the problem.
+ */
 internal class JSONSupport {
 
     private let dictionary: JSONDictionary
@@ -17,7 +23,7 @@ internal class JSONSupport {
     }
 
     func isJSONDebuggingEnabled() -> Bool {
-        return NSProcessInfo.processInfo().environment["JSONDebuggingEnabled"] == "YES"
+        return NSProcessInfo.processInfo().environment["JSONDebuggingEnabled"]?.uppercaseString == "YES"
     }
 
     func value<T>(key: String, required: Bool = true, nilValue: T? = nil) -> T? {
