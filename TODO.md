@@ -9,7 +9,7 @@ Note: Initially only the GET requests which are accessible from the Public scope
 1. Add support to use as a dependency
    1. ~~CocoaPods~~
    1. ~~Carthage~~  
-   1. SPM (Swift Package Manager)
+   1. SwiftPM (Swift Package Manager)
 1. Implement full API
    1. ~~/v3/oauth~~
    1. ~~Implement secure access data storage~~

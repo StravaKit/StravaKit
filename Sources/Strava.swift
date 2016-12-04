@@ -48,30 +48,27 @@ public enum HTTPMethod: String {
     case PUT = "PUT"
 }
 
-/**
- Strava Error Codes
-
- - RemoteError: Error on backend.
- - MissingCredentials: Required credentials were missing.
- - NoAccessToken: Access Token was not found.
- - NoResponse: Response was not returned.
- - InvalidResponse: Response was not expected.
- - RecordNotFound: Requested resource was not found.
- - RateLimitExceeded: Request exceeded rate limit. See error for details.
- - AccessForbidden: Access is not allowed.
- - UnsupportedRequest: Request is not supported.
- - UndefinedError: Reason for error is not known.
- */
+/** Strava Error Codes */
 public enum StravaErrorCode: Int {
+    /** Error on backend. */
     case RemoteError = 501
+    /** Required credentials were missing. */
     case MissingCredentials = 502
+    /** Access Token was not found. */
     case NoAccessToken = 503
+    /** Response was not returned. */
     case NoResponse = 504
+    /** Response was not expected. */
     case InvalidResponse = 505
+    /** Requested resource was not found. */
     case RecordNotFound = 506
+    /** Request exceeded rate limit. See error for details. */
     case RateLimitExceeded = 507
+    /** Access is not allowed. */
     case AccessForbidden = 508
+    /** Request is not supported. */
     case UnsupportedRequest = 509
+    /** Reason for error is not known. */
     case UndefinedError = 599
 }
 

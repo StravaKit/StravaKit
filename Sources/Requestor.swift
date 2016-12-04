@@ -13,10 +13,19 @@ import Foundation
  */
 public protocol Requestor {
 
+    /** Base URL for the API endpoints. */
     var baseUrl: String { get set }
 
     /**
      Request method used for all API endpoint calls.
+
+     - Parameters:
+     - method: HTTP method
+     - authenticated: Indicates if request is authenticated
+     - path: Path for REST endpoing
+     - params: Parameters for request
+     - completionHandler: Callback
+     - Returns: Task
      */
     func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask?
 
@@ -27,6 +36,7 @@ public protocol Requestor {
  */
 public class DefaultRequestor : Requestor {
 
+    /** Base URL for the API endpoints. */
     public var baseUrl: String
 
     init() {
@@ -35,13 +45,21 @@ public class DefaultRequestor : Requestor {
 
     /**
      Request method used for all API endpoint calls.
+
+     - Parameters:
+     - method: HTTP method
+     - authenticated: Indicates if request is authenticated
+     - path: Path for REST endpoing
+     - params: Parameters for request
+     - completionHandler: Callback
+     - Returns: Task
      */
     public func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
         guard let url = Strava.urlWithString(baseUrl + path, parameters: method == .GET ? params : nil)
             else {
-            let error = Strava.error(.UnsupportedRequest, reason: "Unsupported Request")
-            completionHandler?(response: nil, error: error)
-            return nil
+                let error = Strava.error(.UnsupportedRequest, reason: "Unsupported Request")
+                completionHandler?(response: nil, error: error)
+                return nil
         }
 
         let request = NSMutableURLRequest(URL: url)
@@ -64,9 +82,9 @@ public class DefaultRequestor : Requestor {
         if authenticated {
             guard let accessToken = Strava.sharedInstance.accessToken
                 else {
-                let error = Strava.error(.NoAccessToken, reason: "No Access Token")
-                completionHandler?(response: nil, error: error)
-                return nil
+                    let error = Strava.error(.NoAccessToken, reason: "No Access Token")
+                    completionHandler?(response: nil, error: error)
+                    return nil
             }
             sessionConfiguration.HTTPAdditionalHeaders = ["Authorization": "Bearer \(accessToken)"]
         }
@@ -74,8 +92,8 @@ public class DefaultRequestor : Requestor {
         let task = session.dataTaskWithRequest(request) { [weak self] data, response, error in
             guard let httpResponse = response as? NSHTTPURLResponse
                 else {
-                debugPrint("🔥🔥🔥")
-                fatalError("Response must be an instance of NSHTTPURLResponse")
+                    debugPrint("🔥🔥🔥")
+                    fatalError("Response must be an instance of NSHTTPURLResponse")
             }
 
             if Strava.isDebugging {
@@ -162,9 +180,9 @@ public class DefaultRequestor : Requestor {
         guard let data = data else {
             return
         }
-
+        
         let string = String(data: data, encoding: NSUTF8StringEncoding)
         print("Response: \(string)")
     }
-
+    
 }
