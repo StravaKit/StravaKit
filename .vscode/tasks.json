@@ -14,7 +14,7 @@
       "taskName": "A: Build iOS Project",
       "isBuildCommand": true,
       "args": [
-        "${workspaceRoot}/tasks.sh build"
+        "${workspaceRoot}/scripts/tasks.sh build"
       ]
     },
     {
