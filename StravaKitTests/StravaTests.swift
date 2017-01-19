@@ -30,7 +30,7 @@ class StravaClientTests: XCTestCase {
         XCTAssertNotNil(URL)
     }
 
-    func testURLCreationForBasicParemeters() {
+    func testURLCreationForBasicParameters() {
         // adding parameters
         let parameters : JSONDictionary = ["name" : "strava"]
         let URL = Strava.urlWithString(StravaBaseURL, parameters: parameters)
