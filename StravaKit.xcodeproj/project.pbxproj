@@ -236,6 +236,15 @@
 		26EC73BC1D8379220022B3B5 /* rate-limit.json in Resources */ = {isa = PBXBuildFile; fileRef = 26EC73B81D8379190022B3B5 /* rate-limit.json */; };
 		26F521E31D70DA9300EB4162 /* PolylineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521E21D70DA9300EB4162 /* PolylineTests.swift */; };
 		26F521ED1D710C6700EB4162 /* PhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F521EC1D710C6700EB4162 /* PhotoTests.swift */; };
+		26F9F8CE1E30522F00D48B64 /* athlete-zones-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F9F8CD1E30522F00D48B64 /* athlete-zones-bad.json */; };
+		26F9F8CF1E30525600D48B64 /* athlete-zones-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F9F8CD1E30522F00D48B64 /* athlete-zones-bad.json */; };
+		26F9F8D01E30525600D48B64 /* athlete-zones-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F9F8CC1E30506D00D48B64 /* athlete-zones-good.json */; };
+		26F9F8D11E30525700D48B64 /* athlete-zones-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F9F8CD1E30522F00D48B64 /* athlete-zones-bad.json */; };
+		26F9F8D21E30525700D48B64 /* athlete-zones-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F9F8CC1E30506D00D48B64 /* athlete-zones-good.json */; };
+		26F9F8D31E30525700D48B64 /* athlete-zones-bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F9F8CD1E30522F00D48B64 /* athlete-zones-bad.json */; };
+		26F9F8D41E30525700D48B64 /* athlete-zones-good.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F9F8CC1E30506D00D48B64 /* athlete-zones-good.json */; };
+		26F9F8D71E30539100D48B64 /* Zones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F9F8D51E30539100D48B64 /* Zones.swift */; };
+		26F9F8D81E30539100D48B64 /* Zones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F9F8D51E30539100D48B64 /* Zones.swift */; };
 		371BAE6EB52A45952216673C /* Pods_StravaKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4519018A10D71B494F35AC8B /* Pods_StravaKit_iOS.framework */; };
 		430C005BFECCB9D9DB55A2D1 /* Pods_StravaDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD5685453DE9179CA3739F4 /* Pods_StravaDemo.framework */; };
 		B108BCE39384E5AD6C0180F6 /* Pods_StravaKitTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522F3905F6ADB45FEAC573C8 /* Pods_StravaKitTests_iOS.framework */; };
@@ -404,6 +413,9 @@
 		26EC73B81D8379190022B3B5 /* rate-limit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "rate-limit.json"; path = "Data/rate-limit.json"; sourceTree = "<group>"; };
 		26F521E21D70DA9300EB4162 /* PolylineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolylineTests.swift; sourceTree = "<group>"; };
 		26F521EC1D710C6700EB4162 /* PhotoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTests.swift; sourceTree = "<group>"; };
+		26F9F8CC1E30506D00D48B64 /* athlete-zones-good.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "athlete-zones-good.json"; path = "Data/athlete-zones-good.json"; sourceTree = "<group>"; };
+		26F9F8CD1E30522F00D48B64 /* athlete-zones-bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "athlete-zones-bad.json"; path = "Data/athlete-zones-bad.json"; sourceTree = "<group>"; };
+		26F9F8D51E30539100D48B64 /* Zones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zones.swift; sourceTree = "<group>"; };
 		4519018A10D71B494F35AC8B /* Pods_StravaKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StravaKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B41B017CC59DB9375CE6B7 /* Pods-StravaDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StravaDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StravaDemo/Pods-StravaDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		4A43EBD430FEDBF4B1B7341C /* Pods-StravaKit-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StravaKit-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StravaKit-iOS/Pods-StravaKit-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -578,12 +590,6 @@
 		26C92C031D6BAD1100C5D491 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				26EC73B81D8379190022B3B5 /* rate-limit.json */,
-				26746BF21D829C73007FA0A4 /* route-bad.json */,
-				26746BF31D829C73007FA0A4 /* routes-bad.json */,
-				26746BB61D8235DE007FA0A4 /* route-good.json */,
-				26746BB71D8235DE007FA0A4 /* routes-good.json */,
-				26746BB81D8235DE007FA0A4 /* segments-explore-good.json */,
 				2678DC0A1D80961B00A75C5B /* activities-bad.json */,
 				2678DC0B1D80961B00A75C5B /* activities-following.json */,
 				2678DC0C1D80961B00A75C5B /* activities-good.json */,
@@ -594,6 +600,8 @@
 				2678DC111D80961B00A75C5B /* athlete-friends-good.json */,
 				2678DC121D80961B00A75C5B /* athlete-good.json */,
 				2678DC131D80961B00A75C5B /* athlete-other.json */,
+				26F9F8CD1E30522F00D48B64 /* athlete-zones-bad.json */,
+				26F9F8CC1E30506D00D48B64 /* athlete-zones-good.json */,
 				2678DC141D80961B00A75C5B /* club-bad.json */,
 				2678DC151D80961B00A75C5B /* club-good.json */,
 				2678DC161D80961B00A75C5B /* clubs-bad.json */,
@@ -602,18 +610,24 @@
 				2678DC191D80961B00A75C5B /* exchange-token-bad.json */,
 				2678DC1A1D80961B00A75C5B /* exchange-token-good.json */,
 				2678DC1B1D80961B00A75C5B /* invalid.json */,
-				2678DC1C1D80961B00A75C5B /* segment-leaderboard-bad.json */,
-				2678DC1D1D80961B00A75C5B /* segment-leaderboard-good.json */,
 				2678DC1E1D80961B00A75C5B /* photo-heavy.json */,
 				2678DC1F1D80961B00A75C5B /* photo-light.json */,
 				2678DC201D80961B00A75C5B /* polylines.json */,
+				26EC73B81D8379190022B3B5 /* rate-limit.json */,
 				2678DC211D80961B00A75C5B /* resource-summary-bad.json */,
 				2678DC221D80961B00A75C5B /* resource-summary-good.json */,
+				26746BF21D829C73007FA0A4 /* route-bad.json */,
+				26746BB61D8235DE007FA0A4 /* route-good.json */,
+				26746BF31D829C73007FA0A4 /* routes-bad.json */,
+				26746BB71D8235DE007FA0A4 /* routes-good.json */,
 				2678DC231D80961B00A75C5B /* segment-bad.json */,
 				2678DC241D80961B00A75C5B /* segment-efforts-bad.json */,
 				2678DC251D80961B00A75C5B /* segment-efforts-good.json */,
 				2678DC261D80961B00A75C5B /* segment-good.json */,
+				2678DC1C1D80961B00A75C5B /* segment-leaderboard-bad.json */,
+				2678DC1D1D80961B00A75C5B /* segment-leaderboard-good.json */,
 				2678DC271D80961B00A75C5B /* segments-bad.json */,
+				26746BB81D8235DE007FA0A4 /* segments-explore-good.json */,
 				2678DC281D80961B00A75C5B /* segments-good.json */,
 				2678DC291D80961B00A75C5B /* segments-starred-bad.json */,
 				2678DC2A1D80961B00A75C5B /* segments-starred-good.json */,
@@ -653,6 +667,7 @@
 				269810131D8F4E8B00849210 /* SegmentStats.swift */,
 				269810141D8F4E8B00849210 /* Stats.swift */,
 				269810151D8F4E8B00849210 /* StatsDetail.swift */,
+				26F9F8D51E30539100D48B64 /* Zones.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -872,7 +887,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "SmallSharpTools LLC";
 				TargetAttributes = {
 					2655C5FA1D7664C000715ADE = {
@@ -976,6 +991,7 @@
 				2678DCC91D80962500A75C5B /* exchange-token-good.json in Resources */,
 				26746BE51D8235EC007FA0A4 /* route-good.json in Resources */,
 				2678DCC61D80962500A75C5B /* clubs-good.json in Resources */,
+				26F9F8D41E30525700D48B64 /* athlete-zones-good.json in Resources */,
 				2678DCD71D80962500A75C5B /* segments-good.json in Resources */,
 				2678DCD31D80962500A75C5B /* segment-efforts-bad.json in Resources */,
 				2678DCBC1D80962500A75C5B /* activity-bad.json in Resources */,
@@ -989,6 +1005,7 @@
 				2678DCB91D80962500A75C5B /* activities-bad.json in Resources */,
 				2678DCC41D80962500A75C5B /* club-good.json in Resources */,
 				2678DCD81D80962500A75C5B /* segments-starred-bad.json in Resources */,
+				26F9F8D31E30525700D48B64 /* athlete-zones-bad.json in Resources */,
 				2678DCC11D80962500A75C5B /* athlete-good.json in Resources */,
 				2678DCCA1D80962500A75C5B /* invalid.json in Resources */,
 			);
@@ -999,6 +1016,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26AEBF711D664A2E00481015 /* LaunchScreen.storyboard in Resources */,
+				26F9F8CE1E30522F00D48B64 /* athlete-zones-bad.json in Resources */,
 				26AEBF6E1D664A2E00481015 /* Assets.xcassets in Resources */,
 				26AEBF6C1D664A2E00481015 /* Main.storyboard in Resources */,
 			);
@@ -1034,6 +1052,7 @@
 				2678DC831D80962300A75C5B /* exchange-token-good.json in Resources */,
 				26746BDF1D8235EB007FA0A4 /* route-good.json in Resources */,
 				2678DC801D80962300A75C5B /* clubs-good.json in Resources */,
+				26F9F8D01E30525600D48B64 /* athlete-zones-good.json in Resources */,
 				2678DC911D80962300A75C5B /* segments-good.json in Resources */,
 				2678DC8D1D80962300A75C5B /* segment-efforts-bad.json in Resources */,
 				2678DC761D80962300A75C5B /* activity-bad.json in Resources */,
@@ -1047,6 +1066,7 @@
 				2678DC731D80962300A75C5B /* activities-bad.json in Resources */,
 				2678DC7E1D80962300A75C5B /* club-good.json in Resources */,
 				2678DC921D80962300A75C5B /* segments-starred-bad.json in Resources */,
+				26F9F8CF1E30525600D48B64 /* athlete-zones-bad.json in Resources */,
 				2678DC7B1D80962300A75C5B /* athlete-good.json in Resources */,
 				2678DC841D80962300A75C5B /* invalid.json in Resources */,
 			);
@@ -1089,6 +1109,7 @@
 				2678DCA61D80962500A75C5B /* exchange-token-good.json in Resources */,
 				26746BE21D8235EB007FA0A4 /* route-good.json in Resources */,
 				2678DCA31D80962500A75C5B /* clubs-good.json in Resources */,
+				26F9F8D21E30525700D48B64 /* athlete-zones-good.json in Resources */,
 				2678DCB41D80962500A75C5B /* segments-good.json in Resources */,
 				2678DCB01D80962500A75C5B /* segment-efforts-bad.json in Resources */,
 				2678DC991D80962500A75C5B /* activity-bad.json in Resources */,
@@ -1102,6 +1123,7 @@
 				2678DC961D80962500A75C5B /* activities-bad.json in Resources */,
 				2678DCA11D80962500A75C5B /* club-good.json in Resources */,
 				2678DCB51D80962500A75C5B /* segments-starred-bad.json in Resources */,
+				26F9F8D11E30525700D48B64 /* athlete-zones-bad.json in Resources */,
 				2678DC9E1D80962500A75C5B /* athlete-good.json in Resources */,
 				2678DCA71D80962500A75C5B /* invalid.json in Resources */,
 			);
@@ -1627,6 +1649,7 @@
 				2698102B1D8F4E8B00849210 /* ResourceSummary.swift in Sources */,
 				269810371D8F4E8B00849210 /* StatsDetail.swift in Sources */,
 				26980FF11D8F4E3500849210 /* StravaActivity.swift in Sources */,
+				26F9F8D81E30539100D48B64 /* Zones.swift in Sources */,
 				26980FE91D8F4DD900849210 /* StravaOAuth.swift in Sources */,
 				269810431D8F4EA700849210 /* Requestor.swift in Sources */,
 				2698103F1D8F4EA700849210 /* Keychain.swift in Sources */,
@@ -1708,6 +1731,7 @@
 				2698102A1D8F4E8B00849210 /* ResourceSummary.swift in Sources */,
 				269810361D8F4E8B00849210 /* StatsDetail.swift in Sources */,
 				26980FF01D8F4E3500849210 /* StravaActivity.swift in Sources */,
+				26F9F8D71E30539100D48B64 /* Zones.swift in Sources */,
 				26980FE81D8F4DD900849210 /* StravaOAuth.swift in Sources */,
 				269810421D8F4EA700849210 /* Requestor.swift in Sources */,
 				2698103E1D8F4EA700849210 /* Keychain.swift in Sources */,

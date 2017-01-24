@@ -99,6 +99,29 @@ class StravaAthleteTests: XCTestCase {
         XCTAssertTrue(athletes.count == 0)
     }
 
+    func testAthleteZonesCreationFromGoodDictionary() {
+        // all required values are in the JSON file
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("athlete-zones-good") as? JSONDictionary else {
+            XCTFail()
+            return
+        }
+
+        let zones = Zones(dictionary: dictionary)
+        XCTAssertNotNil(zones)
+        XCTAssertTrue(zones?.power?.zones.count > 0)
+    }
+
+    func testAthleteZonesCreationFromBadDictionary() {
+        // required values are missing from the JSON file
+        guard let dictionary = JSONLoader.sharedInstance.loadJSON("athlete-zones-bad") as? JSONDictionary else {
+            XCTFail()
+            return
+        }
+
+        let zones = Zones(dictionary: dictionary)
+        XCTAssertNil(zones)
+    }
+
     func testGetAthleteGood() {
         let expectation = self.expectationWithDescription("API Call")
 

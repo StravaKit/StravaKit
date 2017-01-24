@@ -7,7 +7,7 @@ target 'StravaDemo' do
   target 'StravaDemoTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Swifter', '~> 1.2'
+    pod 'Swifter', '~> 1.2.0'
   end
 
 end
@@ -22,7 +22,7 @@ target 'StravaKit-iOS' do
     use_frameworks!
       inherit! :search_paths
       # Pods for testing
-      pod 'Swifter', '~> 1.2'
+      pod 'Swifter', '~> 1.2.0'
   end
 
 end
@@ -37,7 +37,7 @@ target 'StravaKit-Mac' do
     use_frameworks!
       inherit! :search_paths
       # Pods for testing
-      pod 'Swifter', '~> 1.2'
+      pod 'Swifter', '~> 1.2.0'
   end
 
 end

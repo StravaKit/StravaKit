@@ -16,7 +16,7 @@
       <div class="content-wrapper">
         <p><a href="../index.html">StravaKit Docs</a> (32% documented)</p>
         <p class="header-right"><a href="https://github.com/StravaKit/StravaKit"><img src="../img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right"><a href="dash-feed://http%3A%2F%2Fcocoadocs%2Eorg%2Fdocsets%2FStravaKit%2F0%2E7%2E0%2Fdocsets%2FStravaKit%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+        <p class="header-right"><a href="dash-feed://http%3A%2F%2Fcocoadocs%2Eorg%2Fdocsets%2FStravaKit%2F0%2E8%2E0%2Fdocsets%2FStravaKit%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -159,6 +159,15 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/StatsDetail.html">StatsDetail</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Zone.html">Zone</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ZoneCollection.html">ZoneCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Zones.html">Zones</a>
               </li>
             </ul>
           </li>
@@ -441,38 +450,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZFC9StravaKit6Strava8getStatsERR"></a>
-                    <a name="//apple_ref/swift/Method/getStats(athleteId:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFC9StravaKit6Strava8getStatsERR">getStats(athleteId:completionHandler:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Gets stats for athlete by ID.</p>
-
-<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getStats</span><span class="p">(</span><span class="n">athleteId</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
-</code></pre>
-
-<p>Docs: <a href="http://strava.github.io/api/v3/athlete/#stats">http://strava.github.io/api/v3/athlete/#stats</a></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getStats</span><span class="p">(</span><span class="nv">athleteId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="nv">stats</span><span class="p">:</span> <span class="kt"><a href="../Structs/Stats.html">Stats</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:ZFC9StravaKit6Strava17getAthleteFriendsERR"></a>
                     <a name="//apple_ref/swift/Method/getAthleteFriends(page:completionHandler:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:ZFC9StravaKit6Strava17getAthleteFriendsERR">getAthleteFriends(page:completionHandler:)</a>
@@ -496,6 +473,70 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getAthleteFriends</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="nv">athletes</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Athlete.html">Athlete</a></span><span class="p">]?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava15getAthleteZonesERR"></a>
+                    <a name="//apple_ref/swift/Method/getAthleteZones(page:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava15getAthleteZonesERR">getAthleteZones(page:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets zones of current athlete.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="n">getAthleteZones</span> <span class="p">{</span> <span class="p">(</span><span class="n">zones</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/athlete/#zones">http://strava.github.io/api/v3/athlete/#zones</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getAthleteZones</span><span class="p">(</span><span class="nv">page</span><span class="p">:</span> <span class="kt"><a href="../Structs.html#/s:V9StravaKit4Page">Page</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="nv">zones</span><span class="p">:</span> <span class="kt"><a href="../Structs/Zones.html">Zones</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC9StravaKit6Strava8getStatsERR"></a>
+                    <a name="//apple_ref/swift/Method/getStats(athleteId:completionHandler:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC9StravaKit6Strava8getStatsERR">getStats(athleteId:completionHandler:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets stats for athlete by ID.</p>
+
+<pre class="highlight swift"><code><span class="kt">Strava</span><span class="o">.</span><span class="nf">getStats</span><span class="p">(</span><span class="n">athleteId</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">stats</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span> <span class="k">in</span> <span class="p">}</span>
+</code></pre>
+
+<p>Docs: <a href="http://strava.github.io/api/v3/athlete/#stats">http://strava.github.io/api/v3/athlete/#stats</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">func</span> <span class="nf">getStats</span><span class="p">(</span><span class="nv">athleteId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="nv">stats</span><span class="p">:</span> <span class="kt"><a href="../Structs/Stats.html">Stats</a></span><span class="p">?,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">NSError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">())?)</span> <span class="o">-&gt;</span> <span class="kt">NSURLSessionTask</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -1008,7 +1049,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://github.com/StravaKit/StravaKit" target="_blank" rel="external">StravaKit</a>. All rights reserved. (Last updated: 2016-12-04)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/StravaKit/StravaKit" target="_blank" rel="external">StravaKit</a>. All rights reserved. (Last updated: 2017-01-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

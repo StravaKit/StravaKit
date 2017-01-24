@@ -43,6 +43,7 @@ Note: Initially only the GET requests which are accessible from the Public scope
    1. ~~/v3/segments/:id/leaderboard~~
    1. ~~/v3/segments/starred~~
    1. ~~/v3/segments/:id/all_efforts~~
+   1. ~~/v3/athlete/zones~~
    1. /v3/uploads
 1. Review performance
    1. ~~Implement rate limiting support~~
