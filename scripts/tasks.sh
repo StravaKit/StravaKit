@@ -4,13 +4,13 @@ set -e
 
 Command="$1"
 
-AppVersion="0.7.0"
+AppVersion="0.8.0"
 ProjectName="StravaKit"
 ProjectDir="`dirname \"$0\"`"
 Workspace="${ProjectName}.xcworkspace"
 Scheme="${ProjectName}"
 Project="${ProjectName}.xcodeproj"
-Target="${ProjectName}"
+Target="${ProjectName}-iOS"
 
 TestPlatform="iOS Simulator"
 TestName="iPhone 7"

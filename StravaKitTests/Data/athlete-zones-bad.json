@@ -1,0 +1,31 @@
+{
+  "heart_ratex": {
+    "custom_zones": false,
+    "zones": [
+      {
+        "min": 0,
+        "max": 115
+      },
+      {
+        "min": 115,
+        "max": 152
+      },
+      {
+        "min": 152,
+        "max": 171
+      },
+      {
+        "min": 171,
+        "max": 190
+      },
+      {
+        "min": 190,
+        "max": -1
+      }
+    ]
+  },
+  "power": {
+    "zones": [
+    ]
+  }
+}

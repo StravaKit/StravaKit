@@ -1287,6 +1287,55 @@
       "symbol": "HTTPMethod.PUT",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/StravaKit/Zones.swift",
+      "line": 11,
+      "symbol": "Zone",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/StravaKit/Zones.swift",
+      "line": 33,
+      "symbol": "Zone.zones(array:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/StravaKit/Zones.swift",
+      "line": 43,
+      "symbol": "ZoneCollection",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/StravaKit/Zones.swift",
+      "line": 46,
+      "symbol": "ZoneCollection.custom",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/StravaKit/Zones.swift",
+      "line": 49,
+      "symbol": "ZoneCollection.zones",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/StravaKit/Zones.swift",
+      "line": 75,
+      "symbol": "Zones.heartRate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/StravaKit/Zones.swift",
+      "line": 78,
+      "symbol": "Zones.power",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
     }
   ],
   "source_directory": "/Users/brennan/GitHub/brennanMKE/StravaKit"
