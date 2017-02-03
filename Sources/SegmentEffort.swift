@@ -79,19 +79,19 @@ public struct SegmentEffort {
         }
     }
 
-    public static func efforts(dictionaries: [JSONDictionary]) -> [SegmentEffort] {
+    public static func efforts(_ dictionaries: [JSONDictionary]) -> [SegmentEffort] {
         return dictionaries.flatMap { (d) in
             return SegmentEffort(dictionary: d)
         }
     }
 
-    public var startDate: NSDate? {
+    public var startDate: Date? {
         get {
             return Strava.dateFromString(startDateString)
         }
     }
 
-    public var startDateLocal: NSDate? {
+    public var startDateLocal: Date? {
         get {
             return Strava.dateFromString(startDateLocalString)
         }

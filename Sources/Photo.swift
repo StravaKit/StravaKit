@@ -29,13 +29,13 @@ public struct Photo {
     internal let uploadedAtString: String?
     internal let createdAtString: String?
 
-    public var uploadedAt: NSDate? {
+    public var uploadedAt: Date? {
         get {
             return Strava.dateFromString(uploadedAtString)
         }
     }
 
-    public var createdAt: NSDate? {
+    public var createdAt: Date? {
         get {
             return Strava.dateFromString(createdAtString)
         }
@@ -62,7 +62,7 @@ public struct Photo {
             self.type = s.value("type", required: false)
             self.uploadedAtString = s.value("uploaded_at", required: false)
             self.createdAtString = s.value("created_at", required: false)
-            if let location: [Double] = s.value("location") where location.count == 2 {
+            if let location: [Double] = s.value("location"), location.count == 2 {
                 self.location = location
             }
             else {
@@ -82,7 +82,7 @@ public struct Photo {
 
     public var coordinate: CLLocationCoordinate2D {
         get {
-            if let location = location where location.count == 2,
+            if let location = location, location.count == 2,
                 let latitude = location.first,
                 let longitude = location.last {
                 let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
@@ -95,13 +95,13 @@ public struct Photo {
 
 public struct PhotoURL {
     let size: String
-    let URL: NSURL
+    let URL: Foundation.URL
 
-    internal static func photoURLs(dictionary: [String : String]) -> [PhotoURL]? {
+    internal static func photoURLs(_ dictionary: [String : String]) -> [PhotoURL]? {
         let photoURLs: [PhotoURL] = dictionary.flatMap { (pair) in
             let size = pair.0
             guard let urlString = dictionary[size],
-                let URL = NSURL(string: urlString)
+                let URL = Foundation.URL(string: urlString)
                 else {
                     return nil
             }

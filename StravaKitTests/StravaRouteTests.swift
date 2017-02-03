@@ -74,7 +74,7 @@ class StravaRouteTests: XCTestCase {
     }
 
     func testGetRouteGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("route-good")
@@ -87,14 +87,14 @@ class StravaRouteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetRouteBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("route-bad")
@@ -107,14 +107,14 @@ class StravaRouteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetRouteInvalid() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
@@ -127,14 +127,14 @@ class StravaRouteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetRouteWithError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -147,14 +147,14 @@ class StravaRouteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetRoutesGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("routes-good")
@@ -170,14 +170,14 @@ class StravaRouteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetRoutesBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("routes-bad")
@@ -191,14 +191,14 @@ class StravaRouteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetRoutesInvalid() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
@@ -213,14 +213,14 @@ class StravaRouteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetRoutesWithError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -233,8 +233,8 @@ class StravaRouteTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }

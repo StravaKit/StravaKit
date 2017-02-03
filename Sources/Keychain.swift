@@ -16,6 +16,7 @@ private let KnownErrSecMissingEntitlement = Int32(-34018)
 
 public extension Strava {
 
+    @discardableResult
     internal func storeAccessData() -> Bool {
         deleteAccessData()
         var success = false
@@ -28,7 +29,7 @@ public extension Strava {
                 StravaAthleteKey : athlete.dictionary
             ]
 
-            let data: NSData = NSKeyedArchiver.archivedDataWithRootObject(dictionary)
+            let data: Data = NSKeyedArchiver.archivedData(withRootObject: dictionary)
 
             let query: JSONDictionary = [
                 kSecClass as String : kSecClassGenericPassword,
@@ -47,10 +48,11 @@ public extension Strava {
         return success
     }
 
+    @discardableResult
     internal func loadAccessData() -> Bool {
         var success = false
 
-        let query: [String: AnyObject] = [
+        let query: [String: Any] = [
             kSecClass as String : kSecClassGenericPassword,
             kSecAttrAccount as String : StravaKeychainAccount,
             kSecReturnData as String : kCFBooleanTrue,
@@ -59,15 +61,15 @@ public extension Strava {
 
         var result: AnyObject?
 
-        let resultCode = withUnsafeMutablePointer(&result) {
+        let resultCode = withUnsafeMutablePointer(to: &result) {
             SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
         }
 
         check(resultCode)
 
         if resultCode == noErr {
-            if let data = result as? NSData {
-                if let dictionary = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? JSONDictionary,
+            if let data = result as? Data {
+                if let dictionary = NSKeyedUnarchiver.unarchiveObject(with: data) as? JSONDictionary,
                     let accessToken = dictionary[StravaAccessTokenKey] as? String,
                     let athleteDictionary = dictionary[StravaAthleteKey] as? JSONDictionary,
                     let athlete = Athlete(dictionary: athleteDictionary) {
@@ -81,8 +83,9 @@ public extension Strava {
         return success
     }
 
+    @discardableResult
     internal func deleteAccessData() -> Bool {
-        let query: [String: AnyObject] = [
+        let query: [String: Any] = [
             kSecClass as String : kSecClassGenericPassword,
             kSecAttrAccount as String : StravaKeychainAccount
         ]
@@ -94,7 +97,7 @@ public extension Strava {
         return resultCode == noErr || resultCode == errSecItemNotFound
     }
 
-    internal func check(resultCode: OSStatus) {
+    internal func check(_ resultCode: OSStatus) {
         if resultCode == KnownErrSecMissingEntitlement {
             debugPrint("App is missing a critical entitlement. Add KeyChain Entitlement, Go to project settings -> Capabilities -> Keychain Sharing -> Add Keychain Groups+Turn On. See http://sstools.co/2ftrv0x")
         }

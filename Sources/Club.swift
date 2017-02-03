@@ -15,8 +15,8 @@ public struct Club {
     let clubId: Int
     let resourceState: Int
     let name: String
-    let profileMediumURL: NSURL
-    let profileURL: NSURL
+    let profileMediumURL: URL
+    let profileURL: URL
     let sportType: String
     let city: String
     let state: String
@@ -27,8 +27,8 @@ public struct Club {
     let verified: Bool
     let url: String
 
-    let coverPhotoURL: NSURL?
-    let coverPhotoSmallURL: NSURL?
+    let coverPhotoURL: URL?
+    let coverPhotoSmallURL: URL?
     let clubDescription: String?
     let clubType: String?
     let membership: String?
@@ -45,9 +45,9 @@ public struct Club {
             let resourceState: Int = s.value("resource_state"),
             let name: String = s.value("name"),
             let profileMedium: String = s.value("profile_medium"),
-            let profileMediumURL = NSURL(string: profileMedium),
+            let profileMediumURL = URL(string: profileMedium),
             let profile: String = s.value("profile"),
-            let profileURL = NSURL(string: profile),
+            let profileURL = URL(string: profile),
             let sportType: String = s.value("sport_type"),
             let city: String = s.value("city"),
             let state: String = s.value("state"),
@@ -75,14 +75,14 @@ public struct Club {
             // Optional Properties
 
             if let coverPhoto: String = s.value("cover_photo", required: false) {
-                self.coverPhotoURL = NSURL(string: coverPhoto)
+                self.coverPhotoURL = URL(string: coverPhoto)
             }
             else {
                 self.coverPhotoURL = nil
             }
 
             if let coverPhotoSmall: String = s.value("cover_photo_small", required: false) {
-                self.coverPhotoSmallURL = NSURL(string: coverPhotoSmall)
+                self.coverPhotoSmallURL = URL(string: coverPhotoSmall)
             }
             else {
                 self.coverPhotoSmallURL = nil
@@ -100,7 +100,7 @@ public struct Club {
         }
     }
 
-    public static func clubs(dictionaries: JSONArray) -> [Club] {
+    public static func clubs(_ dictionaries: JSONArray) -> [Club] {
         return dictionaries.flatMap { (d) in
             return Club(dictionary: d)
         }

@@ -12,24 +12,24 @@ internal class JSONLoader : NSObject {
 
     static let sharedInstance: JSONLoader = JSONLoader()
 
-    func loadJSON(name: String) -> AnyObject? {
+    func loadJSON(_ name: String) -> Any? {
         let data = loadData(name)
 
         if let data = data {
-            return try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            return try! JSONSerialization.jsonObject(with: data, options: .allowFragments)
         }
 
         return nil
     }
 
-    func loadData(name: String) -> NSData? {
-        let bundle = NSBundle(forClass: classForCoder)
-        guard let path = bundle.pathForResource(name, ofType: "json") else {
+    func loadData(_ name: String) -> Data? {
+        let bundle = Bundle(for: classForCoder)
+        guard let path = bundle.path(forResource: name, ofType: "json") else {
             return nil
         }
-        let fm = NSFileManager.defaultManager()
-        if fm.isReadableFileAtPath(path) {
-            guard let data = fm.contentsAtPath(path) else {
+        let fm = FileManager.default
+        if fm.isReadableFile(atPath: path) {
+            guard let data = fm.contents(atPath: path) else {
                 return nil
             }
 

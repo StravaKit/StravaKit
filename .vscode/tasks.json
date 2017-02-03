@@ -21,56 +21,56 @@
       "taskName": "B: Run Tests",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh test"
+        "${workspaceRoot}/scripts/tasks.sh test"
       ]
     },
     {
       "taskName": "C: Clean Build",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh clean"
+        "${workspaceRoot}/scripts/tasks.sh clean"
       ]
     },
     {
       "taskName": "D: Run Jazzy",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh jazzy"
+        "${workspaceRoot}/scripts/tasks.sh jazzy"
       ]
     },
     {
       "taskName": "E: Set Up Dependencies",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh setup"
+        "${workspaceRoot}/scripts/tasks.sh setup"
       ]
     },
     {
       "taskName": "F: Run All",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh all"
+        "${workspaceRoot}/scripts/tasks.sh all"
       ]
     },
     {
       "taskName": "G: Install Gems",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh bundle-install"
+        "${workspaceRoot}/scripts/tasks.sh bundle-install"
       ]
     },
     {
       "taskName": "H: Install CocoaPod Dependencies",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh pod-install"
+        "${workspaceRoot}/scripts/tasks.sh pod-install"
       ]
     },
     {
       "taskName": "I: Update CocoaPod Dependencies",
       "isBuildCommand": false,
       "args": [
-        "${workspaceRoot}/tasks.sh pod-update"
+        "${workspaceRoot}/scripts/tasks.sh pod-update"
       ]
     }
   ]

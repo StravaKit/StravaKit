@@ -201,7 +201,7 @@ class StravaSegmentTests: XCTestCase {
     }
 
     func testGetSegmentGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segment-good")
@@ -214,14 +214,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segment-bad")
@@ -234,14 +234,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -254,14 +254,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentsGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segments-good")
@@ -288,14 +288,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentsBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segments-bad")
@@ -320,14 +320,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentsInvalid() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
@@ -352,14 +352,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
     
     func testGetSegmentsError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -384,14 +384,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetStarredSegmentsGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segments-starred-good")
@@ -406,14 +406,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetStarredSegmentsBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segments-starred-bad")
@@ -426,14 +426,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetStarredSegmentsInvalid() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
@@ -448,14 +448,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetStarredSegmentsError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -468,14 +468,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetLeaderboardGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segment-leaderboard-good")
@@ -497,14 +497,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetLeaderboardBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segment-leaderboard-bad")
@@ -517,14 +517,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetLeaderboardInvalid() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
@@ -539,14 +539,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetLeaderboardError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -559,14 +559,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentEffortsGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segment-efforts-good")
@@ -581,14 +581,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentEffortsBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("segment-efforts-bad")
@@ -602,14 +602,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentEffortsInvalid() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
@@ -624,14 +624,14 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetSegmentEffortsError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -644,8 +644,8 @@ class StravaSegmentTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }

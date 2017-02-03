@@ -24,13 +24,14 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/clubs/#get-details
      */
-    static func getClub(clubId: Int, completionHandler:((club: Club?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        let path = ClubResourcePath.Club.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(clubId))
+    @discardableResult
+    static func getClub(_ clubId: Int, completionHandler:((_ club: Club?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+        let path = ClubResourcePath.Club.rawValue.replacingOccurrences(of: ":id", with: String(clubId))
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(club: nil, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(nil, error)
                 }
                 return
             }
@@ -48,7 +49,8 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/clubs/#get-athletes
      */
-    static func getClubs(page: Page? = nil, completionHandler:((clubs: [Club]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    @discardableResult
+    static func getClubs(_ page: Page? = nil, completionHandler:((_ clubs: [Club]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ClubResourcePath.Clubs.rawValue
 
         var params: ParamsDictionary? = nil
@@ -61,8 +63,8 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(clubs: nil, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(nil, error)
                 }
                 return
             }
@@ -73,32 +75,32 @@ public extension Strava {
 
     // MARK: - Internal Functions -
 
-    internal static func handleClubResponse(response: AnyObject?, completionHandler:((club: Club?, error: NSError?) -> ())?) {
+    internal static func handleClubResponse(_ response: Any?, completionHandler:((_ club: Club?, _ error: NSError?) -> ())?) {
         if let dictionary = response as? JSONDictionary,
             let club = Club(dictionary: dictionary) {
-            dispatch_async(dispatch_get_main_queue()) {
-                completionHandler?(club: club, error: nil)
+            DispatchQueue.main.async {
+                completionHandler?(club, nil)
             }
         }
         else {
-            dispatch_async(dispatch_get_main_queue()) {
-                let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
-                completionHandler?(club: nil, error: error)
+            DispatchQueue.main.async {
+                let error = Strava.error(.invalidResponse, reason: "Invalid Response")
+                completionHandler?(nil, error)
             }
         }
     }
 
-    internal static func handleClubsResponse(response: AnyObject?, completionHandler:((clubs: [Club]?, error: NSError?) -> ())?) {
+    internal static func handleClubsResponse(_ response: Any?, completionHandler:((_ clubs: [Club]?, _ error: NSError?) -> ())?) {
         if let dictionaries = response as? JSONArray {
             let clubs = Club.clubs(dictionaries)
-            dispatch_async(dispatch_get_main_queue()) {
-                completionHandler?(clubs: clubs, error: nil)
+            DispatchQueue.main.async {
+                completionHandler?(clubs, nil)
             }
         }
         else {
-            dispatch_async(dispatch_get_main_queue()) {
-                let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
-                completionHandler?(clubs: nil, error: error)
+            DispatchQueue.main.async {
+                let error = Strava.error(.invalidResponse, reason: "Invalid Response")
+                completionHandler?(nil, error)
             }
         }
     }

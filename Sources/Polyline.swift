@@ -12,9 +12,9 @@
 import Foundation
 import CoreLocation
 
-enum PolylineError: ErrorType {
-    case SingleCoordinateDecodingError
-    case ChunkExtractingError
+enum PolylineError: Error {
+    case singleCoordinateDecodingError
+    case chunkExtractingError
 }
 
 internal class Polyline {
@@ -27,14 +27,14 @@ internal class Polyline {
 
      @return: A `[CLLocationCoordinate2D]` representing the decoded polyline if valid, `nil` otherwise
      */
-    internal static func decodePolyline(encodedPolyline: String, precision: Double = 1e5) -> [CLLocationCoordinate2D]? {
-        guard let data: NSData = encodedPolyline.dataUsingEncoding(NSUTF8StringEncoding)
+    internal static func decodePolyline(_ encodedPolyline: String, precision: Double = 1e5) -> [CLLocationCoordinate2D]? {
+        guard let data: Data = encodedPolyline.data(using: String.Encoding.utf8)
             else {
             debugPrint("🔥🔥🔥")
             return nil
         }
-        let byteArray: UnsafePointer<Int8> = unsafeBitCast(data.bytes, UnsafePointer<Int8>.self)
-        let length: Int = Int(data.length)
+        let byteArray: UnsafePointer<Int8> = unsafeBitCast((data as NSData).bytes, to: UnsafePointer<Int8>.self)
+        let length: Int = Int(data.count)
         var position: Int = Int(0)
 
         var decodedCoordinates: [CLLocationCoordinate2D] = []
@@ -67,9 +67,9 @@ internal class Polyline {
      We use a byte array (UnsafePointer<Int8>) here for performance reasons. 
      Check with swift 2 if we can go back to using [Int8].
      */
-    private static func decodeSingleCoordinate(byteArray byteArray: UnsafePointer<Int8>, length: Int, inout position: Int, precision: Double = 1e5) throws -> Double {
+    fileprivate static func decodeSingleCoordinate(byteArray: UnsafePointer<Int8>, length: Int, position: inout Int, precision: Double = 1e5) throws -> Double {
 
-        guard position < length else { throw PolylineError.SingleCoordinateDecodingError }
+        guard position < length else { throw PolylineError.singleCoordinateDecodingError }
 
         let bitMask:Int8 = Int8(0x1F)
 
@@ -88,7 +88,7 @@ internal class Polyline {
         } while ((currentChar & 0x20) == 0x20) && (position < length) && (componentCounter < 6)
 
         if (componentCounter == 6) && ((currentChar & 0x20) == 0x20) {
-            throw PolylineError.SingleCoordinateDecodingError
+            throw PolylineError.singleCoordinateDecodingError
         }
         
         if (coordinate & 0x01) == 0x01 {

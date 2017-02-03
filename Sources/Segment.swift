@@ -54,8 +54,8 @@ public struct Segment {
             let resourceState: Int = s.value("resource_state"),
             let name: String = s.value("name"),
             let distance: Double = s.value("distance"),
-            let start_latlng: [Double] = s.value("start_latlng") where start_latlng.count == 2,
-            let end_latlng: [Double] = s.value("end_latlng") where end_latlng.count == 2,
+            let start_latlng: [Double] = s.value("start_latlng"), start_latlng.count == 2,
+            let end_latlng: [Double] = s.value("end_latlng"), end_latlng.count == 2,
             let startLatitude: Double = start_latlng.first,
             let startLongitude: Double = start_latlng.last,
             let endLatitude: Double = end_latlng.first,
@@ -109,15 +109,15 @@ public struct Segment {
         }
     }
 
-    public static func segments(dictionary: JSONDictionary) -> [Segment]? {
+    public static func segments(_ dictionary: JSONDictionary) -> [Segment]? {
         if let s = JSONSupport(dictionary: dictionary),
-        let dictionaries: JSONArray = s.value("segments") where dictionaries.count > 0 {
+        let dictionaries: JSONArray = s.value("segments"), dictionaries.count > 0 {
             return Segment.segments(dictionaries)
         }
         return nil
     }
 
-    public static func segments(dictionaries: JSONArray) -> [Segment]? {
+    public static func segments(_ dictionaries: JSONArray) -> [Segment]? {
         return dictionaries.flatMap { (d) in
             return Segment(dictionary: d)
         }
@@ -133,19 +133,19 @@ public struct Segment {
         }
     }
 
-    public var starredDate: NSDate? {
+    public var starredDate: Date? {
         get {
             return Strava.dateFromString(starredDateString)
         }
     }
 
-    public var createdAt: NSDate? {
+    public var createdAt: Date? {
         get {
             return Strava.dateFromString(createdAtString)
         }
     }
 
-    public var updatedAt: NSDate? {
+    public var updatedAt: Date? {
         get {
             return Strava.dateFromString(updatedAtString)
         }
