@@ -23,7 +23,7 @@ public struct LeaderboardEntry {
     public let effortId: Int
     public let rank: Int
     public let neighborhoodIndex: Int
-    public let athleteProfileURL: NSURL
+    public let athleteProfileURL: URL
 
     internal let startDateString: String
     internal let startDateLocalString: String
@@ -49,7 +49,7 @@ public struct LeaderboardEntry {
             let rank: Int = s.value("rank"),
             let neighborhoodIndex: Int = s.value("neighborhood_index"),
             let athleteProfile: String = s.value("athlete_profile"),
-            let athleteProfileURL = NSURL(string: athleteProfile) {
+            let athleteProfileURL = URL(string: athleteProfile) {
             self.athleteName = athleteName
             self.athleteId = athleteId
             self.athleteGender = athleteGender
@@ -74,13 +74,13 @@ public struct LeaderboardEntry {
         }
     }
 
-    public var startDate: NSDate? {
+    public var startDate: Date? {
         get {
             return Strava.dateFromString(startDateString)
         }
     }
 
-    public var startDateLocal: NSDate? {
+    public var startDateLocal: Date? {
         get {
             return Strava.dateFromString(startDateLocalString)
         }

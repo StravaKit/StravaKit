@@ -24,13 +24,14 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/routes/#retreive
      */
-    static func getRoute(routeId: Int, completionHandler:((route: Route?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        let path = RouteResourcePath.RouteDetail.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(routeId))
+    @discardableResult
+    static func getRoute(_ routeId: Int, completionHandler:((_ route: Route?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+        let path = RouteResourcePath.RouteDetail.rawValue.replacingOccurrences(of: ":id", with: String(routeId))
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(route: nil, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(nil, error)
                 }
                 return
             }
@@ -48,8 +49,9 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/routes/#list
      */
-    static func getRoutes(athleteId: Int, page: Page? = nil, completionHandler:((clubs: [Route]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        let path = RouteResourcePath.Routes.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(athleteId))
+    @discardableResult
+    static func getRoutes(_ athleteId: Int, page: Page? = nil, completionHandler:((_ clubs: [Route]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+        let path = RouteResourcePath.Routes.rawValue.replacingOccurrences(of: ":id", with: String(athleteId))
 
         var params: ParamsDictionary? = nil
         if let page = page {
@@ -61,8 +63,8 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(clubs: nil, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(nil, error)
                 }
                 return
             }
@@ -73,32 +75,32 @@ public extension Strava {
 
     // MARK: - Internal Functions -
 
-    internal static func handleRouteResponse(response: AnyObject?, completionHandler:((route: Route?, error: NSError?) -> ())?) {
+    internal static func handleRouteResponse(_ response: Any?, completionHandler:((_ route: Route?, _ error: NSError?) -> ())?) {
         if let dictionary = response as? JSONDictionary,
             let route = Route(dictionary: dictionary) {
-            dispatch_async(dispatch_get_main_queue()) {
-                completionHandler?(route: route, error: nil)
+            DispatchQueue.main.async {
+                completionHandler?(route, nil)
             }
         }
         else {
-            dispatch_async(dispatch_get_main_queue()) {
-                let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
-                completionHandler?(route: nil, error: error)
+            DispatchQueue.main.async {
+                let error = Strava.error(.invalidResponse, reason: "Invalid Response")
+                completionHandler?(nil, error)
             }
         }
     }
 
-    internal static func handleRoutesResponse(response: AnyObject?, completionHandler:((routes: [Route]?, error: NSError?) -> ())?) {
+    internal static func handleRoutesResponse(_ response: Any?, completionHandler:((_ routes: [Route]?, _ error: NSError?) -> ())?) {
         if let dictionaries = response as? JSONArray {
             let routes = Route.routes(dictionaries)
-            dispatch_async(dispatch_get_main_queue()) {
-                completionHandler?(routes: routes, error: nil)
+            DispatchQueue.main.async {
+                completionHandler?(routes, nil)
             }
         }
         else {
-            dispatch_async(dispatch_get_main_queue()) {
-                let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
-                completionHandler?(routes: nil, error: error)
+            DispatchQueue.main.async {
+                let error = Strava.error(.invalidResponse, reason: "Invalid Response")
+                completionHandler?(nil, error)
             }
         }
     }

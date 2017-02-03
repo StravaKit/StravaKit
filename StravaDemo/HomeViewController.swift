@@ -27,8 +27,8 @@ class HomeViewController: UIViewController {
 
     // MARK: - Private Constants -
 
-    private let ClientIDKey: String = "ClientID"
-    private let ClientSecretKey: String = "ClientSecret"
+    fileprivate let ClientIDKey: String = "ClientID"
+    fileprivate let ClientSecretKey: String = "ClientSecret"
 
     // MARK: - Computed Properties -
 
@@ -68,16 +68,16 @@ class HomeViewController: UIViewController {
         loadDefaults()
         refreshUI()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(HomeViewController.stravaAuthorizationCompleted(_:)), name: StravaAuthorizationCompletedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.stravaAuthorizationCompleted(_:)), name: NSNotification.Name(rawValue: StravaAuthorizationCompletedNotification), object: nil)
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: StravaAuthorizationCompletedNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: StravaAuthorizationCompletedNotification), object: nil)
     }
 
     // MARK: - User Actions -
 
-    @IBAction func accessButtonTapped(sender: AnyObject) {
+    @IBAction func accessButtonTapped(_ sender: Any) {
         if !Strava.isAuthorized {
             authorizeStrava()
         }
@@ -86,22 +86,22 @@ class HomeViewController: UIViewController {
         }
     }
 
-    @IBAction func runTestsButtonTapped(sender: AnyObject) {
+    @IBAction func runTestsButtonTapped(_ sender: Any) {
         runTests()
     }
 
     // MARK: - UI Functions -
 
     internal func refreshUI() {
-        assert(NSThread.isMainThread(), "Main Thread is required")
+        assert(Thread.isMainThread, "Main Thread is required")
         let isAuthorized = Strava.isAuthorized
         let title = isAuthorized ? "Deauthorize" : "Authorize"
         statusLabel.text = nil
-        accessButton.setTitle(title, forState: .Normal)
-        runTestsButton.hidden = !isAuthorized
+        accessButton.setTitle(title, for: .normal)
+        runTestsButton.isHidden = !isAuthorized
     }
 
-    internal func showIntegrationResult(success: Bool) {
+    internal func showIntegrationResult(_ success: Bool) {
         statusLabel.text = success ? "Integration Passed" : "Integration Failed"
     }
 
@@ -113,15 +113,15 @@ class HomeViewController: UIViewController {
         Strava.set(clientId: clientId, clientSecret: clientSecret, redirectURI: redirectURI)
 
         if let URL = Strava.userLogin(scope: .Public) {
-            let vc = SFSafariViewController(URL: URL, entersReaderIfAvailable: false)
-            presentViewController(vc, animated: true, completion: nil)
+            let vc = SFSafariViewController(url: URL, entersReaderIfAvailable: false)
+            present(vc, animated: true, completion: nil)
             safariViewController = vc
         }
     }
 
     internal func deauthorizeStrava() {
         Strava.deauthorize { (success, error) in
-            assert(NSThread.isMainThread(), "Main Thread is required")
+            assert(Thread.isMainThread, "Main Thread is required")
             self.refreshUI()
             if success {
                 debugPrint("Deauthorization successful!")
@@ -135,9 +135,9 @@ class HomeViewController: UIViewController {
         }
     }
 
-    internal func stravaAuthorizationCompleted(notification: NSNotification?) {
-        assert(NSThread.isMainThread(), "Main Thread is required")
-        safariViewController?.dismissViewControllerAnimated(true, completion: nil)
+    internal func stravaAuthorizationCompleted(_ notification: Notification?) {
+        assert(Thread.isMainThread, "Main Thread is required")
+        safariViewController?.dismiss(animated: true, completion: nil)
         safariViewController = nil
         refreshUI()
         guard let userInfo = notification?.userInfo,
@@ -202,7 +202,7 @@ class HomeViewController: UIViewController {
         }
     }
 
-    internal func handleTestResult(success: Bool, total: Int, name: String, error: NSError?) {
+    internal func handleTestResult(_ success: Bool, total: Int, name: String, error: NSError?) {
         if success {
             testCount += 1
             if testCount == total {
@@ -217,118 +217,118 @@ class HomeViewController: UIViewController {
         }
     }
 
-    internal func getAthlete(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getAthlete(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getAthlete { (athlete, error) in
             if let _ = athlete {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getAthleteByID(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getAthleteByID(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         if let athleteId = Strava.currentAthlete?.athleteId {
             Strava.getAthlete(athleteId) { (athlete, error) in
                 if let _ = athlete {
-                    completionHandler(success: true, error: nil)
+                    completionHandler(true, nil)
                 }
                 else if let error = error {
-                    completionHandler(success: false, error: error)
+                    completionHandler(false, error)
                 }
             }
         }
     }
 
-    internal func getAthleteFriends(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getAthleteFriends(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getAthleteFriends { (athletes, error) in
             if let _ = athletes {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getStats(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getStats(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         if let athleteId = Strava.currentAthlete?.athleteId {
             Strava.getStats(athleteId, completionHandler: { (stats, error) in
                 if let _ = stats {
-                    completionHandler(success: true, error: nil)
+                    completionHandler(true, nil)
                 }
                 else if let error = error {
-                    completionHandler(success: false, error: error)
+                    completionHandler(false, error)
                 }
             })
         }
     }
 
-    internal func getActivities(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getActivities(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getActivities { (activities, error) in
             if let activities = activities,
                 let firstActivity = activities.first {
                 Strava.getActivity(firstActivity.activityId, completionHandler: { (activity, error) in
                     if let _ = activity {
-                        completionHandler(success: true, error: nil)
+                        completionHandler(true, nil)
                     }
                     else if let error = error {
-                        completionHandler(success: false, error: error)
+                        completionHandler(false, error)
                     }
                 })
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getFollowingActivities(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getFollowingActivities(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getFollowingActivities { (activities, error) in
             if let _ = activities {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getClub(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getClub(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getClub(1000) { (club, error) in
             if let _ = club {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getClubs(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getClubs(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getClubs { (clubs, error) in
             if let _ = clubs {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getSegment(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getSegment(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getSegment(141491) { (clubs, error) in
             if let _ = clubs {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getSegments(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getSegments(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         let latitude1: CLLocationDegrees = 37.821362
         let longitude1: CLLocationDegrees = -122.505373
         let latitude2: CLLocationDegrees = 37.842038
@@ -338,49 +338,49 @@ class HomeViewController: UIViewController {
 
         guard let mapBounds = MapBounds(coordinate1: coordinate1, coordinate2: coordinate2) else {
             let error = NSError(domain: "Testing", code: 1, userInfo: nil)
-            completionHandler(success: false, error: error)
+            completionHandler(false, error)
             return
         }
 
         Strava.getSegments(mapBounds) { (segments, error) in
             if let _ = segments {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getStarredSegments(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getStarredSegments(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getStarredSegments { (segments, error) in
             if let _ = segments {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getSegmentLeaderboard(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getSegmentLeaderboard(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getSegmentLeaderboard(141491) { (leaderboard, error) in
             if let _ = leaderboard {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
 
-    internal func getSegmentEfforts(completionHandler: ((success: Bool, error: NSError?) -> ())) {
+    internal func getSegmentEfforts(_ completionHandler: @escaping ((_ success: Bool, _ error: NSError?) -> ())) {
         Strava.getSegmentEfforts(141491) { (efforts, error) in
             if let _ = efforts {
-                completionHandler(success: true, error: nil)
+                completionHandler(true, nil)
             }
             else if let error = error {
-                completionHandler(success: false, error: error)
+                completionHandler(false, error)
             }
         }
     }
@@ -388,18 +388,18 @@ class HomeViewController: UIViewController {
     // MARK: - Defaults Functions -
 
     internal func loadDefaults() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if let clientId = defaults.objectForKey(ClientIDKey) as? String,
-            let clientSecret = defaults.objectForKey(ClientSecretKey) as? String {
+        let defaults = UserDefaults.standard
+        if let clientId = defaults.object(forKey: ClientIDKey) as? String,
+            let clientSecret = defaults.object(forKey: ClientSecretKey) as? String {
             self.clientId = clientId
             self.clientSecret = clientSecret
         }
     }
 
     internal func storeDefaults() {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(clientId, forKey: ClientIDKey)
-        defaults.setObject(clientSecret, forKey: ClientSecretKey)
+        let defaults = UserDefaults.standard
+        defaults.set(clientId, forKey: ClientIDKey)
+        defaults.set(clientSecret, forKey: ClientSecretKey)
     }
 
 }

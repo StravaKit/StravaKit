@@ -76,7 +76,7 @@ class PhotoTests: XCTestCase {
         }
 
         var dictionary = json
-        dictionary.removeValueForKey("location")
+        dictionary.removeValue(forKey: "location")
         let photo = Photo(dictionary: dictionary)
         XCTAssertNotNil(photo)
 

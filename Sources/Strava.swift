@@ -14,11 +14,11 @@ import Foundation
 import Security
 
 /** JSON Dictionary */
-public typealias JSONDictionary = [String : AnyObject]
+public typealias JSONDictionary = [String : Any]
 /** JSON Array */
 public typealias JSONArray = [JSONDictionary]
 /** Params Dictionary */
-public typealias ParamsDictionary = [String : AnyObject]
+public typealias ParamsDictionary = [String : Any]
 
 /** Strava Base URL */
 public let StravaBaseURL = "https://www.strava.com"
@@ -51,34 +51,34 @@ public enum HTTPMethod: String {
 /** Strava Error Codes */
 public enum StravaErrorCode: Int {
     /** Error on backend. */
-    case RemoteError = 501
+    case remoteError = 501
     /** Required credentials were missing. */
-    case MissingCredentials = 502
+    case missingCredentials = 502
     /** Access Token was not found. */
-    case NoAccessToken = 503
+    case noAccessToken = 503
     /** Response was not returned. */
-    case NoResponse = 504
+    case noResponse = 504
     /** Response was not expected. */
-    case InvalidResponse = 505
+    case invalidResponse = 505
     /** Requested resource was not found. */
-    case RecordNotFound = 506
+    case recordNotFound = 506
     /** Request exceeded rate limit. See error for details. */
-    case RateLimitExceeded = 507
+    case rateLimitExceeded = 507
     /** Access is not allowed. */
-    case AccessForbidden = 508
+    case accessForbidden = 508
     /** Request is not supported. */
-    case UnsupportedRequest = 509
+    case unsupportedRequest = 509
     /** Reason for error is not known. */
-    case UndefinedError = 599
+    case undefinedError = 599
 }
 
 /**
  Strava class for handling all API endpoint requests.
  */
-public class Strava {
+open class Strava {
 
     static let sharedInstance = Strava()
-    internal let dateFormatter = NSDateFormatter()
+    internal let dateFormatter = DateFormatter()
     internal var clientId: String?
     internal var clientSecret: String?
     internal var redirectURI: String?
@@ -96,14 +96,14 @@ public class Strava {
 
         // Use ISO 8601 standard format for date strings
         // Docs: http://strava.github.io/api/#dates
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
     }
 
     /**
      Indicates if the current athlete is defined with a profile and access token.
      */
-    public static var isAuthorized: Bool {
+    open static var isAuthorized: Bool {
         get {
             return sharedInstance.accessToken != nil && sharedInstance.athlete != nil
         }
@@ -112,7 +112,7 @@ public class Strava {
     /**
      Current Athlete which is authorized.
      */
-    public static var currentAthlete: Athlete? {
+    open static var currentAthlete: Athlete? {
         get {
             return sharedInstance.athlete
         }
@@ -121,7 +121,7 @@ public class Strava {
     /**
      Allows for enabling debugging. It is false by default.
      */
-    public static var isDebugging: Bool {
+    open static var isDebugging: Bool {
         get {
             return sharedInstance.isDebugging
         }
@@ -133,7 +133,8 @@ public class Strava {
     /**
      Request method for all StravaKit API endpoint calls.
      */
-    public static func request(method: HTTPMethod, authenticated: Bool, path: String, params: [String: AnyObject]?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    @discardableResult
+    open static func request(_ method: HTTPMethod, authenticated: Bool, path: String, params: [String: Any]?, completionHandler: ((_ response: Any?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         if isDebugging {
             debugPrint("Method: \(method.rawValue), Path: \(path), Authenticated: \(authenticated)")
             if let params = params {
@@ -149,21 +150,21 @@ public class Strava {
 
     // MARK: - Internal Functions -
 
-    internal static func error(code: StravaErrorCode, reason: String, userInfo: [String : AnyObject]? = [:]) -> NSError {
-        var dictionary: [String : AnyObject]? = userInfo
-        dictionary?[NSLocalizedDescriptionKey] = reason
+    internal static func error(_ code: StravaErrorCode, reason: String, userInfo: [String : Any]? = [:]) -> NSError {
+        var dictionary: [String : Any]? = userInfo
+        dictionary?[NSLocalizedDescriptionKey] = reason as Any?
 
         let error = NSError(domain: StravaErrorDomain, code: code.rawValue, userInfo: dictionary)
         return error
     }
 
-    internal static func urlWithString(string: String?, parameters: JSONDictionary?) -> NSURL? {
+    internal static func urlWithString(_ string: String?, parameters: JSONDictionary?) -> URL? {
         guard let string = string
             else {
             return nil
         }
 
-        let URL = NSURL(string: string)
+        let URL = Foundation.URL(string: string)
         if URL?.scheme != "http" && URL?.scheme != "https" {
             return nil
         }
@@ -175,36 +176,36 @@ public class Strava {
         return URL
     }
 
-    internal static func appendQueryParameters(parameters: JSONDictionary, URL: NSURL?) -> NSURL? {
+    internal static func appendQueryParameters(_ parameters: JSONDictionary, URL: Foundation.URL?) -> Foundation.URL? {
         guard let URL = URL,
-            let components = NSURLComponents(URL: URL, resolvingAgainstBaseURL: false)
+            var components = URLComponents(url: URL, resolvingAgainstBaseURL: false)
             else {
                 return nil
         }
 
-        var queryItems: [NSURLQueryItem] = []
+        var queryItems: [URLQueryItem] = []
 
         for key in parameters.keys {
             let value = parameters[key]
             if let stringValue = value as? String {
-                let queryItem : NSURLQueryItem = NSURLQueryItem(name: key, value: stringValue)
+                let queryItem : URLQueryItem = URLQueryItem(name: key, value: stringValue)
                 queryItems.append(queryItem)
             }
             else if let value = value {
                 let stringValue = "\(value)"
-                let queryItem : NSURLQueryItem = NSURLQueryItem(name: key, value: stringValue)
+                let queryItem : URLQueryItem = URLQueryItem(name: key, value: stringValue)
                 queryItems.append(queryItem)
             }
         }
 
         components.queryItems = queryItems
 
-        return components.URL
+        return components.url
     }
 
-    internal static func dateFromString(string: String?) -> NSDate? {
+    internal static func dateFromString(_ string: String?) -> Date? {
         if let string = string {
-            return sharedInstance.dateFormatter.dateFromString(string)
+            return sharedInstance.dateFormatter.date(from: string)
         }
         return nil
     }

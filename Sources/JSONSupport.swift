@@ -16,17 +16,17 @@ import Foundation
  */
 internal class JSONSupport {
 
-    private let dictionary: JSONDictionary
+    fileprivate let dictionary: JSONDictionary
 
     init?(dictionary: JSONDictionary) {
         self.dictionary = dictionary
     }
 
     func isJSONDebuggingEnabled() -> Bool {
-        return NSProcessInfo.processInfo().environment["JSONDebuggingEnabled"]?.uppercaseString == "YES"
+        return ProcessInfo.processInfo.environment["JSONDebuggingEnabled"]?.uppercased() == "YES"
     }
 
-    func value<T>(key: String, required: Bool = true, nilValue: T? = nil) -> T? {
+    func value<T>(_ key: String, required: Bool = true, nilValue: T? = nil) -> T? {
         var warnings : [String] = []
         if required && isJSONDebuggingEnabled() {
             if let _ = dictionary[key] as? T {

@@ -16,35 +16,35 @@ internal class JSONServer {
 
     internal func prepare() {
         server["/data"] = { request in
-            return .OK(.Json(["data" : "123"]))
+            return .ok(.json(["data" : "123"]))
         }
 
         server.POST["/post"] = { request in
-            return .OK(.Json(["posted" : "true"]))
+            return .ok(.json(["posted" : "true"]))
         }
 
         server.PUT["/put"] = { request in
-            return .OK(.Json(["put" : "true"]))
+            return .ok(.json(["put" : "true"]))
         }
 
         server["/bad-request"] = { request in
-            return .BadRequest(.Html("Bad Request"))
+            return .badRequest(.html("Bad Request"))
         }
 
         server["/unauthorized"] = { request in
-            return .Unauthorized
+            return .unauthorized
         }
 
         server["/forbidden"] = { request in
-            return .Forbidden
+            return .forbidden
         }
 
         server["/not-found"] = { request in
-            return .NotFound
+            return .notFound
         }
 
         server["/server-error"] = { request in
-            return .InternalServerError
+            return .internalServerError
         }
 
         server["/rate-limit"] = { request in
@@ -56,11 +56,11 @@ internal class JSONServer {
             ]
 
             if let data = JSONLoader.sharedInstance.loadData("rate-limit"),
-                let string = String(data: data, encoding: NSUTF8StringEncoding) {
-                return HttpResponse.RAW(statusCode, "Rate Limit", headers, { $0.write([UInt8](string.utf8)) })
+                let string = String(data: data, encoding: String.Encoding.utf8) {
+                return HttpResponse.raw(statusCode, "Rate Limit", headers, { $0.write([UInt8](string.utf8)) })
             }
 
-            return .InternalServerError
+            return .internalServerError
         }
 
     }

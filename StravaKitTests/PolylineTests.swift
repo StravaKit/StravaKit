@@ -28,7 +28,7 @@ internal struct Coordinate {
         }
     }
 
-    static func coordinates(json: JSONArray) -> [Coordinate] {
+    static func coordinates(_ json: JSONArray) -> [Coordinate] {
         var result: [Coordinate] = []
 
         for dictionary in json {
@@ -60,7 +60,7 @@ internal struct PolylineData {
         }
     }
 
-    static func loadJSONData(json: JSONArray) -> [PolylineData] {
+    static func loadJSONData(_ json: JSONArray) -> [PolylineData] {
         var items: [PolylineData] = []
         for dictionary in json {
             if let data = PolylineData(dictionary: dictionary) {
@@ -90,7 +90,7 @@ class PolylineTests: XCTestCase {
             XCTAssertNotNil(coordinates)
             XCTAssertTrue(coordinates?.count == polylineData.coordinates.count)
             if let coordinates = coordinates {
-                for (index, coordinate) in coordinates.enumerate() {
+                for (index, coordinate) in coordinates.enumerated() {
                     let otherCoordinate = polylineData.coordinates[index]
                     XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: epsilon)
                     XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: epsilon)
@@ -137,7 +137,7 @@ class PolylineTests: XCTestCase {
             XCTAssertNil(map.coordinates)
             XCTAssertNotNil(map.summaryCoordinates)
 
-            for (index, coordinate) in map.summaryCoordinates.enumerate() {
+            for (index, coordinate) in map.summaryCoordinates.enumerated() {
                 let otherCoordinate = polylineData.coordinates[index]
                 XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: epsilon)
                 XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: epsilon)
@@ -174,7 +174,7 @@ class PolylineTests: XCTestCase {
             XCTAssertNotNil(map.summaryCoordinates)
 
             if let coordinates = map.coordinates {
-                for (index, coordinate) in coordinates.enumerate() {
+                for (index, coordinate) in coordinates.enumerated() {
                     let otherCoordinate = polylineData.coordinates[index]
                     XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: epsilon)
                     XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: epsilon)

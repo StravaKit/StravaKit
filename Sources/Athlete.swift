@@ -19,8 +19,8 @@ public struct Athlete {
     public let city: String
     public let state: String
     public let country: String
-    public let profileImageURL : NSURL
-    public let profileMediumImageURL : NSURL
+    public let profileImageURL : URL
+    public let profileMediumImageURL : URL
     public let sex: String
     public let premium: Bool
 
@@ -46,8 +46,8 @@ public struct Athlete {
                 "city" : city,
                 "state" : state,
                 "country" : country,
-                "profile" : String(profileImageURL),
-                "profile_medium" : String(profileMediumImageURL),
+                "profile" : profileImageURL.absoluteString,
+                "profile_medium" : profileMediumImageURL.absoluteString,
                 "sex" : sex,
                 "premium" : premium
             ]
@@ -85,9 +85,9 @@ public struct Athlete {
             let state: String = s.value("state"),
             let country: String = s.value("country"),
             let profile: String = s.value("profile"),
-            let profileImageURL = NSURL(string: profile),
+            let profileImageURL = URL(string: profile),
             let profileMedium: String = s.value("profile_medium"),
-            let profileMediumImageURL = NSURL(string: profileMedium),
+            let profileMediumImageURL = URL(string: profileMedium),
             let sex: String = s.value("sex"),
             let premium: Bool = s.value("premium") {
             self.athleteId = athleteId
@@ -118,7 +118,7 @@ public struct Athlete {
     /**
      Creates athlete models from an array of dictionaries.
      */
-    public static func athletes(dictionaries: JSONArray) -> [Athlete] {
+    public static func athletes(_ dictionaries: JSONArray) -> [Athlete] {
         return dictionaries.flatMap { (d) in
             Athlete(dictionary: d)
         }

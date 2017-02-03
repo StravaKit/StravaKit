@@ -46,7 +46,7 @@ class StravaStatsTests: XCTestCase {
     }
 
     func testGetStatsGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("stats-good")
@@ -59,14 +59,14 @@ class StravaStatsTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetStatsBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("stats-bad")
@@ -79,14 +79,14 @@ class StravaStatsTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetStatsWithError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -99,15 +99,15 @@ class StravaStatsTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     // MARK: - Private Functions -
 
-    private func statsDictionary(name: String) -> JSONDictionary? {
+    fileprivate func statsDictionary(_ name: String) -> JSONDictionary? {
         if let json = JSONLoader.sharedInstance.loadJSON(name) as? JSONDictionary {
             return json
         }

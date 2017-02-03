@@ -33,7 +33,7 @@ public struct SegmentStats {
         }
     }
 
-    public var prDate: NSDate? {
+    public var prDate: Date? {
         get {
             return Strava.dateFromString(prDateString)
         }

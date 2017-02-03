@@ -25,7 +25,8 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/activities/#get-activities
      */
-    static func getActivities(page: Page? = nil, completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    @discardableResult
+    static func getActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ActivityResourcePath.Activities.rawValue
 
         var params: ParamsDictionary? = nil
@@ -38,8 +39,8 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(activities: nil, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(nil, error)
                 }
                 return
             }
@@ -57,13 +58,14 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/activities/#get-details
      */
-    static func getActivity(activityId: Int, completionHandler:((activity: Activity?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        let path = ActivityResourcePath.Activity.rawValue.stringByReplacingOccurrencesOfString(":id", withString: String(activityId))
+    @discardableResult
+    static func getActivity(_ activityId: Int, completionHandler:((_ activity: Activity?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+        let path = ActivityResourcePath.Activity.rawValue.replacingOccurrences(of: ":id", with: String(activityId))
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(activity: nil, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(nil, error)
                 }
                 return
             }
@@ -81,7 +83,8 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/activities/#get-feed
      */
-    static func getFollowingActivities(page: Page? = nil, completionHandler:((activities: [Activity]?, error: NSError?) -> ())?) -> NSURLSessionTask? {
+    @discardableResult
+    static func getFollowingActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ActivityResourcePath.Following.rawValue
 
         var params: ParamsDictionary? = nil
@@ -94,8 +97,8 @@ public extension Strava {
 
         return request(.GET, authenticated: true, path: path, params: params) { (response, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(activities: nil, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(nil, error)
                 }
                 return
             }
@@ -106,26 +109,26 @@ public extension Strava {
 
     // MARK: - Internal Functions -
 
-    internal static func handleActivitiesResponse(response: AnyObject?, completionHandler: ((activities: [Activity]?, error: NSError?) -> ())?) {
+    internal static func handleActivitiesResponse(_ response: Any?, completionHandler: ((_ activities: [Activity]?, _ error: NSError?) -> ())?) {
         let activities = (response as? JSONArray)?.flatMap { (d) in
             return Activity(dictionary: d)
         }
-        dispatch_async(dispatch_get_main_queue()) {
-            completionHandler?(activities: activities ?? [], error: nil)
+        DispatchQueue.main.async {
+            completionHandler?(activities ?? [], nil)
         }
     }
 
-    internal static func handleActivityResponse(response: AnyObject?, completionHandler:((activity: Activity?, error: NSError?) -> ())?) {
+    internal static func handleActivityResponse(_ response: Any?, completionHandler:((_ activity: Activity?, _ error: NSError?) -> ())?) {
         if let dictionary = response as? JSONDictionary,
             let activity = Activity(dictionary: dictionary) {
-            dispatch_async(dispatch_get_main_queue()) {
-                completionHandler?(activity: activity, error: nil)
+            DispatchQueue.main.async {
+                completionHandler?(activity, nil)
             }
         }
         else {
-            dispatch_async(dispatch_get_main_queue()) {
-                let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
-                completionHandler?(activity: nil, error: error)
+            DispatchQueue.main.async {
+                let error = Strava.error(.invalidResponse, reason: "Invalid Response")
+                completionHandler?(nil, error)
             }
         }
     }

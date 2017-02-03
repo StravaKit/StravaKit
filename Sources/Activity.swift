@@ -81,8 +81,8 @@ public struct Activity {
             let startDate: String = s.value("start_date"),
             let startDateLocal: String = s.value("start_date_local"),
             let timezone: String = s.value("timezone"),
-            let startCoordinates: [CLLocationDegrees] = s.value("start_latlng") where startCoordinates.count == 2,
-            let endCoordinates: [CLLocationDegrees] = s.value("end_latlng") where endCoordinates.count == 2,
+            let startCoordinates: [CLLocationDegrees] = s.value("start_latlng"), startCoordinates.count == 2,
+            let endCoordinates: [CLLocationDegrees] = s.value("end_latlng"), endCoordinates.count == 2,
             let city: String = s.value("location_city"),
             let state: String = s.value("location_state"),
             let country: String = s.value("location_country"),
@@ -158,7 +158,7 @@ public struct Activity {
         }
     }
 
-    public static func activities(dictionaries: [JSONDictionary]) -> [Activity]? {
+    public static func activities(_ dictionaries: [JSONDictionary]) -> [Activity]? {
         let activities = dictionaries.flatMap { (d) in
             return Activity(dictionary: d)
         }
@@ -190,13 +190,13 @@ public struct Activity {
         }
     }
 
-    public var startDate: NSDate? {
+    public var startDate: Date? {
         get {
             return Strava.dateFromString(startDateString)
         }
     }
 
-    public var startDateLocal: NSDate? {
+    public var startDateLocal: Date? {
         get {
             return Strava.dateFromString(startDateLocalString)
         }

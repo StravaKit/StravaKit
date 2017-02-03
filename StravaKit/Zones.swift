@@ -30,7 +30,7 @@ public struct Zone {
         }
     }
 
-    public static func zones(array: JSONArray) -> [Zone]? {
+    public static func zones(_ array: JSONArray) -> [Zone]? {
         let zones = array.flatMap { (d) in
             return Zone(dictionary: d)
         }
@@ -54,7 +54,7 @@ public struct ZoneCollection {
     init?(dictionary: JSONDictionary) {
         if let s = JSONSupport(dictionary: dictionary),
             let custom: Bool = s.value("custom_zones", required: false, nilValue: false),
-            let zonesArray: JSONArray = s.value("zones") where zonesArray.count > 0,
+            let zonesArray: JSONArray = s.value("zones"), zonesArray.count > 0,
             let zones = Zone.zones(zonesArray) {
             self.custom = custom
             self.zones = zones

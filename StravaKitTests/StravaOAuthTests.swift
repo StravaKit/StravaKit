@@ -26,7 +26,7 @@ class StravaOAuthTests: XCTestCase {
 
     override func tearDown() {
         Strava.sharedInstance.alternateRequestor = nil
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: StravaAuthorizationCompletedNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: StravaAuthorizationCompletedNotification), object: nil)
         super.tearDown()
     }
 
@@ -58,9 +58,9 @@ class StravaOAuthTests: XCTestCase {
     }
 
     func testOpenURLWithCode() {
-        let expectation = self.expectationWithDescription("Notification")
+        let expectation = self.expectation(description: "Notification")
 
-        let callbackURL = NSURL(string: "\(RedirectURI)?state=&code=1234")!
+        let callbackURL = URL(string: "\(RedirectURI)?state=&code=1234")!
         let sourceApplication = "com.apple.SafariViewService"
 
         let jsonRequestor = JSONRequestor()
@@ -68,9 +68,9 @@ class StravaOAuthTests: XCTestCase {
         jsonRequestor.error = nil
         Strava.sharedInstance.alternateRequestor = jsonRequestor
 
-        let nc = NSNotificationCenter.defaultCenter()
+        let nc = NotificationCenter.default
         var observer: NSObjectProtocol? = nil
-        observer = nc.addObserverForName(StravaAuthorizationCompletedNotification, object: nil, queue: nil) { (notification) in
+        observer = nc.addObserver(forName: NSNotification.Name(rawValue: StravaAuthorizationCompletedNotification), object: nil, queue: nil) { (notification) in
             if let status = notification.userInfo?[StravaStatusKey] as? String {
                 XCTAssertTrue(status == StravaStatusSuccessValue)
                 XCTAssertNil(notification.userInfo?[StravaErrorKey])
@@ -86,14 +86,14 @@ class StravaOAuthTests: XCTestCase {
         let opened = Strava.openURL(callbackURL, sourceApplication: sourceApplication)
         XCTAssertTrue(opened)
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testOpenURLWithCodeWithoutCredentials() {
-        let callbackURL = NSURL(string: "\(RedirectURI)?state=&code=1234")!
+        let callbackURL = URL(string: "\(RedirectURI)?state=&code=1234")!
         let sourceApplication = "com.apple.SafariViewService"
 
         let jsonRequestor = JSONRequestor()
@@ -110,7 +110,7 @@ class StravaOAuthTests: XCTestCase {
     }
 
     func testOpenURLWithError() {
-        let callbackURL = NSURL(string: "\(RedirectURI)?state=&error=access_denied")!
+        let callbackURL = URL(string: "\(RedirectURI)?state=&error=access_denied")!
         let sourceApplication = "com.apple.SafariViewService"
 
         let jsonRequestor = JSONRequestor()
@@ -123,7 +123,7 @@ class StravaOAuthTests: XCTestCase {
     }
 
     func testOpenURLWithInvalidSourceApplication() {
-        let callbackURL = NSURL(string: "\(RedirectURI)?state=&error=access_denied")!
+        let callbackURL = URL(string: "\(RedirectURI)?state=&error=access_denied")!
         let sourceApplication = "com.acme.App"
 
         let jsonRequestor = JSONRequestor()
@@ -136,7 +136,7 @@ class StravaOAuthTests: XCTestCase {
     }
 
     func testOpenURLWithInvalidRedirectURI() {
-        let callbackURL = NSURL(string: "acme://localhost/oauth?state=&code=1234")!
+        let callbackURL = URL(string: "acme://localhost/oauth?state=&code=1234")!
         let sourceApplication = "com.apple.SafariViewService"
 
         let jsonRequestor = JSONRequestor()
@@ -149,7 +149,7 @@ class StravaOAuthTests: XCTestCase {
     }
 
     func testExchangeTokenGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("exchange-token-good")
@@ -172,14 +172,14 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testExchangeTokenBad() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("exchange-token-bad")
@@ -192,14 +192,14 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testExchangeTokenMissingCredentials() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("exchange-token-bad")
@@ -216,14 +216,14 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testExchangeTokenWithError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = nil
@@ -236,14 +236,14 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testDeauthorizeGood() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("empty")
@@ -256,14 +256,14 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testDeauthorizeGoodWithError() {
-        let expectation = self.expectationWithDescription("API Call")
+        let expectation = self.expectation(description: "API Call")
 
         let jsonRequestor = JSONRequestor()
         jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("empty")
@@ -276,18 +276,18 @@ class StravaOAuthTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testNotifyAuthorizationCompletedGood() {
-        let expectation = self.expectationWithDescription("Notification")
+        let expectation = self.expectation(description: "Notification")
 
-        let nc = NSNotificationCenter.defaultCenter()
+        let nc = NotificationCenter.default
         var observer: NSObjectProtocol? = nil
-        observer = nc.addObserverForName(StravaAuthorizationCompletedNotification, object: nil, queue: nil) { (notification) in
+        observer = nc.addObserver(forName: NSNotification.Name(rawValue: StravaAuthorizationCompletedNotification), object: nil, queue: nil) { (notification) in
             if let status = notification.userInfo?[StravaStatusKey] as? String {
                 XCTAssertTrue(status == StravaStatusSuccessValue)
                 XCTAssertNil(notification.userInfo?[StravaErrorKey])
@@ -302,18 +302,18 @@ class StravaOAuthTests: XCTestCase {
 
         Strava.notifyAuthorizationCompleted(true, error: nil)
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testNotifyAuthorizationCompletedBad() {
-        let expectation = self.expectationWithDescription("Notification")
+        let expectation = self.expectation(description: "Notification")
 
-        let nc = NSNotificationCenter.defaultCenter()
+        let nc = NotificationCenter.default
         var observer: NSObjectProtocol? = nil
-        observer = nc.addObserverForName(StravaAuthorizationCompletedNotification, object: nil, queue: nil) { (notification) in
+        observer = nc.addObserver(forName: NSNotification.Name(rawValue: StravaAuthorizationCompletedNotification), object: nil, queue: nil) { (notification) in
             if let status = notification.userInfo?[StravaStatusKey] as? String {
                 XCTAssertTrue(status == StravaStatusFailureValue)
                 XCTAssertNotNil(notification.userInfo?[StravaErrorKey])
@@ -329,8 +329,8 @@ class StravaOAuthTests: XCTestCase {
         let error = NSError(domain: "Testing", code: 500, userInfo: nil)
         Strava.notifyAuthorizationCompleted(false, error: error)
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }

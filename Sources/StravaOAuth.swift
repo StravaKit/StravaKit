@@ -50,7 +50,7 @@ public extension Strava {
     /**
      Initialize clientId, clientSecret and redirectURI.
      */
-    static func set(clientId clientId: String, clientSecret: String, redirectURI: String, sandbox: Bool? = nil) {
+    static func set(clientId: String, clientSecret: String, redirectURI: String, sandbox: Bool? = nil) {
         sharedInstance.clientId = clientId
         sharedInstance.clientSecret = clientSecret
         sharedInstance.redirectURI = redirectURI
@@ -73,10 +73,10 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/oauth/#get-authorize
      */
-    static func userLogin(scope scope: OAuthScope, state: String = "") -> NSURL? {
+    static func userLogin(scope: OAuthScope, state: String = "") -> URL? {
         guard let clientId = sharedInstance.clientId,
-            _ = sharedInstance.clientSecret,
-            redirectURI = sharedInstance.redirectURI
+            let _ = sharedInstance.clientSecret,
+            let redirectURI = sharedInstance.redirectURI
             else { return nil }
 
         let parameters : JSONDictionary = [
@@ -99,7 +99,7 @@ public extension Strava {
      When the `redirectURI` is used it will cause a method in your `AppDelegate` to be run. The `openURL` method which is provided by StravaKit will determine if an opened URL should be used for OAuth authorization.
 
      ```swift
-     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: Any) -> Bool {
          return Strava.openURL(url, sourceApplication: sourceApplication)
      }
      ```
@@ -124,16 +124,16 @@ public extension Strava {
      ```
 
      */
-    static func openURL(URL: NSURL, sourceApplication: String?) -> Bool {
+    static func openURL(_ URL: Foundation.URL, sourceApplication: String?) -> Bool {
         guard let _ = sharedInstance.clientId,
-            _ = sharedInstance.clientSecret
+            let _ = sharedInstance.clientSecret
             else {
                 return false
         }
 
-        guard let sa = sourceApplication where sa == "com.apple.SafariViewService",
+        guard let sa = sourceApplication, sa == "com.apple.SafariViewService",
             let uri = sharedInstance.redirectURI,
-            let _ = URL.absoluteString?.rangeOfString(uri)
+            let _ = URL.absoluteString.range(of: uri)
             else {
                 return false
         }
@@ -144,7 +144,7 @@ public extension Strava {
         // Example: stravademo://localhost/oauth/signin?state=&error=access_denied
 
         if let errorValue = queryStringValue(URL, name: "error") {
-            error = Strava.error(.RemoteError, reason: "Remote Error: \(errorValue)")
+            error = Strava.error(.remoteError, reason: "Remote Error: \(errorValue)")
             notifyAuthorizationCompleted(false, error: error)
         }
         else if let code = queryStringValue(URL, name: "code") {
@@ -179,7 +179,7 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/oauth/#deauthorize
      */
-    static func deauthorize(completionHandler: ((success: Bool, error: NSError?) -> ())?) {
+    static func deauthorize(_ completionHandler: ((_ success: Bool, _ error: NSError?) -> ())?) {
         let path = OAuthResourcePath.Deauthorization.rawValue
 
         request(.POST, authenticated: true, path: path, params: nil) { (response, error) in
@@ -188,14 +188,14 @@ public extension Strava {
             sharedInstance.deleteAccessData()
 
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(success: false, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(false, error)
                 }
                 return
             }
 
-            dispatch_async(dispatch_get_main_queue()) {
-                completionHandler?(success: true, error: nil)
+            DispatchQueue.main.async {
+                completionHandler?(true, nil)
             }
         }
     }
@@ -207,13 +207,13 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/oauth/#post-token
      */
-    internal static func exchangeTokenWithCode(code: String, completionHandler: ((success: Bool, error: NSError?) -> ())?) {
+    internal static func exchangeTokenWithCode(_ code: String, completionHandler: ((_ success: Bool, _ error: NSError?) -> ())?) {
         guard let clientId = sharedInstance.clientId,
-            clientSecret = sharedInstance.clientSecret
+            let clientSecret = sharedInstance.clientSecret
             else {
-                let error = Strava.error(.MissingCredentials, reason: "Missing Credentials")
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(success: false, error: error)
+                let error = Strava.error(.missingCredentials, reason: "Missing Credentials")
+                DispatchQueue.main.async {
+                    completionHandler?(false, error)
                 }
                 return
         }
@@ -227,19 +227,19 @@ public extension Strava {
 
         request(.POST, authenticated: false, path: path, params: params) { (response, error) in
             if let error = error {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completionHandler?(success: false, error: error)
+                DispatchQueue.main.async {
+                    completionHandler?(false, error)
                 }
                 return
             }
 
-            guard let response = response,
+            guard let response = response as? JSONDictionary,
                 let accessToken = response["access_token"] as? String,
                 let athleteDictionary = response["athlete"] as? JSONDictionary
                 else {
-                    let error = Strava.error(.InvalidResponse, reason: "Invalid Response")
-                    dispatch_async(dispatch_get_main_queue()) {
-                        completionHandler?(success: false, error: error)
+                    let error = Strava.error(.invalidResponse, reason: "Invalid Response")
+                    DispatchQueue.main.async {
+                        completionHandler?(false, error)
                     }
                     return
             }
@@ -248,27 +248,27 @@ public extension Strava {
             sharedInstance.athlete = Athlete(dictionary: athleteDictionary)
             sharedInstance.storeAccessData()
             assert(sharedInstance.athlete != nil, "Athlete is required")
-            dispatch_async(dispatch_get_main_queue()) {
-                completionHandler?(success: true, error: nil)
+            DispatchQueue.main.async {
+                completionHandler?(true, nil)
             }
         }
     }
 
-    internal static func notifyAuthorizationCompleted(success: Bool, error: NSError?) {
+    internal static func notifyAuthorizationCompleted(_ success: Bool, error: NSError?) {
         var userInfo: JSONDictionary = [:]
         userInfo[StravaStatusKey] = success ? StravaStatusSuccessValue : StravaStatusFailureValue
         if let error = error {
             userInfo[StravaErrorKey] = error
         }
-        let nc = NSNotificationCenter.defaultCenter()
+        let nc = NotificationCenter.default
         let name = StravaAuthorizationCompletedNotification
-        dispatch_async(dispatch_get_main_queue()) {
-            nc.postNotificationName(name, object: nil, userInfo: userInfo)
+        DispatchQueue.main.async {
+            nc.post(name: Notification.Name(rawValue: name), object: nil, userInfo: userInfo)
         }
     }
 
-    internal static func queryStringValue(URL: NSURL, name: String) -> String? {
-        return NSURLComponents(URL: URL, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == name }).first?.value
+    internal static func queryStringValue(_ URL: Foundation.URL, name: String) -> String? {
+        return URLComponents(url: URL, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == name }).first?.value
     }
     
 }

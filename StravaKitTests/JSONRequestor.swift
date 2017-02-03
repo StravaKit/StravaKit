@@ -9,21 +9,21 @@
 import Foundation
 import StravaKit
 
-public class JSONRequestor : Requestor {
+open class JSONRequestor : Requestor {
 
-    public var response: AnyObject?
-    public var responses: [AnyObject]?
-    public var error: NSError?
-    public var callback: (() -> ())?
+    open var response: Any?
+    open var responses: [Any]?
+    open var error: NSError?
+    open var callback: (() -> ())?
 
-    public var baseUrl: String
+    open var baseUrl: String
 
     init() {
         baseUrl = StravaBaseURL
     }
 
-    public func request(method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((response: AnyObject?, error: NSError?) -> ())?) -> NSURLSessionTask? {
-        dispatch_async(dispatch_get_main_queue()) { [weak self] in
+    open func request(_ method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((_ response: Any?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+        DispatchQueue.main.async { [weak self] in
             guard let s = self else {
                 return
             }
@@ -36,7 +36,7 @@ public class JSONRequestor : Requestor {
                     s.responses = responses
                 }
             }
-            completionHandler?(response: s.response, error: s.error)
+            completionHandler?(s.response, s.error)
             s.callback?()
 
             // advance to the next response if there are responses defined

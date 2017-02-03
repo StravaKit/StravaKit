@@ -36,10 +36,10 @@ class RequestorTests: XCTestCase {
     }
 
     func testDataRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         requestor.request(.GET, authenticated: false, path: "/data", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 XCTAssertNil(error, "Error must be nil")
 
                 if let response = response,
@@ -59,19 +59,19 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testBadBaseURLRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         requestor.baseUrl = "null"
 
         requestor.request(.GET, authenticated: false, path: "/data", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 XCTAssertNil(response)
                 XCTAssertNotNil(error)
 
@@ -79,19 +79,19 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testAuthenticatedWithAccessTokenRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         Strava.sharedInstance.accessToken = "abc123"
 
         requestor.request(.GET, authenticated: true, path: "/data", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 debugPrint("Error: \(error)")
                 debugPrint("Response: \(response)")
                 XCTAssertNotNil(response)
@@ -101,19 +101,19 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testAuthenticatedWithoutAccessTokenRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         XCTAssertFalse(Strava.isAuthorized)
 
         requestor.request(.GET, authenticated: true, path: "/data", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 debugPrint("Error: \(error)")
                 debugPrint("Response: \(response)")
                 XCTAssertNil(response)
@@ -123,21 +123,21 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testPostRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         let params: [String : String] = [
             "data" : "123"
         ]
 
-        requestor.request(.POST, authenticated: false, path: "/post", params: params) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+        requestor.request(.POST, authenticated: false, path: "/post", params: params as ParamsDictionary?) { (response, error) in
+            DispatchQueue.main.async {
                 XCTAssertNotNil(response)
                 XCTAssertNil(error)
 
@@ -145,19 +145,19 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testPostRequestWithBadParameters() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         let params: ParamsDictionary = [:]
 
         requestor.request(.POST, authenticated: false, path: "/post", params: params) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 XCTAssertNotNil(response)
                 XCTAssertNil(error)
 
@@ -165,21 +165,21 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testPutRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         let params: [String : String] = [
             "data" : "123"
         ]
 
-        requestor.request(.PUT, authenticated: false, path: "/put", params: params) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+        requestor.request(.PUT, authenticated: false, path: "/put", params: params as ParamsDictionary?) { (response, error) in
+            DispatchQueue.main.async {
                 XCTAssertNotNil(response)
                 XCTAssertNil(error)
 
@@ -187,17 +187,17 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testBadRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         requestor.request(.GET, authenticated: false, path: "/bad-request", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 debugPrint("Error: \(error)")
                 debugPrint("Response: \(response)")
                 XCTAssertNil(response)
@@ -207,17 +207,17 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testUnauthorizedRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         requestor.request(.GET, authenticated: false, path: "/unauthorized", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 debugPrint("Error: \(error)")
                 debugPrint("Response: \(response)")
                 XCTAssertNil(response)
@@ -227,17 +227,17 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testForbiddenRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         requestor.request(.GET, authenticated: false, path: "/forbidden", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 debugPrint("Error: \(error)")
                 debugPrint("Response: \(response)")
                 XCTAssertNil(response)
@@ -247,17 +247,17 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testNotFoundRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         requestor.request(.GET, authenticated: false, path: "/not-found", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 debugPrint("Error: \(error)")
                 debugPrint("Response: \(response)")
                 XCTAssertNotNil(response)
@@ -267,17 +267,17 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testServerErrorRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         requestor.request(.GET, authenticated: false, path: "/server-error", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 debugPrint("Error: \(error)")
                 debugPrint("Response: \(response)")
                 XCTAssertNotNil(response)
@@ -287,17 +287,17 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testRateLimitRequest() {
-        let expectation = expectationWithDescription("Request")
+        let expectation = self.expectation(description: "Request")
 
         requestor.request(.GET, authenticated: false, path: "/rate-limit", params: nil) { (response, error) in
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 XCTAssertNil(response)
                 XCTAssertNotNil(error)
 
@@ -318,8 +318,8 @@ class RequestorTests: XCTestCase {
             }
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }

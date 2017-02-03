@@ -33,7 +33,7 @@ class StravaDemoTests: XCTestCase {
         vc.clientSecret = ClientSecret
 
         vc.storeDefaults()
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.synchronize()
         vc.loadDefaults()
         Strava.set(clientId: vc.clientId, clientSecret: vc.clientSecret, redirectURI: RedirectURI)
         XCTAssertTrue(vc.clientId == Strava.sharedInstance.clientId)
@@ -45,11 +45,11 @@ class StravaDemoTests: XCTestCase {
         vc.clientId = clientId
         vc.clientSecret = clientSecret
         vc.storeDefaults()
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.synchronize()
     }
 
     func testGetAthlete() {
-        let expectation = self.expectationWithDescription("UI")
+        let expectation = self.expectation(description: "UI")
 
         let requestor = JSONRequestor()
         requestor.response = JSONLoader.sharedInstance.loadJSON("athlete-good")
@@ -67,14 +67,14 @@ class StravaDemoTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetAthleteByID() {
-        let expectation = self.expectationWithDescription("UI")
+        let expectation = self.expectation(description: "UI")
 
         let athleteResponse = JSONLoader.sharedInstance.loadJSON("athlete-good")
 
@@ -97,12 +97,12 @@ class StravaDemoTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout, handler: nil)
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout, handler: nil)
     }
 
     func testGetStats() {
-        let expectation = self.expectationWithDescription("UI")
+        let expectation = self.expectation(description: "UI")
 
         let requestor = JSONRequestor()
         requestor.response = JSONLoader.sharedInstance.loadJSON("stats-good")
@@ -125,14 +125,14 @@ class StravaDemoTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetActivities() {
-        let expectation = self.expectationWithDescription("UI")
+        let expectation = self.expectation(description: "UI")
 
         guard let activities = JSONLoader.sharedInstance.loadJSON("activities-good"),
             let activity = JSONLoader.sharedInstance.loadJSON("activity-good") else {
@@ -161,14 +161,14 @@ class StravaDemoTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetFollowerActivities() {
-        let expectation = self.expectationWithDescription("UI")
+        let expectation = self.expectation(description: "UI")
 
         let requestor = JSONRequestor()
         requestor.response = JSONLoader.sharedInstance.loadJSON("activities-following")
@@ -191,14 +191,14 @@ class StravaDemoTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetClub() {
-        let expectation = self.expectationWithDescription("UI")
+        let expectation = self.expectation(description: "UI")
 
         let requestor = JSONRequestor()
         requestor.response = JSONLoader.sharedInstance.loadJSON("club-good")
@@ -216,14 +216,14 @@ class StravaDemoTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     func testGetClubs() {
-        let expectation = self.expectationWithDescription("UI")
+        let expectation = self.expectation(description: "UI")
 
         let requestor = JSONRequestor()
         requestor.response = JSONLoader.sharedInstance.loadJSON("clubs-good")
@@ -241,15 +241,15 @@ class StravaDemoTests: XCTestCase {
             expectation.fulfill()
         }
 
-        let timeout: NSTimeInterval = 120
-        self.waitForExpectationsWithTimeout(timeout) { (error) in
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
             // do nothing
         }
     }
 
     // MARK: - Private Functions -
 
-    private func getHomeViewController() -> HomeViewController? {
+    fileprivate func getHomeViewController() -> HomeViewController? {
         if let nc = getNavigationController(),
             let vc = nc.topViewController as? HomeViewController {
             return vc
@@ -258,8 +258,8 @@ class StravaDemoTests: XCTestCase {
         return nil
     }
 
-    private func getNavigationController() -> UINavigationController? {
-        if let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate,
+    fileprivate func getNavigationController() -> UINavigationController? {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let window = appDelegate.window,
             let navigationController = window.rootViewController as? UINavigationController {
             return navigationController

@@ -8,7 +8,7 @@ AppVersion="0.8.0"
 ProjectName="StravaKit"
 ProjectDir="`dirname \"$0\"`"
 Workspace="${ProjectName}.xcworkspace"
-Scheme="${ProjectName}"
+Scheme="${ProjectName}-iOS"
 Project="${ProjectName}.xcodeproj"
 Target="${ProjectName}-iOS"
 
