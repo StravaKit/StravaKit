@@ -164,21 +164,21 @@ open class Strava {
             return nil
         }
 
-        let URL = Foundation.URL(string: string)
-        if URL?.scheme != "http" && URL?.scheme != "https" {
+        let aURL = URL(string: string)
+        if aURL?.scheme != "http" && aURL?.scheme != "https" {
             return nil
         }
 
         if let parameters = parameters {
-            return appendQueryParameters(parameters, URL: URL)
+            return appendQueryParameters(parameters, aURL: aURL)
         }
 
-        return URL
+        return aURL
     }
 
-    internal static func appendQueryParameters(_ parameters: JSONDictionary, URL: Foundation.URL?) -> Foundation.URL? {
-        guard let URL = URL,
-            var components = URLComponents(url: URL, resolvingAgainstBaseURL: false)
+    internal static func appendQueryParameters(_ parameters: JSONDictionary, aURL: URL?) -> URL? {
+        guard let aURL = aURL,
+            var components = URLComponents(url: aURL, resolvingAgainstBaseURL: false)
             else {
                 return nil
         }

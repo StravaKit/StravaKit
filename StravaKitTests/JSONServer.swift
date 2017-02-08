@@ -11,20 +11,22 @@ import Swifter
 import StravaKit
 
 internal class JSONServer {
+
     let server = HttpServer()
     var isStarted: Bool = false
 
     internal func prepare() {
+
         server["/data"] = { request in
-            return .ok(.json(["data" : "123"]))
+            return .ok(.json(["data" : "123"] as AnyObject))
         }
 
         server.POST["/post"] = { request in
-            return .ok(.json(["posted" : "true"]))
+            return .ok(.json(["posted" : "true"] as AnyObject))
         }
 
         server.PUT["/put"] = { request in
-            return .ok(.json(["put" : "true"]))
+            return .ok(.json(["put" : "true"] as AnyObject))
         }
 
         server["/bad-request"] = { request in
@@ -57,7 +59,14 @@ internal class JSONServer {
 
             if let data = JSONLoader.sharedInstance.loadData("rate-limit"),
                 let string = String(data: data, encoding: String.Encoding.utf8) {
-                return HttpResponse.raw(statusCode, "Rate Limit", headers, { $0.write([UInt8](string.utf8)) })
+                return HttpResponse.raw(statusCode, "Rate Limit", headers, {
+                    do {
+                        try $0.write([UInt8](string.utf8))
+                    }
+                    catch {
+                        fatalError()
+                    }
+                })
             }
 
             return .internalServerError
@@ -66,8 +75,12 @@ internal class JSONServer {
     }
 
     internal func start() {
+        if isStarted {
+            return
+        }
         prepare()
         do {
+            debugPrint("🚀 Taking off!")
             try server.start(8081)
             isStarted = true
         }

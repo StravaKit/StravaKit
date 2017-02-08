@@ -20,7 +20,7 @@ class StravaClientTests: XCTestCase {
 
     func testAddQueryParametersToNilURL() {
         let params = ["name" : "Tim"]
-        let URL = Strava.appendQueryParameters(params as JSONDictionary, URL: nil)
+        let URL = Strava.appendQueryParameters(params as JSONDictionary, aURL: nil)
         XCTAssertNil(URL)
     }
 
@@ -37,7 +37,7 @@ class StravaClientTests: XCTestCase {
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
-            XCTAssertTrue(query.containsString("name=strava"))
+            XCTAssertNotNil(query.range(of: "name=strava"))
         }
         else {
             XCTFail()
@@ -47,13 +47,13 @@ class StravaClientTests: XCTestCase {
     func testURLCreationForIntParameter() {
         // add parameter which is an Int
         let parameters : JSONDictionary = ["name" : "strava", "score" : Int(5)]
-        let URL = Strava.urlWithString(StravaBaseURL, parameters: parameters)
-        XCTAssertNotNil(URL)
-        if let URL = URL,
-            let query = URL.query {
+        let aURL = Strava.urlWithString(StravaBaseURL, parameters: parameters)
+        XCTAssertNotNil(aURL)
+        if let aURL = aURL,
+            let query = aURL.query {
             // Note: Order of query parameters is not guaranteed
-            XCTAssertTrue(query.containsString("name=strava"))
-            XCTAssertTrue(query.containsString("score=5"))
+            XCTAssertNotNil(query.range(of:"name=strava"))
+            XCTAssertNotNil(query.range(of:"score=5"))
         }
         else {
             XCTFail()
@@ -68,8 +68,8 @@ class StravaClientTests: XCTestCase {
         if let URL = URL,
             let query = URL.query {
             // Note: Order of query parameters is not guaranteed
-            XCTAssertTrue(query.containsString("name=strava"))
-            XCTAssertTrue(query.containsString("pi=3.14"))
+            XCTAssertNotNil(query.range(of:"name=strava"))
+            XCTAssertNotNil(query.range(of:"pi=3.14"))
         }
         else {
             XCTFail()
@@ -83,7 +83,7 @@ class StravaClientTests: XCTestCase {
         XCTAssertNotNil(URL)
         if let URL = URL,
             let query = URL.query {
-            XCTAssertTrue(query.containsString("name=strava%20v3"))
+            XCTAssertNotNil(query.range(of:"name=strava%20v3"))
         }
         else {
             XCTFail()

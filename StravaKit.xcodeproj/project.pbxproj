@@ -1883,7 +1883,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1EFF69C1CF8CB58F80C1F120 /* Pods-StravaKitTests-Mac.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
@@ -1901,7 +1900,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E074033684503BF0746D8D01 /* Pods-StravaKitTests-Mac.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
@@ -2045,7 +2043,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D7E67F1F4E5DBBA17E39083B /* Pods-StravaDemoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
 				INFOPLIST_FILE = StravaDemoTests/Info.plist;
@@ -2061,7 +2058,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9989D2BD484EB0A31DCFC4AF /* Pods-StravaDemoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
 				INFOPLIST_FILE = StravaDemoTests/Info.plist;
@@ -2130,7 +2126,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C15A13B0385BF3270405E505 /* Pods-StravaKitTests-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
 				INFOPLIST_FILE = StravaKitTests/Info.plist;
@@ -2146,7 +2141,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CAB697627934F7FE1E97FF1 /* Pods-StravaKitTests-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = JJUWC4MH8Y;
 				INFOPLIST_FILE = StravaKitTests/Info.plist;
