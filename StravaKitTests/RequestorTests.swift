@@ -12,16 +12,16 @@ import XCTest
 
 class RequestorTests: XCTestCase {
 
-    let server = JSONServer()
+    static let server = JSONServer()
     var requestor: Requestor = DefaultRequestor()
     let BaseURL: String = "http://localhost:8081"
 
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        if !server.isStarted {
+        if !RequestorTests.server.isStarted {
             Strava.isDebugging = true
-            server.start()
+            RequestorTests.server.start()
         }
 
         requestor.baseUrl = BaseURL
