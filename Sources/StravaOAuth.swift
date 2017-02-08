@@ -124,7 +124,7 @@ public extension Strava {
      ```
 
      */
-    static func openURL(_ URL: Foundation.URL, sourceApplication: String?) -> Bool {
+    static func openURL(_ aURL: URL, sourceApplication: String?) -> Bool {
         guard let _ = sharedInstance.clientId,
             let _ = sharedInstance.clientSecret
             else {
@@ -133,7 +133,7 @@ public extension Strava {
 
         guard let sa = sourceApplication, sa == "com.apple.SafariViewService",
             let uri = sharedInstance.redirectURI,
-            let _ = URL.absoluteString.range(of: uri)
+            let _ = aURL.absoluteString.range(of: uri)
             else {
                 return false
         }
@@ -143,11 +143,11 @@ public extension Strava {
         // The user can tap the cancel button which results in an access denied error.
         // Example: stravademo://localhost/oauth/signin?state=&error=access_denied
 
-        if let errorValue = queryStringValue(URL, name: "error") {
+        if let errorValue = queryStringValue(aURL, name: "error") {
             error = Strava.error(.remoteError, reason: "Remote Error: \(errorValue)")
             notifyAuthorizationCompleted(false, error: error)
         }
-        else if let code = queryStringValue(URL, name: "code") {
+        else if let code = queryStringValue(aURL, name: "code") {
             exchangeTokenWithCode(code) { (success, error) in
                 notifyAuthorizationCompleted(success, error: error)
             }
@@ -267,8 +267,8 @@ public extension Strava {
         }
     }
 
-    internal static func queryStringValue(_ URL: Foundation.URL, name: String) -> String? {
-        return URLComponents(url: URL, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == name }).first?.value
+    internal static func queryStringValue(_ aURL: URL, name: String) -> String? {
+        return URLComponents(url: aURL, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == name }).first?.value
     }
     
 }

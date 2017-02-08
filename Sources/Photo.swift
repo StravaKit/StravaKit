@@ -95,18 +95,18 @@ public struct Photo {
 
 public struct PhotoURL {
     let size: String
-    let URL: Foundation.URL
+    let photoURL: URL
 
     internal static func photoURLs(_ dictionary: [String : String]) -> [PhotoURL]? {
         let photoURLs: [PhotoURL] = dictionary.flatMap { (pair) in
             let size = pair.0
             guard let urlString = dictionary[size],
-                let URL = Foundation.URL(string: urlString)
+                let photoURL = URL(string: urlString)
                 else {
                     return nil
             }
 
-            return PhotoURL(size: size, URL: URL)
+            return PhotoURL(size: size, photoURL: photoURL)
         }
 
         return photoURLs.count > 0 ? photoURLs : nil

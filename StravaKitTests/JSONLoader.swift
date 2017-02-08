@@ -13,10 +13,13 @@ internal class JSONLoader : NSObject {
     static let sharedInstance: JSONLoader = JSONLoader()
 
     func loadJSON(_ name: String) -> Any? {
-        let data = loadData(name)
-
-        if let data = data {
-            return try! JSONSerialization.jsonObject(with: data, options: .allowFragments)
+        if let data = loadData(name) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            }
+            catch {
+                debugPrint("Failure while loading JSON from \(name)")
+            }
         }
 
         return nil

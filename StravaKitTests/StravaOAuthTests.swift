@@ -32,8 +32,7 @@ class StravaOAuthTests: XCTestCase {
 
     func testUserLoginURL() {
         guard let loginURL = Strava.userLogin(scope: .Public),
-            let absoluteString = loginURL.absoluteString,
-            let range = absoluteString.rangeOfString(StravaBaseURL),
+            let range = loginURL.absoluteString.range(of:StravaBaseURL),
             let clientId = Strava.queryStringValue(loginURL, name: "client_id"),
             let redirectURI = Strava.queryStringValue(loginURL, name: "redirect_uri"),
             let scope = Strava.queryStringValue(loginURL, name: "scope") else {
