@@ -34,9 +34,7 @@ public struct SegmentStats {
     }
 
     public var prDate: Date? {
-        get {
-            return Strava.dateFromString(prDateString)
-        }
+        return Strava.dateFromString(prDateString)
     }
 
 }

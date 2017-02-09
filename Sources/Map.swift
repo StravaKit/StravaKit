@@ -41,23 +41,19 @@ public struct Map {
     }
 
     public var coordinates: [CLLocationCoordinate2D]? {
-        get {
-            if let polyline = polyline,
-                let coordinates = Polyline.decodePolyline(polyline) {
-                return coordinates
-            }
-            return nil
+        if let polyline = polyline,
+            let coordinates = Polyline.decodePolyline(polyline) {
+            return coordinates
         }
+        return nil
     }
 
     public var summaryCoordinates: [CLLocationCoordinate2D] {
-        get {
-            let polyline = Polyline.decodePolyline(summaryPolyline)
-            if let polyline = polyline {
-                return polyline
-            }
-            return []
+        let polyline = Polyline.decodePolyline(summaryPolyline)
+        if let polyline = polyline {
+            return polyline
         }
+        return []
     }
 
 }

@@ -169,39 +169,31 @@ public struct Activity {
     }
 
     public var startCoordinate: CLLocationCoordinate2D {
-        get {
-            guard let latitude = startCoordinates.first,
-                let longitude = startCoordinates.last
-                else {
-                    debugPrint("🔥🔥🔥")
-                    return kCLLocationCoordinate2DInvalid
-            }
-            return CLLocationCoordinate2DMake(latitude, longitude)
+        guard let latitude = startCoordinates.first,
+            let longitude = startCoordinates.last
+            else {
+                debugPrint("🔥🔥🔥")
+                return kCLLocationCoordinate2DInvalid
         }
+        return CLLocationCoordinate2DMake(latitude, longitude)
     }
 
     public var endCoordinate: CLLocationCoordinate2D {
-        get {
-            guard let latitude = endCoordinates.first,
-                let longitude = endCoordinates.last
-                else {
-                    debugPrint("🔥🔥🔥")
-                    return kCLLocationCoordinate2DInvalid
-            }
-            return CLLocationCoordinate2DMake(latitude, longitude)
+        guard let latitude = endCoordinates.first,
+            let longitude = endCoordinates.last
+            else {
+                debugPrint("🔥🔥🔥")
+                return kCLLocationCoordinate2DInvalid
         }
+        return CLLocationCoordinate2DMake(latitude, longitude)
     }
 
     public var startDate: Date? {
-        get {
-            return Strava.dateFromString(startDateString)
-        }
+        return Strava.dateFromString(startDateString)
     }
 
     public var startDateLocal: Date? {
-        get {
-            return Strava.dateFromString(startDateLocalString)
-        }
+        return Strava.dateFromString(startDateLocalString)
     }
 
 }

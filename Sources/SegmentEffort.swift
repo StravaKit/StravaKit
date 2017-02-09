@@ -86,15 +86,11 @@ public struct SegmentEffort {
     }
 
     public var startDate: Date? {
-        get {
-            return Strava.dateFromString(startDateString)
-        }
+        return Strava.dateFromString(startDateString)
     }
 
     public var startDateLocal: Date? {
-        get {
-            return Strava.dateFromString(startDateLocalString)
-        }
+        return Strava.dateFromString(startDateLocalString)
     }
 
 }
