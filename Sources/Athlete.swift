@@ -123,5 +123,5 @@ public struct Athlete {
             Athlete(dictionary: d)
         }
     }
-    
+
 }

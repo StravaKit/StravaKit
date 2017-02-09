@@ -96,5 +96,5 @@ public struct SegmentEffort {
             return Strava.dateFromString(startDateLocalString)
         }
     }
-    
+
 }

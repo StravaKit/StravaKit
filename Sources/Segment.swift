@@ -150,5 +150,5 @@ public struct Segment {
             return Strava.dateFromString(updatedAtString)
         }
     }
-    
+
 }

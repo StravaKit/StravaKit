@@ -209,5 +209,5 @@ open class Strava {
         }
         return nil
     }
-    
+
 }

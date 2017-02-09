@@ -175,7 +175,7 @@ open class DefaultRequestor: Requestor {
                 let error = Strava.error(.undefinedError, reason: "Unknown Error")
                 completionHandler?(nil, error)
             }
-        }) 
+        })
         task.resume()
         return task
     }
@@ -188,9 +188,9 @@ open class DefaultRequestor: Requestor {
         guard let data = data else {
             return
         }
-        
+
         let string = String(data: data, encoding: String.Encoding.utf8)
         print("Response: \(string)")
     }
-    
+
 }

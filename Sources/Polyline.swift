@@ -59,7 +59,7 @@ internal class Polyline {
         if decodedCoordinates.count > 0 {
             return decodedCoordinates
         }
-        
+
         return nil
     }
 
@@ -90,14 +90,14 @@ internal class Polyline {
         if (componentCounter == 6) && ((currentChar & 0x20) == 0x20) {
             throw PolylineError.singleCoordinateDecodingError
         }
-        
+
         if (coordinate & 0x01) == 0x01 {
             coordinate = ~(coordinate >> 1)
         } else {
             coordinate = coordinate >> 1
         }
-        
+
         return Double(coordinate) / precision
     }
-    
+
 }

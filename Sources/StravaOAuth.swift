@@ -270,5 +270,5 @@ public extension Strava {
     internal static func queryStringValue(_ aURL: URL, name: String) -> String? {
         return URLComponents(url: aURL, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == name }).first?.value
     }
-    
+
 }

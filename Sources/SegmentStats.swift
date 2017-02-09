@@ -38,5 +38,5 @@ public struct SegmentStats {
             return Strava.dateFromString(prDateString)
         }
     }
-    
+
 }
