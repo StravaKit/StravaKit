@@ -124,31 +124,23 @@ public struct Segment {
     }
 
     public var coordinates: [CLLocationCoordinate2D]? {
-        get {
-            if let points = points,
-                let coordinates = Polyline.decodePolyline(points) {
-                return coordinates
-            }
-            return nil
+        if let points = points,
+            let coordinates = Polyline.decodePolyline(points) {
+            return coordinates
         }
+        return nil
     }
 
     public var starredDate: Date? {
-        get {
-            return Strava.dateFromString(starredDateString)
-        }
+        return Strava.dateFromString(starredDateString)
     }
 
     public var createdAt: Date? {
-        get {
-            return Strava.dateFromString(createdAtString)
-        }
+        return Strava.dateFromString(createdAtString)
     }
 
     public var updatedAt: Date? {
-        get {
-            return Strava.dateFromString(updatedAtString)
-        }
+        return Strava.dateFromString(updatedAtString)
     }
 
 }

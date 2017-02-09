@@ -30,15 +30,11 @@ public struct Photo {
     internal let createdAtString: String?
 
     public var uploadedAt: Date? {
-        get {
-            return Strava.dateFromString(uploadedAtString)
-        }
+        return Strava.dateFromString(uploadedAtString)
     }
 
     public var createdAt: Date? {
-        get {
-            return Strava.dateFromString(createdAtString)
-        }
+        return Strava.dateFromString(createdAtString)
     }
 
     /**
@@ -75,21 +71,17 @@ public struct Photo {
     }
 
     public var photoURLs: [PhotoURL]? {
-        get {
-            return PhotoURL.photoURLs(urls)
-        }
+        return PhotoURL.photoURLs(urls)
     }
 
     public var coordinate: CLLocationCoordinate2D {
-        get {
-            if let location = location, location.count == 2,
-                let latitude = location.first,
-                let longitude = location.last {
-                let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-                return coordinate
-            }
-            return kCLLocationCoordinate2DInvalid
+        if let location = location, location.count == 2,
+            let latitude = location.first,
+            let longitude = location.last {
+            let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+            return coordinate
         }
+        return kCLLocationCoordinate2DInvalid
     }
 }
 

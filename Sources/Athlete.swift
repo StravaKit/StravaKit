@@ -31,45 +31,41 @@ public struct Athlete {
     internal let email: String?
 
     public var fullName: String {
-        get {
-            return "\(firstName) \(lastName)"
-        }
+        return "\(firstName) \(lastName)"
     }
 
     public var dictionary: JSONDictionary {
-        get {
-            var dictionary: JSONDictionary = [
-                "id" : athleteId,
-                "resource_state" : resourceState,
-                "firstname" : firstName,
-                "lastname" : lastName,
-                "city" : city,
-                "state" : state,
-                "country" : country,
-                "profile" : profileImageURL.absoluteString,
-                "profile_medium" : profileMediumImageURL.absoluteString,
-                "sex" : sex,
-                "premium" : premium
-            ]
+        var dictionary: JSONDictionary = [
+            "id" : athleteId,
+            "resource_state" : resourceState,
+            "firstname" : firstName,
+            "lastname" : lastName,
+            "city" : city,
+            "state" : state,
+            "country" : country,
+            "profile" : profileImageURL.absoluteString,
+            "profile_medium" : profileMediumImageURL.absoluteString,
+            "sex" : sex,
+            "premium" : premium
+        ]
 
-            if let followerCount = followerCount {
-                dictionary["follower_count"] = followerCount
-            }
-            if let friendCount = friendCount {
-                dictionary["friend_count"] = friendCount
-            }
-            if let mutualFriendCount = mutualFriendCount {
-                dictionary["mutual_friend_count"] = mutualFriendCount
-            }
-            if let measurementPreference = measurementPreference {
-                dictionary["measurement_preference"] = measurementPreference
-            }
-            if let email = email {
-                dictionary["email"] = email
-            }
-
-            return dictionary
+        if let followerCount = followerCount {
+            dictionary["follower_count"] = followerCount
         }
+        if let friendCount = friendCount {
+            dictionary["friend_count"] = friendCount
+        }
+        if let mutualFriendCount = mutualFriendCount {
+            dictionary["mutual_friend_count"] = mutualFriendCount
+        }
+        if let measurementPreference = measurementPreference {
+            dictionary["measurement_preference"] = measurementPreference
+        }
+        if let email = email {
+            dictionary["email"] = email
+        }
+
+        return dictionary
     }
 
     /**

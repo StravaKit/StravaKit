@@ -104,18 +104,14 @@ open class Strava {
      Indicates if the current athlete is defined with a profile and access token.
      */
     open static var isAuthorized: Bool {
-        get {
-            return sharedInstance.accessToken != nil && sharedInstance.athlete != nil
-        }
+        return sharedInstance.accessToken != nil && sharedInstance.athlete != nil
     }
 
     /**
      Current Athlete which is authorized.
      */
     open static var currentAthlete: Athlete? {
-        get {
-            return sharedInstance.athlete
-        }
+        return sharedInstance.athlete
     }
 
     /**
