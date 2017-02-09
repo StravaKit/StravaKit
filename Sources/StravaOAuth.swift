@@ -164,10 +164,10 @@ public extension Strava {
      ```swift
      Strava.deauthorize { (success, error) in
          if success {
-             // TODO: change UI for authorized state
+             // Note: change UI for authorized state
          }
          else {
-             // TODO: warn user that deauthorization failed
+             // Note: warn user that deauthorization failed
              if let error = error {
                  print("Error: \(error.localizedDescription)")
              }
