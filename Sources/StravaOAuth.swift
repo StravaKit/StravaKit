@@ -9,7 +9,7 @@
 import Foundation
 
 /** Authorization Completed Notification */
-public let StravaAuthorizationCompletedNotification : String = "StravaAuthorizationCompleted"
+public let StravaAuthorizationCompletedNotification: String = "StravaAuthorizationCompleted"
 
 /** Status Key */
 public let StravaStatusKey: String = "status"
@@ -79,7 +79,7 @@ public extension Strava {
             let redirectURI = sharedInstance.redirectURI
             else { return nil }
 
-        let parameters : JSONDictionary = [
+        let parameters: JSONDictionary = [
             "client_id" : clientId,
             "response_type" : "code",
             "redirect_uri" : redirectURI,

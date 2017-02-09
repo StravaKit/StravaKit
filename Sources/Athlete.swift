@@ -19,8 +19,8 @@ public struct Athlete {
     public let city: String
     public let state: String
     public let country: String
-    public let profileImageURL : URL
-    public let profileMediumImageURL : URL
+    public let profileImageURL: URL
+    public let profileMediumImageURL: URL
     public let sex: String
     public let premium: Bool
 

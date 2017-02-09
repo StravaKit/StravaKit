@@ -27,7 +27,7 @@ internal class JSONSupport {
     }
 
     func value<T>(_ key: String, required: Bool = true, nilValue: T? = nil) -> T? {
-        var warnings : [String] = []
+        var warnings: [String] = []
         if required && isJSONDebuggingEnabled() {
             if let _ = dictionary[key] as? T {
                 // No warnings

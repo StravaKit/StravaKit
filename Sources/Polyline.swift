@@ -71,7 +71,7 @@ internal class Polyline {
 
         guard position < length else { throw PolylineError.singleCoordinateDecodingError }
 
-        let bitMask:Int8 = Int8(0x1F)
+        let bitMask: Int8 = Int8(0x1F)
 
         var coordinate: Int32 = 0
 

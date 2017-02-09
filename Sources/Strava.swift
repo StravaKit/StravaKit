@@ -188,12 +188,12 @@ open class Strava {
         for key in parameters.keys {
             let value = parameters[key]
             if let stringValue = value as? String {
-                let queryItem : URLQueryItem = URLQueryItem(name: key, value: stringValue)
+                let queryItem: URLQueryItem = URLQueryItem(name: key, value: stringValue)
                 queryItems.append(queryItem)
             }
             else if let value = value {
                 let stringValue = "\(value)"
-                let queryItem : URLQueryItem = URLQueryItem(name: key, value: stringValue)
+                let queryItem: URLQueryItem = URLQueryItem(name: key, value: stringValue)
                 queryItems.append(queryItem)
             }
         }

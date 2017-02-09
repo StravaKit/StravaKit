@@ -35,7 +35,7 @@ public protocol Requestor {
 /**
  Default Requestor used by the Strava class as the real implementation for requests.
  */
-open class DefaultRequestor : Requestor {
+open class DefaultRequestor: Requestor {
 
     /** Base URL for the API endpoints. */
     open var baseUrl: String
