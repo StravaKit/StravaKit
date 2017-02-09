@@ -17,7 +17,7 @@ public struct StatsDetail {
     public let movingTime: Int
     public let elapsedTime: Int
     public let elevationGain: Float
-    
+
     public let achievementCount: Int?
 
     /**
@@ -44,7 +44,6 @@ public struct StatsDetail {
         else {
             return nil
         }
-        
     }
-    
+
 }

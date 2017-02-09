@@ -203,5 +203,5 @@ public struct Activity {
             return Strava.dateFromString(startDateLocalString)
         }
     }
-    
+
 }

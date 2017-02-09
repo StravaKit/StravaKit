@@ -111,5 +111,5 @@ public struct PhotoURL {
 
         return photoURLs.count > 0 ? photoURLs : nil
     }
-    
+
 }

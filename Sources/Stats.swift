@@ -77,5 +77,5 @@ public struct Stats {
             return nil
         }
     }
-    
+
 }

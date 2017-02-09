@@ -85,5 +85,5 @@ public struct LeaderboardEntry {
             return Strava.dateFromString(startDateLocalString)
         }
     }
-    
+
 }

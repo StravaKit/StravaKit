@@ -251,5 +251,5 @@ public extension Strava {
             }
         }
     }
-    
+
 }

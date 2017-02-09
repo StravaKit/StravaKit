@@ -1,5 +1,4 @@
 disabled_rules: # rule identifiers to exclude from running
-  - comma
   - control_statement
   - function_body_length
   - variable_name
@@ -7,7 +6,6 @@ disabled_rules: # rule identifiers to exclude from running
   - implicit_getter
   - statement_position
   - line_length
-  - trailing_whitespace
   - trailing_newline
   - type_name
   - trailing_comma
