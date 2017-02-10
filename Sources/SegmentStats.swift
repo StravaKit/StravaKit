@@ -17,6 +17,10 @@ public struct SegmentStats {
 
     internal let prDateString: String?
 
+    public var prDate: Date? {
+        return Strava.dateFromString(prDateString)
+    }
+
     /**
      Failable initializer.
      */
@@ -31,10 +35,6 @@ public struct SegmentStats {
         else {
             return nil
         }
-    }
-
-    public var prDate: Date? {
-        return Strava.dateFromString(prDateString)
     }
 
 }

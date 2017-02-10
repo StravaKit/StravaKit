@@ -80,7 +80,6 @@ internal class JSONServer {
         }
         prepare()
         do {
-            debugPrint("🚀 Taking off!")
             try server.start(8081)
             isStarted = true
         }

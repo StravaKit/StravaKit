@@ -142,7 +142,6 @@ class HomeViewController: UIViewController {
         refreshUI()
         guard let userInfo = notification?.userInfo,
             let status = userInfo[StravaStatusKey] as? String else {
-                debugPrint("🔥🔥🔥")
                 return
         }
         if status == StravaStatusSuccessValue {
