@@ -60,17 +60,31 @@
       ]
     },
     {
-      "taskName": "H: Install CocoaPod Dependencies",
+      "taskName": "H: CocoaPods - Install Dependencies",
       "isBuildCommand": false,
       "args": [
         "${workspaceRoot}/scripts/tasks.sh pod-install"
       ]
     },
     {
-      "taskName": "I: Update CocoaPod Dependencies",
+      "taskName": "I: CocoaPods - Update Dependencies",
       "isBuildCommand": false,
       "args": [
         "${workspaceRoot}/scripts/tasks.sh pod-update"
+      ]
+    },
+    {
+      "taskName": "J: CocoaPods - Lint Spec",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/scripts/tasks.sh pod-spec-lint"
+      ]
+    },
+    {
+      "taskName": "K: CocoaPods - Push Trunk",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/scripts/tasks.sh pod-trunk-push"
       ]
     }
   ]
