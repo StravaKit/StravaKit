@@ -82,6 +82,16 @@ run_pod_update() {
     bundle exec pod update
 }
 
+run_pod_spec_lint() {
+    echo "Linting Podspec..."
+    bundle exec pod spec lint
+}
+
+run_pod_trunk_push() {
+    echo "Linting Podspec..."
+    bundle exec pod trunk push
+}
+
 run_setup() {
     echo "Setting up..."
     run_bundle_install
@@ -125,7 +135,13 @@ case "${Command}" in
     pod-update)
         run_pod_update
         ;;
+    pod-spec-lint)
+        run_pod_spec_lint
+        ;;
+    pod-trunk-push)
+        run_pod_trunk_push
+        ;;
     *)
-        echo "Usage: `basename $0` { build | clean | jazzy | setup | all | bundle-install | pod-install | pod-update }"
+        echo "Usage: `basename $0` { build | clean | jazzy | setup | all | bundle-install | pod-install | pod-update | pod-spec-lint | pod-trunk-push }"
         ;;
 esac
