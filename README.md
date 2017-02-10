@@ -17,7 +17,7 @@ See [Change Log] and [To Do List] for completed features and future plans.
 [StravaKit] is available through [CocoaPods]. To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'StravaKit', '~> 0.7'
+pod 'StravaKit', '~> 0.9'
 ```
 
 ## Carthage
@@ -27,7 +27,7 @@ StravaKit can also be built using [Carthage].
 Add the following line to your Cartfile:
 
 ```sh
-github "StravaKit/StravaKit" ~> 0.7
+github "StravaKit/StravaKit" ~> 0.9
 ```
 
 ## Beta Status
@@ -63,7 +63,7 @@ MIT
 
 ## Author
 
-Brennan Stehling - 2016
+Brennan Stehling - 2016-2017
 
 # Examples
 
