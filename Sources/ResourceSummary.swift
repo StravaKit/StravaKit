@@ -12,8 +12,8 @@ import Foundation
  Model Representation of a resource summary.
  */
 public struct ResourceSummary {
-    let resourceId: Int
-    let resourceState: Int
+    public let resourceId: Int
+    public let resourceState: Int
 
     /**
      Failable initializer.

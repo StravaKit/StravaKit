@@ -93,7 +93,6 @@ open class DefaultRequestor: Requestor {
         let task = session.dataTask(with: request, completionHandler: { [weak self] data, response, error in
             guard let httpResponse = response as? HTTPURLResponse
                 else {
-                    debugPrint("🔥🔥🔥")
                     fatalError("Response must be an instance of NSHTTPURLResponse")
             }
 

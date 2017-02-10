@@ -28,7 +28,7 @@ public struct Athlete {
     public let friendCount: Int?
     public let mutualFriendCount: Int?
     public let measurementPreference: String?
-    internal let email: String?
+    public let email: String?
 
     public var fullName: String {
         return "\(firstName) \(lastName)"

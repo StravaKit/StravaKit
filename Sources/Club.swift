@@ -12,29 +12,29 @@ import Foundation
  Model Representation of a club.
  */
 public struct Club {
-    let clubId: Int
-    let resourceState: Int
-    let name: String
-    let profileMediumURL: URL
-    let profileURL: URL
-    let sportType: String
-    let city: String
-    let state: String
-    let country: String
-    let isPrivate: Bool
-    let memberCount: Int
-    let featured: Bool
-    let verified: Bool
-    let url: String
+    public let clubId: Int
+    public let resourceState: Int
+    public let name: String
+    public let profileMediumURL: URL
+    public let profileURL: URL
+    public let sportType: String
+    public let city: String
+    public let state: String
+    public let country: String
+    public let isPrivate: Bool
+    public let memberCount: Int
+    public let featured: Bool
+    public let verified: Bool
+    public let url: String
 
-    let coverPhotoURL: URL?
-    let coverPhotoSmallURL: URL?
-    let clubDescription: String?
-    let clubType: String?
-    let membership: String?
-    let followingCount: Int?
-    let admin: Bool?
-    let owner: Bool?
+    public let coverPhotoURL: URL?
+    public let coverPhotoSmallURL: URL?
+    public let clubDescription: String?
+    public let clubType: String?
+    public let membership: String?
+    public let followingCount: Int?
+    public let admin: Bool?
+    public let owner: Bool?
 
     /**
      Failable initializer.

@@ -12,19 +12,19 @@ import Foundation
  Model Representation of a route.
  */
 public struct Route {
-    let routeId: Int
-    let name: String
-    let routeDescription: String
-    let athlete: Athlete
-    let distance: Double
-    let elevationGain: Double
-    let map: Map
-    let isPrivate: Bool
-    let resourceState: Int
-    let starred: Bool
-    let subType: Int
-    let timestamp: Int
-    let type: Int
+    public let routeId: Int
+    public let name: String
+    public let routeDescription: String
+    public let athlete: Athlete
+    public let distance: Double
+    public let elevationGain: Double
+    public let map: Map
+    public let isPrivate: Bool
+    public let resourceState: Int
+    public let starred: Bool
+    public let subType: Int
+    public let timestamp: Int
+    public let type: Int
 
     let segments: [Segment]?
 
