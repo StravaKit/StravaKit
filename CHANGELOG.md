@@ -2,6 +2,7 @@
 
 Version | Changes
 --- | ---
+**0.9.1** | Corrects behavior for athlete zones
 **0.9.0** | Migrates code base to Swift 3
 **0.8.0** | Adds support for athlete zones
 **0.7.0** | Revises code to use flatMap and other common Swift patterns
