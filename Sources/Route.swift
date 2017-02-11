@@ -32,7 +32,7 @@ public struct Route {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let routeId: Int = s.value("id"),
             let name: String = s.value("name"),
             let routeDescription: String = s.value("description"),
@@ -47,32 +47,29 @@ public struct Route {
             let starred: Bool = s.value("starred"),
             let subType: Int = s.value("sub_type"),
             let timestamp: Int = s.value("timestamp"),
-            let type: Int = s.value("type") {
-            self.routeId = routeId
-            self.name = name
-            self.routeDescription = routeDescription
-            self.athlete = athlete
-            self.distance = distance
-            self.elevationGain = elevationGain
-            self.map = map
-            self.isPrivate = isPrivate
-            self.resourceState = resourceState
-            self.starred = starred
-            self.subType = subType
-            self.timestamp = timestamp
-            self.type = type
+            let type: Int = s.value("type") else {
+                return nil
+        }
+        self.routeId = routeId
+        self.name = name
+        self.routeDescription = routeDescription
+        self.athlete = athlete
+        self.distance = distance
+        self.elevationGain = elevationGain
+        self.map = map
+        self.isPrivate = isPrivate
+        self.resourceState = resourceState
+        self.starred = starred
+        self.subType = subType
+        self.timestamp = timestamp
+        self.type = type
 
-            if let segmentsDictionaries: JSONArray = s.value("segments"),
-                let segments: [Segment] = Segment.segments(segmentsDictionaries) {
-                self.segments = segments
-            }
-            else {
-                self.segments = nil
-            }
-
+        if let segmentsDictionaries: JSONArray = s.value("segments"),
+            let segments: [Segment] = Segment.segments(segmentsDictionaries) {
+            self.segments = segments
         }
         else {
-            return nil
+            self.segments = nil
         }
     }
 

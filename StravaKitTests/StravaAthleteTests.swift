@@ -328,4 +328,90 @@ class StravaAthleteTests: XCTestCase {
         }
     }
 
+    func testGetAthleteZonesGood() {
+        let expectation = self.expectation(description: "API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("athlete-zones-good")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getAthleteZones(page) { (zones, error) in
+            XCTAssertNotNil(zones)
+            XCTAssertNil(error)
+            XCTAssertTrue(zones?.heartRate?.zones.count == 5)
+            XCTAssertTrue(zones?.power?.zones.count == 7)
+            expectation.fulfill()
+        }
+
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetAthleteZonesBad() {
+        let expectation = self.expectation(description: "API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("athlete-zones-bad")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getAthleteZones() { (zones, error) in
+            XCTAssertNil(zones)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetAthleteZonesInvalid() {
+        let expectation = self.expectation(description: "API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = JSONLoader.sharedInstance.loadJSON("invalid")
+        jsonRequestor.error = nil
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        let page = Page(page: 1, perPage: 20)
+
+        Strava.getAthleteZones(page) { (zones, error) in
+            XCTAssertNil(zones)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
+            // do nothing
+        }
+    }
+
+    func testGetAthleteZonesWithError() {
+        let expectation = self.expectation(description: "API Call")
+
+        let jsonRequestor = JSONRequestor()
+        jsonRequestor.response = nil
+        jsonRequestor.error = NSError(domain: "Testing", code: 500, userInfo: nil)
+        Strava.sharedInstance.alternateRequestor = jsonRequestor
+
+        Strava.getAthleteZones() { (zones, error) in
+            XCTAssertNil(zones)
+            XCTAssertNotNil(error)
+            expectation.fulfill()
+        }
+
+        let timeout: TimeInterval = 120
+        self.waitForExpectations(timeout: timeout) { (error) in
+            // do nothing
+        }
+    }
+
 }

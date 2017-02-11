@@ -24,26 +24,24 @@ public struct StatsDetail {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let count: Int = s.value("count"),
             let distance: Float = s.value("distance"),
             let movingTime: Int = s.value("moving_time"),
             let elapsedTime: Int = s.value("elapsed_time"),
-            let elevationGain: Float = s.value("elevation_gain") {
-
-            self.count = count
-            self.distance = distance
-            self.movingTime = movingTime
-            self.elapsedTime = elapsedTime
-            self.elevationGain = elevationGain
-
-            // Optional Properties
-
-            self.achievementCount = s.value("achievement_count", required: false)
+            let elevationGain: Float = s.value("elevation_gain") else {
+                return nil
         }
-        else {
-            return nil
-        }
+
+        self.count = count
+        self.distance = distance
+        self.movingTime = movingTime
+        self.elapsedTime = elapsedTime
+        self.elevationGain = elevationGain
+
+        // Optional Properties
+
+        self.achievementCount = s.value("achievement_count", required: false)
     }
 
 }

@@ -22,22 +22,20 @@ public struct Leaderboard {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let effortCount: Int = s.value("effort_count"),
             let entryCount: Int = s.value("entry_count"),
             let neighborhoodCount: Int = s.value("neighborhood_count"),
             let komType: String = s.value("kom_type"),
-            let entryDictionaries: JSONArray = s.value("entries") {
-            self.effortCount = effortCount
-            self.entryCount = entryCount
-            self.neighborhoodCount = neighborhoodCount
-            self.komType = komType
-            self.entries = entryDictionaries.flatMap { (d) in
-                return LeaderboardEntry(dictionary: d)
-            }
+            let entryDictionaries: JSONArray = s.value("entries") else {
+                return nil
         }
-        else {
-            return nil
+        self.effortCount = effortCount
+        self.entryCount = entryCount
+        self.neighborhoodCount = neighborhoodCount
+        self.komType = komType
+        self.entries = entryDictionaries.flatMap { (d) in
+            return LeaderboardEntry(dictionary: d)
         }
     }
 }

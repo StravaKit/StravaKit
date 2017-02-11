@@ -193,8 +193,8 @@ public extension Strava {
     }
 
     internal static func handleAthleteZonesResponse(_ response: Any?, completionHandler: ((_ zones: Zones?, _ error: NSError?) -> ())?) {
-        if let dictionary = response as? JSONDictionary {
-            let zones = Zones(dictionary: dictionary)
+        if let dictionary = response as? JSONDictionary,
+            let zones = Zones(dictionary: dictionary) {
             DispatchQueue.main.async {
                 completionHandler?(zones, nil)
             }

@@ -19,15 +19,13 @@ public struct ResourceSummary {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let resourceId: Int = s.value("id"),
-            let resourceState: Int = s.value("resource_state") {
-            self.resourceId = resourceId
-            self.resourceState = resourceState
+            let resourceState: Int = s.value("resource_state") else {
+                return nil
         }
-        else {
-            return nil
-        }
+        self.resourceId = resourceId
+        self.resourceState = resourceState
     }
 
 }

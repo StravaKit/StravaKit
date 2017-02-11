@@ -18,14 +18,12 @@ internal struct Coordinate {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let latitude = dictionary["latitude"] as? Double,
-            let longitude = dictionary["longitude"] as? Double {
-            self.latitude = latitude
-            self.longitude = longitude
+        guard let latitude = dictionary["latitude"] as? Double,
+            let longitude = dictionary["longitude"] as? Double else {
+                return nil
         }
-        else {
-            return nil
-        }
+        self.latitude = latitude
+        self.longitude = longitude
     }
 
     static func coordinates(_ json: JSONArray) -> [Coordinate] {
@@ -49,15 +47,13 @@ internal struct PolylineData {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let polyline = dictionary["polyline"] as? String,
-            let coordinatesDictionary = dictionary["coordinates"] as? JSONArray {
-            let coordinates = Coordinate.coordinates(coordinatesDictionary)
-            self.polyline = polyline
-            self.coordinates = coordinates
+        guard let polyline = dictionary["polyline"] as? String,
+            let coordinatesDictionary = dictionary["coordinates"] as? JSONArray else {
+                return nil
         }
-        else {
-            return nil
-        }
+        let coordinates = Coordinate.coordinates(coordinatesDictionary)
+        self.polyline = polyline
+        self.coordinates = coordinates
     }
 
     static func loadJSONData(_ json: JSONArray) -> [PolylineData] {

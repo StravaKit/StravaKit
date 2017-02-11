@@ -40,7 +40,7 @@ public struct Club {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let clubId: Int = s.value("id"),
             let resourceState: Int = s.value("resource_state"),
             let name: String = s.value("name"),
@@ -56,48 +56,46 @@ public struct Club {
             let memberCount: Int = s.value("member_count"),
             let featured: Bool = s.value("featured"),
             let verified: Bool = s.value("verified"),
-            let url: String = s.value("url") {
-            self.clubId = clubId
-            self.resourceState = resourceState
-            self.name = name
-            self.profileMediumURL = profileMediumURL
-            self.profileURL = profileURL
-            self.sportType = sportType
-            self.city = city
-            self.state = state
-            self.country = country
-            self.isPrivate = isPrivate
-            self.memberCount = memberCount
-            self.featured = featured
-            self.verified = verified
-            self.url = url
+            let url: String = s.value("url") else {
+                return nil
+        }
+        self.clubId = clubId
+        self.resourceState = resourceState
+        self.name = name
+        self.profileMediumURL = profileMediumURL
+        self.profileURL = profileURL
+        self.sportType = sportType
+        self.city = city
+        self.state = state
+        self.country = country
+        self.isPrivate = isPrivate
+        self.memberCount = memberCount
+        self.featured = featured
+        self.verified = verified
+        self.url = url
 
-            // Optional Properties
+        // Optional Properties
 
-            if let coverPhoto: String = s.value("cover_photo", required: false) {
-                self.coverPhotoURL = URL(string: coverPhoto)
-            }
-            else {
-                self.coverPhotoURL = nil
-            }
-
-            if let coverPhotoSmall: String = s.value("cover_photo_small", required: false) {
-                self.coverPhotoSmallURL = URL(string: coverPhotoSmall)
-            }
-            else {
-                self.coverPhotoSmallURL = nil
-            }
-
-            self.clubDescription = s.value("description", required: false)
-            self.clubType = s.value("club_type", required: false)
-            self.membership = s.value("membership", required: false)
-            self.followingCount = s.value("following_count", required: false)
-            self.admin = s.value("admin", required: false)
-            self.owner = s.value("owner", required: false)
+        if let coverPhoto: String = s.value("cover_photo", required: false) {
+            self.coverPhotoURL = URL(string: coverPhoto)
         }
         else {
-            return nil
+            self.coverPhotoURL = nil
         }
+
+        if let coverPhotoSmall: String = s.value("cover_photo_small", required: false) {
+            self.coverPhotoSmallURL = URL(string: coverPhotoSmall)
+        }
+        else {
+            self.coverPhotoSmallURL = nil
+        }
+
+        self.clubDescription = s.value("description", required: false)
+        self.clubType = s.value("club_type", required: false)
+        self.membership = s.value("membership", required: false)
+        self.followingCount = s.value("following_count", required: false)
+        self.admin = s.value("admin", required: false)
+        self.owner = s.value("owner", required: false)
     }
 
     public static func clubs(_ dictionaries: JSONArray) -> [Club] {
