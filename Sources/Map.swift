@@ -22,22 +22,20 @@ public struct Map {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let mapId: String = s.value("id"),
             let summaryPolyline: String = s.value("summary_polyline"),
-            let resourceState: Int = s.value("resource_state") {
-
-            self.mapId = mapId
-            self.summaryPolyline = summaryPolyline
-            self.resourceState = resourceState
-
-            // Optional Properties
-
-            self.polyline = s.value("polyline", required: false)
+            let resourceState: Int = s.value("resource_state") else {
+                return nil
         }
-        else {
-            return nil
-        }
+
+        self.mapId = mapId
+        self.summaryPolyline = summaryPolyline
+        self.resourceState = resourceState
+
+        // Optional Properties
+
+        self.polyline = s.value("polyline", required: false)
     }
 
     public var coordinates: [CLLocationCoordinate2D]? {

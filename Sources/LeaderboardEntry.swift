@@ -34,7 +34,7 @@ public struct LeaderboardEntry {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let athleteName: String = s.value("athlete_name"),
             let athleteId: Int = s.value("athlete_id"),
             let athleteGender: String = s.value("athlete_gender"),
@@ -49,29 +49,27 @@ public struct LeaderboardEntry {
             let rank: Int = s.value("rank"),
             let neighborhoodIndex: Int = s.value("neighborhood_index"),
             let athleteProfile: String = s.value("athlete_profile"),
-            let athleteProfileURL = URL(string: athleteProfile) {
-            self.athleteName = athleteName
-            self.athleteId = athleteId
-            self.athleteGender = athleteGender
-            self.averageWatts = averageWatts
-            self.distance = distance
-            self.elapsedTime = elapsedTime
-            self.movingTime = movingTime
-            self.startDateString = startDate
-            self.startDateLocalString = startDateLocal
-            self.activityId = activityId
-            self.effortId = effortId
-            self.rank = rank
-            self.neighborhoodIndex = neighborhoodIndex
-            self.athleteProfileURL = athleteProfileURL
-
-            // Optional Properties
-
-            self.averageHr = s.value("average_hr", required: false)
+            let athleteProfileURL = URL(string: athleteProfile) else {
+                return nil
         }
-        else {
-            return nil
-        }
+        self.athleteName = athleteName
+        self.athleteId = athleteId
+        self.athleteGender = athleteGender
+        self.averageWatts = averageWatts
+        self.distance = distance
+        self.elapsedTime = elapsedTime
+        self.movingTime = movingTime
+        self.startDateString = startDate
+        self.startDateLocalString = startDateLocal
+        self.activityId = activityId
+        self.effortId = effortId
+        self.rank = rank
+        self.neighborhoodIndex = neighborhoodIndex
+        self.athleteProfileURL = athleteProfileURL
+
+        // Optional Properties
+
+        self.averageHr = s.value("average_hr", required: false)
     }
 
     public var startDate: Date? {

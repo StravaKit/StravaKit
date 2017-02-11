@@ -72,7 +72,7 @@ public struct Athlete {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let athleteId: Int = s.value("id"),
             let resourceState: Int = s.value("resource_state"),
             let firstName: String = s.value("firstname"),
@@ -85,30 +85,29 @@ public struct Athlete {
             let profileMedium: String = s.value("profile_medium"),
             let profileMediumImageURL = URL(string: profileMedium),
             let sex: String = s.value("sex"),
-            let premium: Bool = s.value("premium") {
-            self.athleteId = athleteId
-            self.resourceState = resourceState
-            self.firstName = firstName
-            self.lastName = lastName
-            self.city = city
-            self.state = state
-            self.country = country
-            self.profileImageURL = profileImageURL
-            self.profileMediumImageURL = profileMediumImageURL
-            self.sex = sex
-            self.premium = premium
-
-            // Optional Properties
-
-            self.followerCount = s.value("follower_count", required: false, nilValue: 0)
-            self.friendCount = s.value("friend_count", required: false, nilValue: 0)
-            self.mutualFriendCount = s.value("mutual_friend_count", required: false, nilValue: 0)
-            self.measurementPreference = s.value("measurement_preference", required: false, nilValue: "meters")
-            self.email = s.value("email", required: false, nilValue: nil)
+            let premium: Bool = s.value("premium")
+            else {
+                return nil
         }
-        else {
-            return nil
-        }
+        self.athleteId = athleteId
+        self.resourceState = resourceState
+        self.firstName = firstName
+        self.lastName = lastName
+        self.city = city
+        self.state = state
+        self.country = country
+        self.profileImageURL = profileImageURL
+        self.profileMediumImageURL = profileMediumImageURL
+        self.sex = sex
+        self.premium = premium
+
+        // Optional Properties
+
+        self.followerCount = s.value("follower_count", required: false, nilValue: 0)
+        self.friendCount = s.value("friend_count", required: false, nilValue: 0)
+        self.mutualFriendCount = s.value("mutual_friend_count", required: false, nilValue: 0)
+        self.measurementPreference = s.value("measurement_preference", required: false, nilValue: "meters")
+        self.email = s.value("email", required: false, nilValue: nil)
     }
 
     /**

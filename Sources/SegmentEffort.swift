@@ -36,7 +36,7 @@ public struct SegmentEffort {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let effortId: Int = s.value("id"),
             let resourceState: Int = s.value("resource_state"),
             let name: String = s.value("name"),
@@ -54,29 +54,27 @@ public struct SegmentEffort {
             let deviceWatts: Bool = s.value("device_watts"),
             let averageWatts: Double = s.value("average_watts"),
             let segmentDictionary: JSONDictionary = s.value("segment"),
-            let segment = Segment(dictionary: segmentDictionary) {
-            self.effortId = effortId
-            self.resourceState = resourceState
-            self.name = name
-            self.activity = activity
-            self.athlete = athlete
-            self.elapsedTime = elapsedTime
-            self.movingTime = movingTime
-            self.startDateString = startDate
-            self.startDateLocalString = startDateLocal
-            self.distance = distance
-            self.startIndex = startIndex
-            self.endIndex = endIndex
-            self.deviceWatts = deviceWatts
-            self.averageWatts = averageWatts
-            self.segment = segment
+            let segment = Segment(dictionary: segmentDictionary) else {
+                return nil
+        }
+        self.effortId = effortId
+        self.resourceState = resourceState
+        self.name = name
+        self.activity = activity
+        self.athlete = athlete
+        self.elapsedTime = elapsedTime
+        self.movingTime = movingTime
+        self.startDateString = startDate
+        self.startDateLocalString = startDateLocal
+        self.distance = distance
+        self.startIndex = startIndex
+        self.endIndex = endIndex
+        self.deviceWatts = deviceWatts
+        self.averageWatts = averageWatts
+        self.segment = segment
 
-            self.prRank = s.value("pr_rank", required: false)
-            self.komRank = s.value("kom_rank", required: false)
-        }
-        else {
-            return nil
-        }
+        self.prRank = s.value("pr_rank", required: false)
+        self.komRank = s.value("kom_rank", required: false)
     }
 
     public static func efforts(_ dictionaries: [JSONDictionary]) -> [SegmentEffort] {

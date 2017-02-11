@@ -19,15 +19,13 @@ public struct Zone {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let max: Int = s.value("max"),
-            let min: Int = s.value("min") {
-            self.max = max
-            self.min = min
+            let min: Int = s.value("min") else {
+                return nil
         }
-        else {
-            return nil
-        }
+        self.max = max
+        self.min = min
     }
 
     public static func zones(_ array: JSONArray) -> [Zone]? {
@@ -52,16 +50,14 @@ public struct ZoneCollection {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let custom: Bool = s.value("custom_zones", required: false, nilValue: false),
             let zonesArray: JSONArray = s.value("zones"), zonesArray.count > 0,
-            let zones = Zone.zones(zonesArray) {
-            self.custom = custom
-            self.zones = zones
+            let zones = Zone.zones(zonesArray) else {
+                return nil
         }
-        else {
-            return nil
-        }
+        self.custom = custom
+        self.zones = zones
     }
 
 }

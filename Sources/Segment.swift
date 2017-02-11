@@ -49,7 +49,7 @@ public struct Segment {
      Failable initializer.
      */
     init?(dictionary: JSONDictionary) {
-        if let s = JSONSupport(dictionary: dictionary),
+        guard let s = JSONSupport(dictionary: dictionary),
             let segmentId: Int = s.value("id"),
             let resourceState: Int = s.value("resource_state"),
             let name: String = s.value("name"),
@@ -61,51 +61,49 @@ public struct Segment {
             let endLatitude: Double = end_latlng.first,
             let endLongitude: Double = end_latlng.last,
             let climbCategory: Int = s.value("climb_category"),
-            let starred: Bool = s.value("starred") {
-            let startCoordinate = CLLocationCoordinate2DMake(startLatitude, startLongitude)
-            let endCoordinate = CLLocationCoordinate2DMake(endLatitude, endLongitude)
+            let starred: Bool = s.value("starred") else {
+                return nil
+        }
+        let startCoordinate = CLLocationCoordinate2DMake(startLatitude, startLongitude)
+        let endCoordinate = CLLocationCoordinate2DMake(endLatitude, endLongitude)
 
-            self.segmentId = segmentId
-            self.resourceState = resourceState
-            self.name = name
-            self.distance = distance
-            self.startCoordinate = startCoordinate
-            self.endCoordinate = endCoordinate
-            self.climbCategory = climbCategory
-            self.starred = starred
+        self.segmentId = segmentId
+        self.resourceState = resourceState
+        self.name = name
+        self.distance = distance
+        self.startCoordinate = startCoordinate
+        self.endCoordinate = endCoordinate
+        self.climbCategory = climbCategory
+        self.starred = starred
 
-            // Optional Properties
+        // Optional Properties
 
-            self.points = s.value("points", required: false)
-            self.climbCategoryDescription = s.value("climb_category_desc", required: false)
-            self.elevationHigh = s.value("elevation_high", required: false)
-            self.elevationLow = s.value("elevation_low", required: false)
-            self.elevationDifference = s.value("elev_difference", required: false)
-            self.maximumGrade = s.value("maximum_grade", required: false)
-            self.averageGrade = s.value("average_grade", required: false)
-            self.activityType = s.value("activity_type", required: false)
-            self.starredDateString = s.value("starred_date", required: false)
-            self.isPrivate = s.value("private", required: false)
-            self.hazardous = s.value("hazardous", required: false)
-            self.city = s.value("city", required: false)
-            self.state = s.value("state", required: false)
-            self.country = s.value("country", required: false)
-            self.createdAtString = s.value("created_at", required: false)
-            self.updatedAtString = s.value("updated_at", required: false)
-            self.totalElevationGain = s.value("total_elevation_gain", required: false)
-            self.map = s.value("map", required: false)
-            self.effortCount = s.value("effort_count", required: false)
-            self.athleteCount = s.value("athlete_count", required: false)
-            self.starCount = s.value("star_count", required: false)
-            if let statsDictionary: JSONDictionary = s.value("athlete_segment_stats", required: false) {
-                self.athleteSegmentStats = SegmentStats(dictionary: statsDictionary)
-            }
-            else {
-                self.athleteSegmentStats = nil
-            }
+        self.points = s.value("points", required: false)
+        self.climbCategoryDescription = s.value("climb_category_desc", required: false)
+        self.elevationHigh = s.value("elevation_high", required: false)
+        self.elevationLow = s.value("elevation_low", required: false)
+        self.elevationDifference = s.value("elev_difference", required: false)
+        self.maximumGrade = s.value("maximum_grade", required: false)
+        self.averageGrade = s.value("average_grade", required: false)
+        self.activityType = s.value("activity_type", required: false)
+        self.starredDateString = s.value("starred_date", required: false)
+        self.isPrivate = s.value("private", required: false)
+        self.hazardous = s.value("hazardous", required: false)
+        self.city = s.value("city", required: false)
+        self.state = s.value("state", required: false)
+        self.country = s.value("country", required: false)
+        self.createdAtString = s.value("created_at", required: false)
+        self.updatedAtString = s.value("updated_at", required: false)
+        self.totalElevationGain = s.value("total_elevation_gain", required: false)
+        self.map = s.value("map", required: false)
+        self.effortCount = s.value("effort_count", required: false)
+        self.athleteCount = s.value("athlete_count", required: false)
+        self.starCount = s.value("star_count", required: false)
+        if let statsDictionary: JSONDictionary = s.value("athlete_segment_stats", required: false) {
+            self.athleteSegmentStats = SegmentStats(dictionary: statsDictionary)
         }
         else {
-            return nil
+            self.athleteSegmentStats = nil
         }
     }
 
