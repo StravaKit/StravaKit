@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Route Struct Reference</title>
+    <title>Polyline Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/Route" class="dashAnchor"></a>
-    <a title="Route Struct Reference"></a>
+    <a name="//apple_ref/swift/Struct/Polyline" class="dashAnchor"></a>
+    <a title="Polyline Struct Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">StravaKit Docs</a> (32% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">StravaKit Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Route Struct Reference
+        Polyline Struct Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -216,14 +216,27 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Route</h1>
+            <h1>Polyline</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Polyline</span></code></pre>
 
                 </div>
               </div>
-            <p>Model Representation of a route.</p>
+            <p>This class can be used for :</p>
+
+<ul>
+<li>Encoding an [CLLocation] or a [CLLocationCoordinate2D] to a polyline String</li>
+<li>Decoding a polyline String to an [CLLocation] or a [CLLocationCoordinate2D]</li>
+<li>Encoding / Decoding associated levels</li>
+</ul>
+
+<p>it is aims to produce the same results as google&rsquo;s iOS sdk not as the online
+tool which is fuzzy when it comes to rounding values</p>
+
+<p>it is based on google&rsquo;s algorithm that can be found here :</p>
+
+<p>:see: <a href="https://developers.google.com/maps/documentation/utilities/polylinealgorithm">https://developers.google.com/maps/documentation/utilities/polylinealgorithm</a></p>
 
           </section>
           <section class="section task-group-section">
@@ -232,9 +245,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV9StravaKit5Route7routeIdSi"></a>
-                    <a name="//apple_ref/swift/Property/routeId" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route7routeIdSi">routeId</a>
+                    <a name="/s:vV9StravaKit8Polyline11coordinatesGSqGSaVSC22CLLocationCoordinate2D__"></a>
+                    <a name="//apple_ref/swift/Property/coordinates" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV9StravaKit8Polyline11coordinatesGSqGSaVSC22CLLocationCoordinate2D__">coordinates</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -242,14 +255,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The array of coordinates (nil if polyline cannot be decoded)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">coordinates</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocationCoordinate2D</span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
@@ -259,9 +272,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV9StravaKit5Route4nameSS"></a>
-                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route4nameSS">name</a>
+                    <a name="/s:vV9StravaKit8Polyline15encodedPolylineSS"></a>
+                    <a name="//apple_ref/swift/Property/encodedPolyline" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV9StravaKit8Polyline15encodedPolylineSS">encodedPolyline</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -269,14 +282,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The encoded polyline</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">encodedPolyline</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -286,9 +299,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV9StravaKit5Route16routeDescriptionSS"></a>
-                    <a name="//apple_ref/swift/Property/routeDescription" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route16routeDescriptionSS">routeDescription</a>
+                    <a name="/s:vV9StravaKit8Polyline6levelsGSqGSaVs6UInt32__"></a>
+                    <a name="//apple_ref/swift/Property/levels" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV9StravaKit8Polyline6levelsGSqGSaVs6UInt32__">levels</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -296,14 +309,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The array of levels (nil if cannot be decoded, or is not provided)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">levels</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt32</span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
@@ -313,9 +326,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV9StravaKit5Route7athleteVS_7Athlete"></a>
-                    <a name="//apple_ref/swift/Property/athlete" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route7athleteVS_7Athlete">athlete</a>
+                    <a name="/s:vV9StravaKit8Polyline13encodedLevelsGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/encodedLevels" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV9StravaKit8Polyline13encodedLevelsGSqSS_">encodedLevels</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -323,14 +336,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The encoded levels (nil if cannot be encoded, or is not provided)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">encodedLevels</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -340,9 +353,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV9StravaKit5Route8distanceSd"></a>
-                    <a name="//apple_ref/swift/Property/distance" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route8distanceSd">distance</a>
+                    <a name="/s:vV9StravaKit8Polyline9locationsGSqGSaCSo10CLLocation__"></a>
+                    <a name="//apple_ref/swift/Property/locations" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV9StravaKit8Polyline9locationsGSqGSaCSo10CLLocation__">locations</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -350,16 +363,100 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The array of location (computed from coordinates)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocation</span><span class="p">]?</span></code></pre>
 
                         </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Public Methods" class="dashAnchor"></a>
+                <a href="#/Public%20Methods">
+                  <h3 class="section-name">Public Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV9StravaKit8PolylinecFT11coordinatesGSaVSC22CLLocationCoordinate2D_6levelsGSqGSaVs6UInt32__9precisionSd_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(coordinates:levels:precision:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV9StravaKit8PolylinecFT11coordinatesGSaVSC22CLLocationCoordinate2D_6levelsGSqGSaVs6UInt32__9precisionSd_S0_">init(coordinates:levels:precision:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This designated initializer encodes a <code>[CLLocationCoordinate2D]</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">coordinates</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocationCoordinate2D</span><span class="p">],</span> <span class="nv">levels</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt32</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">precision</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinates</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Array</code> of <code>CLLocationCoordinate2D</code> that you want to encode</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>levels</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The optional <code>Array</code> of levels  that you want to encode (default: <code>nil</code>)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>precision</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The precision used for encoding (default: <code>1e5</code>)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -367,9 +464,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV9StravaKit5Route13elevationGainSd"></a>
-                    <a name="//apple_ref/swift/Property/elevationGain" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route13elevationGainSd">elevationGain</a>
+                    <a name="/s:FV9StravaKit8PolylinecFT15encodedPolylineSS13encodedLevelsGSqSS_9precisionSd_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(encodedPolyline:encodedLevels:precision:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV9StravaKit8PolylinecFT15encodedPolylineSS13encodedLevelsGSqSS_9precisionSd_S0_">init(encodedPolyline:encodedLevels:precision:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -377,16 +474,62 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This designated initializer decodes a polyline <code>String</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">encodedPolyline</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">encodedLevels</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">precision</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encodedPolyline</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The polyline that you want to decode</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encodedLevels</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The levels that you want to decode (default: <code>nil</code>)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>precision</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The precision used for decoding (default: <code>1e5</code>)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -394,9 +537,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vV9StravaKit5Route3mapVS_3Map"></a>
-                    <a name="//apple_ref/swift/Property/map" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route3mapVS_3Map">map</a>
+                    <a name="/s:FV9StravaKit8PolylinecFT9locationsGSaCSo10CLLocation_6levelsGSqGSaVs6UInt32__9precisionSd_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(locations:levels:precision:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV9StravaKit8PolylinecFT9locationsGSaCSo10CLLocation_6levelsGSqGSaVs6UInt32__9precisionSd_S0_">init(locations:levels:precision:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -404,205 +547,62 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This init encodes a <code>[CLLocation]</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocation</span><span class="p">],</span> <span class="nv">levels</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt32</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">precision</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV9StravaKit5Route9isPrivateSb"></a>
-                    <a name="//apple_ref/swift/Property/isPrivate" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route9isPrivateSb">isPrivate</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>locations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Array</code> of <code>CLLocation</code> that you want to encode</p>
 
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>levels</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The optional array of levels  that you want to encode (default: <code>nil</code>)</p>
 
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV9StravaKit5Route13resourceStateSi"></a>
-                    <a name="//apple_ref/swift/Property/resourceState" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route13resourceStateSi">resourceState</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>precision</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The precision used for encoding (default: <code>1e5</code>)</p>
 
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV9StravaKit5Route7starredSb"></a>
-                    <a name="//apple_ref/swift/Property/starred" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route7starredSb">starred</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV9StravaKit5Route7subTypeSi"></a>
-                    <a name="//apple_ref/swift/Property/subType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route7subTypeSi">subType</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV9StravaKit5Route9timestampSi"></a>
-                    <a name="//apple_ref/swift/Property/timestamp" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route9timestampSi">timestamp</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vV9StravaKit5Route4typeSi"></a>
-                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vV9StravaKit5Route4typeSi">type</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Route</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:ZFV9StravaKit5Route6routesFGSaGVs10DictionarySSP___GSaS0__"></a>
-                    <a name="//apple_ref/swift/Method/routes(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFV9StravaKit5Route6routesFGSaGVs10DictionarySSP___GSaS0__">routes(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Creates route models from an array of dictionaries.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">routes</span><span class="p">(</span><span class="n">_</span> <span class="nv">dictionaries</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:9StravaKit9JSONArray">JSONArray</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Route</span><span class="p">]</span></code></pre>
-
-                        </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Global Variables  Reference</title>
+    <title>Functions  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,7 +10,7 @@
     
   </head>
   <body>
-    <a title="Global Variables  Reference"></a>
+    <a title="Functions  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">StravaKit Docs</a> (32% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="index.html">StravaKit Reference</a>
         <img id="carat" src="img/carat.png" />
-        Global Variables  Reference
+        Functions  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -215,19 +215,26 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Global Variables</h1>
-            <p>The following global variables are available globally.</p>
+            <h1>Functions</h1>
+            <p>The following functions are available globally.</p>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Functions"></a>
+                <a name="//apple_ref/swift/Section/Public Functions" class="dashAnchor"></a>
+                <a href="#/Public%20Functions">
+                  <h3 class="section-name">Public Functions</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:v9StravaKit40StravaAuthorizationCompletedNotificationSS"></a>
-                    <a name="//apple_ref/swift/Global/StravaAuthorizationCompletedNotification" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit40StravaAuthorizationCompletedNotificationSS">StravaAuthorizationCompletedNotification</a>
+                    <a name="/s:F9StravaKit17encodeCoordinatesFTGSaVSC22CLLocationCoordinate2D_9precisionSd_SS"></a>
+                    <a name="//apple_ref/swift/Function/encodeCoordinates(_:precision:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:F9StravaKit17encodeCoordinatesFTGSaVSC22CLLocationCoordinate2D_9precisionSd_SS">encodeCoordinates(_:precision:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -235,16 +242,54 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Authorization Completed Notification</p>
+                        <p>This function encodes an <code>[CLLocationCoordinate2D]</code> to a <code>String</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">StravaAuthorizationCompletedNotification</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"StravaAuthorizationCompleted"</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encodeCoordinates</span><span class="p">(</span><span class="n">_</span> <span class="nv">coordinates</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocationCoordinate2D</span><span class="p">],</span> <span class="nv">precision</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinates</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Array</code> of <code>CLLocationCoordinate2D</code> that you want to encode</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>precision</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The precision used to encode coordinates (default: <code>1e5</code>)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>String</code> representing the encoded Polyline</p>
+
                       </div>
                     </section>
                   </div>
@@ -252,9 +297,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:v9StravaKit15StravaStatusKeySS"></a>
-                    <a name="//apple_ref/swift/Global/StravaStatusKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit15StravaStatusKeySS">StravaStatusKey</a>
+                    <a name="/s:F9StravaKit15encodeLocationsFTGSaCSo10CLLocation_9precisionSd_SS"></a>
+                    <a name="//apple_ref/swift/Function/encodeLocations(_:precision:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:F9StravaKit15encodeLocationsFTGSaCSo10CLLocation_9precisionSd_SS">encodeLocations(_:precision:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -262,16 +307,54 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Status Key</p>
+                        <p>This function encodes an <code>[CLLocation]</code> to a <code>String</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">StravaStatusKey</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"status"</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encodeLocations</span><span class="p">(</span><span class="n">_</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt">CLLocation</span><span class="p">],</span> <span class="nv">precision</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinates</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Array</code> of <code>CLLocation</code> that you want to encode</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>precision</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The precision used to encode locations (default: <code>1e5</code>)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>String</code> representing the encoded Polyline</p>
+
                       </div>
                     </section>
                   </div>
@@ -279,9 +362,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:v9StravaKit14StravaErrorKeySS"></a>
-                    <a name="//apple_ref/swift/Global/StravaErrorKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit14StravaErrorKeySS">StravaErrorKey</a>
+                    <a name="/s:F9StravaKit12encodeLevelsFGSaVs6UInt32_SS"></a>
+                    <a name="//apple_ref/swift/Function/encodeLevels(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:F9StravaKit12encodeLevelsFGSaVs6UInt32_SS">encodeLevels(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -289,16 +372,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Error Key</p>
+                        <p>This function encodes an <code>[UInt32]</code> to a <code>String</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">StravaErrorKey</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"error"</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encodeLevels</span><span class="p">(</span><span class="n">_</span> <span class="nv">levels</span><span class="p">:</span> <span class="p">[</span><span class="kt">UInt32</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>levels</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>Array</code> of <code>UInt32</code> levels that you want to encode</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>String</code> representing the encoded Levels</p>
+
                       </div>
                     </section>
                   </div>
@@ -306,9 +414,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:v9StravaKit24StravaStatusSuccessValueSS"></a>
-                    <a name="//apple_ref/swift/Global/StravaStatusSuccessValue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit24StravaStatusSuccessValueSS">StravaStatusSuccessValue</a>
+                    <a name="/s:F9StravaKit14decodePolylineFTSS9precisionSd_GSqGSaVSC22CLLocationCoordinate2D__"></a>
+                    <a name="//apple_ref/swift/Function/decodePolyline(_:precision:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:F9StravaKit14decodePolylineFTSS9precisionSd_GSqGSaVSC22CLLocationCoordinate2D__">decodePolyline(_:precision:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -316,16 +424,54 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Success Value</p>
+                        <p>This function decodes a <code>String</code> to a <code>[CLLocationCoordinate2D]?</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">StravaStatusSuccessValue</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"success"</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decodePolyline</span><span class="p">(</span><span class="n">_</span> <span class="nv">encodedPolyline</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">precision</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">CLLocationCoordinate2D</span><span class="p">]?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encodedPolyline</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>String</code> representing the encoded Polyline</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>precision</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The precision used to decode coordinates (default: <code>1e5</code>)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>[CLLocationCoordinate2D]</code> representing the decoded polyline if valid, <code>nil</code> otherwise</p>
+
                       </div>
                     </section>
                   </div>
@@ -333,9 +479,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:v9StravaKit24StravaStatusFailureValueSS"></a>
-                    <a name="//apple_ref/swift/Global/StravaStatusFailureValue" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit24StravaStatusFailureValueSS">StravaStatusFailureValue</a>
+                    <a name="/s:F9StravaKit14decodePolylineFTSS9precisionSd_GSqGSaCSo10CLLocation__"></a>
+                    <a name="//apple_ref/swift/Function/decodePolyline(_:precision:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:F9StravaKit14decodePolylineFTSS9precisionSd_GSqGSaCSo10CLLocation__">decodePolyline(_:precision:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -343,105 +489,54 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Failure Value</p>
+                        <p>This function decodes a String to a [CLLocation]?</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">StravaStatusFailureValue</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"failure"</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decodePolyline</span><span class="p">(</span><span class="n">_</span> <span class="nv">encodedPolyline</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">precision</span><span class="p">:</span> <span class="kt">Double</span> <span class="o">=</span> <span class="mf">1e5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">CLLocation</span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v9StravaKit7PageKeySS"></a>
-                    <a name="//apple_ref/swift/Global/PageKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit7PageKeySS">PageKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Page Key</p>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encodedPolyline</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String representing the encoded Polyline</p>
 
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>precision</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The precision used to decode locations (default: 1e5)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">PageKey</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"page"</span></code></pre>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A [CLLocation] representing the decoded polyline if valid, nil otherwise</p>
 
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v9StravaKit10PerPageKeySS"></a>
-                    <a name="//apple_ref/swift/Global/PerPageKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit10PerPageKeySS">PerPageKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Per Page Key</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">PerPageKey</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"per_page"</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v9StravaKit13StravaBaseURLSS"></a>
-                    <a name="//apple_ref/swift/Global/StravaBaseURL" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit13StravaBaseURLSS">StravaBaseURL</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Strava Base URL</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">StravaBaseURL</span> <span class="o">=</span> <span class="s">"https://www.strava.com"</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>
@@ -449,9 +544,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:v9StravaKit17StravaErrorDomainSS"></a>
-                    <a name="//apple_ref/swift/Global/StravaErrorDomain" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit17StravaErrorDomainSS">StravaErrorDomain</a>
+                    <a name="/s:F9StravaKit12decodeLevelsFSSGSqGSaVs6UInt32__"></a>
+                    <a name="//apple_ref/swift/Function/decodeLevels(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:F9StravaKit12decodeLevelsFSSGSqGSaVs6UInt32__">decodeLevels(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -459,124 +554,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Strava Error Domain</p>
+                        <p>This function decodes a <code>String</code> to an <code>[UInt32]</code></p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">StravaErrorDomain</span> <span class="o">=</span> <span class="s">"StravaKit"</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decodeLevels</span><span class="p">(</span><span class="n">_</span> <span class="nv">encodedLevels</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">UInt32</span><span class="p">]?</span></code></pre>
 
                         </div>
                       </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v9StravaKit23RateLimitLimitHeaderKeySS"></a>
-                    <a name="//apple_ref/swift/Global/RateLimitLimitHeaderKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit23RateLimitLimitHeaderKeySS">RateLimitLimitHeaderKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Rate Limit HTTP Header Key for Limit</p>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encodedLevels</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code>String</code> representing the levels to decode</p>
 
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">RateLimitLimitHeaderKey</span> <span class="o">=</span> <span class="s">"X-Ratelimit-Limit"</span></code></pre>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>[UInt32]</code> representing the decoded Levels if the <code>String</code> is valid, <code>nil</code> otherwise</p>
 
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v9StravaKit23RateLimitUsageHeaderKeySS"></a>
-                    <a name="//apple_ref/swift/Global/RateLimitUsageHeaderKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit23RateLimitUsageHeaderKeySS">RateLimitUsageHeaderKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Rate Limit HTTP Header Key for Usage</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">RateLimitUsageHeaderKey</span> <span class="o">=</span> <span class="s">"X-Ratelimit-Usage"</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v9StravaKit17RateLimitLimitKeySS"></a>
-                    <a name="//apple_ref/swift/Global/RateLimitLimitKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit17RateLimitLimitKeySS">RateLimitLimitKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Rate Limit Notification Key for Limit</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">RateLimitLimitKey</span> <span class="o">=</span> <span class="s">"Rate-Limit-Limit"</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:v9StravaKit17RateLimitUsageKeySS"></a>
-                    <a name="//apple_ref/swift/Global/RateLimitUsageKey" class="dashAnchor"></a>
-                    <a class="token" href="#/s:v9StravaKit17RateLimitUsageKeySS">RateLimitUsageKey</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Rate Limit Notification Key for Usage</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">RateLimitUsageKey</span> <span class="o">=</span> <span class="s">"Rate-Limit-Usage"</span></code></pre>
-
-                        </div>
                       </div>
                     </section>
                   </div>
