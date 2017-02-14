@@ -779,14 +779,14 @@
     },
     {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Map.swift",
-      "line": 41,
+      "line": 43,
       "symbol": "Map.coordinates",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Map.swift",
-      "line": 49,
+      "line": 51,
       "symbol": "Map.summaryCoordinates",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -1234,42 +1234,42 @@
     },
     {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
-      "line": 110,
+      "line": 112,
       "symbol": "Segment.segments(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
-      "line": 118,
+      "line": 120,
       "symbol": "Segment.segments(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
-      "line": 124,
+      "line": 126,
       "symbol": "Segment.coordinates",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
-      "line": 132,
+      "line": 134,
       "symbol": "Segment.starredDate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
-      "line": 136,
+      "line": 138,
       "symbol": "Segment.createdAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
-      "line": 140,
+      "line": 142,
       "symbol": "Segment.updatedAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
