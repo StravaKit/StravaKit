@@ -45,6 +45,8 @@ public struct Segment {
     public let athleteSegmentStats: SegmentStats?
     public let points: String?
 
+    private let precision: Double = 0.00001
+
     /**
      Failable initializer.
      */
@@ -122,9 +124,9 @@ public struct Segment {
     }
 
     public var coordinates: [CLLocationCoordinate2D]? {
-        if let points = points,
-            let coordinates = Polyline.decodePolyline(points) {
-            return coordinates
+        if let points = points {
+            let polyline = Polyline(encodedPolyline: points)
+            return polyline.coordinates
         }
         return nil
     }

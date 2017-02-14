@@ -18,6 +18,8 @@ public struct Map {
     public let summaryPolyline: String
     public let resourceState: Int
 
+    private let precision: Double = 0.00001
+
     /**
      Failable initializer.
      */
@@ -39,19 +41,16 @@ public struct Map {
     }
 
     public var coordinates: [CLLocationCoordinate2D]? {
-        if let polyline = polyline,
-            let coordinates = Polyline.decodePolyline(polyline) {
-            return coordinates
+        if let polyline = polyline {
+            let p = Polyline(encodedPolyline: polyline)
+            return p.coordinates
         }
         return nil
     }
 
     public var summaryCoordinates: [CLLocationCoordinate2D] {
-        let polyline = Polyline.decodePolyline(summaryPolyline)
-        if let polyline = polyline {
-            return polyline
-        }
-        return []
+        let polyline = Polyline(encodedPolyline: summaryPolyline)
+        return polyline.coordinates ?? []
     }
 
 }
