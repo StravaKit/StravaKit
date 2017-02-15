@@ -2,6 +2,7 @@
 
 Version | Changes
 --- | ---
+**0.9.3** | Makes all endpoint requests public
 **0.9.2** | Updates Polyline dependency
 **0.9.1** | Corrects behavior for athlete zones
 **0.9.0** | Migrates code base to Swift 3

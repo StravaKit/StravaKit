@@ -50,7 +50,7 @@ public extension Strava {
     /**
      Initialize clientId, clientSecret and redirectURI.
      */
-    static func set(clientId: String, clientSecret: String, redirectURI: String, sandbox: Bool? = nil) {
+    public static func set(clientId: String, clientSecret: String, redirectURI: String, sandbox: Bool? = nil) {
         sharedInstance.clientId = clientId
         sharedInstance.clientSecret = clientSecret
         sharedInstance.redirectURI = redirectURI
@@ -73,7 +73,7 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/oauth/#get-authorize
      */
-    static func userLogin(scope: OAuthScope, state: String = "") -> URL? {
+    public static func userLogin(scope: OAuthScope, state: String = "") -> URL? {
         guard let clientId = sharedInstance.clientId,
             let _ = sharedInstance.clientSecret,
             let redirectURI = sharedInstance.redirectURI
@@ -124,7 +124,7 @@ public extension Strava {
      ```
 
      */
-    static func openURL(_ aURL: URL, sourceApplication: String?) -> Bool {
+    public static func openURL(_ aURL: URL, sourceApplication: String?) -> Bool {
         guard let _ = sharedInstance.clientId,
             let _ = sharedInstance.clientSecret
             else {
@@ -179,10 +179,11 @@ public extension Strava {
 
      Docs: http://strava.github.io/api/v3/oauth/#deauthorize
      */
-    static func deauthorize(_ completionHandler: ((_ success: Bool, _ error: NSError?) -> ())?) {
+    @discardableResult
+    public static func deauthorize(_ completionHandler: ((_ success: Bool, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = OAuthResourcePath.Deauthorization.rawValue
 
-        request(.POST, authenticated: true, path: path, params: nil) { (response, error) in
+        let task = request(.POST, authenticated: true, path: path, params: nil) { (response, error) in
             sharedInstance.accessToken = nil
             sharedInstance.athlete = nil
             sharedInstance.deleteAccessData()
@@ -198,6 +199,8 @@ public extension Strava {
                 completionHandler?(true, nil)
             }
         }
+
+        return task
     }
 
     // MARK: - Internal Functions -

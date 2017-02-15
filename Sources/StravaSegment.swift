@@ -28,7 +28,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/segments/#retrieve
      */
     @discardableResult
-    static func getSegment(_ segmentId: Int, completionHandler:((_ segment: Segment?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getSegment(_ segmentId: Int, completionHandler:((_ segment: Segment?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = SegmentResourcePath.Segment.rawValue.replacingOccurrences(of: ":id", with: String(segmentId))
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
@@ -53,7 +53,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/segments/#explore
      */
     @discardableResult
-    static func getSegments(_ mapBounds: MapBounds, page: Page? = nil, completionHandler:((_ segments: [Segment]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getSegments(_ mapBounds: MapBounds, page: Page? = nil, completionHandler:((_ segments: [Segment]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = SegmentResourcePath.Segments.rawValue
         var params: ParamsDictionary = [
             "bounds" : "\(mapBounds.coordinate1.latitude),\(mapBounds.coordinate1.longitude),\(mapBounds.coordinate2.latitude),\(mapBounds.coordinate2.longitude)"
@@ -86,7 +86,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/segments/#starred
      */
     @discardableResult
-    static func getStarredSegments(_ page: Page? = nil, completionHandler:((_ segments: [Segment]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getStarredSegments(_ page: Page? = nil, completionHandler:((_ segments: [Segment]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = SegmentResourcePath.StarredSegments.rawValue
 
         var params: ParamsDictionary? = nil
@@ -119,7 +119,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/segments/#leaderboard
      */
     @discardableResult
-    static func getSegmentLeaderboard(_ segmentId: Int, page: Page? = nil, completionHandler:((_ leaderboard: Leaderboard?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getSegmentLeaderboard(_ segmentId: Int, page: Page? = nil, completionHandler:((_ leaderboard: Leaderboard?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = SegmentResourcePath.Leaderboard.rawValue.replacingOccurrences(of: ":id", with: String(segmentId))
 
         var params: ParamsDictionary? = nil
@@ -152,7 +152,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/segments/#efforts
      */
     @discardableResult
-    static func getSegmentEfforts(_ segmentId: Int, page: Page? = nil, completionHandler:((_ efforts: [SegmentEffort]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getSegmentEfforts(_ segmentId: Int, page: Page? = nil, completionHandler:((_ efforts: [SegmentEffort]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = SegmentResourcePath.AllEfforts.rawValue.replacingOccurrences(of: ":id", with: String(segmentId))
 
         var params: ParamsDictionary? = nil

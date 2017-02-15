@@ -28,7 +28,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/athlete/#get-details
      */
     @discardableResult
-    static func getAthlete(_ completionHandler: ((_ athlete: Athlete?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getAthlete(_ completionHandler: ((_ athlete: Athlete?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = AthleteResourcePath.Athlete.rawValue
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
@@ -53,7 +53,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/athlete/#get-another-details
      */
     @discardableResult
-    static func getAthlete(_ athleteId: Int, completionHandler: ((_ athlete: Athlete?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getAthlete(_ athleteId: Int, completionHandler: ((_ athlete: Athlete?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = AthleteResourcePath.Athletes.rawValue.replacingOccurrences(of: ":id", with: String(athleteId))
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
@@ -78,7 +78,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/follow/#friends
      */
     @discardableResult
-    static func getAthleteFriends(_ page: Page? = nil, completionHandler: ((_ athletes: [Athlete]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getAthleteFriends(_ page: Page? = nil, completionHandler: ((_ athletes: [Athlete]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = AthleteResourcePath.Friends.rawValue
 
         var params: ParamsDictionary? = nil
@@ -111,7 +111,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/athlete/#zones
      */
     @discardableResult
-    static func getAthleteZones(_ page: Page? = nil, completionHandler: ((_ zones: Zones?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getAthleteZones(_ page: Page? = nil, completionHandler: ((_ zones: Zones?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = AthleteResourcePath.Zones.rawValue
 
         var params: ParamsDictionary? = nil
@@ -144,7 +144,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/athlete/#stats
      */
     @discardableResult
-    static func getStats(_ athleteId: Int, completionHandler: ((_ stats: Stats?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getStats(_ athleteId: Int, completionHandler: ((_ stats: Stats?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = AthleteResourcePath.Stats.rawValue.replacingOccurrences(of: ":id", with: String(athleteId))
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
