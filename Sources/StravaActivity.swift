@@ -26,7 +26,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/activities/#get-activities
      */
     @discardableResult
-    static func getActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ActivityResourcePath.Activities.rawValue
 
         var params: ParamsDictionary? = nil
@@ -59,7 +59,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/activities/#get-details
      */
     @discardableResult
-    static func getActivity(_ activityId: Int, completionHandler:((_ activity: Activity?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getActivity(_ activityId: Int, completionHandler:((_ activity: Activity?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ActivityResourcePath.Activity.rawValue.replacingOccurrences(of: ":id", with: String(activityId))
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
@@ -84,7 +84,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/activities/#get-feed
      */
     @discardableResult
-    static func getFollowingActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getFollowingActivities(_ page: Page? = nil, completionHandler:((_ activities: [Activity]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ActivityResourcePath.Following.rawValue
 
         var params: ParamsDictionary? = nil

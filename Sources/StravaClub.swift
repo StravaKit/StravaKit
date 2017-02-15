@@ -25,7 +25,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/clubs/#get-details
      */
     @discardableResult
-    static func getClub(_ clubId: Int, completionHandler:((_ club: Club?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getClub(_ clubId: Int, completionHandler:((_ club: Club?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ClubResourcePath.Club.rawValue.replacingOccurrences(of: ":id", with: String(clubId))
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
@@ -50,7 +50,7 @@ public extension Strava {
      Docs: http://strava.github.io/api/v3/clubs/#get-athletes
      */
     @discardableResult
-    static func getClubs(_ page: Page? = nil, completionHandler:((_ clubs: [Club]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func getClubs(_ page: Page? = nil, completionHandler:((_ clubs: [Club]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         let path = ClubResourcePath.Clubs.rawValue
 
         var params: ParamsDictionary? = nil

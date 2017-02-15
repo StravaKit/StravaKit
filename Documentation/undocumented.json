@@ -1,1622 +1,1622 @@
 {
   "warnings": [
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 16,
       "symbol": "Activity.activityId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 17,
       "symbol": "Activity.externalId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 18,
       "symbol": "Activity.uploadId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 19,
       "symbol": "Activity.athleteId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 20,
       "symbol": "Activity.athleteResourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 21,
       "symbol": "Activity.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 22,
       "symbol": "Activity.distance",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 23,
       "symbol": "Activity.movingTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 24,
       "symbol": "Activity.elapsedTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 26,
       "symbol": "Activity.totalElevationGain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 27,
       "symbol": "Activity.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 28,
       "symbol": "Activity.timezone",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 29,
       "symbol": "Activity.startCoordinates",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 30,
       "symbol": "Activity.endCoordinates",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 31,
       "symbol": "Activity.city",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 32,
       "symbol": "Activity.state",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 33,
       "symbol": "Activity.country",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 34,
       "symbol": "Activity.achievementCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 35,
       "symbol": "Activity.kudosCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 36,
       "symbol": "Activity.commentCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 37,
       "symbol": "Activity.athleteCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 38,
       "symbol": "Activity.photoCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 39,
       "symbol": "Activity.map",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 40,
       "symbol": "Activity.trainer",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 41,
       "symbol": "Activity.commute",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 42,
       "symbol": "Activity.manual",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 43,
       "symbol": "Activity.privateActivity",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 44,
       "symbol": "Activity.flagged",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 45,
       "symbol": "Activity.gearId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 46,
       "symbol": "Activity.averageSpeed",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 47,
       "symbol": "Activity.maxSpeed",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 48,
       "symbol": "Activity.deviceWatts",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 49,
       "symbol": "Activity.hasHeartrate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 50,
       "symbol": "Activity.elevationHigh",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 51,
       "symbol": "Activity.elevationLow",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 52,
       "symbol": "Activity.totalPhotoCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 53,
       "symbol": "Activity.hasKudoed",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 58,
       "symbol": "Activity.averageWatts",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 59,
       "symbol": "Activity.weightedAverageWatts",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 60,
       "symbol": "Activity.kilojoules",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 61,
       "symbol": "Activity.workoutType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 163,
       "symbol": "Activity.activities(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 171,
       "symbol": "Activity.startCoordinate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 180,
       "symbol": "Activity.endCoordinate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 189,
       "symbol": "Activity.startDate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Activity.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Activity.swift",
       "line": 193,
       "symbol": "Activity.startDateLocal",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 15,
       "symbol": "Athlete.athleteId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 16,
       "symbol": "Athlete.resourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 17,
       "symbol": "Athlete.firstName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 18,
       "symbol": "Athlete.lastName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 19,
       "symbol": "Athlete.city",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 20,
       "symbol": "Athlete.state",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 21,
       "symbol": "Athlete.country",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 22,
       "symbol": "Athlete.profileImageURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 23,
       "symbol": "Athlete.profileMediumImageURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 24,
       "symbol": "Athlete.sex",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 25,
       "symbol": "Athlete.premium",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 27,
       "symbol": "Athlete.followerCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 28,
       "symbol": "Athlete.friendCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 29,
       "symbol": "Athlete.mutualFriendCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 30,
       "symbol": "Athlete.measurementPreference",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 31,
       "symbol": "Athlete.email",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 33,
       "symbol": "Athlete.fullName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Athlete.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Athlete.swift",
       "line": 37,
       "symbol": "Athlete.dictionary",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 15,
       "symbol": "Club.clubId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 16,
       "symbol": "Club.resourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 17,
       "symbol": "Club.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 18,
       "symbol": "Club.profileMediumURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 19,
       "symbol": "Club.profileURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 20,
       "symbol": "Club.sportType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 21,
       "symbol": "Club.city",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 22,
       "symbol": "Club.state",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 23,
       "symbol": "Club.country",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 24,
       "symbol": "Club.isPrivate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 25,
       "symbol": "Club.memberCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 26,
       "symbol": "Club.featured",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 27,
       "symbol": "Club.verified",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 28,
       "symbol": "Club.url",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 30,
       "symbol": "Club.coverPhotoURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 31,
       "symbol": "Club.coverPhotoSmallURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 32,
       "symbol": "Club.clubDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 33,
       "symbol": "Club.clubType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 34,
       "symbol": "Club.membership",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 35,
       "symbol": "Club.followingCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 36,
       "symbol": "Club.admin",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 37,
       "symbol": "Club.owner",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Club.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Club.swift",
       "line": 101,
       "symbol": "Club.clubs(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Leaderboard.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Leaderboard.swift",
       "line": 15,
       "symbol": "Leaderboard.effortCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Leaderboard.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Leaderboard.swift",
       "line": 16,
       "symbol": "Leaderboard.entryCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Leaderboard.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Leaderboard.swift",
       "line": 17,
       "symbol": "Leaderboard.neighborhoodCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Leaderboard.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Leaderboard.swift",
       "line": 18,
       "symbol": "Leaderboard.komType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Leaderboard.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Leaderboard.swift",
       "line": 19,
       "symbol": "Leaderboard.entries",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 15,
       "symbol": "LeaderboardEntry.athleteName",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 16,
       "symbol": "LeaderboardEntry.athleteId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 17,
       "symbol": "LeaderboardEntry.athleteGender",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 18,
       "symbol": "LeaderboardEntry.averageWatts",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 19,
       "symbol": "LeaderboardEntry.distance",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 20,
       "symbol": "LeaderboardEntry.elapsedTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 21,
       "symbol": "LeaderboardEntry.movingTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 22,
       "symbol": "LeaderboardEntry.activityId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 23,
       "symbol": "LeaderboardEntry.effortId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 24,
       "symbol": "LeaderboardEntry.rank",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 25,
       "symbol": "LeaderboardEntry.neighborhoodIndex",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 26,
       "symbol": "LeaderboardEntry.athleteProfileURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 31,
       "symbol": "LeaderboardEntry.averageHr",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 75,
       "symbol": "LeaderboardEntry.startDate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/LeaderboardEntry.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/LeaderboardEntry.swift",
       "line": 79,
       "symbol": "LeaderboardEntry.startDateLocal",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Map.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Map.swift",
       "line": 16,
       "symbol": "Map.mapId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Map.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Map.swift",
       "line": 17,
       "symbol": "Map.polyline",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Map.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Map.swift",
       "line": 18,
       "symbol": "Map.summaryPolyline",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Map.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Map.swift",
       "line": 19,
       "symbol": "Map.resourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Map.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Map.swift",
       "line": 43,
       "symbol": "Map.coordinates",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Map.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Map.swift",
       "line": 51,
       "symbol": "Map.summaryCoordinates",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/MapBounds.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/MapBounds.swift",
       "line": 16,
       "symbol": "MapBounds.coordinate1",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/MapBounds.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/MapBounds.swift",
       "line": 17,
       "symbol": "MapBounds.coordinate2",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 16,
       "symbol": "Photo.source",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 17,
       "symbol": "Photo.urls",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 19,
       "symbol": "Photo.photoId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 20,
       "symbol": "Photo.uniqueId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 21,
       "symbol": "Photo.activityId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 22,
       "symbol": "Photo.resourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 23,
       "symbol": "Photo.ref",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 24,
       "symbol": "Photo.uid",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 25,
       "symbol": "Photo.caption",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 26,
       "symbol": "Photo.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 27,
       "symbol": "Photo.location",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 32,
       "symbol": "Photo.uploadedAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 36,
       "symbol": "Photo.createdAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 71,
       "symbol": "Photo.photoURLs",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 75,
       "symbol": "Photo.coordinate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Photo.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Photo.swift",
       "line": 87,
       "symbol": "PhotoURL",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/ResourceSummary.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/ResourceSummary.swift",
       "line": 15,
       "symbol": "ResourceSummary.resourceId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/ResourceSummary.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/ResourceSummary.swift",
       "line": 16,
       "symbol": "ResourceSummary.resourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 15,
       "symbol": "Route.routeId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 16,
       "symbol": "Route.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 17,
       "symbol": "Route.routeDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 18,
       "symbol": "Route.athlete",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 19,
       "symbol": "Route.distance",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 20,
       "symbol": "Route.elevationGain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 21,
       "symbol": "Route.map",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 22,
       "symbol": "Route.isPrivate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 23,
       "symbol": "Route.resourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 24,
       "symbol": "Route.starred",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 25,
       "symbol": "Route.subType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 26,
       "symbol": "Route.timestamp",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Route.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Route.swift",
       "line": 27,
       "symbol": "Route.type",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 16,
       "symbol": "Segment.segmentId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 17,
       "symbol": "Segment.resourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 18,
       "symbol": "Segment.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 19,
       "symbol": "Segment.distance",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 20,
       "symbol": "Segment.startCoordinate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 21,
       "symbol": "Segment.endCoordinate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 22,
       "symbol": "Segment.climbCategory",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 23,
       "symbol": "Segment.starred",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 25,
       "symbol": "Segment.isPrivate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 26,
       "symbol": "Segment.hazardous",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 27,
       "symbol": "Segment.city",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 28,
       "symbol": "Segment.state",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 29,
       "symbol": "Segment.country",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 30,
       "symbol": "Segment.elevationHigh",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 31,
       "symbol": "Segment.elevationLow",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 32,
       "symbol": "Segment.elevationDifference",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 33,
       "symbol": "Segment.climbCategoryDescription",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 34,
       "symbol": "Segment.maximumGrade",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 35,
       "symbol": "Segment.averageGrade",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 36,
       "symbol": "Segment.activityType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 37,
       "symbol": "Segment.starredDateString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 38,
       "symbol": "Segment.createdAtString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 39,
       "symbol": "Segment.updatedAtString",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 40,
       "symbol": "Segment.totalElevationGain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 41,
       "symbol": "Segment.map",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 42,
       "symbol": "Segment.effortCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 43,
       "symbol": "Segment.athleteCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 44,
       "symbol": "Segment.starCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 45,
       "symbol": "Segment.athleteSegmentStats",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 46,
       "symbol": "Segment.points",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 112,
       "symbol": "Segment.segments(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 120,
       "symbol": "Segment.segments(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 126,
       "symbol": "Segment.coordinates",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 134,
       "symbol": "Segment.starredDate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 138,
       "symbol": "Segment.createdAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Segment.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Segment.swift",
       "line": 142,
       "symbol": "Segment.updatedAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 15,
       "symbol": "SegmentEffort.effortId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 16,
       "symbol": "SegmentEffort.resourceState",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 17,
       "symbol": "SegmentEffort.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 18,
       "symbol": "SegmentEffort.activity",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 19,
       "symbol": "SegmentEffort.athlete",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 20,
       "symbol": "SegmentEffort.elapsedTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 21,
       "symbol": "SegmentEffort.movingTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 22,
       "symbol": "SegmentEffort.distance",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 23,
       "symbol": "SegmentEffort.startIndex",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 24,
       "symbol": "SegmentEffort.endIndex",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 25,
       "symbol": "SegmentEffort.deviceWatts",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 26,
       "symbol": "SegmentEffort.averageWatts",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 27,
       "symbol": "SegmentEffort.segment",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 29,
       "symbol": "SegmentEffort.prRank",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 30,
       "symbol": "SegmentEffort.komRank",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 80,
       "symbol": "SegmentEffort.efforts(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 86,
       "symbol": "SegmentEffort.startDate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentEffort.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentEffort.swift",
       "line": 90,
       "symbol": "SegmentEffort.startDateLocal",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentStats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentStats.swift",
       "line": 15,
       "symbol": "SegmentStats.prElapsedTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentStats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentStats.swift",
       "line": 16,
       "symbol": "SegmentStats.effortCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/SegmentStats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/SegmentStats.swift",
       "line": 20,
       "symbol": "SegmentStats.prDate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 15,
       "symbol": "Stats.athleteId",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 16,
       "symbol": "Stats.biggestRideDistance",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 17,
       "symbol": "Stats.biggestClimbElevationGain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 19,
       "symbol": "Stats.recentRideTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 20,
       "symbol": "Stats.recentRunTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 21,
       "symbol": "Stats.recentSwimTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 23,
       "symbol": "Stats.ytdRideTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 24,
       "symbol": "Stats.ytdRunTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 25,
       "symbol": "Stats.ytdSwimTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 27,
       "symbol": "Stats.allRideTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 28,
       "symbol": "Stats.allRunTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Stats.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Stats.swift",
       "line": 29,
       "symbol": "Stats.allSwimTotals",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StatsDetail.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StatsDetail.swift",
       "line": 15,
       "symbol": "StatsDetail.count",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StatsDetail.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StatsDetail.swift",
       "line": 16,
       "symbol": "StatsDetail.distance",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StatsDetail.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StatsDetail.swift",
       "line": 17,
       "symbol": "StatsDetail.movingTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StatsDetail.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StatsDetail.swift",
       "line": 18,
       "symbol": "StatsDetail.elapsedTime",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StatsDetail.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StatsDetail.swift",
       "line": 19,
       "symbol": "StatsDetail.elevationGain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/StatsDetail.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StatsDetail.swift",
       "line": 21,
       "symbol": "StatsDetail.achievementCount",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Strava.swift",
       "line": 46,
       "symbol": "HTTPMethod.GET",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Strava.swift",
       "line": 47,
       "symbol": "HTTPMethod.POST",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Strava.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Strava.swift",
       "line": 48,
       "symbol": "HTTPMethod.PUT",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Zones.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Zones.swift",
       "line": 11,
       "symbol": "Zone",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Zones.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Zones.swift",
       "line": 31,
       "symbol": "Zone.zones(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Zones.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Zones.swift",
       "line": 41,
       "symbol": "ZoneCollection",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Zones.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Zones.swift",
       "line": 44,
       "symbol": "ZoneCollection.custom",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Zones.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Zones.swift",
       "line": 47,
       "symbol": "ZoneCollection.zones",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Zones.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Zones.swift",
       "line": 71,
       "symbol": "Zones.heartRate",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/brennan/GitHub/brennanMKE/StravaKit/Sources/Zones.swift",
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Zones.swift",
       "line": 74,
       "symbol": "Zones.power",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/brennan/GitHub/brennanMKE/StravaKit"
+  "source_directory": "/Users/brennan/GitHub/StravaKit/StravaKit"
 }
