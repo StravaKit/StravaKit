@@ -1,43 +1,21 @@
-target 'StravaDemo' do
+
+target 'StravaDemoTests' do
   use_frameworks!
-  platform :ios, '9.0'
+  inherit! :search_paths
+  # Pods for testing
+  pod 'Swifter', '~> 1.3'
+end
 
-  # Pods for StravaDemo
-
-  target 'StravaDemoTests' do
+target 'StravaKitTests-iOS' do
+  use_frameworks!
     inherit! :search_paths
     # Pods for testing
     pod 'Swifter', '~> 1.3'
-  end
-
 end
 
-target 'StravaKit-iOS' do
+target 'StravaKitTests-Mac' do
   use_frameworks!
-  platform :ios, '9.0'
-
-  # Pods for StravaKit-iOS
-
-  target 'StravaKitTests-iOS' do
-    use_frameworks!
-      inherit! :search_paths
-      # Pods for testing
-      pod 'Swifter', '~> 1.3'
-  end
-
-end
-
-target 'StravaKit-Mac' do
-  use_frameworks!
-  platform :osx, '10.11'
-
-  # Pods for StravaKit-Mac
-
-  target 'StravaKitTests-Mac' do
-    use_frameworks!
-      inherit! :search_paths
-      # Pods for testing
-      pod 'Swifter', '~> 1.3'
-  end
-
+    inherit! :search_paths
+    # Pods for testing
+    pod 'Swifter', '~> 1.3'
 end

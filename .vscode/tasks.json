@@ -60,28 +60,35 @@
       ]
     },
     {
-      "taskName": "H: CocoaPods - Install Dependencies",
+      "taskName": "H: CocoaPods - Reset Integration",
+      "isBuildCommand": false,
+      "args": [
+        "${workspaceRoot}/scripts/tasks.sh pod-reset"
+      ]
+    },
+    {
+      "taskName": "I: CocoaPods - Install Dependencies",
       "isBuildCommand": false,
       "args": [
         "${workspaceRoot}/scripts/tasks.sh pod-install"
       ]
     },
     {
-      "taskName": "I: CocoaPods - Update Dependencies",
+      "taskName": "J: CocoaPods - Update Dependencies",
       "isBuildCommand": false,
       "args": [
         "${workspaceRoot}/scripts/tasks.sh pod-update"
       ]
     },
     {
-      "taskName": "J: CocoaPods - Lint Spec",
+      "taskName": "K: CocoaPods - Lint Spec",
       "isBuildCommand": false,
       "args": [
         "${workspaceRoot}/scripts/tasks.sh pod-spec-lint"
       ]
     },
     {
-      "taskName": "K: CocoaPods - Push Trunk",
+      "taskName": "L: CocoaPods - Push Trunk",
       "isBuildCommand": false,
       "args": [
         "${workspaceRoot}/scripts/tasks.sh pod-trunk-push"

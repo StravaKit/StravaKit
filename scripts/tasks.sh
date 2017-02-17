@@ -72,6 +72,11 @@ run_bundle_install() {
     bundle install
 }
 
+run_pod_reset() {
+    bundle exec pod deintegrate --verbose
+    bundle exec pod install --verbose
+}
+
 run_pod_install() {
     echo "Installing Pods..."
     bundle exec pod install
@@ -129,6 +134,9 @@ case "${Command}" in
     bundle-install)
         run_bundle_install
         ;;
+    pod-reset)
+        run_pod_reset
+        ;;
     pod-install)
         run_pod_install
         ;;
@@ -142,6 +150,6 @@ case "${Command}" in
         run_pod_trunk_push
         ;;
     *)
-        echo "Usage: `basename $0` { build | clean | jazzy | setup | all | bundle-install | pod-install | pod-update | pod-spec-lint | pod-trunk-push }"
+        echo "Usage: `basename $0` { build | clean | jazzy | setup | all | bundle-install | pod-reset | pod-install | pod-update | pod-spec-lint | pod-trunk-push }"
         ;;
 esac
