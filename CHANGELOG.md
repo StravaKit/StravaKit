@@ -2,6 +2,7 @@
 
 Version | Changes
 --- | ---
+**0.9.4** | Fixes CocoaPods/Carthage dependencies
 **0.9.3** | Makes all endpoint requests public
 **0.9.2** | Updates Polyline dependency
 **0.9.1** | Corrects behavior for athlete zones
