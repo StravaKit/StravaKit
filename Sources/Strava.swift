@@ -144,6 +144,22 @@ open class Strava {
         return sharedInstance.defaultRequestor.request(method, authenticated: authenticated, path: path, params: params, completionHandler: completionHandler)
     }
 
+    @discardableResult
+    open static func uploadRequest(_ path: String, _ params: [String: Any]?, _ file: Data, completionHandler: ((_ response: Any?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+        if isDebugging {
+            debugPrint("Method: POST, Path: \(path), Authenticated: true")
+            if let params = params {
+                debugPrint("Params: \(params)")
+            }
+        }
+        if let alternateRequestor = sharedInstance.alternateRequestor {
+            return alternateRequestor.uploadRequest(path, params, file, completionHandler: completionHandler)
+        }
+
+        return sharedInstance.defaultRequestor.uploadRequest(path, params, file, completionHandler: completionHandler)
+    }
+
+
     // MARK: - Internal Functions -
 
     internal static func error(_ code: StravaErrorCode, reason: String, userInfo: [String : Any]? = [:]) -> NSError {

@@ -30,6 +30,9 @@ public protocol Requestor {
     @discardableResult
     func request(_ method: HTTPMethod, authenticated: Bool, path: String, params: ParamsDictionary?, completionHandler: ((_ response: Any?, _ error: NSError?) -> ())?) -> URLSessionTask?
 
+    @discardableResult
+    func uploadRequest(_ path: String, _ params: ParamsDictionary?, _ file: Data, completionHandler: ((_ response: Any?, _ error: NSError?) -> ())?) -> URLSessionTask?
+
 }
 
 /**
@@ -75,6 +78,41 @@ open class DefaultRequestor: Requestor {
         return processRequest(request, authenticated: authenticated, completionHandler: completionHandler)
 
     }
+
+    open func uploadRequest(_ path: String, _ params: ParamsDictionary?, _ file: Data, completionHandler: ((_ response: Any?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+        guard let url = Strava.urlWithString(baseUrl + path, parameters: nil) else {
+            let error = Strava.error(.unsupportedRequest, reason: "Unsupported Request")
+            completionHandler?(nil, error)
+            return nil
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+
+        let boundary = "Boundary-\(UUID().uuidString)"
+
+        let data = NSMutableData()
+
+        for (key, value) in params ?? [:] {
+            data.append("--\(boundary)\r\n".data(using: .utf8)!)
+            data.append("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n".data(using: .utf8)!)
+            data.append("\(value)\r\n".data(using: .utf8)!)
+        }
+
+        data.append("--\(boundary)\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"file\"; filename=\"upload.gpx\"\r\n".data(using: .utf8)!)
+        data.append("Content-Type: application/octet-stream\r\n\r\n".data(using: .utf8)!)
+        data.append(file)
+        data.append("\r\n".data(using: .utf8)!)
+        data.append("--\(boundary)--\r\n".data(using: .utf8)!)
+
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.setValue(String(data.length), forHTTPHeaderField: "Content-Length")
+        request.httpBody = data as Data
+
+        return processRequest(request, authenticated: true, completionHandler: completionHandler)
+    }
+
 
     // MARK: - Internal Functions -
 
