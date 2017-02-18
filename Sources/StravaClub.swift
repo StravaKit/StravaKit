@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal enum ClubResourcePath: String {
+public enum ClubResourcePath: String {
     case Club = "/api/v3/clubs/:id"
     case Clubs = "/api/v3/athlete/clubs"
 }
@@ -26,7 +26,7 @@ public extension Strava {
      */
     @discardableResult
     public static func getClub(_ clubId: Int, completionHandler:((_ club: Club?, _ error: NSError?) -> ())?) -> URLSessionTask? {
-        let path = ClubResourcePath.Club.rawValue.replacingOccurrences(of: ":id", with: String(clubId))
+        let path = replaceId(id: clubId, in: ClubResourcePath.Club.rawValue)
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {

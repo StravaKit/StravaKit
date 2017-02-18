@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal enum RouteResourcePath: String {
+public enum RouteResourcePath: String {
     case Routes = "/api/v3/athletes/:id/routes"
     case RouteDetail = "/api/v3/routes/:id"
 }
@@ -26,7 +26,7 @@ public extension Strava {
      */
     @discardableResult
     public static func getRoute(_ routeId: Int, completionHandler:((_ route: Route?, _ error: NSError?) -> ())?) -> URLSessionTask? {
-        let path = RouteResourcePath.RouteDetail.rawValue.replacingOccurrences(of: ":id", with: String(routeId))
+        let path = replaceId(id: routeId, in: RouteResourcePath.RouteDetail.rawValue)
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
@@ -51,8 +51,7 @@ public extension Strava {
      */
     @discardableResult
     public static func getRoutes(_ athleteId: Int, page: Page? = nil, completionHandler:((_ clubs: [Route]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
-        let path = RouteResourcePath.Routes.rawValue.replacingOccurrences(of: ":id", with: String(athleteId))
-
+        let path = replaceId(id: athleteId, in: RouteResourcePath.Routes.rawValue)
         var params: ParamsDictionary? = nil
         if let page = page {
             params = [

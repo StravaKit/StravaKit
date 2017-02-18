@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal enum SegmentResourcePath: String {
+public enum SegmentResourcePath: String {
     case Segment = "/api/v3/segments/:id"
     case Segments = "/api/v3/segments/explore"
     case StarredSegments = "/api/v3/segments/starred"
@@ -29,7 +29,7 @@ public extension Strava {
      */
     @discardableResult
     public static func getSegment(_ segmentId: Int, completionHandler:((_ segment: Segment?, _ error: NSError?) -> ())?) -> URLSessionTask? {
-        let path = SegmentResourcePath.Segment.rawValue.replacingOccurrences(of: ":id", with: String(segmentId))
+        let path = replaceId(id: segmentId, in: SegmentResourcePath.Segment.rawValue)
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {
@@ -120,8 +120,7 @@ public extension Strava {
      */
     @discardableResult
     public static func getSegmentLeaderboard(_ segmentId: Int, page: Page? = nil, completionHandler:((_ leaderboard: Leaderboard?, _ error: NSError?) -> ())?) -> URLSessionTask? {
-        let path = SegmentResourcePath.Leaderboard.rawValue.replacingOccurrences(of: ":id", with: String(segmentId))
-
+        let path = replaceId(id: segmentId, in: SegmentResourcePath.Leaderboard.rawValue)
         var params: ParamsDictionary? = nil
         if let page = page {
             params = [
@@ -153,7 +152,7 @@ public extension Strava {
      */
     @discardableResult
     public static func getSegmentEfforts(_ segmentId: Int, page: Page? = nil, completionHandler:((_ efforts: [SegmentEffort]?, _ error: NSError?) -> ())?) -> URLSessionTask? {
-        let path = SegmentResourcePath.AllEfforts.rawValue.replacingOccurrences(of: ":id", with: String(segmentId))
+        let path = replaceId(id: segmentId, in: SegmentResourcePath.AllEfforts.rawValue)
 
         var params: ParamsDictionary? = nil
         if let page = page {

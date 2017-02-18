@@ -77,7 +77,7 @@ public enum StravaErrorCode: Int {
  */
 open class Strava {
 
-    static let sharedInstance = Strava()
+    internal static let sharedInstance = Strava()
     internal let dateFormatter = DateFormatter()
     internal var clientId: String?
     internal var clientSecret: String?
@@ -124,6 +124,16 @@ open class Strava {
         set {
             sharedInstance.isDebugging = newValue
         }
+    }
+
+    open static func replaceId(id: Int, in path: String) -> String {
+        return path.replacingOccurrences(of: ":id", with: String(id))
+    }
+
+    open static func configure(accessToken: String?, athleteDictionary: JSONDictionary? = nil, alternateRequestor: Requestor? = nil) {
+        sharedInstance.accessToken = accessToken
+        sharedInstance.athlete = Athlete(dictionary: athleteDictionary ?? [:])
+        sharedInstance.alternateRequestor = alternateRequestor
     }
 
     /**

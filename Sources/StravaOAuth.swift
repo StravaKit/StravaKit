@@ -20,7 +20,7 @@ public let StravaStatusSuccessValue: String = "success"
 /** Failure Value */
 public let StravaStatusFailureValue: String = "failure"
 
-internal enum OAuthResourcePath: String {
+public enum OAuthResourcePath: String {
     case RequestAccess = "/oauth/authorize"
     case TokenExchange = "/oauth/token"
     case Deauthorization = "/oauth/deauthorize"
@@ -158,7 +158,7 @@ public extension Strava {
 
     /**
      Deauthorizes Strava access token.
-
+     
      Once the authorization steps have beenc completed successfully the access token and athlete profile have been securely stored in the user's Keychain for use whenever they use your app. If they ever want to remove the access token and athlete profile they can deauthorize their session with Strava.
 
      ```swift
@@ -178,6 +178,9 @@ public extension Strava {
      With a valid access token, which is managed for you by StravaKit, you can use various API endpoints.
 
      Docs: http://strava.github.io/api/v3/oauth/#deauthorize
+     
+     - Parameter completionHandler: completion handler
+     - Returns: task
      */
     @discardableResult
     public static func deauthorize(_ completionHandler: ((_ success: Bool, _ error: NSError?) -> ())?) -> URLSessionTask? {
