@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal enum ActivityResourcePath: String {
+public enum ActivityResourcePath: String {
     case Activities = "/api/v3/athlete/activities"
     case Activity = "/api/v3/activities/:id"
     case Following = "/api/v3/activities/following"
@@ -60,7 +60,7 @@ public extension Strava {
      */
     @discardableResult
     public static func getActivity(_ activityId: Int, completionHandler:((_ activity: Activity?, _ error: NSError?) -> ())?) -> URLSessionTask? {
-        let path = ActivityResourcePath.Activity.rawValue.replacingOccurrences(of: ":id", with: String(activityId))
+        let path = replaceId(id: activityId, in: ActivityResourcePath.Activity.rawValue)
 
         return request(.GET, authenticated: true, path: path, params: nil) { (response, error) in
             if let error = error {

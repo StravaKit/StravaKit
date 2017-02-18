@@ -206,8 +206,8 @@
 		2698103F1D8F4EA700849210 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269810391D8F4EA700849210 /* Keychain.swift */; };
 		269810401D8F4EA700849210 /* Polyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698103A1D8F4EA700849210 /* Polyline.swift */; };
 		269810411D8F4EA700849210 /* Polyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698103A1D8F4EA700849210 /* Polyline.swift */; };
-		269810421D8F4EA700849210 /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698103B1D8F4EA700849210 /* Requestor.swift */; };
-		269810431D8F4EA700849210 /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698103B1D8F4EA700849210 /* Requestor.swift */; };
+		269810421D8F4EA700849210 /* DefaultRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698103B1D8F4EA700849210 /* DefaultRequestor.swift */; };
+		269810431D8F4EA700849210 /* DefaultRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2698103B1D8F4EA700849210 /* DefaultRequestor.swift */; };
 		26AEBF671D664A2E00481015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AEBF661D664A2E00481015 /* AppDelegate.swift */; };
 		26AEBF6C1D664A2E00481015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6A1D664A2E00481015 /* Main.storyboard */; };
 		26AEBF6E1D664A2E00481015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26AEBF6D1D664A2E00481015 /* Assets.xcassets */; };
@@ -227,6 +227,8 @@
 		26C92C281D6C163700C5D491 /* KeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C271D6C163700C5D491 /* KeychainTests.swift */; };
 		26C92C3A1D6CBAB100C5D491 /* JSONRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C181D6C028000C5D491 /* JSONRequestor.swift */; };
 		26C92C3B1D6CBAB100C5D491 /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C92C211D6C0E6700C5D491 /* JSONLoader.swift */; };
+		26D35EB71E582FD1003D01F7 /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D35EB61E582FD1003D01F7 /* Requestor.swift */; };
+		26D35EB81E582FD1003D01F7 /* Requestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D35EB61E582FD1003D01F7 /* Requestor.swift */; };
 		26EC73B11D83533E0022B3B5 /* JSONServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC73AD1D8350070022B3B5 /* JSONServer.swift */; };
 		26EC73B21D83533F0022B3B5 /* JSONServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC73AD1D8350070022B3B5 /* JSONServer.swift */; };
 		26EC73B31D8353400022B3B5 /* JSONServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EC73AD1D8350070022B3B5 /* JSONServer.swift */; };
@@ -383,7 +385,7 @@
 		269810381D8F4EA700849210 /* JSONSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONSupport.swift; path = Sources/JSONSupport.swift; sourceTree = SOURCE_ROOT; };
 		269810391D8F4EA700849210 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Sources/Keychain.swift; sourceTree = SOURCE_ROOT; };
 		2698103A1D8F4EA700849210 /* Polyline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Polyline.swift; path = Sources/Polyline.swift; sourceTree = SOURCE_ROOT; };
-		2698103B1D8F4EA700849210 /* Requestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requestor.swift; path = Sources/Requestor.swift; sourceTree = SOURCE_ROOT; };
+		2698103B1D8F4EA700849210 /* DefaultRequestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultRequestor.swift; path = Sources/DefaultRequestor.swift; sourceTree = SOURCE_ROOT; };
 		26AEBF631D664A2E00481015 /* StravaDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StravaDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26AEBF661D664A2E00481015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26AEBF6B1D664A2E00481015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 		26C92C1B1D6C063E00C5D491 /* StravaOAuthTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StravaOAuthTests.swift; sourceTree = "<group>"; };
 		26C92C211D6C0E6700C5D491 /* JSONLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
 		26C92C271D6C163700C5D491 /* KeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainTests.swift; sourceTree = "<group>"; };
+		26D35EB61E582FD1003D01F7 /* Requestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Requestor.swift; path = Sources/Requestor.swift; sourceTree = SOURCE_ROOT; };
 		26EC73AD1D8350070022B3B5 /* JSONServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONServer.swift; sourceTree = "<group>"; };
 		26EC73B41D8354E10022B3B5 /* RequestorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestorTests.swift; sourceTree = "<group>"; };
 		26EC73B81D8379190022B3B5 /* rate-limit.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "rate-limit.json"; path = "Data/rate-limit.json"; sourceTree = "<group>"; };
@@ -542,6 +545,7 @@
 				26980FFC1D8F4E4500849210 /* Info.plist */,
 				26980FFE1D8F4E4500849210 /* StravaKit.h */,
 				26980FFD1D8F4E4500849210 /* Strava.swift */,
+				26D35EB61E582FD1003D01F7 /* Requestor.swift */,
 				26F99AB01D7F625F00F76C84 /* Extensions */,
 				26C92C071D6BDD2800C5D491 /* Models */,
 				26C92C041D6BDCDF00C5D491 /* Internal */,
@@ -628,7 +632,7 @@
 				269810381D8F4EA700849210 /* JSONSupport.swift */,
 				269810391D8F4EA700849210 /* Keychain.swift */,
 				2698103A1D8F4EA700849210 /* Polyline.swift */,
-				2698103B1D8F4EA700849210 /* Requestor.swift */,
+				2698103B1D8F4EA700849210 /* DefaultRequestor.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -1244,6 +1248,7 @@
 			files = (
 				269810291D8F4E8B00849210 /* Photo.swift in Sources */,
 				2698101F1D8F4E8B00849210 /* Leaderboard.swift in Sources */,
+				26D35EB81E582FD1003D01F7 /* Requestor.swift in Sources */,
 				269810251D8F4E8B00849210 /* MapBounds.swift in Sources */,
 				269810211D8F4E8B00849210 /* LeaderboardEntry.swift in Sources */,
 				26980FF71D8F4E3500849210 /* StravaRoute.swift in Sources */,
@@ -1258,7 +1263,7 @@
 				269810371D8F4E8B00849210 /* StatsDetail.swift in Sources */,
 				26980FF11D8F4E3500849210 /* StravaActivity.swift in Sources */,
 				26980FE91D8F4DD900849210 /* StravaOAuth.swift in Sources */,
-				269810431D8F4EA700849210 /* Requestor.swift in Sources */,
+				269810431D8F4EA700849210 /* DefaultRequestor.swift in Sources */,
 				2698103F1D8F4EA700849210 /* Keychain.swift in Sources */,
 				269810331D8F4E8B00849210 /* SegmentStats.swift in Sources */,
 				269810271D8F4E8B00849210 /* Page.swift in Sources */,
@@ -1326,6 +1331,7 @@
 			files = (
 				269810281D8F4E8B00849210 /* Photo.swift in Sources */,
 				2698101E1D8F4E8B00849210 /* Leaderboard.swift in Sources */,
+				26D35EB71E582FD1003D01F7 /* Requestor.swift in Sources */,
 				269810241D8F4E8B00849210 /* MapBounds.swift in Sources */,
 				269810201D8F4E8B00849210 /* LeaderboardEntry.swift in Sources */,
 				26980FF61D8F4E3500849210 /* StravaRoute.swift in Sources */,
@@ -1340,7 +1346,7 @@
 				269810361D8F4E8B00849210 /* StatsDetail.swift in Sources */,
 				26980FF01D8F4E3500849210 /* StravaActivity.swift in Sources */,
 				26980FE81D8F4DD900849210 /* StravaOAuth.swift in Sources */,
-				269810421D8F4EA700849210 /* Requestor.swift in Sources */,
+				269810421D8F4EA700849210 /* DefaultRequestor.swift in Sources */,
 				2698103E1D8F4EA700849210 /* Keychain.swift in Sources */,
 				269810321D8F4E8B00849210 /* SegmentStats.swift in Sources */,
 				269810261D8F4E8B00849210 /* Page.swift in Sources */,
