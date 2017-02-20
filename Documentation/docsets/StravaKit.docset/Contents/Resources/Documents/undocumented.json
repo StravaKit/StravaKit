@@ -1569,6 +1569,223 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Strava.swift",
+      "line": 129,
+      "symbol": "Strava.replaceId(id:in:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Strava.swift",
+      "line": 133,
+      "symbol": "Strava.configure(accessToken:athleteDictionary:alternateRequestor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaActivity.swift",
+      "line": 11,
+      "symbol": "ActivityResourcePath",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaActivity.swift",
+      "line": 12,
+      "symbol": "ActivityResourcePath.Activities",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaActivity.swift",
+      "line": 13,
+      "symbol": "ActivityResourcePath.Activity",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaActivity.swift",
+      "line": 14,
+      "symbol": "ActivityResourcePath.Following",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaAthlete.swift",
+      "line": 11,
+      "symbol": "AthleteResourcePath",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaAthlete.swift",
+      "line": 12,
+      "symbol": "AthleteResourcePath.Athlete",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaAthlete.swift",
+      "line": 13,
+      "symbol": "AthleteResourcePath.Athletes",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaAthlete.swift",
+      "line": 14,
+      "symbol": "AthleteResourcePath.Friends",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaAthlete.swift",
+      "line": 15,
+      "symbol": "AthleteResourcePath.Zones",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaAthlete.swift",
+      "line": 16,
+      "symbol": "AthleteResourcePath.Stats",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaClub.swift",
+      "line": 11,
+      "symbol": "ClubResourcePath",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaClub.swift",
+      "line": 12,
+      "symbol": "ClubResourcePath.Club",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaClub.swift",
+      "line": 13,
+      "symbol": "ClubResourcePath.Clubs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaOAuth.swift",
+      "line": 23,
+      "symbol": "OAuthResourcePath",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaOAuth.swift",
+      "line": 24,
+      "symbol": "OAuthResourcePath.RequestAccess",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaOAuth.swift",
+      "line": 25,
+      "symbol": "OAuthResourcePath.TokenExchange",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaOAuth.swift",
+      "line": 26,
+      "symbol": "OAuthResourcePath.Deauthorization",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaRoute.swift",
+      "line": 11,
+      "symbol": "RouteResourcePath",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaRoute.swift",
+      "line": 12,
+      "symbol": "RouteResourcePath.Routes",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaRoute.swift",
+      "line": 13,
+      "symbol": "RouteResourcePath.RouteDetail",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaSegment.swift",
+      "line": 11,
+      "symbol": "SegmentResourcePath",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaSegment.swift",
+      "line": 12,
+      "symbol": "SegmentResourcePath.Segment",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaSegment.swift",
+      "line": 13,
+      "symbol": "SegmentResourcePath.Segments",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaSegment.swift",
+      "line": 14,
+      "symbol": "SegmentResourcePath.StarredSegments",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaSegment.swift",
+      "line": 15,
+      "symbol": "SegmentResourcePath.Leaderboard",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaSegment.swift",
+      "line": 16,
+      "symbol": "SegmentResourcePath.AllEfforts",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaUpload.swift",
+      "line": 11,
+      "symbol": "UploadResourcePath",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaUpload.swift",
+      "line": 12,
+      "symbol": "UploadResourcePath.Upload",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/StravaUpload.swift",
+      "line": 13,
+      "symbol": "UploadResourcePath.CheckUpload",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/brennan/GitHub/StravaKit/StravaKit/Sources/Zones.swift",
       "line": 11,
       "symbol": "Zone",
