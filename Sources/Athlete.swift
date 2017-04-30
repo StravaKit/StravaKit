@@ -78,7 +78,7 @@ public struct Athlete {
             let firstName: String = s.value("firstname"),
             let lastName: String = s.value("lastname"),
             let city: String = s.value("city"),
-            let state: String = s.value("state"),
+            let state: String = s.value("state", required: false, nilValue: ""),
             let country: String = s.value("country"),
             let profile: String = s.value("profile"),
             let profileImageURL = URL(string: profile),
