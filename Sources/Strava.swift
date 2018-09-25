@@ -103,21 +103,21 @@ open class Strava {
     /**
      Indicates if the current athlete is defined with a profile and access token.
      */
-    open static var isAuthorized: Bool {
+    public static var isAuthorized: Bool {
         return sharedInstance.accessToken != nil && sharedInstance.athlete != nil
     }
 
     /**
      Current Athlete which is authorized.
      */
-    open static var currentAthlete: Athlete? {
+    public static var currentAthlete: Athlete? {
         return sharedInstance.athlete
     }
 
     /**
      Allows for enabling debugging. It is false by default.
      */
-    open static var isDebugging: Bool {
+    public static var isDebugging: Bool {
         get {
             return sharedInstance.isDebugging
         }
@@ -126,11 +126,11 @@ open class Strava {
         }
     }
 
-    open static func replaceId(id: Int, in path: String) -> String {
+    public static func replaceId(id: Int, in path: String) -> String {
         return path.replacingOccurrences(of: ":id", with: String(id))
     }
 
-    open static func configure(accessToken: String?, athleteDictionary: JSONDictionary? = nil, alternateRequestor: Requestor? = nil) {
+    public static func configure(accessToken: String?, athleteDictionary: JSONDictionary? = nil, alternateRequestor: Requestor? = nil) {
         sharedInstance.accessToken = accessToken
         sharedInstance.athlete = Athlete(dictionary: athleteDictionary ?? [:])
         sharedInstance.alternateRequestor = alternateRequestor
@@ -140,7 +140,7 @@ open class Strava {
      Request method for all StravaKit API endpoint calls.
      */
     @discardableResult
-    open static func request(_ method: HTTPMethod, authenticated: Bool, path: String, params: [String: Any]?, completionHandler: ((_ response: Any?, _ error: NSError?) -> ())?) -> URLSessionTask? {
+    public static func request(_ method: HTTPMethod, authenticated: Bool, path: String, params: [String: Any]?, completionHandler: ((_ response: Any?, _ error: NSError?) -> ())?) -> URLSessionTask? {
         if isDebugging {
             debugPrint("Method: \(method.rawValue), Path: \(path), Authenticated: \(authenticated)")
             if let params = params {
