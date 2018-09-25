@@ -61,8 +61,8 @@ class PhotoTests: XCTestCase {
 
             let coordinate = photo.coordinate
             XCTAssertTrue(CLLocationCoordinate2DIsValid(coordinate))
-            XCTAssertEqualWithAccuracy(latitude, coordinate.latitude, accuracy: epsilon)
-            XCTAssertEqualWithAccuracy(longitude, coordinate.longitude, accuracy: epsilon)
+            XCTAssertEqual(latitude, coordinate.latitude, accuracy: epsilon)
+            XCTAssertEqual(longitude, coordinate.longitude, accuracy: epsilon)
         }
         else {
             XCTFail()

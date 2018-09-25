@@ -114,8 +114,8 @@ class PolylineTests: XCTestCase {
             if let coordinates = coordinates {
                 for (index, coordinate) in coordinates.enumerated() {
                     let otherCoordinate = polylineData.coordinates[index]
-                    XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
-                    XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
+                    XCTAssertEqual(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
+                    XCTAssertEqual(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
                 }
             }
         }
@@ -207,8 +207,8 @@ class PolylineTests: XCTestCase {
 
             for (index, coordinate) in map.summaryCoordinates.enumerated() {
                 let otherCoordinate = polylineData.coordinates[index]
-                XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
-                XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
+                XCTAssertEqual(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
+                XCTAssertEqual(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
             }
         }
     }
@@ -243,8 +243,8 @@ class PolylineTests: XCTestCase {
             if let coordinates = map.coordinates {
                 for (index, coordinate) in coordinates.enumerated() {
                     let otherCoordinate = polylineData.coordinates[index]
-                    XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
-                    XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
+                    XCTAssertEqual(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
+                    XCTAssertEqual(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
                 }
             }
             
