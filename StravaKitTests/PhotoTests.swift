@@ -46,7 +46,7 @@ class PhotoTests: XCTestCase {
             return
         }
 
-        let epsilon = Double(FLT_EPSILON)
+        let epsilon = Double(Float.ulpOfOne)
         let latitude = Double(37.839333333)
         let longitude = Double(-122.489833333)
 
