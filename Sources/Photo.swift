@@ -89,7 +89,7 @@ public struct PhotoURL {
     let photoURL: URL
 
     internal static func photoURLs(_ dictionary: [String : String]) -> [PhotoURL]? {
-        let photoURLs: [PhotoURL] = dictionary.flatMap { (pair) in
+        let photoURLs: [PhotoURL] = dictionary.compactMap { (pair) in
             let size = pair.0
             guard let urlString = dictionary[size],
                 let photoURL = URL(string: urlString)

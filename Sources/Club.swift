@@ -99,7 +99,7 @@ public struct Club {
     }
 
     public static func clubs(_ dictionaries: JSONArray) -> [Club] {
-        return dictionaries.flatMap { (d) in
+        return dictionaries.compactMap { (d) in
             return Club(dictionary: d)
         }
     }

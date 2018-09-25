@@ -84,7 +84,7 @@ class PolylineTests: XCTestCase {
                 return nil
         }
 
-        let coordinates = jsonCoordinates.flatMap { (dictionary) -> CLLocationCoordinate2D? in
+        let coordinates = jsonCoordinates.compactMap { (dictionary) -> CLLocationCoordinate2D? in
             if let latitude = dictionary["latitude"] as? Double,
                 let longitude = dictionary["longitude"] as? Double {
                 let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
@@ -170,7 +170,7 @@ class PolylineTests: XCTestCase {
             return
         }
 
-        let locations = coordinates.flatMap { (coordinate) -> CLLocation? in
+        let locations = coordinates.compactMap { (coordinate) -> CLLocation? in
             return CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         }
 

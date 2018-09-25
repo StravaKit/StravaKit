@@ -34,7 +34,7 @@ public struct Leaderboard {
         self.entryCount = entryCount
         self.neighborhoodCount = neighborhoodCount
         self.komType = komType
-        self.entries = entryDictionaries.flatMap { (d) in
+        self.entries = entryDictionaries.compactMap { (d) in
             return LeaderboardEntry(dictionary: d)
         }
     }

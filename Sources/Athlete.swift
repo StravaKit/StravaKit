@@ -114,7 +114,7 @@ public struct Athlete {
      Creates athlete models from an array of dictionaries.
      */
     public static func athletes(_ dictionaries: JSONArray) -> [Athlete] {
-        return dictionaries.flatMap { (d) in
+        return dictionaries.compactMap { (d) in
             Athlete(dictionary: d)
         }
     }

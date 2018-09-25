@@ -118,7 +118,7 @@ public struct Segment {
     }
 
     public static func segments(_ dictionaries: JSONArray) -> [Segment]? {
-        return dictionaries.flatMap { (d) in
+        return dictionaries.compactMap { (d) in
             return Segment(dictionary: d)
         }
     }

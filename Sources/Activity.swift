@@ -161,7 +161,7 @@ public struct Activity {
     }
 
     public static func activities(_ dictionaries: [JSONDictionary]) -> [Activity]? {
-        let activities = dictionaries.flatMap { (d) in
+        let activities = dictionaries.compactMap { (d) in
             return Activity(dictionary: d)
         }
 
