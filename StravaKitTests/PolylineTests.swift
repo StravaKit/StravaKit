@@ -105,7 +105,7 @@ class PolylineTests: XCTestCase {
         let polylinesData = PolylineData.loadJSONData(json)
 
         for polylineData in polylinesData {
-            XCTAssertTrue(polylineData.polyline.characters.count > 0)
+            XCTAssertTrue(polylineData.polyline.count > 0)
             XCTAssertTrue(polylineData.coordinates.count > 0)
             let polyline = Polyline(encodedPolyline:polylineData.polyline)
             let coordinates: [CLLocationCoordinate2D]? = polyline.coordinates
@@ -188,7 +188,7 @@ class PolylineTests: XCTestCase {
         let polylinesData = PolylineData.loadJSONData(json)
 
         for polylineData in polylinesData {
-            XCTAssertTrue(polylineData.polyline.characters.count > 0)
+            XCTAssertTrue(polylineData.polyline.count > 0)
             XCTAssertTrue(polylineData.coordinates.count > 0)
 
             let dictionary: JSONDictionary = [
@@ -222,7 +222,7 @@ class PolylineTests: XCTestCase {
         let polylinesData = PolylineData.loadJSONData(json)
 
         for polylineData in polylinesData {
-            XCTAssertTrue(polylineData.polyline.characters.count > 0)
+            XCTAssertTrue(polylineData.polyline.count > 0)
             XCTAssertTrue(polylineData.coordinates.count > 0)
 
             let dictionary: JSONDictionary = [
