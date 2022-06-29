@@ -78,7 +78,7 @@ public struct SegmentEffort {
     }
 
     public static func efforts(_ dictionaries: [JSONDictionary]) -> [SegmentEffort] {
-        return dictionaries.flatMap { (d) in
+        return dictionaries.compactMap { (d) in
             return SegmentEffort(dictionary: d)
         }
     }

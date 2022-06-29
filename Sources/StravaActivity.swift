@@ -110,7 +110,7 @@ public extension Strava {
     // MARK: - Internal Functions -
 
     internal static func handleActivitiesResponse(_ response: Any?, completionHandler: ((_ activities: [Activity]?, _ error: NSError?) -> ())?) {
-        let activities = (response as? JSONArray)?.flatMap { (d) in
+        let activities = (response as? JSONArray)?.compactMap { (d) in
             return Activity(dictionary: d)
         }
         DispatchQueue.main.async {

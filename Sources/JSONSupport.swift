@@ -29,26 +29,42 @@ internal class JSONSupport {
     func value<T>(_ key: String, required: Bool = true, nilValue: T? = nil) -> T? {
         var warnings: [String] = []
         if required && isJSONDebuggingEnabled() {
-            if let _ = dictionary[key] as? T {
+            if let _ : T = cast(dictionary[key]) {
                 // No warnings
             }
             else if dictionary[key] == nil {
                 warnings.append("Dictionary value is missing: \(key)")
             }
             else {
-                warnings.append("Dictionary value is wrong type: \(key), \(dictionary[key])")
+                warnings.append("Dictionary value is wrong type: \(key), \(String(describing: dictionary[key]))")
             }
 
             for warning in warnings {
                 debugPrint(warning)
             }
         }
-
-        let value = dictionary[key] as? T
-        if value == nil {
+        guard let value: T = cast(dictionary[key]) else {
             return nilValue
         }
         return value
     }
 
+    private func cast<T>(_ value: Any?) -> T? {
+        if let value = value as? T {
+            return value
+        }
+        if let value = value as? NSNumber {
+            if T.self == Float.self || T.self == Float?.self {
+                return value.floatValue as? T
+            }
+            if T.self == Double.self || T.self == Double?.self {
+                return value.doubleValue as? T
+            }
+            if T.self == Int.self || T.self == Int?.self {
+                return value.intValue as? T
+            }
+        }
+        
+        return nil
+    }
 }

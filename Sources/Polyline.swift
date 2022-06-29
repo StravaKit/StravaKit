@@ -164,7 +164,7 @@ public func decodePolyline(_ encodedPolyline: String, precision: Double = 1e5) -
 
     let data = encodedPolyline.data(using: String.Encoding.utf8)!
 
-    let byteArray = unsafeBitCast((data as NSData).bytes, to: UnsafePointer<Int8>.self)
+    let byteArray = (data as NSData).bytes.assumingMemoryBound(to: Int8.self)
     let length = Int(data.count)
     var position = Int(0)
 
@@ -324,7 +324,8 @@ private func extractNextChunk(_ encodedString: inout String.UnicodeScalarView) t
         let currentCharacterValue = Int32(encodedString[currentIndex].value)
         if isSeparator(currentCharacterValue) {
             let extractedScalars = encodedString[encodedString.startIndex...currentIndex]
-            encodedString = encodedString[encodedString.index(after: currentIndex)..<encodedString.endIndex]
+            let start = encodedString.index(after: currentIndex)
+            encodedString = String.UnicodeScalarView(encodedString[start...])
 
             return String(extractedScalars)
         }

@@ -77,7 +77,7 @@ public struct Route {
      Creates route models from an array of dictionaries.
      */
     public static func routes(_ dictionaries: JSONArray) -> [Route] {
-        return dictionaries.flatMap { (d) in
+        return dictionaries.compactMap { (d) in
             return Route(dictionary: d)
         }
     }

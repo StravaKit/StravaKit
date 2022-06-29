@@ -84,7 +84,7 @@ class PolylineTests: XCTestCase {
                 return nil
         }
 
-        let coordinates = jsonCoordinates.flatMap { (dictionary) -> CLLocationCoordinate2D? in
+        let coordinates = jsonCoordinates.compactMap { (dictionary) -> CLLocationCoordinate2D? in
             if let latitude = dictionary["latitude"] as? Double,
                 let longitude = dictionary["longitude"] as? Double {
                 let coordinate = CLLocationCoordinate2DMake(latitude, longitude)
@@ -105,7 +105,7 @@ class PolylineTests: XCTestCase {
         let polylinesData = PolylineData.loadJSONData(json)
 
         for polylineData in polylinesData {
-            XCTAssertTrue(polylineData.polyline.characters.count > 0)
+            XCTAssertTrue(polylineData.polyline.count > 0)
             XCTAssertTrue(polylineData.coordinates.count > 0)
             let polyline = Polyline(encodedPolyline:polylineData.polyline)
             let coordinates: [CLLocationCoordinate2D]? = polyline.coordinates
@@ -114,8 +114,8 @@ class PolylineTests: XCTestCase {
             if let coordinates = coordinates {
                 for (index, coordinate) in coordinates.enumerated() {
                     let otherCoordinate = polylineData.coordinates[index]
-                    XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
-                    XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
+                    XCTAssertEqual(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
+                    XCTAssertEqual(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
                 }
             }
         }
@@ -170,7 +170,7 @@ class PolylineTests: XCTestCase {
             return
         }
 
-        let locations = coordinates.flatMap { (coordinate) -> CLLocation? in
+        let locations = coordinates.compactMap { (coordinate) -> CLLocation? in
             return CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         }
 
@@ -188,7 +188,7 @@ class PolylineTests: XCTestCase {
         let polylinesData = PolylineData.loadJSONData(json)
 
         for polylineData in polylinesData {
-            XCTAssertTrue(polylineData.polyline.characters.count > 0)
+            XCTAssertTrue(polylineData.polyline.count > 0)
             XCTAssertTrue(polylineData.coordinates.count > 0)
 
             let dictionary: JSONDictionary = [
@@ -207,8 +207,8 @@ class PolylineTests: XCTestCase {
 
             for (index, coordinate) in map.summaryCoordinates.enumerated() {
                 let otherCoordinate = polylineData.coordinates[index]
-                XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
-                XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
+                XCTAssertEqual(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
+                XCTAssertEqual(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
             }
         }
     }
@@ -222,7 +222,7 @@ class PolylineTests: XCTestCase {
         let polylinesData = PolylineData.loadJSONData(json)
 
         for polylineData in polylinesData {
-            XCTAssertTrue(polylineData.polyline.characters.count > 0)
+            XCTAssertTrue(polylineData.polyline.count > 0)
             XCTAssertTrue(polylineData.coordinates.count > 0)
 
             let dictionary: JSONDictionary = [
@@ -243,8 +243,8 @@ class PolylineTests: XCTestCase {
             if let coordinates = map.coordinates {
                 for (index, coordinate) in coordinates.enumerated() {
                     let otherCoordinate = polylineData.coordinates[index]
-                    XCTAssertEqualWithAccuracy(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
-                    XCTAssertEqualWithAccuracy(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
+                    XCTAssertEqual(Double(coordinate.latitude), Double(otherCoordinate.latitude), accuracy: precision)
+                    XCTAssertEqual(coordinate.longitude, otherCoordinate.longitude, accuracy: precision)
                 }
             }
             

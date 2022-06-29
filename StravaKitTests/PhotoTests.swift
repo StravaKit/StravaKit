@@ -46,7 +46,7 @@ class PhotoTests: XCTestCase {
             return
         }
 
-        let epsilon = Double(FLT_EPSILON)
+        let epsilon = Double(Float.ulpOfOne)
         let latitude = Double(37.839333333)
         let longitude = Double(-122.489833333)
 
@@ -61,8 +61,8 @@ class PhotoTests: XCTestCase {
 
             let coordinate = photo.coordinate
             XCTAssertTrue(CLLocationCoordinate2DIsValid(coordinate))
-            XCTAssertEqualWithAccuracy(latitude, coordinate.latitude, accuracy: epsilon)
-            XCTAssertEqualWithAccuracy(longitude, coordinate.longitude, accuracy: epsilon)
+            XCTAssertEqual(latitude, coordinate.latitude, accuracy: epsilon)
+            XCTAssertEqual(longitude, coordinate.longitude, accuracy: epsilon)
         }
         else {
             XCTFail()

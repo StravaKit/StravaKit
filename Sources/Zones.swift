@@ -29,7 +29,7 @@ public struct Zone {
     }
 
     public static func zones(_ array: JSONArray) -> [Zone]? {
-        let zones = array.flatMap { (d) in
+        let zones = array.compactMap { (d) in
             return Zone(dictionary: d)
         }
 
